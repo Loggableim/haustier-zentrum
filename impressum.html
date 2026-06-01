@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Impressum – Haustierzentrum</title>
+<meta name="description" content="Impressum der Website Haustierzentrum – Angaben gemäß §5 TMG.">
+<meta property="og:title" content="Impressum – Haustierzentrum">
+<meta property="og:url" content="https://haustierzentrum.com/impressum.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Haustierzentrum">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://haustierzentrum.com/impressum.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Impressum",
+  "isPartOf": {"@type":"WebSite","name":"Haustierzentrum","url":"https://haustierzentrum.com"}
+}
+</script>
+<style>
+:root {
+  --primary: #FF9800;
+  --primary-dark: #e68900;
+  --bg: #ffffff;
+  --bg-alt: #f7f7f7;
+  --text: #1a1a1a;
+  --text-muted: #666;
+  --border: #e0e0e0;
+  --card-shadow: 0 2px 12px rgba(0,0,0,.08);
+  --font: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--font);
+  color:var(--text);
+  background:var(--bg);
+  line-height:1.7;
+  display:flex;
+  flex-direction:column;
+  min-height:100vh;
+}
+a{color:var(--primary);text-decoration:none}
+a:hover{text-decoration:underline}
+
+.site-header{
+  background:var(--bg);
+  border-bottom:2px solid var(--primary);
+  padding:0 1rem;
+  position:sticky;
+  top:0;
+  z-index:100;
+}
+.nav-wrap{
+  max-width:1100px;
+  margin:0 auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  height:64px;
+}
+.logo{
+  font-size:1.4rem;
+  font-weight:800;
+  color:var(--primary);
+  letter-spacing:-.5px;
+}
+.logo:hover{text-decoration:none}
+.nav-links{display:flex;gap:1.5rem;list-style:none}
+.nav-links a{
+  color:var(--text);
+  font-weight:500;
+  font-size:.95rem;
+  padding:.3rem 0;
+  border-bottom:2px solid transparent;
+  transition:.2s;
+}
+.nav-links a:hover,.nav-links a.active{
+  color:var(--primary);
+  border-bottom-color:var(--primary);
+  text-decoration:none;
+}
+.nav-toggle{display:none;background:none;border:none;font-size:1.6rem;cursor:pointer;color:var(--text);padding:.25rem;}
+main{flex:1;max-width:1100px;margin:0 auto;padding:2rem 1rem;width:100%}
+
+.info-page{max-width:780px;margin:0 auto}
+.info-page h1{font-size:2rem;margin-bottom:1rem;color:var(--primary-dark)}
+.info-page h2{font-size:1.3rem;margin:2rem 0 .8rem}
+.info-page p{margin-bottom:1rem}
+.info-page address{font-style:normal;margin-bottom:1rem;line-height:2}
+
+.site-footer{
+  background:#1a1a1a;
+  color:#ccc;
+  padding:2rem 1rem;
+  margin-top:3rem;
+  font-size:.88rem;
+}
+.footer-wrap{
+  max-width:1100px;
+  margin:0 auto;
+  display:flex;
+  flex-wrap:wrap;
+  gap:2rem;
+  justify-content:space-between;
+  align-items:center;
+}
+.footer-wrap a{color:#FFB74D}
+.footer-wrap a:hover{color:#fff}
+.footer-copy{text-align:center;width:100%;margin-top:1rem;padding-top:1rem;border-top:1px solid #333;font-size:.82rem}
+
+.cookie-banner{
+  position:fixed;
+  bottom:0;
+  left:0;
+  right:0;
+  background:#1a1a1a;
+  color:#eee;
+  padding:1rem 1.5rem;
+  display:none;
+  z-index:999;
+  box-shadow:0 -4px 20px rgba(0,0,0,.3);
+  font-size:.9rem;
+}
+.cookie-banner.show{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:1rem}
+.cookie-banner p{max-width:700px}
+.cookie-banner button{
+  background:var(--primary);
+  border:none;
+  color:#fff;
+  font-weight:600;
+  padding:.5rem 1.5rem;
+  border-radius:6px;
+  cursor:pointer;
+  font-size:.9rem;
+  white-space:nowrap;
+}
+.cookie-banner button:hover{background:var(--primary-dark)}
+
+@media(max-width:768px){
+  .nav-links{
+    display:none;
+    position:absolute;
+    top:64px;
+    left:0;
+    right:0;
+    background:var(--bg);
+    flex-direction:column;
+    padding:1rem;
+    border-bottom:2px solid var(--primary);
+    box-shadow:0 4px 12px rgba(0,0,0,.1);
+    gap:.25rem;
+  }
+  .nav-links.open{display:flex}
+  .nav-toggle{display:block}
+  .info-page h1{font-size:1.5rem}
+  .cookie-banner{flex-direction:column;text-align:center}
+}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="nav-wrap">
+    <a href="/" class="logo">🐾 Haustierzentrum</a>
+    <button class="nav-toggle" aria-label="Menü" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+    <ul class="nav-links">
+      <li><a href="/">Start</a></li>
+      <li><a href="/artikel/hundeerziehung-grundlagen.html">Hunde</a></li>
+      <li><a href="/artikel/katzenhaltung-wohnung.html">Katzen</a></li>
+      <li><a href="/artikel/kleintiere-hamster-meerschweinchen.html">Kleintiere</a></li>
+      <li><a href="/about.html">Über uns</a></li>
+      <li><a href="/impressum.html" class="active">Impressum</a></li>
+    </ul>
+  </div>
+</header>
+
+<main>
+  <div class="info-page">
+    <h1>Impressum</h1>
+
+    <p><strong>Angaben gemäß §5 TMG</strong></p>
+
+    <address>
+      Haustierzentrum<br>
+      Max Mustermann<br>
+      Musterstraße 123<br>
+      12345 Musterstadt<br>
+      Deutschland
+    </address>
+
+    <p>
+      <strong>E-Mail:</strong> <a href="mailto:kontakt@haustierzentrum.com">kontakt@haustierzentrum.com</a><br>
+      <strong>Internet:</strong> <a href="https://haustierzentrum.com">https://haustierzentrum.com</a>
+    </p>
+
+    <h2>Verantwortlich für den Inhalt nach §55 Abs.2 RStV</h2>
+    <p>Max Mustermann, Musterstraße 123, 12345 Musterstadt</p>
+
+    <h2>Haftungsausschluss</h2>
+    <p><strong>Haftung für Inhalte:</strong> Die Inhalte dieser Seite wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen.</p>
+    <p><strong>Haftung für Links:</strong> Diese Website enthält Links zu externen Webseiten Dritter, auf deren Inhalte wir keinen Einfluss haben. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber verantwortlich.</p>
+
+    <h2>Datenschutzerklärung</h2>
+    <p>Diese Website verwendet ausschließlich technisch notwendige Cookies, um die Funktion der Website zu gewährleisten. Es werden keine Tracking-Cookies, Analyse-Tools oder Marketing-Cookies ohne Einwilligung eingesetzt.</p>
+    <p>Personenbezogene Daten (wie E-Mail-Adressen bei Kontaktaufnahme) werden vertraulich behandelt und nicht an Dritte weitergegeben.</p>
+
+    <h2>Affiliate-Hinweis</h2>
+    <p>Diese Website enthält Affiliate-Links zu Amazon.de. Als Amazon-Partner verdienen wir an qualifizierten Verkäufen. Für Dich entstehen dadurch keine zusätzlichen Kosten. Die Kennzeichnung erfolgt deutlich sichtbar im jeweiligen Beitrag.</p>
+
+    <h2>Urheberrecht</h2>
+    <p>Die durch die Betreiber erstellten Inhalte und Werke auf dieser Website unterliegen dem deutschen Urheberrecht. Beiträge Dritter sind als solche gekennzeichnet. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers.</p>
+
+    <h2>Streitschlichtung</h2>
+    <p>Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener">https://ec.europa.eu/consumers/odr</a>. Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
+
+    <h2>Google AdSense</h2>
+    <p>Diese Website nutzt Google AdSense, einen Dienst zum Einbinden von Werbeanzeigen. Google AdSense verwendet Cookies, um die Anzeigen relevanter zu gestalten. Durch die Nutzung dieser Website erklärst Du Dich mit der Verarbeitung Deiner Daten durch Google einverstanden. Weitere Informationen findest Du in der Datenschutzerklärung von Google.</p>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-wrap">
+    <div>
+      <strong style="color:#fff;">🐾 Haustierzentrum</strong>
+      <p style="margin-top:.3rem;">Dein Blog für artgerechte Haustierhaltung</p>
+    </div>
+    <div>
+      <a href="/about.html">Über uns</a> &middot;
+      <a href="/impressum.html">Impressum</a> &middot;
+      <a href="/sitemap.xml">Sitemap</a>
+    </div>
+    <div class="footer-copy">
+      <p>&copy; 2026 Haustierzentrum. Alle Rechte vorbehalten.</p>
+      <p style="margin-top:.3rem;font-size:.8rem;">Diese Seite kann Affiliate-Links (Amazon DE) enthalten. Als Amazon-Partner verdienen wir an qualifizierten Verkäufen.</p>
+    </div>
+  </div>
+</footer>
+
+<div class="cookie-banner show" id="cookieBanner">
+  <p>🍪 Diese Website verwendet Cookies und technisch notwendige Funktionen. Mit der Nutzung stimmst Du der Verarbeitung zu. <a href="/impressum.html" style="color:#FFB74D;">Mehr Infos</a></p>
+  <button onclick="document.getElementById('cookieBanner').classList.remove('show')">Akzeptieren</button>
+</div>
+
+<script>
+document.querySelectorAll('.nav-links a').forEach(l=>l.addEventListener('click',()=>{
+  document.querySelector('.nav-links').classList.remove('open')
+}))
+</script>
+</body>
+</html>

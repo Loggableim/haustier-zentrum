@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Über uns – Haustierzentrum</title>
+<meta name="description" content="Über Haustierzentrum – Dein Blog für artgerechte Haustierhaltung mit Tipps zu Hunden, Katzen und Kleintieren.">
+<meta property="og:title" content="Über uns – Haustierzentrum">
+<meta property="og:description" content="Lerne das Team hinter Haustierzentrum kennen.">
+<meta property="og:url" content="https://haustierzentrum.com/about.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Haustierzentrum">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://haustierzentrum.com/about.html">
+<style>
+:root {
+  --primary: #FF9800;
+  --primary-dark: #e68900;
+  --bg: #ffffff;
+  --bg-alt: #f7f7f7;
+  --text: #1a1a1a;
+  --text-muted: #666;
+  --border: #e0e0e0;
+  --card-shadow: 0 2px 12px rgba(0,0,0,.08);
+  --font: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--font);
+  color:var(--text);
+  background:var(--bg);
+  line-height:1.7;
+  display:flex;
+  flex-direction:column;
+  min-height:100vh;
+}
+a{color:var(--primary);text-decoration:none}
+a:hover{text-decoration:underline}
+img{max-width:100%;height:auto;display:block}
+
+.site-header{
+  background:var(--bg);
+  border-bottom:2px solid var(--primary);
+  padding:0 1rem;
+  position:sticky;
+  top:0;
+  z-index:100;
+}
+.nav-wrap{
+  max-width:1100px;
+  margin:0 auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  height:64px;
+}
+.logo{
+  font-size:1.4rem;
+  font-weight:800;
+  color:var(--primary);
+  letter-spacing:-.5px;
+}
+.logo:hover{text-decoration:none}
+.nav-links{display:flex;gap:1.5rem;list-style:none}
+.nav-links a{
+  color:var(--text);
+  font-weight:500;
+  font-size:.95rem;
+  padding:.3rem 0;
+  border-bottom:2px solid transparent;
+  transition:.2s;
+}
+.nav-links a:hover,.nav-links a.active{
+  color:var(--primary);
+  border-bottom-color:var(--primary);
+  text-decoration:none;
+}
+.nav-toggle{display:none;background:none;border:none;font-size:1.6rem;cursor:pointer;color:var(--text);padding:.25rem;}
+main{flex:1;max-width:1100px;margin:0 auto;padding:2rem 1rem;width:100%}
+
+.info-page{max-width:780px;margin:0 auto}
+.info-page h1{font-size:2rem;margin-bottom:1rem;color:var(--primary-dark)}
+.info-page h2{font-size:1.3rem;margin:2rem 0 .8rem}
+.info-page p{margin-bottom:1rem}
+
+.site-footer{
+  background:#1a1a1a;
+  color:#ccc;
+  padding:2rem 1rem;
+  margin-top:3rem;
+  font-size:.88rem;
+}
+.footer-wrap{
+  max-width:1100px;
+  margin:0 auto;
+  display:flex;
+  flex-wrap:wrap;
+  gap:2rem;
+  justify-content:space-between;
+  align-items:center;
+}
+.footer-wrap a{color:#FFB74D}
+.footer-wrap a:hover{color:#fff}
+.footer-copy{text-align:center;width:100%;margin-top:1rem;padding-top:1rem;border-top:1px solid #333;font-size:.82rem}
+
+.cookie-banner{
+  position:fixed;
+  bottom:0;
+  left:0;
+  right:0;
+  background:#1a1a1a;
+  color:#eee;
+  padding:1rem 1.5rem;
+  display:none;
+  z-index:999;
+  box-shadow:0 -4px 20px rgba(0,0,0,.3);
+  font-size:.9rem;
+}
+.cookie-banner.show{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:1rem}
+.cookie-banner p{max-width:700px}
+.cookie-banner button{
+  background:var(--primary);
+  border:none;
+  color:#fff;
+  font-weight:600;
+  padding:.5rem 1.5rem;
+  border-radius:6px;
+  cursor:pointer;
+  font-size:.9rem;
+  white-space:nowrap;
+}
+.cookie-banner button:hover{background:var(--primary-dark)}
+
+@media(max-width:768px){
+  .nav-links{
+    display:none;
+    position:absolute;
+    top:64px;
+    left:0;
+    right:0;
+    background:var(--bg);
+    flex-direction:column;
+    padding:1rem;
+    border-bottom:2px solid var(--primary);
+    box-shadow:0 4px 12px rgba(0,0,0,.1);
+    gap:.25rem;
+  }
+  .nav-links.open{display:flex}
+  .nav-toggle{display:block}
+  .info-page h1{font-size:1.5rem}
+  .cookie-banner{flex-direction:column;text-align:center}
+}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="nav-wrap">
+    <a href="/" class="logo">🐾 Haustierzentrum</a>
+    <button class="nav-toggle" aria-label="Menü" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+    <ul class="nav-links">
+      <li><a href="/">Start</a></li>
+      <li><a href="/artikel/hundeerziehung-grundlagen.html">Hunde</a></li>
+      <li><a href="/artikel/katzenhaltung-wohnung.html">Katzen</a></li>
+      <li><a href="/artikel/kleintiere-hamster-meerschweinchen.html">Kleintiere</a></li>
+      <li><a href="/about.html" class="active">Über uns</a></li>
+      <li><a href="/impressum.html">Impressum</a></li>
+    </ul>
+  </div>
+</header>
+
+<main>
+  <div class="info-page">
+    <h1>Über Haustierzentrum</h1>
+
+    <p>Willkommen bei <strong>Haustierzentrum</strong> – Deinem Blog für artgerechte Haustierhaltung!</p>
+
+    <p>Wir sind ein Team von leidenschaftlichen Tierfreunden, die ihr Wissen und ihre Erfahrungen rund um Hunde, Katzen und Kleintiere teilen möchten. Unser Ziel ist es, Dir praktische, alltagstaugliche Tipps zu geben, damit Dein Haustier ein glückliches und gesundes Leben führen kann.</p>
+
+    <h2>Was uns ausmacht</h2>
+    <p>Bei Haustierzentrum legen wir Wert auf artgerechte Haltung, wissenschaftlich fundierte Informationen und eine einfache, verständliche Sprache. Wir testen Produkte, recherchieren zu aktuellen Themen und geben unsere Erfahrungen aus erster Hand weiter.</p>
+
+    <h2>Unser Angebot</h2>
+    <ul>
+      <li><strong>Hunde:</strong> Erziehungstipps, Rasseporträts, Gesundheit & Ernährung</li>
+      <li><strong>Katzen:</strong> Wohnungshaltung, Beschäftigung, Gesundheit & Pflege</li>
+      <li><strong>Kleintiere:</strong> Hamster, Meerschweinchen, Kaninchen – Haltung, Vergleich & Zubehör</li>
+    </ul>
+
+    <h2>Warum Du uns vertrauen kannst</h2>
+    <p>Unsere Artikel werden von Tierhaltern mit langjähriger Erfahrung verfasst und regelmäßig aktualisiert. Wir arbeiten nach redaktionellen Standards und kennzeichnen Affiliate-Links sowie Werbung deutlich.</p>
+
+    <h2>Kontakt</h2>
+    <p>Du hast Fragen, Anregungen oder möchtest mit uns zusammenarbeiten? Schreib uns einfach eine E-Mail an <a href="mailto:kontakt@haustierzentrum.com">kontakt@haustierzentrum.com</a> – wir freuen uns auf Deine Nachricht!</p>
+
+    <p style="margin-top:2rem;">🐾 Dein Haustierzentrum-Team</p>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-wrap">
+    <div>
+      <strong style="color:#fff;">🐾 Haustierzentrum</strong>
+      <p style="margin-top:.3rem;">Dein Blog für artgerechte Haustierhaltung</p>
+    </div>
+    <div>
+      <a href="/about.html">Über uns</a> &middot;
+      <a href="/impressum.html">Impressum</a> &middot;
+      <a href="/sitemap.xml">Sitemap</a>
+    </div>
+    <div class="footer-copy">
+      <p>&copy; 2026 Haustierzentrum. Alle Rechte vorbehalten.</p>
+      <p style="margin-top:.3rem;font-size:.8rem;">Diese Seite kann Affiliate-Links (Amazon DE) enthalten. Als Amazon-Partner verdienen wir an qualifizierten Verkäufen.</p>
+    </div>
+  </div>
+</footer>
+
+<div class="cookie-banner show" id="cookieBanner">
+  <p>🍪 Diese Website verwendet Cookies und technisch notwendige Funktionen. Mit der Nutzung stimmst Du der Verarbeitung zu. <a href="/impressum.html" style="color:#FFB74D;">Mehr Infos</a></p>
+  <button onclick="document.getElementById('cookieBanner').classList.remove('show')">Akzeptieren</button>
+</div>
+
+<script>
+document.querySelectorAll('.nav-links a').forEach(l=>l.addEventListener('click',()=>{
+  document.querySelector('.nav-links').classList.remove('open')
+}))
+</script>
+</body>
+</html>
