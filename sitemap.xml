@@ -6,27 +6,32 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://haustierzentrum.com/artikel/zeckenschutz-flohschutz-hund.html</loc>
+    <loc>https://haustierzentrum.com/about.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://haustierzentrum.com/artikel/allergiker-haustiere.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://haustierzentrum.com/artikel/katzentoilette-geruch-vermeiden.html</loc>
+    <loc>https://haustierzentrum.com/artikel/aquarium-einrichtung.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://haustierzentrum.com/artikel/meerschweinchen-ernaehrung-vitamin-c.html</loc>
+    <loc>https://haustierzentrum.com/artikel/hamster-haltung.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://haustierzentrum.com/artikel/kaninchenhaltung.html</loc>
+    <loc>https://haustierzentrum.com/artikel/haustier-anschaffung.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://haustierzentrum.com/artikel/katzenbeschaeftigung.html</loc>
+    <loc>https://haustierzentrum.com/artikel/haustiere-kinder.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -36,12 +41,12 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://haustierzentrum.com/artikel/hundeerziehung-grundlagen.html</loc>
+    <loc>https://haustierzentrum.com/artikel/hunde-hausmittel.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://haustierzentrum.com/artikel/hundespielzeuge-2026.html</loc>
+    <loc>https://haustierzentrum.com/artikel/hunde-reisen.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -51,7 +56,52 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://haustierzentrum.com/artikel/katzenhaltung-wohnung.html</loc>
+    <loc>https://haustierzentrum.com/artikel/hundeerziehung-grundlagen.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://haustierzentrum.com/artikel/hunderassen-anfaenger.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://haustierzentrum.com/artikel/hundespielzeuge-2026.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://haustierzentrum.com/artikel/hundeversicherung.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://haustierzentrum.com/artikel/kaninchenhaltung.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://haustierzentrum.com/artikel/katzen-ernaehrung.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://haustierzentrum.com/artikel/katzen-freigaenger.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://haustierzentrum.com/artikel/katzen-kratzbaum.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://haustierzentrum.com/artikel/katzen-zahnpflege.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://haustierzentrum.com/artikel/katzenbeschaeftigung.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -61,7 +111,27 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://haustierzentrum.com/artikel/katzenhaltung-wohnung.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://haustierzentrum.com/artikel/katzenkrankheiten-erkennen.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://haustierzentrum.com/artikel/katzenrassen-vergleich.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://haustierzentrum.com/artikel/katzentoilette-geruch-vermeiden.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://haustierzentrum.com/artikel/kleintier-gehege.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -71,9 +141,34 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://haustierzentrum.com/about.html</loc>
+    <loc>https://haustierzentrum.com/artikel/leinenfuehrigkeit.html</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://haustierzentrum.com/artikel/meerschweinchen-ernaehrung-vitamin-c.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://haustierzentrum.com/artikel/tierarztkosten.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://haustierzentrum.com/artikel/wellensittich-haltung.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://haustierzentrum.com/artikel/welpen-eingewoehnung.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://haustierzentrum.com/artikel/zeckenschutz-flohschutz-hund.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://haustierzentrum.com/impressum.html</loc>
