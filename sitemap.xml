@@ -21,6 +21,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://haustierzentrum.com/artikel/katzenkrankheiten-erkennen.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://haustierzentrum.com/artikel/kleintiere-hamster-meerschweinchen.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
