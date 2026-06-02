@@ -6,6 +6,21 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://haustierzentrum.com/artikel/zeckenschutz-flohschutz-hund.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://haustierzentrum.com/artikel/katzentoilette-geruch-vermeiden.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://haustierzentrum.com/artikel/meerschweinchen-ernaehrung-vitamin-c.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://haustierzentrum.com/artikel/kaninchenhaltung.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
