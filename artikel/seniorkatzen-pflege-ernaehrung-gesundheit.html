@@ -44,16 +44,426 @@
 html{scroll-behavior:smooth}
 body{font-family:var(--font);color:var(--text);background:var(--bg);line-height:1.7;display:flex;flex-direction:column;min-height:100vh}
 a{color:var(--primary);text-decoration:none}a:hover{text-decoration:underline}img{max-width:100%;height:auto;display:block}
-.site-header{background:var(--bg);border-bottom:2px solid var(--primary);padding:0 1rem;position:sticky;top:0;z-index:100}.nav-wrap{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px}.logo{font-size:1.4rem;font-weight:800;color:var(--primary);letter-spacing:-.5px}.logo:hover{text-decoration:none}.nav-links{display:flex;gap:1.5rem;list-style:none}.nav-links a{color:var(--text);font-weight:500;font-size:.95rem;padding:.3rem 0;border-bottom:2px solid transparent;transition:.2s}.nav-links a:hover,.nav-links a.active{color:var(--primary);border-bottom-color:var(--primary);text-decoration:none}.nav-toggle{display:none;background:none;border:none;font-size:1.6rem;cursor:pointer;color:var(--text);padding:.25rem}main{flex:1;max-width:1100px;margin:0 auto;padding:2rem 1rem;width:100%}
+.site-header{
+  background:rgba(255,255,255,.92);
+  backdrop-filter:blur(16px) saturate(1.2);
+  border-bottom:3px solid var(--primary);
+  padding:0 1rem;
+  position:sticky;
+  top:0;
+  z-index:1000;
+}
+.nav-wrap{
+  max-width:1200px;
+  margin:0 auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  height:72px;
+}
+.logo{
+  font-size:1.4rem;
+  font-weight:900;
+  letter-spacing:-1px;
+  background:linear-gradient(135deg,var(--primary-dark),var(--primary));
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  background-clip:text;
+  flex-shrink:0;
+}
+.logo span{font-weight:400;color:var(--text-muted);-webkit-text-fill-color:var(--text-muted);}
+.logo:hover{text-decoration:none}
+.main-nav{display:flex;align-items:center}
+.nav-links{display:flex;gap:0;list-style:none;align-items:center;margin:0;padding:0}
+.nav-links > li{position:relative}
+.nav-links > li > a{
+  color:var(--text);
+  font-weight:600;
+  font-size:.85rem;
+  padding:.4rem 1rem;
+  border-radius:50px;
+  transition:.2s;
+  letter-spacing:.2px;
+  display:flex;
+  align-items:center;
+  gap:.3rem;
+  white-space:nowrap;
+}
+.nav-links > li > a .arrow{
+  font-size:.6rem;
+  transition:transform .25s;
+  display:inline-block;
+}
+.nav-links > li:hover > a .arrow{
+  transform:rotate(180deg);
+}
+.nav-links > li > a:hover,
+.nav-links > li > a.active{
+  color:#fff;
+  background:var(--primary);
+  text-decoration:none;
+}
+.nav-links > li.simple-link > a{
+  color:var(--text-muted);
+  font-weight:500;
+  font-size:.8rem;
+}
+.nav-links > li.simple-link > a:hover{
+  color:#fff;
+}
+.mega-panel{
+  position:absolute;
+  top:100%;
+  left:50%;
+  transform:translateX(-50%) translateY(12px);
+  background:#fff;
+  border-radius:16px;
+  box-shadow:0 20px 60px rgba(0,0,0,.15), 0 4px 20px rgba(0,0,0,.06);
+  min-width:680px;
+  max-width:900px;
+  padding:0;
+  opacity:0;
+  visibility:hidden;
+  transition:all .25s cubic-bezier(.16,1,.3,1);
+  border:1px solid var(--border-light);
+  overflow:hidden;
+  pointer-events:none;
+}
+.nav-links > li:hover .mega-panel{
+  opacity:1;
+  visibility:visible;
+  transform:translateX(-50%) translateY(8px);
+  pointer-events:auto;
+}
+.mega-grid{
+  display:grid;
+  gap:0;
+  padding:1.5rem;
+}
+.mega-grid.cols-2{grid-template-columns:1fr 1fr}
+.mega-grid.cols-3{grid-template-columns:1fr 1fr 1fr}
+.mega-grid.cols-4{grid-template-columns:1fr 1fr 1fr 1fr}
+.mega-col{
+  padding:0 .8rem;
+  border-right:1px solid var(--border-light);
+}
+.mega-col:last-child{border-right:none}
+.mega-col h4{
+  font-size:.7rem;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  color:var(--primary);
+  font-weight:700;
+  margin:0 0 .6rem 0;
+  padding-bottom:.4rem;
+  border-bottom:2px solid var(--primary-light);
+}
+.mega-col a{
+  display:flex;
+  align-items:center;
+  gap:.4rem;
+  padding:.35rem .5rem;
+  border-radius:8px;
+  color:var(--text);
+  font-size:.82rem;
+  font-weight:500;
+  transition:all .15s;
+  text-decoration:none;
+  line-height:1.3;
+}
+.mega-col a:hover{
+  background:var(--primary-light);
+  color:var(--primary-dark);
+  text-decoration:none;
+}
+.mega-col a .badge{
+  font-size:.6rem;
+  background:var(--primary);
+  color:#fff;
+  padding:.1rem .4rem;
+  border-radius:20px;
+  font-weight:700;
+  margin-left:auto;
+  animation:pulse-badge 2s infinite;
+}
+@keyframes pulse-badge{
+  0%,100%{opacity:1}
+  50%{opacity:.6}
+}
+.mega-col a .desc{
+  font-size:.68rem;
+  color:var(--text-muted);
+  font-weight:400;
+  display:block;
+  margin-left:1.6rem;
+  margin-top:-.1rem;
+}
+.mega-featured{
+  background:linear-gradient(135deg,var(--primary-light),#fff8e1);
+  border-radius:12px;
+  padding:.8rem 1rem;
+  margin-top:.6rem;
+  display:flex;
+  align-items:center;
+  gap:.8rem;
+}
+.mega-featured img{
+  width:52px;
+  height:52px;
+  border-radius:8px;
+  object-fit:cover;
+  flex-shrink:0;
+}
+.mega-featured .meta{flex:1}
+.mega-featured .meta strong{display:block;font-size:.82rem;color:var(--text)}
+.mega-featured .meta span{font-size:.7rem;color:var(--text-muted)}
+.search-btn{
+  background:none;
+  border:none;
+  font-size:1.1rem;
+  cursor:pointer;
+  color:var(--text-muted);
+  padding:.4rem .6rem;
+  border-radius:50px;
+  transition:.2s;
+  display:flex;
+  align-items:center;
+  flex-shrink:0;
+}
+.search-btn:hover{
+  background:var(--primary-light);
+  color:var(--primary);
+}
+.nav-toggle{
+  display:none;
+  background:none;
+  border:none;
+  font-size:1.6rem;
+  cursor:pointer;
+  color:var(--text);
+  padding:.25rem;
+}
+main{flex:1;max-width:1100px;margin:0 auto;padding:2rem 1rem;width:100%}
+
 .article-header{margin-bottom:2rem}.article-header h1{font-size:2rem;line-height:1.3;margin-bottom:.5rem;color:var(--primary-dark)}.article-meta{display:flex;gap:1rem;flex-wrap:wrap;align-items:center;font-size:.88rem;color:var(--text-muted);margin-bottom:1rem}.article-meta .cats span{background:var(--primary);color:#fff;font-size:.75rem;font-weight:600;padding:.2rem .7rem;border-radius:20px;margin-right:.4rem}.featured-img{width:100%;max-height:420px;background:var(--bg-alt);border-radius:12px;display:flex;align-items:center;justify-content:center;color:var(--text-muted);margin-bottom:2rem;overflow:hidden;min-height:250px}.hero-image{width:100%;height:auto;border-radius:12px;display:block;object-fit:cover}.article-content{max-width:750px;margin:0 auto}.article-content h2{font-size:1.5rem;margin:2rem 0 1rem;color:var(--primary-dark)}.article-content h3{font-size:1.2rem;margin:1.5rem 0 .8rem}.article-content p{margin-bottom:1.2rem}.article-content ul,.article-content ol{margin-bottom:1.2rem;padding-left:1.5rem}.article-content li{margin-bottom:.4rem}
 .ad-placeholder{background:var(--bg-alt);border:2px dashed var(--border);border-radius:8px;padding:2rem;text-align:center;margin:2rem 0;color:var(--text-muted);font-size:.85rem}.ad-placeholder.amazon{border-color:var(--primary);background:#fff8e1}.article-content table{width:100%;border-collapse:collapse;margin:1.5rem 0;font-size:.95rem}.article-content table th,.article-content table td{border:1px solid var(--border);padding:.75rem 1rem;text-align:left}.article-content table th{background:var(--primary);color:#fff;font-weight:600}.article-content table tr:nth-child(even){background:var(--bg-alt)}.faq-item{margin:1.5rem 0;padding:1rem 1.2rem;background:var(--bg-alt);border-left:4px solid var(--primary);border-radius:0 8px 8px 0}.faq-item h3{margin:0 0 .5rem 0;font-size:1.1rem;color:var(--primary-dark)}.related-posts{margin-top:3rem;padding-top:2rem;border-top:2px solid var(--border)}.related-posts h3{margin-bottom:1rem}.related-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1.5rem}.related-card{background:var(--bg);border:1px solid var(--border);border-radius:10px;overflow:hidden;box-shadow:var(--card-shadow);transition:transform .2s}.related-card:hover{transform:translateY(-3px)}.related-card .card-img{height:140px;background:var(--bg-alt);display:flex;align-items:center;justify-content:center}.related-card .card-body{padding:1rem}.related-card .card-body h4{font-size:1rem;margin-bottom:.4rem}.related-card .card-body h4 a{color:var(--text)}.related-card .card-body h4 a:hover{color:var(--primary);text-decoration:none}
 .site-footer{background:#1a1a1a;color:#ccc;padding:2rem 1rem;margin-top:3rem;font-size:.88rem}.footer-wrap{max-width:1100px;margin:0 auto;display:flex;flex-wrap:wrap;gap:2rem;justify-content:space-between;align-items:center}.footer-wrap a{color:#FFB74D}.footer-wrap a:hover{color:#fff}.footer-copy{text-align:center;width:100%;margin-top:1rem;padding-top:1rem;border-top:1px solid #333;font-size:.82rem}.cookie-banner{position:fixed;bottom:0;left:0;right:0;background:#1a1a1a;color:#eee;padding:1rem 1.5rem;display:none;z-index:999;box-shadow:0 -4px 20px rgba(0,0,0,.3);font-size:.9rem}.cookie-banner.show{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:1rem}.cookie-banner p{max-width:700px}.cookie-banner button{background:var(--primary);border:none;color:#fff;font-weight:600;padding:.5rem 1.5rem;border-radius:6px;cursor:pointer;font-size:.9rem;white-space:nowrap}.cookie-banner button:hover{background:var(--primary-dark)}
-@media(max-width:768px){.nav-links{display:none;position:absolute;top:64px;left:0;right:0;background:var(--bg);flex-direction:column;padding:1rem;border-bottom:2px solid var(--primary);box-shadow:0 4px 12px rgba(0,0,0,.1);gap:.25rem}.nav-links.open{display:flex}.nav-toggle{display:block}.article-header h1{font-size:1.5rem}.article-content table{font-size:.82rem}.article-content table th,.article-content table td{padding:.5rem}.related-grid{grid-template-columns:1fr}.cookie-banner{flex-direction:column;text-align:center}}
+@media(max-width:900px){
+  .main-nav{
+    position:fixed;
+    top:72px;
+    left:0;
+    right:0;
+    bottom:0;
+    background:rgba(255,255,255,.98);
+    backdrop-filter:blur(20px);
+    flex-direction:column;
+    padding:1rem;
+    overflow-y:auto;
+    transform:translateX(100%);
+    transition:transform .35s cubic-bezier(.16,1,.3,1);
+    z-index:999;
+  }
+  .main-nav.open{transform:translateX(0)}
+  .nav-links{flex-direction:column;width:100%;gap:0}
+  .nav-links > li{width:100%}
+  .nav-links > li > a{
+    padding:.8rem 1rem;
+    border-radius:12px;
+    font-size:.95rem;
+    justify-content:space-between;
+  }
+  .nav-links > li > a .arrow{font-size:.8rem}
+  .mega-panel{
+    position:static;
+    transform:none;
+    opacity:1;
+    visibility:visible;
+    box-shadow:none;
+    border:none;
+    border-radius:0;
+    min-width:auto;
+    max-width:100%;
+    padding:0;
+    max-height:0;
+    overflow:hidden;
+    transition:max-height .35s cubic-bezier(.16,1,.3,1),padding .35s;
+    pointer-events:auto;
+    background:var(--bg-alt);
+    margin:0;
+    border-radius:12px;
+  }
+  .nav-links > li.open .mega-panel{
+    max-height:800px;
+    padding:.8rem;
+    margin-bottom:.5rem;
+  }
+  .mega-grid{
+    grid-template-columns:1fr 1fr !important;
+    padding:.5rem;
+    gap:.5rem;
+  }
+  .mega-col{
+    border-right:none;
+    padding:0;
+  }
+  .mega-col h4{font-size:.75rem;margin-bottom:.4rem}
+  .mega-col a{padding:.3rem .5rem;font-size:.85rem}
+  .search-btn{display:none}
+  .nav-toggle{display:block}
+  .nav-links > li.simple-link{
+    border-top:1px solid var(--border-light);
+    padding-top:.5rem;
+    margin-top:.3rem;
+  }
+}
+@media(max-width:500px){
+  .mega-grid{grid-template-columns:1fr !important}
+}
+@media(max-width:768px){
+  .article-header h1{font-size:1.5rem}
+  .article-content table{font-size:.82rem}
+  .article-content table th,.article-content table td{padding:.5rem}
+  .related-grid{grid-template-columns:1fr}
+  .cookie-banner{flex-direction:column;text-align:center}
+}
 </style>
   <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon.png">
 </head>
 <body>
-<header class="site-header"><div class="nav-wrap"><a href="/" class="logo">🐾 Haustierzentrum</a><button class="nav-toggle" aria-label="Menü" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button><ul class="nav-links"><li><a href="/">Start</a></li><li><a href="/artikel/hundeernaehrung.html">Hunde</a></li><li><a href="/artikel/katzenhaltung-wohnung.html" class="active">Katzen</a></li><li><a href="/artikel/kleintiere-hamster-meerschweinchen.html">Kleintiere</a></li><li><a href="/about.html">Über uns</a></li><li><a href="/impressum.html">Impressum</a></li></ul></div></header>
+<!-- ============ HEADER ============ -->
+<header class="site-header">
+  <div class="nav-wrap">
+    <a href="/" class="logo">🐾 Haustier<span>zentrum</span></a>
+    <button class="nav-toggle" aria-label="Menü" onclick="document.querySelector('.main-nav').classList.toggle('open');this.textContent=this.textContent=='☰'?'✕':'☰'">☰</button>
+    <nav class="main-nav">
+      <ul class="nav-links">
+        <!-- HUNDE -->
+        <li>
+          <a href="/artikel/hunderassen-anfaenger.html">Hunde <span class="arrow">▾</span></a>
+          <div class="mega-panel">
+            <div class="mega-grid cols-4">
+              <div class="mega-col">
+                <h4>🐕 Rassen</h4>
+                <a href="/artikel/hunderassen-anfaenger.html">🐕 Hunderassen für Anfänger <span class="badge">Top</span></a>
+                <a href="/artikel/labrador-retriever.html">🐕 Labrador Retriever <span class="badge">Neu</span></a>
+                <a href="/artikel/franzoesische-bulldogge-rasseguide.html">🐕 Französische Bulldogge</a>
+              </div>
+              <div class="mega-col">
+                <h4>🎓 Erziehung</h4>
+                <a href="/artikel/hundeerziehung-grundlagen.html">🎓 Hundeerziehung Grundlagen</a>
+                <a href="/artikel/leinenfuehrigkeit.html">🦮 Leinenführigkeit & Ziehen</a>
+                <a href="/artikel/welpen-eingewoehnung.html">🐾 Welpeneingewöhnung</a>
+              </div>
+              <div class="mega-col">
+                <h4>🏥 Gesundheit & Pflege</h4>
+                <a href="/artikel/hunde-gesundheit.html">🏥 Hundegesundheit & Vorsorge</a>
+                <a href="/artikel/hunde-fellpflege-buersten-baden-krallen.html">🧴 Fellpflege & Baden</a>
+                <a href="/artikel/hunde-zahnpflege.html">🪥 Zahnpflege für Hunde</a>
+                <a href="/artikel/zeckenschutz-flohschutz-hund.html">🌿 Zecken- & Flohschutz</a>
+                <a href="/artikel/hunde-hausmittel.html">🏡 Hausmittel für Hunde</a>
+              </div>
+              <div class="mega-col">
+                <h4>🥩 Ernährung & Mehr</h4>
+                <a href="/artikel/hundeernaehrung.html">🥩 Hundeernährung</a>
+                <a href="/artikel/hunde-uebergewicht.html">⚖️ Übergewicht bei Hunden</a>
+                <a href="/artikel/hundespielzeuge-2026.html">🎾 Hundespielzeug 2026</a>
+                <a href="/artikel/hundeversicherung.html">🛡️ Hundeversicherung</a>
+                <a href="/artikel/hunde-reisen.html">✈️ Reisen mit Hund</a>
+              </div>
+            </div>
+          </div>
+        </li>
+        <!-- KATZEN -->
+        <li>
+          <a href="/artikel/katzenhaltung-wohnung.html">Katzen <span class="arrow">▾</span></a>
+          <div class="mega-panel">
+            <div class="mega-grid cols-3">
+              <div class="mega-col">
+                <h4>🏠 Haltung</h4>
+                <a href="/artikel/katzenhaltung-wohnung.html">🏠 Wohnungshaltung</a>
+                <a href="/artikel/katzen-freigaenger.html">🌳 Freigänger</a>
+                <a href="/artikel/seniorkatzen-pflege-ernaehrung-gesundheit.html">👵 Seniorkatzen</a>
+              </div>
+              <div class="mega-col">
+                <h4>🥫 Ernährung & Gesundheit</h4>
+                <a href="/artikel/katzen-ernaehrung.html">🥫 Katzenernährung</a>
+                <a href="/artikel/katzenfutter-vergleich-2026.html">🥩 Katzenfutter Vergleich</a>
+                <a href="/artikel/katzenkrankheiten-erkennen.html">🏥 Katzenkrankheiten</a>
+                <a href="/artikel/katzen-impfungen-vorsorge.html">💉 Impfungen & Vorsorge</a>
+                <a href="/artikel/katzen-zahnpflege.html">🪥 Zahnpflege</a>
+              </div>
+              <div class="mega-col">
+                <h4>🎾 Beschäftigung & Rassen</h4>
+                <a href="/artikel/katzenbeschaeftigung.html">🎾 Beschäftigungsideen</a>
+                <a href="/artikel/katzen-kratzbaum.html">🌲 Kratzbäume</a>
+                <a href="/artikel/katzentoilette-geruch-vermeiden.html">🚽 Katzentoilette</a>
+                <a href="/artikel/katzenrassen-vergleich.html">🐱 Katzenrassen Vergleich</a>
+              </div>
+            </div>
+          </div>
+        </li>
+        <!-- KLEINTIERE -->
+        <li>
+          <a href="/artikel/kleintiere-hamster-meerschweinchen.html">Kleintiere <span class="arrow">▾</span></a>
+          <div class="mega-panel">
+            <div class="mega-grid cols-3">
+              <div class="mega-col">
+                <h4>🐹 Nagetiere</h4>
+                <a href="/artikel/hamster-haltung.html">🐹 Hamster Haltung</a>
+                <a href="/artikel/meerschweinchen-haltung.html">🐹 Meerschweinchen Haltung</a>
+                <a href="/artikel/kaninchenhaltung.html">🐰 Kaninchenhaltung</a>
+              </div>
+              <div class="mega-col">
+                <h4>🥗 Ernährung & Gehege</h4>
+                <a href="/artikel/meerschweinchen-ernaehrung-vitamin-c.html">🥗 Meerschweinchen Ernährung</a>
+                <a href="/artikel/kleintier-gehege.html">🏠 Kleintiergehege</a>
+                <a href="/artikel/kleintiere-hamster-meerschweinchen.html">🐹 Hamster & Meerschweinchen</a>
+              </div>
+              <div class="mega-col">
+                <h4>🐦 Vögel & Aquarien</h4>
+                <a href="/artikel/voegel-haustier-beste-vogelarten-einsteiger.html">🐦 Vögel als Haustiere</a>
+                <a href="/artikel/wellensittich-haltung.html">🐦 Wellensittich Haltung</a>
+                <a href="/artikel/aquarium-einrichtung.html">🐟 Aquarium Einrichtung</a>
+              </div>
+            </div>
+          </div>
+        </li>
+        <!-- RATGEBER -->
+        <li>
+          <a href="/artikel/haustier-anschaffung.html">Ratgeber <span class="arrow">▾</span></a>
+          <div class="mega-panel" style="min-width:450px;">
+            <div class="mega-grid cols-2">
+              <div class="mega-col">
+                <h4>📋 Allgemein</h4>
+                <a href="/artikel/haustier-anschaffung.html">📋 Haustier Anschaffung</a>
+                <a href="/artikel/haustiere-kinder.html">👨‍👩‍👧‍👦 Haustiere & Kinder</a>
+              </div>
+              <div class="mega-col">
+                <h4>💰 Gesundheit & Kosten</h4>
+                <a href="/artikel/tierarztkosten.html">💰 Tierarztkosten</a>
+                <a href="/artikel/allergiker-haustiere.html">🤧 Allergiker & Haustiere</a>
+                <div class="mega-featured">
+                  <img src="../images/labrador-retriever_00001_.png" alt="Labrador" loading="lazy">
+                  <div class="meta">
+                    <strong>📖 Neuer Artikel</strong>
+                    <span>Labrador Retriever Rasseguide</span>
+                    <a href="/artikel/labrador-retriever.html" style="font-size:.7rem;">Jetzt lesen →</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+        <!-- Simple Links -->
+        <li class="simple-link"><a href="/">Start</a></li>
+        <li class="simple-link"><a href="/about.html">Über uns</a></li>
+        <li class="simple-link"><a href="/impressum.html">Impressum</a></li>
+      </ul>
+    </nav>
+    <button class="search-btn" onclick="window.location.href='/?s='" aria-label="Suche">🔍</button>
+  </div>
+</header>
 <main>
   <article>
     <div class="article-header"><div class="article-meta"><div class="cats"><span>Katzen</span><span>Gesundheit</span><span>Senioren</span></div><span>3. Juni 2026</span><span>· Lesezeit: 10 Min</span></div><h1>Senior-Katzen: Pflege, Ernährung und Gesundheit für Katzen ab 7 Jahren</h1></div>
@@ -177,6 +587,17 @@ a{color:var(--primary);text-decoration:none}a:hover{text-decoration:underline}im
 </main>
 <footer class="site-footer"><div class="footer-wrap"><div><strong style="color:#fff;">🐾 Haustierzentrum</strong><p style="margin-top:.3rem;">Dein Blog für artgerechte Haustierhaltung</p></div><div><a href="/about.html">Über uns</a> &middot; <a href="/impressum.html">Impressum</a> &middot; <a href="/sitemap.xml">Sitemap</a></div><div class="footer-copy"><p>&copy; 2026 Haustierzentrum. Alle Rechte vorbehalten.</p><p style="margin-top:.3rem;font-size:.8rem;">Diese Seite kann Affiliate-Links (Amazon DE) enthalten. Als Amazon-Partner verdienen wir an qualifizierten Verkäufen.</p></div></div></footer>
 <div class="cookie-banner show" id="cookieBanner"><p>🍪 Diese Website verwendet Cookies und technisch notwendige Funktionen. Mit der Nutzung stimmst Du der Verarbeitung zu. <a href="/impressum.html" style="color:#FFB74D;">Mehr Infos</a></p><button onclick="document.getElementById('cookieBanner').classList.remove('show')">Akzeptieren</button></div>
-<script>document.querySelectorAll('.nav-links a').forEach(l=>l.addEventListener('click',()=>{document.querySelector('.nav-links').classList.remove('open')}))</script>
+<script>// Mobile: close nav when simple links are clicked
+document.querySelectorAll('.simple-link a').forEach(l=>l.addEventListener('click',()=>{
+  document.querySelector('.main-nav').classList.remove('open');
+  document.querySelector('.nav-toggle').textContent='☰';
+}))
+// Mobile: tap mega-menu items to toggle panels
+document.querySelectorAll('.nav-links > li:not(.simple-link) > a').forEach(l=>l.addEventListener('click',function(e){
+  if(document.querySelector('.main-nav').classList.contains('open')){
+    e.preventDefault();
+    this.parentElement.classList.toggle('open');
+  }
+}))</script>
 </body>
 </html>

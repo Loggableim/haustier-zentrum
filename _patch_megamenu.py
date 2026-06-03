@@ -1,19 +1,14 @@
 #!/usr/bin/env python3
-"""Batch-update all article HTML files to use the mega menu header."""
+"""Batch-update all article HTML files to use the mega menu header.
+Handles both multiline and minified CSS/HTML variants."""
 import os, glob, re
 
 ARTIKEL_DIR = "C:/HermesPortable/home/scripts/blog-automation/haustier-zentrum/artikel"
-LABRADOR_FILE = os.path.join(ARTIKEL_DIR, "labrador-retriever.html")
 
-# --- Replacement: --border-light variable ---
-OLD_BORDER = """  --border: #e0e0e0;
-  --card-shadow: 0 2px 12px rgba(0,0,0,.08);"""
-NEW_BORDER = """  --border: #e0e0e0;
-  --border-light: #f0ece1;
-  --card-shadow: 0 2px 12px rgba(0,0,0,.08);"""
+# ─── CSS replacements ───
 
-# --- Replacement: site-header + nav CSS (lines 56-93 in original) ---
-OLD_HEADER_CSS = """.site-header{
+# Old multiline header CSS (with newlines)
+OLD_CSS_MULTI = """.site-header{
   background:var(--bg);
   border-bottom:2px solid var(--primary);
   padding:0 1rem;
@@ -53,7 +48,10 @@ OLD_HEADER_CSS = """.site-header{
 .nav-toggle{display:none;background:none;border:none;font-size:1.6rem;cursor:pointer;color:var(--text);padding:.25rem;}
 main{flex:1;max-width:1100px;margin:0 auto;padding:2rem 1rem;width:100%}"""
 
-NEW_HEADER_CSS = """.site-header{
+# Old minified header CSS (single line)
+OLD_CSS_MIN = ".site-header{background:var(--bg);border-bottom:2px solid var(--primary);padding:0 1rem;position:sticky;top:0;z-index:100}.nav-wrap{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px}.logo{font-size:1.4rem;font-weight:800;color:var(--primary);letter-spacing:-.5px}.logo:hover{text-decoration:none}.nav-links{display:flex;gap:1.5rem;list-style:none}.nav-links a{color:var(--text);font-weight:500;font-size:.95rem;padding:.3rem 0;border-bottom:2px solid transparent;transition:.2s}.nav-links a:hover,.nav-links a.active{color:var(--primary);border-bottom-color:var(--primary);text-decoration:none}.nav-toggle{display:none;background:none;border:none;font-size:1.6rem;cursor:pointer;color:var(--text);padding:.25rem}main{flex:1;max-width:1100px;margin:0 auto;padding:2rem 1rem;width:100%}"
+
+NEW_CSS_HEADER = """.site-header{
   background:rgba(255,255,255,.92);
   backdrop-filter:blur(16px) saturate(1.2);
   border-bottom:3px solid var(--primary);
@@ -252,10 +250,11 @@ NEW_HEADER_CSS = """.site-header{
   color:var(--text);
   padding:.25rem;
 }
-main{flex:1;max-width:1100px;margin:0 auto;padding:2rem 1rem;width:100%}"""
+main{flex:1;max-width:1100px;margin:0 auto;padding:2rem 1rem;width:100%}
+"""
 
-# --- Replacement: old mobile responsive CSS ---
-OLD_MOBILE_CSS = """@media(max-width:768px){
+# ─── Mobile CSS ───
+OLD_MOBILE_MULTI = """@media(max-width:768px){
   .nav-links{
     display:none;
     position:absolute;
@@ -278,7 +277,9 @@ OLD_MOBILE_CSS = """@media(max-width:768px){
   .cookie-banner{flex-direction:column;text-align:center}
 }"""
 
-NEW_MOBILE_CSS = """@media(max-width:900px){
+OLD_MOBILE_MIN = "@media(max-width:768px){.nav-links{display:none;position:absolute;top:64px;left:0;right:0;background:var(--bg);flex-direction:column;padding:1rem;border-bottom:2px solid var(--primary);box-shadow:0 4px 12px rgba(0,0,0,.1);gap:.25rem}.nav-links.open{display:flex}.nav-toggle{display:block}.article-header h1{font-size:1.5rem}.article-content table{font-size:.82rem}.article-content table th,.article-content table td{padding:.5rem}.related-grid{grid-template-columns:1fr}.cookie-banner{flex-direction:column;text-align:center}}"
+
+NEW_MOBILE = """@media(max-width:900px){
   .main-nav{
     position:fixed;
     top:72px;
@@ -358,8 +359,8 @@ NEW_MOBILE_CSS = """@media(max-width:900px){
   .cookie-banner{flex-direction:column;text-align:center}
 }"""
 
-# --- Replacement: old header HTML ---
-OLD_HEADER_HTML = """<header class=\"site-header\">
+# ─── Old header HTML (multiline and minified) ───
+OLD_HEADER_MULTI = """<header class=\"site-header\">
   <div class=\"nav-wrap\">
     <a href=\"/\" class=\"logo\">🐾 Haustierzentrum</a>
     <button class=\"nav-toggle\" aria-label=\"Menü\" onclick=\"document.querySelector('.nav-links').classList.toggle('open')\">☰</button>
@@ -373,6 +374,10 @@ OLD_HEADER_HTML = """<header class=\"site-header\">
     </ul>
   </div>
 </header>"""
+
+# Minified header with potential active class variants
+# Pattern: <header...><div...><a...>🐾 Haustierzentrum</a><button...>☰</button><ul...><li...><a...>...</a></li>... </ul></div></header>
+# We'll use regex for the minified version
 
 NEW_HEADER_HTML = """<!-- ============ HEADER ============ -->
 <header class=\"site-header\">
@@ -508,10 +513,13 @@ NEW_HEADER_HTML = """<!-- ============ HEADER ============ -->
   </div>
 </header>"""
 
-# --- Replacement: old script ---
-OLD_SCRIPT = """document.querySelectorAll('.nav-links a').forEach(l=>l.addEventListener('click',()=>{
+# Old script (multiline)
+OLD_SCRIPT_MULTI = """document.querySelectorAll('.nav-links a').forEach(l=>l.addEventListener('click',()=>{
   document.querySelector('.nav-links').classList.remove('open')
 }))"""
+
+# Minified old script
+OLD_SCRIPT_MIN = "document.querySelectorAll('.nav-links a').forEach(l=>l.addEventListener('click',()=>{document.querySelector('.nav-links').classList.remove('open')}))"
 
 NEW_SCRIPT = """// Mobile: close nav when simple links are clicked
 document.querySelectorAll('.simple-link a').forEach(l=>l.addEventListener('click',()=>{
@@ -527,6 +535,69 @@ document.querySelectorAll('.nav-links > li:not(.simple-link) > a').forEach(l=>l.
 }))"""
 
 
+def add_border_light(content):
+    """Add --border-light to :root if missing."""
+    if '--border-light' in content:
+        return content, "already present"
+    old = "  --border: #e0e0e0;\n  --card-shadow: 0 2px 12px rgba(0,0,0,.08);"
+    new = "  --border: #e0e0e0;\n  --border-light: #f0ece1;\n  --card-shadow: 0 2px 12px rgba(0,0,0,.08);"
+    if old in content:
+        return content.replace(old, new), "added"
+    # Try minified version - single line
+    old_min = "  --border: #e0e0e0;\n  --card-shadow: 0 2px 12px rgba(0,0,0,.08);"
+    if old_min in content:
+        return content.replace(old_min, "  --border: #e0e0e0;\n  --border-light: #f0ece1;\n  --card-shadow: 0 2px 12px rgba(0,0,0,.08);"), "added (min)"
+    return content, "NOT FOUND"
+
+
+def replace_css(content):
+    """Replace old header CSS with new mega menu CSS."""
+    if OLD_CSS_MULTI in content:
+        return content.replace(OLD_CSS_MULTI, NEW_CSS_HEADER), "CSS multi"
+    if OLD_CSS_MIN in content:
+        return content.replace(OLD_CSS_MIN, NEW_CSS_HEADER), "CSS min"
+    if '.mega-panel' in content:
+        return content, "already mega"
+    return content, "NOT FOUND"
+
+
+def replace_mobile(content):
+    """Replace old mobile CSS."""
+    if OLD_MOBILE_MULTI in content:
+        return content.replace(OLD_MOBILE_MULTI, NEW_MOBILE), "mobile multi"
+    if OLD_MOBILE_MIN in content:
+        return content.replace(OLD_MOBILE_MIN, NEW_MOBILE), "mobile min"
+    if 'max-width:900px' in content:
+        return content, "already mega"
+    return content, "NOT FOUND"
+
+
+def replace_header_html(content):
+    """Replace old header HTML."""
+    if OLD_HEADER_MULTI in content:
+        return content.replace(OLD_HEADER_MULTI, NEW_HEADER_HTML), "HTML multi"
+    # Minified: use regex to match <header class="site-header">...up to...</header> right before <main>
+    # The pattern: <header class="site-header"><div ... </div></header>
+    m = re.search(r'<header class="site-header"><div class="nav-wrap"><a href="/" class="logo">🐾 Haustierzentrum</a><button[^>]*>☰</button><ul class="nav-links">.*?</ul></div></header>', content, re.DOTALL)
+    if m:
+        content = content.replace(m.group(0), NEW_HEADER_HTML)
+        return content, "HTML min"
+    if 'mega-panel' in content:
+        return content, "already mega"
+    return content, "NOT FOUND"
+
+
+def replace_script(content):
+    """Replace old nav script with new mega menu script."""
+    if OLD_SCRIPT_MULTI in content:
+        return content.replace(OLD_SCRIPT_MULTI, NEW_SCRIPT), "script multi"
+    if OLD_SCRIPT_MIN in content:
+        return content.replace(OLD_SCRIPT_MIN, NEW_SCRIPT), "script min"
+    if 'simple-link' in content and 'main-nav' in content:
+        return content, "already mega"
+    return content, "NOT FOUND"
+
+
 def apply_replacements(filepath):
     """Apply all replacements to a single file."""
     with open(filepath, 'r', encoding='utf-8') as f:
@@ -535,72 +606,36 @@ def apply_replacements(filepath):
     original = content
     changes = []
     
-    # 1. Add --border-light
-    if OLD_BORDER in content:
-        content = content.replace(OLD_BORDER, NEW_BORDER)
-        changes.append("border-light var")
-    else:
-        # Check if already has border-light
-        if '--border-light' in content:
-            changes.append("border-light already present")
-        else:
-            changes.append("border-light NOT FOUND!")
+    content, msg = add_border_light(content)
+    changes.append(f"border: {msg}")
     
-    # 2. Replace header CSS
-    if OLD_HEADER_CSS in content:
-        content = content.replace(OLD_HEADER_CSS, NEW_HEADER_CSS)
-        changes.append("header CSS")
-    else:
-        # Maybe already updated?
-        if '.mega-panel' in content:
-            changes.append("header CSS already mega")
-        else:
-            changes.append("header CSS NOT FOUND!")
+    content, msg = replace_css(content)
+    changes.append(f"CSS: {msg}")
     
-    # 3. Replace mobile CSS
-    if OLD_MOBILE_CSS in content:
-        content = content.replace(OLD_MOBILE_CSS, NEW_MOBILE_CSS)
-        changes.append("mobile CSS")
-    else:
-        if 'max-width:900px' in content:
-            changes.append("mobile CSS already mega")
-        else:
-            changes.append("mobile CSS NOT FOUND!")
+    content, msg = replace_mobile(content)
+    changes.append(f"mobile: {msg}")
     
-    # 4. Replace header HTML
-    if OLD_HEADER_HTML in content:
-        content = content.replace(OLD_HEADER_HTML, NEW_HEADER_HTML)
-        changes.append("header HTML")
-    else:
-        if 'mega-panel' in content:
-            changes.append("header HTML already mega")
-        else:
-            changes.append("header HTML NOT FOUND!")
+    content, msg = replace_header_html(content)
+    changes.append(f"HTML: {msg}")
     
-    # 5. Replace script
-    if OLD_SCRIPT in content:
-        content = content.replace(OLD_SCRIPT, NEW_SCRIPT)
-        changes.append("script")
-    else:
-        if 'simple-link' in content and 'main-nav' in content:
-            changes.append("script already mega")
-        else:
-            changes.append("script NOT FOUND!")
+    content, msg = replace_script(content)
+    changes.append(f"script: {msg}")
     
     if content != original:
         with open(filepath, 'w', encoding='utf-8') as f:
             f.write(content)
-        print(f"  ✅ UPDATED: {', '.join(changes)}")
-        return True, changes
+        print(f"  ✅ UPDATED ({', '.join(changes)})")
+        return True
     else:
-        print(f"  ⏭️  SKIPPED: {', '.join(changes)}")
-        return False, changes
+        print(f"  ⏭️  SKIPPED ({', '.join(changes)})")
+        return False
 
 
 def main():
-    files = sorted(glob.glob(os.path.join(ARTIKEL_DIR, "*.html")))
-    # Exclude labrador-retriever (already done)
-    files = [f for f in files if 'labrador-retriever' not in f]
+    all_files = sorted(glob.glob(os.path.join(ARTIKEL_DIR, "*.html")))
+    # Exclude labrador-retriever (already done) and index/about/impressum
+    excludes = ['labrador-retriever']
+    files = [f for f in all_files if not any(x in f for x in excludes)]
     
     print(f"Found {len(files)} article files to update\n")
     
@@ -611,8 +646,7 @@ def main():
     for fpath in files:
         fname = os.path.basename(fpath)
         try:
-            updated, changes = apply_replacements(fpath)
-            if updated:
+            if apply_replacements(fpath):
                 ok += 1
             else:
                 skipped += 1
