@@ -196,6 +196,21 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://haustierzentrum.com/artikel/hunde-zahnpflege.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://haustierzentrum.com/artikel/katzen-impfungen-vorsorge.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://haustierzentrum.com/artikel/hunde-uebergewicht.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://haustierzentrum.com/impressum.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
