@@ -176,6 +176,21 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://haustierzentrum.com/artikel/seniorkatzen-pflege-ernaehrung-gesundheit.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://haustierzentrum.com/artikel/hunde-fellpflege-buersten-baden-krallen.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://haustierzentrum.com/artikel/voegel-haustier-beste-vogelarten-einsteiger.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://haustierzentrum.com/impressum.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
