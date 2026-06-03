@@ -170,7 +170,7 @@ main{flex:1;max-width:1100px;margin:0 auto;padding:2rem 1rem;width:100%}
         <p>✅ Gehege-Einrichtung, Näpfe, Tränke und Heuraufe in einem Paket<br>
         ✅ Alles, was Du für den Start brauchst – spart Zeit und Geld<br>
         ✅ Auf Meerschweinchen-Bedürfnisse abgestimmte Qualität</p>
-        <a class="amazon-btn" href="https://www.amazon.de/s?k=Meerschweinchen+Zubeh%C3%B6r+Komplettset&tag=nova079-20" target="_blank" rel="nofollow">👉 Meerschweinchen-Zubehör bei Amazon entdecken</a>
+        <a class="amazon-btn" href="https://www.amazon.de/s?k=Meerschweinchen+Zubeh%C3%B6r+Komplettset&tag=nova03e-21" target="_blank" rel="nofollow">👉 Meerschweinchen-Zubehör bei Amazon entdecken</a>
       </div>
 
       <h2>2. Artgerechtes Gehege – Innen- vs. Außenhaltung</h2>
@@ -284,7 +284,7 @@ main{flex:1;max-width:1100px;margin:0 auto;padding:2rem 1rem;width:100%}
         <p>✅ Hochwertiges Wiesenheu – die Basis jeder artgerechten Fütterung<br>
         ✅ Sichere Heuraufen und Futternäpfe aus Keramik<br>
         ✅ Vitamin-C-reiches Frischfutter ganzjährig anbieten</p>
-        <a class="amazon-btn" href="https://www.amazon.de/s?k=Meerschweinchen+Heu+Frischfutter+Vitamin+C&tag=nova079-20" target="_blank" rel="nofollow">👉 Heu und Futter-Zubehör bei Amazon entdecken</a>
+        <a class="amazon-btn" href="https://www.amazon.de/s?k=Meerschweinchen+Heu+Frischfutter+Vitamin+C&tag=nova03e-21" target="_blank" rel="nofollow">👉 Heu und Futter-Zubehör bei Amazon entdecken</a>
       </div>
 
       <h3>Wasser und Tränken</h3>
@@ -422,7 +422,7 @@ main{flex:1;max-width:1100px;margin:0 auto;padding:2rem 1rem;width:100%}
         <h3>🛒 Alles für die Meerschweinchen-Haltung auf einen Blick</h3>
         <p>Von der passenden Heuraufe über hochwertiges Heu bis zum Vitamin-C-Präparat – hier findest Du geprüfte Produkte für Deine Meerschweinchen.</p>
         <p style="font-size:.85rem;color:var(--text-muted);">* Als Amazon-Partner verdienen wir an qualifizierten Verkäufen. Für Dich entstehen keine zusätzlichen Kosten.</p>
-        <a class="amazon-btn" href="https://www.amazon.de/s?k=Meerschweinchen+Haltung+Gehege+Zubeh%C3%B6r&tag=nova079-20" target="_blank" rel="nofollow">👉 Meerschweinchen-Zubehör bei Amazon entdecken</a>
+        <a class="amazon-btn" href="https://www.amazon.de/s?k=Meerschweinchen+Haltung+Gehege+Zubeh%C3%B6r&tag=nova03e-21" target="_blank" rel="nofollow">👉 Meerschweinchen-Zubehör bei Amazon entdecken</a>
       </div>
 
     </div>
@@ -458,8 +458,17 @@ main{flex:1;max-width:1100px;margin:0 auto;padding:2rem 1rem;width:100%}
   <button onclick="document.getElementById('cookieBanner').classList.remove('show')">Akzeptieren</button>
 </div>
 <script>
-document.querySelectorAll('.nav-links a').forEach(l=>l.addEventListener('click',()=>{
-  document.querySelector('.nav-links').classList.remove('open')
+// Mobile: close nav when simple links are clicked
+document.querySelectorAll('.simple-link a').forEach(l=>l.addEventListener('click',()=>{
+  document.querySelector('.main-nav').classList.remove('open');
+  document.querySelector('.nav-toggle').textContent='☰';
+}))
+// Mobile: tap mega-menu items to toggle panels
+document.querySelectorAll('.nav-links > li:not(.simple-link) > a').forEach(l=>l.addEventListener('click',function(e){
+  if(document.querySelector('.main-nav').classList.contains('open')){
+    e.preventDefault();
+    this.parentElement.classList.toggle('open');
+  }
 }));
 // FAQ toggle
 document.querySelectorAll('.faq-question').forEach(q=>{

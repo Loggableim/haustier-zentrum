@@ -35,6 +35,7 @@
   --text: #1a1a1a;
   --text-muted: #666;
   --border: #e0e0e0;
+  --border-light: #f0ece1;
   --card-shadow: 0 2px 12px rgba(0,0,0,.08);
   --font: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
 }
@@ -54,43 +55,204 @@ a:hover{text-decoration:underline}
 img{max-width:100%;height:auto;display:block}
 
 .site-header{
-  background:var(--bg);
-  border-bottom:2px solid var(--primary);
+  background:rgba(255,255,255,.92);
+  backdrop-filter:blur(16px) saturate(1.2);
+  border-bottom:3px solid var(--primary);
   padding:0 1rem;
   position:sticky;
   top:0;
-  z-index:100;
+  z-index:1000;
 }
 .nav-wrap{
-  max-width:1100px;
+  max-width:1200px;
   margin:0 auto;
   display:flex;
   align-items:center;
   justify-content:space-between;
-  height:64px;
+  height:72px;
 }
 .logo{
   font-size:1.4rem;
-  font-weight:800;
-  color:var(--primary);
-  letter-spacing:-.5px;
+  font-weight:900;
+  letter-spacing:-1px;
+  background:linear-gradient(135deg,var(--primary-dark),var(--primary));
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  background-clip:text;
+  flex-shrink:0;
 }
+.logo span{font-weight:400;color:var(--text-muted);-webkit-text-fill-color:var(--text-muted);}
 .logo:hover{text-decoration:none}
-.nav-links{display:flex;gap:1.5rem;list-style:none}
-.nav-links a{
+.main-nav{display:flex;align-items:center}
+.nav-links{display:flex;gap:0;list-style:none;align-items:center;margin:0;padding:0}
+.nav-links > li{position:relative}
+.nav-links > li > a{
   color:var(--text);
-  font-weight:500;
-  font-size:.95rem;
-  padding:.3rem 0;
-  border-bottom:2px solid transparent;
+  font-weight:600;
+  font-size:.85rem;
+  padding:.4rem 1rem;
+  border-radius:50px;
   transition:.2s;
+  letter-spacing:.2px;
+  display:flex;
+  align-items:center;
+  gap:.3rem;
+  white-space:nowrap;
 }
-.nav-links a:hover,.nav-links a.active{
-  color:var(--primary);
-  border-bottom-color:var(--primary);
+.nav-links > li > a .arrow{
+  font-size:.6rem;
+  transition:transform .25s;
+  display:inline-block;
+}
+.nav-links > li:hover > a .arrow{
+  transform:rotate(180deg);
+}
+.nav-links > li > a:hover,
+.nav-links > li > a.active{
+  color:#fff;
+  background:var(--primary);
   text-decoration:none;
 }
-.nav-toggle{display:none;background:none;border:none;font-size:1.6rem;cursor:pointer;color:var(--text);padding:.25rem;}
+.nav-links > li.simple-link > a{
+  color:var(--text-muted);
+  font-weight:500;
+  font-size:.8rem;
+}
+.nav-links > li.simple-link > a:hover{
+  color:#fff;
+}
+.mega-panel{
+  position:absolute;
+  top:100%;
+  left:50%;
+  transform:translateX(-50%) translateY(12px);
+  background:#fff;
+  border-radius:16px;
+  box-shadow:0 20px 60px rgba(0,0,0,.15), 0 4px 20px rgba(0,0,0,.06);
+  min-width:680px;
+  max-width:900px;
+  padding:0;
+  opacity:0;
+  visibility:hidden;
+  transition:all .25s cubic-bezier(.16,1,.3,1);
+  border:1px solid var(--border-light);
+  overflow:hidden;
+  pointer-events:none;
+}
+.nav-links > li:hover .mega-panel{
+  opacity:1;
+  visibility:visible;
+  transform:translateX(-50%) translateY(8px);
+  pointer-events:auto;
+}
+.mega-grid{
+  display:grid;
+  gap:0;
+  padding:1.5rem;
+}
+.mega-grid.cols-2{grid-template-columns:1fr 1fr}
+.mega-grid.cols-3{grid-template-columns:1fr 1fr 1fr}
+.mega-grid.cols-4{grid-template-columns:1fr 1fr 1fr 1fr}
+.mega-col{
+  padding:0 .8rem;
+  border-right:1px solid var(--border-light);
+}
+.mega-col:last-child{border-right:none}
+.mega-col h4{
+  font-size:.7rem;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  color:var(--primary);
+  font-weight:700;
+  margin:0 0 .6rem 0;
+  padding-bottom:.4rem;
+  border-bottom:2px solid var(--primary-light);
+}
+.mega-col a{
+  display:flex;
+  align-items:center;
+  gap:.4rem;
+  padding:.35rem .5rem;
+  border-radius:8px;
+  color:var(--text);
+  font-size:.82rem;
+  font-weight:500;
+  transition:all .15s;
+  text-decoration:none;
+  line-height:1.3;
+}
+.mega-col a:hover{
+  background:var(--primary-light);
+  color:var(--primary-dark);
+  text-decoration:none;
+}
+.mega-col a .badge{
+  font-size:.6rem;
+  background:var(--primary);
+  color:#fff;
+  padding:.1rem .4rem;
+  border-radius:20px;
+  font-weight:700;
+  margin-left:auto;
+  animation:pulse-badge 2s infinite;
+}
+@keyframes pulse-badge{
+  0%,100%{opacity:1}
+  50%{opacity:.6}
+}
+.mega-col a .desc{
+  font-size:.68rem;
+  color:var(--text-muted);
+  font-weight:400;
+  display:block;
+  margin-left:1.6rem;
+  margin-top:-.1rem;
+}
+.mega-featured{
+  background:linear-gradient(135deg,var(--primary-light),#fff8e1);
+  border-radius:12px;
+  padding:.8rem 1rem;
+  margin-top:.6rem;
+  display:flex;
+  align-items:center;
+  gap:.8rem;
+}
+.mega-featured img{
+  width:52px;
+  height:52px;
+  border-radius:8px;
+  object-fit:cover;
+  flex-shrink:0;
+}
+.mega-featured .meta{flex:1}
+.mega-featured .meta strong{display:block;font-size:.82rem;color:var(--text)}
+.mega-featured .meta span{font-size:.7rem;color:var(--text-muted)}
+.search-btn{
+  background:none;
+  border:none;
+  font-size:1.1rem;
+  cursor:pointer;
+  color:var(--text-muted);
+  padding:.4rem .6rem;
+  border-radius:50px;
+  transition:.2s;
+  display:flex;
+  align-items:center;
+  flex-shrink:0;
+}
+.search-btn:hover{
+  background:var(--primary-light);
+  color:var(--primary);
+}
+.nav-toggle{
+  display:none;
+  background:none;
+  border:none;
+  font-size:1.6rem;
+  cursor:pointer;
+  color:var(--text);
+  padding:.25rem;
+}
 main{flex:1;max-width:1100px;margin:0 auto;padding:2rem 1rem;width:100%}
 
 .article-header{margin-bottom:2rem}
@@ -239,22 +401,79 @@ main{flex:1;max-width:1100px;margin:0 auto;padding:2rem 1rem;width:100%}
 }
 .cookie-banner button:hover{background:var(--primary-dark)}
 
-@media(max-width:768px){
-  .nav-links{
-    display:none;
-    position:absolute;
-    top:64px;
+@media(max-width:900px){
+  .main-nav{
+    position:fixed;
+    top:72px;
     left:0;
     right:0;
-    background:var(--bg);
+    bottom:0;
+    background:rgba(255,255,255,.98);
+    backdrop-filter:blur(20px);
     flex-direction:column;
     padding:1rem;
-    border-bottom:2px solid var(--primary);
-    box-shadow:0 4px 12px rgba(0,0,0,.1);
-    gap:.25rem;
+    overflow-y:auto;
+    transform:translateX(100%);
+    transition:transform .35s cubic-bezier(.16,1,.3,1);
+    z-index:999;
   }
-  .nav-links.open{display:flex}
+  .main-nav.open{transform:translateX(0)}
+  .nav-links{flex-direction:column;width:100%;gap:0}
+  .nav-links > li{width:100%}
+  .nav-links > li > a{
+    padding:.8rem 1rem;
+    border-radius:12px;
+    font-size:.95rem;
+    justify-content:space-between;
+  }
+  .nav-links > li > a .arrow{font-size:.8rem}
+  .mega-panel{
+    position:static;
+    transform:none;
+    opacity:1;
+    visibility:visible;
+    box-shadow:none;
+    border:none;
+    border-radius:0;
+    min-width:auto;
+    max-width:100%;
+    padding:0;
+    max-height:0;
+    overflow:hidden;
+    transition:max-height .35s cubic-bezier(.16,1,.3,1),padding .35s;
+    pointer-events:auto;
+    background:var(--bg-alt);
+    margin:0;
+    border-radius:12px;
+  }
+  .nav-links > li.open .mega-panel{
+    max-height:800px;
+    padding:.8rem;
+    margin-bottom:.5rem;
+  }
+  .mega-grid{
+    grid-template-columns:1fr 1fr !important;
+    padding:.5rem;
+    gap:.5rem;
+  }
+  .mega-col{
+    border-right:none;
+    padding:0;
+  }
+  .mega-col h4{font-size:.75rem;margin-bottom:.4rem}
+  .mega-col a{padding:.3rem .5rem;font-size:.85rem}
+  .search-btn{display:none}
   .nav-toggle{display:block}
+  .nav-links > li.simple-link{
+    border-top:1px solid var(--border-light);
+    padding-top:.5rem;
+    margin-top:.3rem;
+  }
+}
+@media(max-width:500px){
+  .mega-grid{grid-template-columns:1fr !important}
+}
+@media(max-width:768px){
   .article-header h1{font-size:1.5rem}
   .article-content table{font-size:.82rem}
   .article-content table th,.article-content table td{padding:.5rem}
@@ -302,7 +521,7 @@ main{flex:1;max-width:1100px;margin:0 auto;padding:2rem 1rem;width:100%}
       <p>Die gute Nachricht: Mit den richtigen Techniken, etwas Geduld und jeder Menge positiver Verstärkung kannst Du das Verhalten Deines Hundes nachhaltig verbessern. In diesem Ratgeber zeigen wir Dir <strong>Schritt für Schritt</strong>, wie Du Deinem Hund beibringst, locker an der Leine zu gehen und aufs Wort zurückzukommen. Das Beste daran: Du wirst sehen, wie viel entspannter Spaziergänge werden – für Dich und Deinen Hund.</p>
 
       <!-- Amazon DE Affiliate -->
-      <div class="amazon-affiliate" style="margin:30px 0;padding:15px;background:#FFF3E0;border:1px solid #FF9800;border-radius:8px;text-align:center"><p><a href="https://www.amazon.de/s?k=Hundeerziehung+Leinenf%C3%BChrigkeit+Buch&tag=nova079-20" target="_blank" rel="nofollow">👉 Erziehungsratgeber für Leinenführigkeit bei Amazon entdecken</a></p></div>
+      <div class="amazon-affiliate" style="margin:30px 0;padding:15px;background:#FFF3E0;border:1px solid #FF9800;border-radius:8px;text-align:center"><p><a href="https://www.amazon.de/s?k=Hundeerziehung+Leinenf%C3%BChrigkeit+Buch&tag=nova03e-21" target="_blank" rel="nofollow">👉 Erziehungsratgeber für Leinenführigkeit bei Amazon entdecken</a></p></div>
 
       <h2>🐾 Leinenführigkeit Schritt für Schritt</h2>
 
@@ -395,7 +614,7 @@ main{flex:1;max-width:1100px;margin:0 auto;padding:2rem 1rem;width:100%}
       </div>
 
       <!-- Amazon Affiliate Link -->
-      <div class="amazon-affiliate" style="margin:30px 0;padding:15px;background:#FFF3E0;border:1px solid #FF9800;border-radius:8px;text-align:center"><p><a href="https://www.amazon.de/s?k=Hundeerziehung+Leine+Training&tag=nova079-20" target="_blank" rel="nofollow">👉 Alles für das Hundetraining bei Amazon entdecken</a></p></div>
+      <div class="amazon-affiliate" style="margin:30px 0;padding:15px;background:#FFF3E0;border:1px solid #FF9800;border-radius:8px;text-align:center"><p><a href="https://www.amazon.de/s?k=Hundeerziehung+Leine+Training&tag=nova03e-21" target="_blank" rel="nofollow">👉 Alles für das Hundetraining bei Amazon entdecken</a></p></div>
 
       <!-- AdSense -->
       <div class="ad-placeholder">
@@ -461,8 +680,17 @@ main{flex:1;max-width:1100px;margin:0 auto;padding:2rem 1rem;width:100%}
 </div>
 
 <script>
-document.querySelectorAll('.nav-links a').forEach(l=>l.addEventListener('click',()=>{
-  document.querySelector('.nav-links').classList.remove('open')
+// Mobile: close nav when simple links are clicked
+document.querySelectorAll('.simple-link a').forEach(l=>l.addEventListener('click',()=>{
+  document.querySelector('.main-nav').classList.remove('open');
+  document.querySelector('.nav-toggle').textContent='☰';
+}))
+// Mobile: tap mega-menu items to toggle panels
+document.querySelectorAll('.nav-links > li:not(.simple-link) > a').forEach(l=>l.addEventListener('click',function(e){
+  if(document.querySelector('.main-nav').classList.contains('open')){
+    e.preventDefault();
+    this.parentElement.classList.toggle('open');
+  }
 }))
 </script>
 </body>
