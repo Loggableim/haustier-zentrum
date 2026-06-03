@@ -151,6 +151,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://haustierzentrum.com/artikel/meerschweinchen-haltung.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://haustierzentrum.com/artikel/tierarztkosten.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
