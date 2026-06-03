@@ -191,6 +191,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://haustierzentrum.com/artikel/labrador-retriever.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://haustierzentrum.com/impressum.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
