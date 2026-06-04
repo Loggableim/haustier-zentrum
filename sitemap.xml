@@ -226,6 +226,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://haustierzentrum.com/artikel/hundeallergien.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://haustierzentrum.com/artikel/katzen-impfungen-vorsorge.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
