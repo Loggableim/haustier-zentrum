@@ -6,7 +6,7 @@
 | # | Status | Thema | Slug |
 |---|--------|-------|------|
 | 1 | ✅ Fertig 04.06.2026 | Deutscher Schäferhund Rasseguide | `deutscher-schaeferhund-rasseguide` |
-| 2 | ✅ Bereit | Golden Retriever Rasseguide | `golden-retriever-rasseguide` |
+| 2 | ✅ Fertig 04.06.2026 | Golden Retriever Rasseguide | `golden-retriever-rasseguide` |
 | 3 | ✅ Bereit | Chihuahua Rasseguide | `chihuahua-rasseguide` |
 | 4 | ✅ Bereit | Australian Shepherd Rasseguide | `australian-shepherd-rasseguide` |
 | 5 | ✅ Bereit | Dackel (Teckel) Rasseguide | `dackel-rasseguide` |

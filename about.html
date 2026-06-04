@@ -623,9 +623,9 @@ main{flex:1;max-width:1100px;margin:0 auto;padding:2rem 1rem;width:100%}
   </div>
 </footer>
 
-<div class="cookie-banner show" id="cookieBanner">
+<div class="cookie-banner" id="cookieBanner">
   <p>🍪 Diese Website verwendet Cookies und technisch notwendige Funktionen. Mit der Nutzung stimmst Du der Verarbeitung zu. <a href="/impressum.html" style="color:#FFB74D;">Mehr Infos</a></p>
-  <button onclick="document.getElementById('cookieBanner').classList.remove('show')">Akzeptieren</button>
+  <button onclick="localStorage.setItem('cookieConsent','1');document.getElementById('cookieBanner').classList.remove('show')">Akzeptieren</button>
 </div>
 
 
@@ -653,6 +653,12 @@ document.querySelectorAll('.simple-link a, .mega-col a').forEach(function(a){
     }
   });
 });
+</script>
+<script>
+// Cookie-Consent: Banner nur anzeigen wenn nicht bereits akzeptiert
+if(!localStorage.getItem('cookieConsent')){
+  document.getElementById('cookieBanner')?.classList.add('show');
+}
 </script>
 </body>
 </html>

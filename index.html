@@ -1118,6 +1118,17 @@ main{flex:1;width:100%}
   <div class="featured-grid">
 
     <article class="blog-card">
+      <div class="card-img"><img src="images/golden-retriever_00001_.png" alt="Golden Retriever Rasseguide" loading="lazy"></div>
+      <div class="card-body">
+        <div class="card-cats"><span>Hunde</span><span>Hunderassen</span><span>Neu</span></div>
+        <div class="card-date">17. Juni 2026 · 35 Min</div>
+        <h2><a href="/artikel/golden-retriever-rasseguide.html">Golden Retriever Rasseguide – Freundlich, intelligent, familientauglich</a></h2>
+        <p>Der große Rasseguide zum Golden Retriever: Herkunft, Charakter, Haltung, Pflege, Ernährung, Gesundheit, FAQ und praktische Tipps für ein langes Hundeleben.</p>
+        <a href="/artikel/golden-retriever-rasseguide.html" class="read-more">Weiterlesen →</a>
+      </div>
+    </article>
+
+    <article class="blog-card">
       <div class="card-img"><img src="images/hundeernaehrung_00001_.png" alt="Hundeernährung" loading="lazy"></div>
       <div class="card-body">
         <div class="card-cats"><span>Hunde</span><span>Ernährung</span></div>
@@ -1486,15 +1497,21 @@ main{flex:1;width:100%}
 </footer>
 
 <!-- ============ COOKIE BANNER ============ -->
-<div class="cookie-banner show" id="cookieBanner">
+<div class="cookie-banner" id="cookieBanner">
   <p>🍪 Diese Website verwendet Cookies und technisch notwendige Funktionen. Mit der Nutzung stimmst Du der Verarbeitung zu. <a href="/impressum.html">Mehr Infos</a></p>
-  <button onclick="document.getElementById('cookieBanner').classList.remove('show')">Akzeptieren</button>
+  <button onclick="localStorage.setItem('cookieConsent','1');document.getElementById('cookieBanner').classList.remove('show')">Akzeptieren</button>
 </div>
 
 <script>
 document.querySelectorAll('.nav-links a').forEach(l=>l.addEventListener('click',()=>{
   document.querySelector('.nav-links').classList.remove('open')
 }))
+</script>
+<script>
+// Cookie-Consent: Banner nur anzeigen wenn nicht bereits akzeptiert
+if(!localStorage.getItem('cookieConsent')){
+  document.getElementById('cookieBanner')?.classList.add('show');
+}
 </script>
 </body>
 </html>
