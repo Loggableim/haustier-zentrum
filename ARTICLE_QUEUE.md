@@ -12,7 +12,7 @@
 || 5 | ✅ Fertig 05.06.2026 | Dackel (Teckel) Rasseguide | `dackel-rasseguide` |
 || 6 | ✅ Fertig 05.06.2026 | Hunde-Krankheiten: Symptome & erste Hilfe | `hunde-krankheiten-symptome-erste-hilfe` |
 || 7 | ✅ Fertig 05.06.2026 | Hunde-Ernährung: BARF, Trocken, Nass | `hunde-ernaehrung-barf-trocken-nass` |
-| 8 | ✅ Bereit | Welpenkauf: Züchter, Tierheim, Checkliste | `welpenkauf-zuuechter-tierheim-checkliste` |
+|| 8 | ✅ Fertig 05.06.2026 | Welpenkauf: Züchter, Tierheim, Checkliste | `welpenkauf-zuuechter-tierheim-checkliste` |
 | 9 | ✅ Bereit | Britisch Kurzhaar Rasseguide | `britisch-kurzhaar-rasseguide` |
 | 10 | ✅ Bereit | Siamkatze Rasseguide | `siamkatze-rasseguide` |
 | 11 | ✅ Bereit | Bengal Cat Rasseguide | `bengal-cat-rasseguide` |
