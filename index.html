@@ -1,0 +1,1529 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Haustierzentrum – Der große Ratgeber für Hunde, Katzen & Kleintiere</title>
+<meta name="description" content="Haustierzentrum – Deutschlands wachsender Blog für artgerechte Haustierhaltung. Praktische Tipps zu Hunden, Katzen, Hamstern, Meerschweinchen, Kaninchen und mehr.">
+<meta property="og:title" content="Haustierzentrum – Haustier-Ratgeber & Magazin">
+<meta property="og:description" content="Tipps und Ratgeber für eine glückliche, artgerechte Haustierhaltung. Jetzt 32+ Ratgeber entdecken.">
+<meta property="og:url" content="https://haustierzentrum.com">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Haustierzentrum">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://haustierzentrum.com">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "name": "Haustierzentrum",
+  "description": "Ratgeber für artgerechte Haustierhaltung – Hunde, Katzen, Kleintiere.",
+  "url": "https://haustierzentrum.com",
+  "author": {"@type":"Person","name":"Haustierzentrum Redaktion"}
+}
+</script>
+<style>
+/* ============================================
+   HAUSTIERZENTRUM — MEGAPAGE
+   Buntstift-Skizzen-Ästhetik meets modernes Portal
+   ============================================ */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800;9..40,900&family=DM+Serif+Display:ital@0;1&display=swap');
+
+:root {
+  --primary: #FF9800;
+  --primary-dark: #e67e00;
+  --primary-light: #fff3e0;
+  --primary-glow: rgba(255,152,0,.15);
+  --bg: #faf8f3;
+  --bg-alt: #f0ece1;
+  --bg-white: #ffffff;
+  --text: #1e1e1e;
+  --text-muted: #7a7a7a;
+  --text-light: #b0a8a0;
+  --border: #e0d8c8;
+  --border-light: #f0ece1;
+  --card-shadow: 0 4px 24px rgba(0,0,0,.06);
+  --card-shadow-hover: 0 12px 48px rgba(0,0,0,.1);
+  --font: 'DM Sans', system-ui, -apple-system, sans-serif;
+  --font-display: 'DM Serif Display', Georgia, serif;
+  --sketch: 3px dashed var(--primary-light);
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+
+/* --- BODY --- */
+body{
+  font-family:var(--font);
+  color:var(--text);
+  background:var(--bg);
+  background-image:
+    radial-gradient(circle at 18px 18px, #e8e3d6 .8px, transparent .8px),
+    radial-gradient(circle at 80px 150px, #f0ece1 2px, transparent 2px);
+  background-size: 36px 36px, 160px 160px;
+  line-height:1.65;
+  display:flex;
+  flex-direction:column;
+  min-height:100vh;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:var(--primary);text-decoration:none}
+a:hover{text-decoration:underline}
+img{max-width:100%;height:auto;display:block}
+
+/* --- SKETCH DIVIDER --- */
+.sketch-divider{
+  width:120px;height:4px;
+  background:var(--primary);
+  border-radius:2px;
+  margin:0 auto 1rem;
+}
+
+/* --- HEADER --- */
+/* --- HEADER / MEGA MENU --- */
+.site-header{
+  background:rgba(255,255,255,.92);
+  backdrop-filter:blur(16px) saturate(1.2);
+  border-bottom:3px solid var(--primary);
+  padding:0 1rem;
+  position:sticky;
+  top:0;
+  z-index:1000;
+}
+.nav-wrap{
+  max-width:1200px;
+  margin:0 auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  height:72px;
+}
+.logo{
+  font-size:1.4rem;
+  font-weight:900;
+  letter-spacing:-1px;
+  background:linear-gradient(135deg,var(--primary-dark),var(--primary));
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  background-clip:text;
+  flex-shrink:0;
+}
+.logo span{font-weight:400;color:var(--text-muted);-webkit-text-fill-color:var(--text-muted);}
+.logo:hover{text-decoration:none}
+
+/* --- Main Navigation --- */
+.main-nav{display:flex;align-items:center}
+.nav-links{display:flex;gap:0;list-style:none;align-items:center;margin:0;padding:0}
+.nav-links > li{position:relative}
+.nav-links > li > a{
+  color:var(--text);
+  font-weight:600;
+  font-size:.85rem;
+  padding:.4rem 1rem;
+  border-radius:50px;
+  transition:.2s;
+  letter-spacing:.2px;
+  display:flex;
+  align-items:center;
+  gap:.3rem;
+  white-space:nowrap;
+}
+.nav-links > li > a .arrow{
+  font-size:.6rem;
+  transition:transform .25s;
+  display:inline-block;
+}
+.nav-links > li:hover > a .arrow{
+  transform:rotate(180deg);
+}
+.nav-links > li > a:hover,
+.nav-links > li > a.active{
+  color:#fff;
+  background:var(--primary);
+  text-decoration:none;
+}
+.nav-links > li.simple-link > a{
+  color:var(--text-muted);
+  font-weight:500;
+  font-size:.8rem;
+}
+.nav-links > li.simple-link > a:hover{
+  color:#fff;
+}
+
+/* --- Mega Dropdown Panel --- */
+.mega-panel{
+  position:absolute;
+  top:100%;
+  left:50%;
+  transform:translateX(-50%) translateY(12px);
+  background:#fff;
+  border-radius:16px;
+  box-shadow:0 20px 60px rgba(0,0,0,.15), 0 4px 20px rgba(0,0,0,.06);
+  min-width:680px;
+  max-width:900px;
+  padding:0;
+  opacity:0;
+  visibility:hidden;
+  transition:all .25s cubic-bezier(.16,1,.3,1);
+  border:1px solid var(--border-light);
+  overflow:hidden;
+  pointer-events:none;
+}
+.nav-links > li:hover .mega-panel{
+  opacity:1;
+  visibility:visible;
+  transform:translateX(-50%) translateY(8px);
+  pointer-events:auto;
+}
+.mega-grid{
+  display:grid;
+  gap:0;
+  padding:1.5rem;
+}
+.mega-grid.cols-2{grid-template-columns:1fr 1fr}
+.mega-grid.cols-3{grid-template-columns:1fr 1fr 1fr}
+.mega-grid.cols-4{grid-template-columns:1fr 1fr 1fr 1fr}
+.mega-col{
+  padding:0 .8rem;
+  border-right:1px solid var(--border-light);
+}
+.mega-col:last-child{border-right:none}
+.mega-col h4{
+  font-size:.7rem;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  color:var(--primary);
+  font-weight:700;
+  margin:0 0 .6rem 0;
+  padding-bottom:.4rem;
+  border-bottom:2px solid var(--primary-light);
+}
+.mega-col a{
+  display:flex;
+  align-items:center;
+  gap:.4rem;
+  padding:.35rem .5rem;
+  border-radius:8px;
+  color:var(--text);
+  font-size:.82rem;
+  font-weight:500;
+  transition:all .15s;
+  text-decoration:none;
+  line-height:1.3;
+}
+.mega-col a:hover{
+  background:var(--primary-light);
+  color:var(--primary-dark);
+  text-decoration:none;
+}
+.mega-col a .badge{
+  font-size:.6rem;
+  background:var(--primary);
+  color:#fff;
+  padding:.1rem .4rem;
+  border-radius:20px;
+  font-weight:700;
+  margin-left:auto;
+  animation:pulse-badge 2s infinite;
+}
+@keyframes pulse-badge{
+  0%,100%{opacity:1}
+  50%{opacity:.6}
+}
+.mega-col a .desc{
+  font-size:.68rem;
+  color:var(--text-muted);
+  font-weight:400;
+  display:block;
+  margin-left:1.6rem;
+  margin-top:-.1rem;
+}
+
+/* --- Featured Card in Mega --- */
+.mega-featured{
+  background:linear-gradient(135deg,var(--primary-light),#fff8e1);
+  border-radius:12px;
+  padding:.8rem 1rem;
+  margin-top:.6rem;
+  display:flex;
+  align-items:center;
+  gap:.8rem;
+}
+.mega-featured img{
+  width:52px;
+  height:52px;
+  border-radius:8px;
+  object-fit:cover;
+  flex-shrink:0;
+}
+.mega-featured .meta{
+  flex:1;
+}
+.mega-featured .meta strong{
+  display:block;
+  font-size:.82rem;
+  color:var(--text);
+}
+.mega-featured .meta span{
+  font-size:.7rem;
+  color:var(--text-muted);
+}
+
+/* --- Search Button --- */
+.search-btn{
+  background:none;
+  border:none;
+  font-size:1.1rem;
+  cursor:pointer;
+  color:var(--text-muted);
+  padding:.4rem .6rem;
+  border-radius:50px;
+  transition:.2s;
+  display:flex;
+  align-items:center;
+}
+.search-btn:hover{
+  background:var(--primary-light);
+  color:var(--primary);
+}
+
+/* --- Mobile Toggle --- */
+.nav-toggle{
+  display:none;
+  background:none;
+  border:none;
+  font-size:1.6rem;
+  cursor:pointer;
+  color:var(--text);
+  padding:.25rem;
+}
+
+/* --- Mobile Responsive --- */
+@media(max-width:900px){
+  .main-nav{
+    position:fixed;
+    top:72px;
+    left:0;
+    right:0;
+    bottom:0;
+    background:rgba(255,255,255,.98);
+    backdrop-filter:blur(20px);
+    flex-direction:column;
+    padding:1rem;
+    overflow-y:auto;
+    transform:translateX(100%);
+    transition:transform .35s cubic-bezier(.16,1,.3,1);
+    z-index:999;
+  }
+  .main-nav.open{transform:translateX(0)}
+  .nav-links{flex-direction:column;width:100%;gap:0}
+  .nav-links > li{width:100%}
+  .nav-links > li > a{
+    padding:.8rem 1rem;
+    border-radius:12px;
+    font-size:.95rem;
+    justify-content:space-between;
+  }
+  .nav-links > li > a .arrow{font-size:.8rem}
+  .mega-panel{
+    position:static;
+    transform:none;
+    opacity:1;
+    visibility:visible;
+    box-shadow:none;
+    border:none;
+    border-radius:0;
+    min-width:auto;
+    max-width:100%;
+    padding:0;
+    max-height:0;
+    overflow:hidden;
+    transition:max-height .35s cubic-bezier(.16,1,.3,1),padding .35s;
+    pointer-events:auto;
+    background:var(--bg-alt);
+    margin:0;
+    border-radius:12px;
+  }
+  .nav-links > li.open .mega-panel{
+    max-height:800px;
+    padding:.8rem;
+    margin-bottom:.5rem;
+  }
+  .mega-grid{
+    grid-template-columns:1fr 1fr !important;
+    padding:.5rem;
+    gap:.5rem;
+  }
+  .mega-col{
+    border-right:none;
+    padding:0;
+  }
+  .mega-col h4{font-size:.75rem;margin-bottom:.4rem}
+  .mega-col a{padding:.3rem .5rem;font-size:.85rem}
+  .search-btn{display:none}
+  .nav-toggle{display:block}
+  .nav-links > li.simple-link{
+    border-top:1px solid var(--border-light);
+    padding-top:.5rem;
+    margin-top:.3rem;
+  }
+}
+@media(max-width:500px){
+  .mega-grid{grid-template-columns:1fr !important}
+}
+
+/* --- MAIN --- */
+main{flex:1;width:100%}
+
+/* --- HERO MEGA --- */
+.hero-mega{
+  max-width:1200px;
+  margin:2rem auto 0;
+  padding:0 1rem;
+  position:relative;
+}
+.hero-inner{
+  background:linear-gradient(160deg,#fff8f0,#fff3e0 40%,#ffe0b2);
+  border-radius:var(--radius-xl);
+  padding:4rem 3rem;
+  position:relative;
+  overflow:hidden;
+  border:var(--sketch);
+}
+/* Decorative sketch blobs */
+.hero-inner::before{
+  content:'🐾';
+  position:absolute;
+  top:30px;right:60px;
+  font-size:6rem;
+  opacity:.08;
+  transform:rotate(15deg);
+}
+.hero-inner::after{
+  content:'🐾';
+  position:absolute;
+  bottom:-20px;left:40px;
+  font-size:8rem;
+  opacity:.06;
+  transform:rotate(-10deg);
+}
+.hero-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:.5rem;
+  background:rgba(255,152,0,.12);
+  color:var(--primary-dark);
+  font-size:.78rem;
+  font-weight:700;
+  padding:.35rem 1rem;
+  border-radius:50px;
+  letter-spacing:.5px;
+  text-transform:uppercase;
+  margin-bottom:1.2rem;
+}
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.2fr 1fr;
+  gap:3rem;
+  align-items:center;
+  position:relative;
+  z-index:1;
+}
+.hero-text h1{
+  font-family:var(--font-display);
+  font-size:3.2rem;
+  line-height:1.15;
+  color:var(--primary-dark);
+  margin-bottom:1rem;
+  font-weight:400;
+}
+.hero-text h1 strong{color:var(--text);font-weight:400;}
+.hero-text p{
+  font-size:1.1rem;
+  color:var(--text-muted);
+  line-height:1.6;
+  margin-bottom:2rem;
+  max-width:520px;
+}
+.hero-actions{
+  display:flex;
+  gap:.8rem;
+  flex-wrap:wrap;
+}
+.btn{
+  display:inline-flex;
+  align-items:center;
+  gap:.5rem;
+  font-weight:700;
+  font-size:.9rem;
+  padding:.75rem 1.6rem;
+  border-radius:50px;
+  border:none;
+  cursor:pointer;
+  transition:.25s;
+  font-family:var(--font);
+  text-decoration:none;
+}
+.btn-primary{
+  background:var(--primary);
+  color:#fff;
+  box-shadow:0 4px 14px var(--primary-glow);
+}
+.btn-primary:hover{background:var(--primary-dark);transform:translateY(-2px);text-decoration:none}
+.btn-outline{
+  background:transparent;
+  color:var(--text);
+  border:2px solid var(--border);
+}
+.btn-outline:hover{border-color:var(--primary);color:var(--primary);text-decoration:none;transform:translateY(-2px)}
+.btn-outline-light{
+  background:rgba(255,255,255,.7);
+  color:var(--text);
+  backdrop-filter:blur(4px);
+}
+.btn-outline-light:hover{background:#fff;text-decoration:none}
+.hero-visual{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:.8rem;
+}
+.hero-visual .card-img{
+  border-radius:var(--radius-md);
+  overflow:hidden;
+  box-shadow:0 4px 20px rgba(0,0,0,.08);
+  aspect-ratio:4/3;
+}
+.hero-visual .card-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.hero-visual .card-img:hover img{transform:scale(1.06)}
+.hero-visual .card-img:first-child{grid-column:1/-1;aspect-ratio:16/9}
+
+/* --- STATS BAR --- */
+.stats-bar{
+  max-width:1200px;
+  margin:0 auto;
+  padding:0 1rem;
+  transform:translateY(-50%);
+  position:relative;
+  z-index:2;
+}
+.stats-inner{
+  background:var(--bg-white);
+  border-radius:var(--radius-md);
+  box-shadow:var(--card-shadow);
+  border:2px solid var(--border-light);
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  padding:1.8rem 2rem;
+  gap:1rem;
+}
+.stat-item{
+  text-align:center;
+  border-right:1px solid var(--border-light);
+  padding:.5rem;
+}
+.stat-item:last-child{border-right:none}
+.stat-num{
+  font-family:var(--font-display);
+  font-size:2rem;
+  font-weight:400;
+  color:var(--primary-dark);
+  line-height:1.2;
+}
+.stat-label{
+  font-size:.82rem;
+  color:var(--text-muted);
+  font-weight:500;
+  letter-spacing:.3px;
+}
+
+/* --- SECTION COMMON --- */
+.section-wrap{
+  max-width:1200px;
+  margin:0 auto;
+  padding:0 1rem;
+}
+.section-pad{padding:4rem 0}
+.section-header{
+  text-align:center;
+  margin-bottom:3rem;
+}
+.section-header h2{
+  font-family:var(--font-display);
+  font-size:2.2rem;
+  color:var(--text);
+  margin-bottom:.5rem;
+  font-weight:400;
+}
+.section-header p{
+  color:var(--text-muted);
+  font-size:1.05rem;
+  max-width:600px;
+  margin:0 auto;
+}
+
+/* --- CATEGORY CARDS --- */
+.cat-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:1.5rem;
+  margin-bottom:4rem;
+}
+.cat-card{
+  background:#fff;
+  border:2px solid var(--border-light);
+  border-radius:var(--radius-lg);
+  padding:2.5rem 2rem;
+  text-align:center;
+  transition:.3s;
+  cursor:pointer;
+  position:relative;
+  overflow:hidden;
+}
+.cat-card:hover{transform:translateY(-6px);box-shadow:var(--card-shadow-hover);border-color:var(--primary-light)}
+.cat-icon{
+  font-size:3.2rem;
+  margin-bottom:1rem;
+  display:block;
+}
+.cat-card h3{font-size:1.4rem;font-weight:700;margin-bottom:.5rem;color:var(--text)}
+.cat-card p{font-size:.88rem;color:var(--text-muted);margin-bottom:1rem;line-height:1.5}
+.cat-count{
+  font-size:.78rem;
+  font-weight:700;
+  color:var(--primary);
+  text-transform:uppercase;
+  letter-spacing:.5px;
+}
+.cat-card::after{
+  content:'';
+  position:absolute;
+  bottom:0;left:20%;right:20%;
+  height:3px;
+  background:var(--primary);
+  border-radius:3px 3px 0 0;
+  transform:scaleX(0);
+  transition:.3s;
+}
+.cat-card:hover::after{transform:scaleX(1)}
+
+/* --- FEATURED ARTICLES --- */
+.featured-grid{
+  display:grid;
+  grid-template-columns:1.4fr 1fr 1fr;
+  grid-template-rows:auto auto;
+  gap:1.2rem;
+  margin-bottom:4rem;
+}
+.featured-grid .blog-card:first-child{
+  grid-row:1/3;
+}
+.featured-grid .blog-card:first-child .card-img{height:320px}
+.featured-grid .blog-card:first-child h2{font-size:1.4rem}
+.featured-grid .blog-card:first-child p{font-size:.95rem}
+
+/* --- BLOG CARD (shared) --- */
+.blog-card{
+  background:#fff;
+  border:2px solid var(--border-light);
+  border-radius:var(--radius-md);
+  overflow:hidden;
+  box-shadow:var(--card-shadow);
+  transition:.3s;
+  display:flex;
+  flex-direction:column;
+}
+.blog-card:hover{transform:translateY(-4px);box-shadow:var(--card-shadow-hover);border-color:var(--primary-light)}
+.card-img{
+  width:100%;
+  height:200px;
+  background:var(--bg-alt);
+  overflow:hidden;
+  flex-shrink:0;
+}
+.card-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.blog-card:hover .card-img img{transform:scale(1.06)}
+.card-body{padding:1.3rem 1.5rem;flex:1;display:flex;flex-direction:column;gap:.3rem}
+.card-cats{display:flex;gap:.35rem;flex-wrap:wrap}
+.card-cats span{
+  background:var(--primary);
+  color:#fff;
+  font-size:.68rem;
+  font-weight:700;
+  padding:.2rem .7rem;
+  border-radius:50px;
+  text-transform:uppercase;
+  letter-spacing:.5px;
+}
+.card-date{font-size:.78rem;color:var(--text-light);font-weight:500}
+.card-body h2{font-size:1.1rem;line-height:1.35;font-weight:700}
+.card-body h2 a{color:var(--text)}
+.card-body h2 a:hover{color:var(--primary);text-decoration:none}
+.card-body p{color:var(--text-muted);font-size:.86rem;flex:1;line-height:1.55}
+.card-body .read-more{
+  align-self:flex-start;
+  font-weight:700;
+  color:var(--primary);
+  font-size:.82rem;
+  padding:.25rem 0;
+  border-bottom:2px solid transparent;
+  transition:.2s;
+  letter-spacing:.2px;
+}
+.card-body .read-more:hover{border-bottom-color:var(--primary);text-decoration:none}
+
+/* --- ALL ARTICLES GRID --- */
+.articles-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
+  gap:1.5rem;
+  margin-bottom:3rem;
+}
+
+/* --- NEWSLETTER / CTA --- */
+.newsletter-cta{
+  background:linear-gradient(160deg,#2d2d2d,#1a1a1a);
+  border-radius:var(--radius-xl);
+  padding:4rem 3rem;
+  text-align:center;
+  margin-bottom:3rem;
+  position:relative;
+  overflow:hidden;
+  border:2px solid #444;
+}
+.newsletter-cta::before{
+  content:'';
+  position:absolute;
+  top:-80px;right:-80px;
+  width:300px;height:300px;
+  background:radial-gradient(circle,rgba(255,152,0,.06) 0%,transparent 70%);
+  border-radius:50%;
+}
+.newsletter-cta h2{
+  font-family:var(--font-display);
+  font-size:2rem;
+  color:#fff;
+  font-weight:400;
+  margin-bottom:.5rem;
+  position:relative;z-index:1;
+}
+.newsletter-cta p{
+  color:#aaa;
+  font-size:1rem;
+  margin-bottom:1.8rem;
+  position:relative;z-index:1;
+}
+.newsletter-form{
+  display:flex;
+  gap:.5rem;
+  max-width:460px;
+  margin:0 auto;
+  position:relative;z-index:1;
+}
+.newsletter-form input{
+  flex:1;
+  padding:.9rem 1.2rem;
+  border-radius:50px;
+  border:2px solid #444;
+  background:#333;
+  color:#fff;
+  font-size:.9rem;
+  font-family:var(--font);
+  outline:none;
+  transition:.2s;
+}
+.newsletter-form input:focus{border-color:var(--primary);background:#3a3a3a}
+.newsletter-form input::placeholder{color:#777}
+.newsletter-form button{
+  background:var(--primary);
+  color:#fff;
+  border:none;
+  padding:.9rem 1.8rem;
+  border-radius:50px;
+  font-weight:700;
+  font-size:.9rem;
+  cursor:pointer;
+  transition:.2s;
+  font-family:var(--font);
+  white-space:nowrap;
+}
+.newsletter-form button:hover{background:var(--primary-dark);transform:translateY(-2px)}
+
+/* --- AFFILIATE / ADS --- */
+.affiliate-section{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:1.5rem;
+  margin-bottom:3rem;
+}
+.affi-card{
+  background:#fff;
+  border:2px solid var(--border-light);
+  border-radius:var(--radius-md);
+  padding:1.8rem 2rem;
+  display:flex;
+  align-items:center;
+  gap:1.2rem;
+  transition:.3s;
+}
+.affi-card:hover{box-shadow:var(--card-shadow-hover);border-color:var(--primary-light);transform:translateY(-2px)}
+.affi-icon{font-size:2.5rem;flex-shrink:0}
+.affi-body h4{font-size:1rem;font-weight:700;margin-bottom:.2rem}
+.affi-body p{font-size:.85rem;color:var(--text-muted);line-height:1.4}
+.affi-badge{
+  display:inline-block;
+  background:var(--primary-light);
+  color:var(--primary-dark);
+  font-size:.7rem;
+  font-weight:700;
+  padding:.15rem .6rem;
+  border-radius:50px;
+  margin-top:.3rem;
+}
+
+/* --- FOOTER --- */
+.site-footer{
+  background:#1a1a1a;
+  color:#999;
+  padding:3.5rem 1rem 2rem;
+  margin-top:3rem;
+  font-size:.88rem;
+}
+.footer-wrap{
+  max-width:1200px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:2fr 1fr 1fr;
+  gap:3rem;
+  margin-bottom:2rem;
+}
+.footer-brand .logo{font-size:1.3rem;display:inline-block;margin-bottom:.8rem}
+.footer-brand p{line-height:1.6;font-size:.85rem}
+.footer-col h4{color:#fff;font-size:.9rem;font-weight:700;margin-bottom:.8rem;text-transform:uppercase;letter-spacing:.5px}
+.footer-col ul{list-style:none}
+.footer-col li{margin-bottom:.5rem}
+.footer-col a{color:#999;font-size:.85rem}
+.footer-col a:hover{color:var(--primary)}
+.footer-bottom{
+  max-width:1200px;
+  margin:0 auto;
+  padding-top:1.5rem;
+  border-top:1px solid #333;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:1rem;
+  font-size:.8rem;
+}
+
+/* --- COOKIE BANNER --- */
+.cookie-banner{
+  position:fixed;
+  bottom:0;
+  left:0;
+  right:0;
+  background:#1a1a1a;
+  color:#ddd;
+  padding:1rem 1.5rem;
+  display:none;
+  z-index:999;
+  box-shadow:0 -4px 20px rgba(0,0,0,.3);
+  font-size:.88rem;
+}
+.cookie-banner.show{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:1rem}
+.cookie-banner p{max-width:700px}
+.cookie-banner a{color:#FFB74D}
+.cookie-banner button{
+  background:var(--primary);
+  border:none;
+  color:#fff;
+  font-weight:700;
+  padding:.5rem 1.5rem;
+  border-radius:50px;
+  cursor:pointer;
+  font-size:.88rem;
+  white-space:nowrap;
+}
+.cookie-banner button:hover{background:var(--primary-dark)}
+
+/* --- RESPONSIVE --- */
+@media(max-width:1024px){
+  .hero-grid{grid-template-columns:1fr;gap:2rem}
+  .hero-text h1{font-size:2.6rem}
+  .hero-visual{max-width:500px;margin:0 auto}
+  .featured-grid{grid-template-columns:1fr 1fr}
+  .featured-grid .blog-card:first-child{grid-row:auto}
+  .featured-grid .blog-card:first-child .card-img{height:200px}
+  .footer-wrap{grid-template-columns:1fr 1fr}
+}
+@media(max-width:768px){
+  .nav-links{
+    display:none;
+    position:absolute;
+    top:72px;
+    left:0;
+    right:0;
+    background:rgba(255,255,255,.98);
+    flex-direction:column;
+    padding:.5rem;
+    border-bottom:3px solid var(--primary);
+    gap:0;
+  }
+  .nav-links.open{display:flex}
+  .nav-links a{padding:.7rem 1rem;border-radius:8px}
+  .nav-toggle{display:block}
+  .hero-inner{padding:2.5rem 1.5rem}
+  .hero-text h1{font-size:2rem}
+  .hero-text p{font-size:1rem}
+  .stats-inner{grid-template-columns:repeat(2,1fr);gap:.5rem;padding:1.2rem}
+  .stat-item:nth-child(2){border-right:none}
+  .cat-grid{grid-template-columns:1fr}
+  .featured-grid{grid-template-columns:1fr}
+  .articles-grid{grid-template-columns:1fr}
+  .affiliate-section{grid-template-columns:1fr}
+  .newsletter-cta{padding:3rem 1.5rem}
+  .newsletter-cta h2{font-size:1.6rem}
+  .newsletter-form{flex-direction:column}
+  .newsletter-form button{width:100%}
+  .footer-wrap{grid-template-columns:1fr;gap:2rem}
+  .footer-bottom{flex-direction:column;text-align:center}
+  .section-header h2{font-size:1.8rem}
+  .hero-visual{display:none}
+}
+</style>
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.png">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9094916118868532" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header">
+  <div class="nav-wrap">
+    <a href="/" class="logo">🐾 Haustier<span>zentrum</span></a>
+    <button class="nav-toggle" aria-label="Menü" onclick="document.querySelector('.main-nav').classList.toggle('open');this.textContent=this.textContent=='☰'?'✕':'☰'">☰</button>
+    <nav class="main-nav">
+      <ul class="nav-links">
+        <!-- HUNDE -->
+        <li>
+          <a href="/artikel/hunderassen-anfaenger.html">Hunde <span class="arrow">▾</span></a>
+          <div class="mega-panel">
+            <div class="mega-grid cols-4">
+              <div class="mega-col">
+                <h4>🐕 Rassen</h4>
+                <a href="/artikel/hunderassen-anfaenger.html">🐕 Hunderassen für Anfänger <span class="badge">Top</span></a>
+                <a href="/artikel/labrador-retriever.html">🐕 Labrador Retriever <span class="badge">Neu</span></a>
+                <a href="/artikel/franzoesische-bulldogge-rasseguide.html">🐕 Französische Bulldogge</a>
+              </div>
+              <div class="mega-col">
+                <h4>🎓 Erziehung</h4>
+                <a href="/artikel/hundeerziehung-grundlagen.html">🎓 Hundeerziehung Grundlagen</a>
+                <a href="/artikel/leinenfuehrigkeit.html">🦮 Leinenführigkeit & Ziehen</a>
+                <a href="/artikel/welpen-eingewoehnung.html">🐾 Welpeneingewöhnung</a>
+              </div>
+              <div class="mega-col">
+                <h4>🏥 Gesundheit & Pflege</h4>
+                <a href="/artikel/hunde-gesundheit.html">🏥 Hundegesundheit & Vorsorge</a>
+                <a href="/artikel/hunde-fellpflege-buersten-baden-krallen.html">🧴 Fellpflege & Baden</a>
+                <a href="/artikel/hunde-zahnpflege.html">🪥 Zahnpflege für Hunde</a>
+                <a href="/artikel/zeckenschutz-flohschutz-hund.html">🌿 Zecken- & Flohschutz</a>
+                <a href="/artikel/hunde-hausmittel.html">🏡 Hausmittel für Hunde</a>
+              </div>
+              <div class="mega-col">
+                <h4>🥩 Ernährung & Mehr</h4>
+                <a href="/artikel/hundeernaehrung.html">🥩 Hundeernährung</a>
+                <a href="/artikel/hunde-uebergewicht.html">⚖️ Übergewicht bei Hunden</a>
+                <a href="/artikel/hundespielzeuge-2026.html">🎾 Hundespielzeug 2026</a>
+                <a href="/artikel/hundeversicherung.html">🛡️ Hundeversicherung</a>
+                <a href="/artikel/hunde-reisen.html">✈️ Reisen mit Hund</a>
+              </div>
+            </div>
+          </div>
+        </li>
+        <!-- KATZEN -->
+        <li>
+          <a href="/artikel/katzenhaltung-wohnung.html">Katzen <span class="arrow">▾</span></a>
+          <div class="mega-panel">
+            <div class="mega-grid cols-3">
+              <div class="mega-col">
+                <h4>🏠 Haltung</h4>
+                <a href="/artikel/katzenhaltung-wohnung.html">🏠 Wohnungshaltung</a>
+                <a href="/artikel/katzen-freigaenger.html">🌳 Freigänger</a>
+                <a href="/artikel/seniorkatzen-pflege-ernaehrung-gesundheit.html">👵 Seniorkatzen</a>
+              </div>
+              <div class="mega-col">
+                <h4>🥫 Ernährung & Gesundheit</h4>
+                <a href="/artikel/katzen-ernaehrung.html">🥫 Katzenernährung</a>
+                <a href="/artikel/katzenfutter-vergleich-2026.html">🥩 Katzenfutter Vergleich</a>
+                <a href="/artikel/katzenkrankheiten-erkennen.html">🏥 Katzenkrankheiten</a>
+                <a href="/artikel/katzen-impfungen-vorsorge.html">💉 Impfungen & Vorsorge</a>
+                <a href="/artikel/katzen-zahnpflege.html">🪥 Zahnpflege</a>
+              </div>
+              <div class="mega-col">
+                <h4>🎾 Beschäftigung & Rassen</h4>
+                <a href="/artikel/katzenbeschaeftigung.html">🎾 Beschäftigungsideen</a>
+                <a href="/artikel/katzen-kratzbaum.html">🌲 Kratzbäume</a>
+                <a href="/artikel/katzentoilette-geruch-vermeiden.html">🚽 Katzentoilette</a>
+                <a href="/artikel/katzenrassen-vergleich.html">🐱 Katzenrassen Vergleich</a>
+                <a href="/artikel/maine-coon-katze-rasseguide.html">🐱 Maine Coon Rasseguide <span class="badge">Neu</span></a>
+              </div>
+            </div>
+          </div>
+        </li>
+        <!-- KLEINTIERE -->
+        <li>
+          <a href="/artikel/kleintiere-hamster-meerschweinchen.html">Kleintiere <span class="arrow">▾</span></a>
+          <div class="mega-panel">
+            <div class="mega-grid cols-3">
+              <div class="mega-col">
+                <h4>🐹 Nagetiere</h4>
+                <a href="/artikel/hamster-haltung.html">🐹 Hamster Haltung</a>
+                <a href="/artikel/meerschweinchen-haltung.html">🐹 Meerschweinchen Haltung</a>
+                <a href="/artikel/kaninchenhaltung.html">🐰 Kaninchenhaltung</a>
+              </div>
+              <div class="mega-col">
+                <h4>🥗 Ernährung & Gehege</h4>
+                <a href="/artikel/meerschweinchen-ernaehrung-vitamin-c.html">🥗 Meerschweinchen Ernährung</a>
+                <a href="/artikel/kleintier-gehege.html">🏠 Kleintiergehege</a>
+                <a href="/artikel/kleintiere-hamster-meerschweinchen.html">🐹 Hamster & Meerschweinchen</a>
+              </div>
+              <div class="mega-col">
+                <h4>🐦 Vögel & Aquarien</h4>
+                <a href="/artikel/voegel-haustier-beste-vogelarten-einsteiger.html">🐦 Vögel als Haustiere</a>
+                <a href="/artikel/wellensittich-haltung.html">🐦 Wellensittich Haltung</a>
+                <a href="/artikel/aquarium-einrichtung.html">🐟 Aquarium Einrichtung</a>
+              </div>
+            </div>
+          </div>
+        </li>
+        <!-- RATGEBER -->
+        <li>
+          <a href="/artikel/haustier-anschaffung.html">Ratgeber <span class="arrow">▾</span></a>
+          <div class="mega-panel" style="min-width:450px;">
+            <div class="mega-grid cols-2">
+              <div class="mega-col">
+                <h4>📋 Allgemein</h4>
+                <a href="/artikel/haustier-anschaffung.html">📋 Haustier Anschaffung</a>
+                <a href="/artikel/haustiere-kinder.html">👨‍👩‍👧‍👦 Haustiere & Kinder</a>
+              </div>
+              <div class="mega-col">
+                <h4>💰 Gesundheit & Kosten</h4>
+                <a href="/artikel/tierarztkosten.html">💰 Tierarztkosten</a>
+                <a href="/artikel/allergiker-haustiere.html">🤧 Allergiker & Haustiere</a>
+                <div class="mega-featured">
+                  <img src="../images/labrador-retriever_00001_.webp" alt="Labrador" loading="lazy">
+                  <div class="meta">
+                    <strong>📖 Neuer Artikel</strong>
+                    <span>Labrador Retriever Rasseguide</span>
+                    <a href="/artikel/labrador-retriever.html" style="font-size:.7rem;">Jetzt lesen →</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+        <!-- Simple Links -->
+        <li class="simple-link"><a href="/">Start</a></li>
+        <li class="simple-link"><a href="/about.html">Über uns</a></li>
+        <li class="simple-link"><a href="/impressum.html">Impressum</a></li>
+      </ul>
+    </nav>
+    <button class="search-btn" onclick="window.location.href='/?s='" aria-label="Suche">🔍</button>
+  </div>
+</header>
+
+<!-- ============ MEGA HERO ============ -->
+<main>
+<section class="hero-mega">
+  <div class="hero-inner">
+    <div class="hero-badge">📖 39+ Ratgeber · Aktualisiert Juni 2026</div>
+    <div class="hero-grid">
+      <div class="hero-text">
+        <h1>Rundum gut beraten<br>für ein <strong>glückliches Haustierleben</strong></h1>
+        <p>Von der Welpenerziehung über die richtige Katzenernährung bis zur artgerechten Kaninchenhaltung – bei uns findest Du geprüfte Ratgeber, praktische Tipps und ehrliche Produktvergleiche.</p>
+        <div class="hero-actions">
+          <a href="#alle-artikel" class="btn btn-primary">📚 Alle Ratgeber entdecken</a>
+          <a href="/artikel/hundeernaehrung.html" class="btn btn-outline">🥩 Hundeernährung</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="card-img"><img src="images/kleintiere_00001_.webp" alt="Kleintiere" loading="lazy"></div>
+        <div class="card-img"><img src="images/katzen-wohnung_00001_.webp" alt="Katzen" loading="lazy"></div>
+        <div class="card-img"><img src="images/hundeerziehung_00001_.webp" alt="Hunde" loading="lazy"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STATS ============ -->
+<section class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-item">
+      <div class="stat-num">39</div>
+      <div class="stat-label">Ratgeber & Artikel</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">3</div>
+      <div class="stat-label">Themenbereiche</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">1.500+</div>
+      <div class="stat-label">Stunden Recherche</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">100%</div>
+      <div class="stat-label">Artgerecht & Praxiserprobt</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ KATEGORIEN ============ -->
+<section class="section-wrap section-pad">
+  <div class="section-header">
+    <div class="sketch-divider"></div>
+    <h2>Dein Haustier · Dein Thema</h2>
+    <p>Wähle aus unseren drei großen Themenwelten – jeder Bereich steckt voller praktischer Ratgeber.</p>
+  </div>
+  <div class="cat-grid">
+    <a href="/artikel/hundeerziehung-grundlagen.html" class="cat-card" style="text-decoration:none">
+      <span class="cat-icon">🐕</span>
+      <h3>Hunde</h3>
+      <p>Erziehung, Ernährung, Gesundheit, Spielzeug – alles für ein glückliches Hundeleben.</p>
+      <span class="cat-count">16 Ratgeber →</span>
+    </a>
+    <a href="/artikel/katzenhaltung-wohnung.html" class="cat-card" style="text-decoration:none">
+      <span class="cat-icon">🐈</span>
+      <h3>Katzen</h3>
+      <p>Wohnungshaltung, Futtervergleiche, Beschäftigung und Gesundheitsvorsorge für Samtpfoten.</p>
+      <span class="cat-count">12 Ratgeber →</span>
+    </a>
+    <a href="/artikel/kleintiere-hamster-meerschweinchen.html" class="cat-card" style="text-decoration:none">
+      <span class="cat-icon">🐹</span>
+      <h3>Kleintiere</h3>
+      <p>Hamster, Meerschweinchen, Kaninchen – artgerechte Haltung und Ernährung im Detail.</p>
+      <span class="cat-count">13 Ratgeber →</span>
+    </a>
+  </div>
+</section>
+
+<!-- ============ FEATURED ARTICLES ============ -->
+<section class="section-wrap">
+  <div class="section-header">
+    <div class="sketch-divider"></div>
+    <h2>🏆 Top-Ratgeber</h2>
+    <p>Die meistgelesenen und umfangreichsten Artikel – perfekt für den Start.</p>
+  </div>
+  <div class="featured-grid">
+
+    <article class="blog-card">
+      <div class="card-img"><img src="images/golden-retriever_00001_.webp" alt="Golden Retriever Rasseguide" loading="lazy"></div>
+      <div class="card-body">
+        <div class="card-cats"><span>Hunde</span><span>Hunderassen</span><span>Neu</span></div>
+        <div class="card-date">17. Juni 2026 · 35 Min</div>
+        <h2><a href="/artikel/golden-retriever-rasseguide.html">Golden Retriever Rasseguide – Freundlich, intelligent, familientauglich</a></h2>
+        <p>Der große Rasseguide zum Golden Retriever: Herkunft, Charakter, Haltung, Pflege, Ernährung, Gesundheit, FAQ und praktische Tipps für ein langes Hundeleben.</p>
+        <a href="/artikel/golden-retriever-rasseguide.html" class="read-more">Weiterlesen →</a>
+      </div>
+    </article>
+
+    <article class="blog-card">
+      <div class="card-img"><img src="images/hundeernaehrung_00001_.webp" alt="Hundeernährung" loading="lazy"></div>
+      <div class="card-body">
+        <div class="card-cats"><span>Hunde</span><span>Ernährung</span></div>
+        <div class="card-date">15. Juni 2026 · 7 Min</div>
+        <h2><a href="/artikel/hundeernaehrung.html">Hundeernährung – Was darf mein Hund wirklich fressen?</a></h2>
+        <p>Der große Guide: BARF, Trockenfutter oder Nassfutter? Inklusive Giftstoff-Liste, Nährstofftabelle und FAQ. Der umfangreichste Artikel auf Haustierzentrum.</p>
+        <a href="/artikel/hundeernaehrung.html" class="read-more">Weiterlesen →</a>
+      </div>
+    </article>
+
+    <article class="blog-card">
+      <div class="card-img"><img src="images/katzenkrankheiten-erkennen_00001_.webp" alt="Katzenkrankheiten" loading="lazy"></div>
+      <div class="card-body">
+        <div class="card-cats"><span>Katzen</span><span>Gesundheit</span></div>
+        <div class="card-date">15. Juni 2026 · 7 Min</div>
+        <h2><a href="/artikel/katzenkrankheiten-erkennen.html">Katzenkrankheiten erkennen – 7 Warnsignale</a></h2>
+        <p>Von Apathie bis Zahnprobleme: Die sieben wichtigsten Symptome, bei denen Du sofort handeln musst. Inklusive Symptom-Checkliste.</p>
+        <a href="/artikel/katzenkrankheiten-erkennen.html" class="read-more">Weiterlesen →</a>
+      </div>
+    </article>
+
+    <article class="blog-card">
+      <div class="card-img"><img src="images/hunde-gesundheit_00001_.webp" alt="Hunde-Gesundheit" loading="lazy"></div>
+      <div class="card-body">
+        <div class="card-cats"><span>Hunde</span><span>Gesundheit</span></div>
+        <div class="card-date">2. Juni 2026 · 6 Min</div>
+        <h2><a href="/artikel/hunde-gesundheit.html">Hunde-Gesundheit – Die häufigsten Krankheiten</a></h2>
+        <p>Von Ohrenentzündungen bis Arthrose: Symptome früh erkennen und mit einfachen Maßnahmen vorbeugen.</p>
+        <a href="/artikel/hunde-gesundheit.html" class="read-more">Weiterlesen →</a>
+      </div>
+    </article>
+
+    <article class="blog-card">
+      <div class="card-img"><img src="images/seniorkatzen-pflege-ernaehrung-gesundheit_00001_.webp" alt="Senior-Katzen" loading="lazy"></div>
+      <div class="card-body">
+        <div class="card-cats"><span>Katzen</span><span>Gesundheit</span><span>Senioren</span></div>
+        <div class="card-date">3. Juni 2026 · 10 Min</div>
+        <h2><a href="/artikel/seniorkatzen-pflege-ernaehrung-gesundheit.html">Senior-Katzen: Pflege, Ernährung &amp; Gesundheit ab 7 Jahren</a></h2>
+        <p>Der große Ratgeber für Katzen ab 7: Alterserscheinungen, Nährstofftabelle, Wohnungsanpassung mit Treppen und erhöhten Näpfen, Zahnpflege und Vorsorge-Checks.</p>
+        <a href="/artikel/seniorkatzen-pflege-ernaehrung-gesundheit.html" class="read-more">Weiterlesen →</a>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ============ ALLE ARTIKEL ============ -->
+<section class="section-wrap section-pad" id="alle-artikel">
+  <div class="section-header">
+    <div class="sketch-divider"></div>
+    <h2>📖 Alle Beiträge</h2>
+    <p>39 Ratgeber, ständig wachsend. Für jedes Haustier und jede Frage die richtige Antwort.</p>
+  </div>
+  <div class="articles-grid">
+
+    <article class="blog-card">
+      <div class="card-img"><img src="images/pudel-rasseguide_00001_.webp" alt="Pudel Rasseguide" loading="lazy"></div>
+      <div class="card-body">
+        <div class="card-cats"><span>Hunde</span><span>Hunderassen</span><span>Neu</span></div>
+        <div class="card-date">19. Juni 2026</div>
+        <h2><a href="/artikel/pudel-rasseguide.html">Pudel Rasseguide – Intelligent, charmant, hypoallergen</a></h2>
+        <p>Der große Rasseguide zum Pudel: Alle vier Größen (Toy bis Königspudel), Charakter, Erziehung, Ernährung, Gesundheit und die aufwendige Fellpflege. Inklusive FAQ und Entscheidungshilfe.</p>
+        <a href="/artikel/pudel-rasseguide.html" class="read-more">Weiterlesen →</a>
+      </div>
+    </article>
+
+    <article class="blog-card">
+      <div class="card-img"><img src="images/hunde-zahnpflege_00001_.webp" alt="Hunde-Zahnpflege" loading="lazy"></div>
+      <div class="card-body">
+        <div class="card-cats"><span>Hunde</span><span>Gesundheit</span><span>Pflege</span></div>
+        <div class="card-date">3. Juni 2026</div>
+        <h2><a href="/artikel/hunde-zahnpflege.html">Hunde-Zahnpflege – Zähneputzen, Zahnstein &amp; gesunde Zähne</a></h2>
+        <p>Die richtige Zahnpflege für Deinen Hund: Zahnputz-Routine, Zahnstein vorbeugen, die besten Zahnbürsten, Zahnpasten &amp; Kauartikel im Vergleich.</p>
+        <a href="/artikel/hunde-zahnpflege.html" class="read-more">Weiterlesen →</a>
+      </div>
+    </article>
+
+    <article class="blog-card">
+      <div class="card-img"><img src="images/katzen-impfungen-vorsorge_00001_.webp" alt="Katzen-Impfungen" loading="lazy"></div>
+      <div class="card-body">
+        <div class="card-cats"><span>Katzen</span><span>Gesundheit</span><span>Vorsorge</span></div>
+        <div class="card-date">3. Juni 2026</div>
+        <h2><a href="/artikel/katzen-impfungen-vorsorge.html">Katzen-Impfungen &amp; Vorsorge – Impfplan, Kosten &amp; Gesundheits-Check</a></h2>
+        <p>Welche Impfungen braucht Deine Katze wirklich? Impfplan, Kostenübersicht, Parasitenschutz und die wichtigsten Vorsorgeuntersuchungen im Überblick.</p>
+        <a href="/artikel/katzen-impfungen-vorsorge.html" class="read-more">Weiterlesen →</a>
+      </div>
+    </article>
+
+    <article class="blog-card">
+      <div class="card-img"><img src="images/hunde-uebergewicht_00001_.webp" alt="Hunde-Übergewicht" loading="lazy"></div>
+      <div class="card-body">
+        <div class="card-cats"><span>Hunde</span><span>Gesundheit</span><span>Ernährung</span></div>
+        <div class="card-date">3. Juni 2026</div>
+        <h2><a href="/artikel/hunde-uebergewicht.html">Hunde-Übergewicht – Erkennen, vorbeugen &amp; gesund abnehmen</a></h2>
+        <p>Übergewicht ist das häufigste Gesundheitsproblem bei Hunden. BCS-Score, Kalorienbedarf, Diätplan &amp; Bewegungstipps für eine gesunde Gewichtsabnahme.</p>
+        <a href="/artikel/hunde-uebergewicht.html" class="read-more">Weiterlesen →</a>
+      </div>
+    </article>
+
+    <article class="blog-card">
+      <div class="card-img"><img src="images/voegel-haustier-beste-vogelarten-einsteiger_00001_.webp" alt="Vögel als Haustier" loading="lazy"></div>
+      <div class="card-body">
+        <div class="card-cats"><span>Kleintiere</span><span>Vögel</span><span>Einsteiger</span></div>
+        <div class="card-date">3. Juni 2026</div>
+        <h2><a href="/artikel/voegel-haustier-beste-vogelarten-einsteiger.html">Vögel als Haustier – Die 5 besten Vogelarten für Einsteiger</a></h2>
+        <p>Wellensittich, Kanarienvogel, Nymphensittich, Zebrafink & Co. – der große Vergleich mit Käfigmaßen, Pflegeaufwand, Kosten und allen Infos für den Start.</p>
+        <a href="/artikel/voegel-haustier-beste-vogelarten-einsteiger.html" class="read-more">Weiterlesen →</a>
+      </div>
+    </article>
+
+    <article class="blog-card">
+      <div class="card-img"><img src="images/hunde-fellpflege-buersten-baden-krallen_00001_.webp" alt="Hunde-Fellpflege" loading="lazy"></div>
+      <div class="card-body">
+        <div class="card-cats"><span>Hunde</span><span>Pflege</span><span>Gesundheit</span></div>
+        <div class="card-date">3. Juni 2026</div>
+        <h2><a href="/artikel/hunde-fellpflege-buersten-baden-krallen.html">Hunde-Fellpflege – Bürsten, Baden &amp; Krallen schneiden</a></h2>
+        <p>Schritt-für-Schritt-Anleitung: Welche Bürste für welchen Felltyp, wie Du Krallen richtig schneidest und wann Baden nötig ist.</p>
+        <a href="/artikel/hunde-fellpflege-buersten-baden-krallen.html" class="read-more">Weiterlesen →</a>
+      </div>
+    </article>
+
+    <article class="blog-card">
+      <div class="card-img"><img src="images/seniorkatzen-pflege-ernaehrung-gesundheit_00001_.webp" alt="Senior-Katzen" loading="lazy"></div>
+      <div class="card-body">
+        <div class="card-cats"><span>Katzen</span><span>Gesundheit</span><span>Senioren</span></div>
+        <div class="card-date">3. Juni 2026</div>
+        <h2><a href="/artikel/seniorkatzen-pflege-ernaehrung-gesundheit.html">Senior-Katzen: Pflege, Ernährung &amp; Gesundheit ab 7 Jahren</a></h2>
+        <p>Alterserscheinungen erkennen, Futter umstellen und die Wohnung seniorengerecht anpassen – der komplette Ratgeber für Katzen ab 7.</p>
+        <a href="/artikel/seniorkatzen-pflege-ernaehrung-gesundheit.html" class="read-more">Weiterlesen →</a>
+      </div>
+    </article>
+
+    <article class="blog-card">
+      <div class="card-img"><img src="images/katzenkrankheiten-erkennen_00001_.webp" alt="Katzenkrankheiten" loading="lazy"></div>
+      <div class="card-body">
+        <div class="card-cats"><span>Gesundheit</span><span>Katzen</span></div>
+        <div class="card-date">15. Juni 2026</div>
+        <h2><a href="/artikel/katzenkrankheiten-erkennen.html">Katzenkrankheiten erkennen – 7 Warnsignale</a></h2>
+        <p>Frühwarnsystem für Katzenbesitzer: die sieben wichtigsten Symptome.</p>
+        <a href="/artikel/katzenkrankheiten-erkennen.html" class="read-more">Weiterlesen →</a>
+      </div>
+    </article>
+
+    <article class="blog-card">
+      <div class="card-img"><img src="images/katzenfutter-vergleich-2026_00001_.webp" alt="Katzenfutter" loading="lazy"></div>
+      <div class="card-body">
+        <div class="card-cats"><span>Katzen</span><span>Ernährung</span></div>
+        <div class="card-date">15. Juni 2026</div>
+        <h2><a href="/artikel/katzenfutter-vergleich-2026.html">Katzenfutter Vergleich 2026</a></h2>
+        <p>Nassfutter vs. Trockenfutter mit 5 Top-Produkten im Test.</p>
+        <a href="/artikel/katzenfutter-vergleich-2026.html" class="read-more">Weiterlesen →</a>
+      </div>
+    </article>
+
+    <article class="blog-card">
+      <div class="card-img"><img src="images/hundespielzeuge-2026_00001_.webp" alt="Hundespielzeug" loading="lazy"></div>
+      <div class="card-body">
+        <div class="card-cats"><span>Hunde</span><span>Spielzeug</span></div>
+        <div class="card-date">15. Juni 2026</div>
+        <h2><a href="/artikel/hundespielzeuge-2026.html">Die besten Hundespielzeuge 2026</a></h2>
+        <p>5 Kategorien im Check: Kauknochen, Intelligenzspielzeug und mehr.</p>
+        <a href="/artikel/hundespielzeuge-2026.html" class="read-more">Weiterlesen →</a>
+      </div>
+    </article>
+
+    <article class="blog-card">
+      <div class="card-img"><img src="images/hundeernaehrung_00001_.webp" alt="Hundeernährung" loading="lazy"></div>
+      <div class="card-body">
+        <div class="card-cats"><span>Hunde</span><span>Ernährung</span></div>
+        <div class="card-date">15. Juni 2026</div>
+        <h2><a href="/artikel/hundeernaehrung.html">Hundeernährung – Was darf mein Hund fressen?</a></h2>
+        <p>BARF, Trockenfutter, Nassfutter und verbotene Lebensmittel.</p>
+        <a href="/artikel/hundeernaehrung.html" class="read-more">Weiterlesen →</a>
+      </div>
+    </article>
+
+    <article class="blog-card">
+      <div class="card-img"><img src="images/zeckenschutz-flohschutz-hund_00001_.webp" alt="Zeckenschutz" loading="lazy"></div>
+      <div class="card-body">
+        <div class="card-cats"><span>Hunde</span><span>Gesundheit</span></div>
+        <div class="card-date">2. Juni 2026</div>
+        <h2><a href="/artikel/zeckenschutz-flohschutz-hund.html">Zeckenschutz und Flohschutz beim Hund</a></h2>
+        <p>Zecken entfernen, Flöhe erkennen, Umgebung reinigen.</p>
+        <a href="/artikel/zeckenschutz-flohschutz-hund.html" class="read-more">Weiterlesen →</a>
+      </div>
+    </article>
+
+    <article class="blog-card">
+      <div class="card-img"><img src="images/katzentoilette-geruch-vermeiden_00001_.webp" alt="Katzentoilette" loading="lazy"></div>
+      <div class="card-body">
+        <div class="card-cats"><span>Katzen</span><span>Hygiene</span></div>
+        <div class="card-date">2. Juni 2026</div>
+        <h2><a href="/artikel/katzentoilette-geruch-vermeiden.html">Katzentoilette richtig einrichten</a></h2>
+        <p>Optimale Platzierung, passende Streu und Reinigungsroutine.</p>
+        <a href="/artikel/katzentoilette-geruch-vermeiden.html" class="read-more">Weiterlesen →</a>
+      </div>
+    </article>
+
+    <article class="blog-card">
+      <div class="card-img"><img src="images/meerschweinchen-ernaehrung-vitamin-c_00001_.webp" alt="Meerschweinchen" loading="lazy"></div>
+      <div class="card-body">
+        <div class="card-cats"><span>Kleintiere</span><span>Meerschweinchen</span></div>
+        <div class="card-date">2. Juni 2026</div>
+        <h2><a href="/artikel/meerschweinchen-ernaehrung-vitamin-c.html">Meerschweinchen Ernährung &amp; Vitamin C</a></h2>
+        <p>Futterplan, Frischfutter, Vitamin-C-Bedarf und Gewichtskontrolle.</p>
+        <a href="/artikel/meerschweinchen-ernaehrung-vitamin-c.html" class="read-more">Weiterlesen →</a>
+      </div>
+    </article>
+
+    <article class="blog-card">
+      <div class="card-img"><img src="images/kaninchenhaltung_00001_.webp" alt="Kaninchenhaltung" loading="lazy"></div>
+      <div class="card-body">
+        <div class="card-cats"><span>Kleintiere</span><span>Kaninchen</span></div>
+        <div class="card-date">2. Juni 2026</div>
+        <h2><a href="/artikel/kaninchenhaltung.html">Kaninchenhaltung – Artgerecht von A bis Z</a></h2>
+        <p>Gehege, Ernährung, Sozialhaltung und Gesundheitsvorsorge.</p>
+        <a href="/artikel/kaninchenhaltung.html" class="read-more">Weiterlesen →</a>
+      </div>
+    </article>
+
+    <article class="blog-card">
+      <div class="card-img"><img src="images/katzen-beschaeftigung_00001_.webp" alt="Katzenbeschäftigung" loading="lazy"></div>
+      <div class="card-body">
+        <div class="card-cats"><span>Katzen</span><span>Spielzeug</span></div>
+        <div class="card-date">2. Juni 2026</div>
+        <h2><a href="/artikel/katzenbeschaeftigung.html">Katzenbeschäftigung – Ideen für drinnen</a></h2>
+        <p>Federangeln, Intelligenzspielzeug und DIY-Spiele für Wohnungskatzen.</p>
+        <a href="/artikel/katzenbeschaeftigung.html" class="read-more">Weiterlesen →</a>
+      </div>
+    </article>
+
+    <article class="blog-card">
+      <div class="card-img"><img src="images/hunde-gesundheit_00001_.webp" alt="Hunde-Gesundheit" loading="lazy"></div>
+      <div class="card-body">
+        <div class="card-cats"><span>Hunde</span><span>Gesundheit</span></div>
+        <div class="card-date">2. Juni 2026</div>
+        <h2><a href="/artikel/hunde-gesundheit.html">Hunde-Gesundheit – Krankheiten erkennen</a></h2>
+        <p>Symptome früh erkennen und mit einfachen Maßnahmen vorbeugen.</p>
+        <a href="/artikel/hunde-gesundheit.html" class="read-more">Weiterlesen →</a>
+      </div>
+    </article>
+
+    <article class="blog-card">
+      <div class="card-img"><img src="images/hundeerziehung_00001_.webp" alt="Hundeerziehung" loading="lazy"></div>
+      <div class="card-body">
+        <div class="card-cats"><span>Hunde</span><span>Erziehung</span></div>
+        <div class="card-date">15. Mai 2026</div>
+        <h2><a href="/artikel/hundeerziehung-grundlagen.html">Hundeerziehung – Grundlagen für Anfänger</a></h2>
+        <p>Sitz, Platz, Kommando – die ersten Schritte mit Deinem Hund.</p>
+        <a href="/artikel/hundeerziehung-grundlagen.html" class="read-more">Weiterlesen →</a>
+      </div>
+    </article>
+
+    <article class="blog-card">
+      <div class="card-img"><img src="images/katzen-wohnung_00001_.webp" alt="Katzenhaltung" loading="lazy"></div>
+      <div class="card-body">
+        <div class="card-cats"><span>Katzen</span><span>Wohnungshaltung</span></div>
+        <div class="card-date">8. Mai 2026</div>
+        <h2><a href="/artikel/katzenhaltung-wohnung.html">Katzenhaltung in der Wohnung</a></h2>
+        <p>Kratzbäume, Rückzugsorte und die richtige Einrichtung.</p>
+        <a href="/artikel/katzenhaltung-wohnung.html" class="read-more">Weiterlesen →</a>
+      </div>
+    </article>
+
+    <article class="blog-card">
+      <div class="card-img"><img src="images/kleintiere_00001_.webp" alt="Kleintiere" loading="lazy"></div>
+      <div class="card-body">
+        <div class="card-cats"><span>Kleintiere</span><span>Hamster</span><span>Meerschweinchen</span></div>
+        <div class="card-date">1. Mai 2026</div>
+        <h2><a href="/artikel/kleintiere-hamster-meerschweinchen.html">Hamster vs. Meerschweinchen</a></h2>
+        <p>Vergleich in Haltung, Pflege, Kosten und Charakter.</p>
+        <a href="/artikel/kleintiere-hamster-meerschweinchen.html" class="read-more">Weiterlesen →</a>
+      </div>
+    </article>
+
+    <article class="blog-card">
+      <div class="card-img"><img src="images/hunderassen-anfaenger_00001_.webp" alt="Hunderassen für Anfänger" loading="lazy"></div>
+      <div class="card-body">
+        <div class="card-cats"><span>Hunde</span><span>Rasseberatung</span></div>
+        <div class="card-date">Juni 2026</div>
+        <h2><a href="/artikel/hunderassen-anfaenger.html">Hunderassen für Anfänger – Welcher Hund passt zu mir?</a></h2>
+        <p>Acht Rasseporträts, detaillierte Vergleichstabelle und Entscheidungshilfe – Finde Deinen perfekten Begleiter.</p>
+        <a href="/artikel/hunderassen-anfaenger.html" class="read-more">Weiterlesen →</a>
+      </div>
+    </article>
+
+    <article class="blog-card">
+      <div class="card-img"><img src="images/welpen-eingewoehnung_00001_.webp" alt="Welpen-Eingewöhnung" loading="lazy"></div>
+      <div class="card-body">
+        <div class="card-cats"><span>Hunde</span><span>Welpen</span><span>Erziehung</span></div>
+        <div class="card-date">Juni 2026</div>
+        <h2><a href="/artikel/welpen-eingewoehnung.html">Welpen-Eingewöhnung – Die ersten 7 Tage Schritt für Schritt</a></h2>
+        <p>Kompletter Tagesplan von Tag 1 bis 7: Stubenreinheit, erste Kommandos, Sozialisation und Trennungsangst vermeiden.</p>
+        <a href="/artikel/welpen-eingewoehnung.html" class="read-more">Weiterlesen →</a>
+      </div>
+    </article>
+
+    <article class="blog-card">
+      <div class="card-img"><img src="images/katzenrassen-vergleich_00001_.webp" alt="Katzenrassen" loading="lazy"></div>
+      <div class="card-body">
+        <div class="card-cats"><span>Katzen</span><span>Rassen</span><span>Vergleich</span></div>
+        <div class="card-date">Juni 2026</div>
+        <h2><a href="/artikel/katzenrassen-vergleich.html">Katzenrassen im Vergleich – Charakter, Haltung &amp; Pflege</a></h2>
+        <p>Sechs Rasseporträts von Europäisch Kurzhaar bis Bengal. Vergleichstabelle, Kosten und Entscheidungshilfe nach Lebenssituation.</p>
+        <a href="/artikel/katzenrassen-vergleich.html" class="read-more">Weiterlesen →</a>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ============ NEWSLETTER ============ -->
+<section class="section-wrap">
+  <div class="newsletter-cta">
+    <h2>✎ Immer up to date</h2>
+    <p>Neue Ratgeber, Produktvergleiche und exklusive Tipps – einmal pro Monat direkt in Dein Postfach.</p>
+    <form class="newsletter-form" action="#" onsubmit="alert('📬 Newsletter-Funktion kommt bald! Du wirst benachrichtigt.');return false">
+      <input type="email" placeholder="Deine E-Mail-Adresse" required>
+      <button type="submit">📬 Abonnieren</button>
+    </form>
+  </div>
+</section>
+
+<!-- ============ AFFILIATE ============ -->
+<section class="section-wrap">
+  <div class="affiliate-section">
+    <div class="affi-card">
+      <div class="affi-icon">🛒</div>
+      <div class="affi-body">
+        <h4>Empfohlenes Zubehör auf Amazon</h4>
+        <p>Hundeleinen, Kratzbäume, Kleintierkäfige und mehr – handverlesen für Dich.</p>
+        <span class="affi-badge">Affiliate-Link · Amazon DE</span>
+      </div>
+    </div>
+    <div class="affi-card">
+      <div class="affi-icon">📢</div>
+      <div class="affi-body">
+        <h4>Werbung · Google AdSense</h4>
+        <p>Diese Website nutzt Google AdSense für responsive Anzeigen. Hier wird eine Anzeige eingeblendet.</p>
+        <span class="affi-badge">Cookies durch Drittanbieter</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site-footer">
+  <div class="footer-wrap">
+    <div class="footer-brand">
+      <a href="/" class="logo">🐾 Haustier<span style="-webkit-text-fill-color:#999">zentrum</span></a>
+      <p>Dein Blog für artgerechte Haustierhaltung. Praktische Ratgeber, ehrliche Produktvergleiche und jede Menge Liebe zu Tieren.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Themen</h4>
+      <ul>
+        <li><a href="/artikel/hundeerziehung-grundlagen.html">Hunde</a></li>
+        <li><a href="/artikel/katzenhaltung-wohnung.html">Katzen</a></li>
+        <li><a href="/artikel/kleintiere-hamster-meerschweinchen.html">Kleintiere</a></li>
+        <li><a href="/sitemap.xml">Sitemap</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Rechtliches</h4>
+      <ul>
+        <li><a href="/about.html">Über uns</a></li>
+        <li><a href="/impressum.html">Impressum</a></li>
+        <li><a href="/impressum.html">Datenschutz</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 Haustierzentrum. Alle Rechte vorbehalten.</p>
+    <p>Als Amazon-Partner verdienen wir an qualifizierten Verkäufen.</p>
+  </div>
+</footer>
+
+<!-- ============ COOKIE BANNER ============ -->
+<div class="cookie-banner" id="cookieBanner">
+  <p>🍪 Diese Website verwendet Cookies und technisch notwendige Funktionen. Mit der Nutzung stimmst Du der Verarbeitung zu. <a href="/impressum.html">Mehr Infos</a></p>
+  <button onclick="localStorage.setItem('cookieConsent','1');document.getElementById('cookieBanner').classList.remove('show')">Akzeptieren</button>
+</div>
+
+<script>
+document.querySelectorAll('.nav-links a').forEach(l=>l.addEventListener('click',()=>{
+  document.querySelector('.nav-links').classList.remove('open')
+}))
+</script>
+<script>
+// Cookie-Consent: Banner nur anzeigen wenn nicht bereits akzeptiert
+if(!localStorage.getItem('cookieConsent')){
+  document.getElementById('cookieBanner')?.classList.add('show');
+}
+</script>
+</body>
+</html>
