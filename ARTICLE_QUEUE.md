@@ -15,7 +15,7 @@
 || 8 | ✅ Fertig 05.06.2026 | Welpenkauf: Züchter, Tierheim, Checkliste | `welpenkauf-zuuechter-tierheim-checkliste` |
 || 9 | ✅ Fertig 06.06.2026 | Britisch Kurzhaar Rasseguide | `britisch-kurzhaar-rasseguide` |
 || 10 | ✅ Fertig 06.06.2026 | Siamkatze Rasseguide | `siamkatze-rasseguide` |
-|| 11 | ✅ Bereit | Bengal Cat Rasseguide | `bengal-cat-rasseguide` |
+|| 11 | ✅ Fertig 06.06.2026 | Bengal Cat Rasseguide | `bengal-cat-rasseguide` |
 || 12 | ✅ Bereit | Katzenfutter selber machen | `katzenfutter-selber-machen` |
 | 13 | ✅ Bereit | Katzen-Verhalten: Körpersprache & Kommunikation | `katzen-verhalten-koerpersprache-kommunikation` |
 | 14 | ✅ Bereit | Kaninchen-Ernährung & Gesundheitsvorsorge | `kaninchen-ernaehrung-gesundheit` |

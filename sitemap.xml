@@ -21,6 +21,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://haustierzentrum.com/artikel/bengal-cat-rasseguide.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://haustierzentrum.com/artikel/border-collie-rasseguide.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
