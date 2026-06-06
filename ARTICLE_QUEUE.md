@@ -16,7 +16,7 @@
 || 9 | ✅ Fertig 06.06.2026 | Britisch Kurzhaar Rasseguide | `britisch-kurzhaar-rasseguide` |
 || 10 | ✅ Fertig 06.06.2026 | Siamkatze Rasseguide | `siamkatze-rasseguide` |
 || 11 | ✅ Fertig 06.06.2026 | Bengal Cat Rasseguide | `bengal-cat-rasseguide` |
-|| 12 | ✅ Bereit | Katzenfutter selber machen | `katzenfutter-selber-machen` |
+|| 12 | ✅ Fertig 06.06.2026 | Katzenfutter selber machen | `katzenfutter-selber-machen` |
 | 13 | ✅ Bereit | Katzen-Verhalten: Körpersprache & Kommunikation | `katzen-verhalten-koerpersprache-kommunikation` |
 | 14 | ✅ Bereit | Kaninchen-Ernährung & Gesundheitsvorsorge | `kaninchen-ernaehrung-gesundheit` |
 | 15 | ✅ Bereit | Degus Haltung & Pflege | `degus-haltung-pflege` |
