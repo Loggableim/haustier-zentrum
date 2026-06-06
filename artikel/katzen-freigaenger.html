@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Freigänger vs. Wohnungskatze – Vor- und Nachteile | Haustierzentrum</title>
+<meta name="description" content="Freigänger oder Wohnungskatze? Vor- und Nachteile beider Haltungsformen. Vergleichstabelle, Sicherheitstipps und Beschäftigungsmöglichkeiten.">
+<meta property="og:title" content="Freigänger vs. Wohnungskatze – Vor- und Nachteile">
+<meta property="og:description" content="Sicherheit oder Freiheit? Wir vergleichen Freigänger- und Wohnungskatzenhaltung mit einer praktischen Übersichtstabelle.">
+<meta property="og:url" content="https://haustierzentrum.com/artikel/katzen-freigaenger.html">
+<meta property="og:type" content="article">
+    <meta property="og:image" content="../images/katzen-freigaenger_00001_.webp">
+<meta property="og:site_name" content="Haustierzentrum">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://haustierzentrum.com/artikel/katzen-freigaenger.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Freigänger vs. Wohnungskatze – Vor- und Nachteile",
+  "description": "Vor- und Nachteile von Freigänger- und Wohnungskatzenhaltung mit praktischen Tipps für beide Varianten.",
+  "author": {"@type":"Person","name":"Haustierzentrum Redaktion"},
+  "datePublished": "2026-06-15",
+  "dateModified": "2026-06-15",
+  "image": "https://haustierzentrum.com/img/katzen-freigaenger.jpg",
+  "publisher": {"@type":"Organization","name":"Haustierzentrum","url":"https://haustierzentrum.com"}
+}
+</script>
+<style>
+:root {
+  --primary: #FF9800;
+  --primary-dark: #e68900;
+  --bg: #ffffff;
+  --bg-alt: #f7f7f7;
+  --text: #1a1a1a;
+  --text-muted: #666;
+  --border: #e0e0e0;
+  --border-light: #f0ece1;
+  --card-shadow: 0 2px 12px rgba(0,0,0,.08);
+  --font: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--font);
+  color:var(--text);
+  background:var(--bg);
+  line-height:1.7;
+  display:flex;
+  flex-direction:column;
+  min-height:100vh;
+}
+a{color:var(--primary);text-decoration:none}
+a:hover{text-decoration:underline}
+img{max-width:100%;height:auto;display:block}
+
+.site-header{
+  background:rgba(255,255,255,.92);
+  backdrop-filter:blur(16px) saturate(1.2);
+  border-bottom:3px solid var(--primary);
+  padding:0 1rem;
+  position:sticky;
+  top:0;
+  z-index:1000;
+}
+.nav-wrap{
+  max-width:1200px;
+  margin:0 auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  height:72px;
+}
+.logo{
+  font-size:1.4rem;
+  font-weight:900;
+  letter-spacing:-1px;
+  background:linear-gradient(135deg,var(--primary-dark),var(--primary));
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  background-clip:text;
+  flex-shrink:0;
+}
+.logo span{font-weight:400;color:var(--text-muted);-webkit-text-fill-color:var(--text-muted);}
+.logo:hover{text-decoration:none}
+.main-nav{display:flex;align-items:center}
+.nav-links{display:flex;gap:0;list-style:none;align-items:center;margin:0;padding:0}
+.nav-links > li{position:relative}
+.nav-links > li > a{
+  color:var(--text);
+  font-weight:600;
+  font-size:.85rem;
+  padding:.4rem 1rem;
+  border-radius:50px;
+  transition:.2s;
+  letter-spacing:.2px;
+  display:flex;
+  align-items:center;
+  gap:.3rem;
+  white-space:nowrap;
+}
+.nav-links > li > a .arrow{
+  font-size:.6rem;
+  transition:transform .25s;
+  display:inline-block;
+}
+.nav-links > li:hover > a .arrow{
+  transform:rotate(180deg);
+}
+.nav-links > li > a:hover,
+.nav-links > li > a.active{
+  color:#fff;
+  background:var(--primary);
+  text-decoration:none;
+}
+.nav-links > li.simple-link > a{
+  color:var(--text-muted);
+  font-weight:500;
+  font-size:.8rem;
+}
+.nav-links > li.simple-link > a:hover{
+  color:#fff;
+}
+.mega-panel{
+  position:absolute;
+  top:100%;
+  left:50%;
+  transform:translateX(-50%) translateY(12px);
+  background:#fff;
+  border-radius:16px;
+  box-shadow:0 20px 60px rgba(0,0,0,.15), 0 4px 20px rgba(0,0,0,.06);
+  min-width:680px;
+  max-width:900px;
+  padding:0;
+  opacity:0;
+  visibility:hidden;
+  transition:all .25s cubic-bezier(.16,1,.3,1);
+  border:1px solid var(--border-light);
+  overflow:hidden;
+  pointer-events:none;
+}
+.nav-links > li:hover .mega-panel{
+  opacity:1;
+  visibility:visible;
+  transform:translateX(-50%) translateY(8px);
+  pointer-events:auto;
+}
+.mega-grid{
+  display:grid;
+  gap:0;
+  padding:1.5rem;
+}
+.mega-grid.cols-2{grid-template-columns:1fr 1fr}
+.mega-grid.cols-3{grid-template-columns:1fr 1fr 1fr}
+.mega-grid.cols-4{grid-template-columns:1fr 1fr 1fr 1fr}
+.mega-col{
+  padding:0 .8rem;
+  border-right:1px solid var(--border-light);
+}
+.mega-col:last-child{border-right:none}
+.mega-col h4{
+  font-size:.7rem;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  color:var(--primary);
+  font-weight:700;
+  margin:0 0 .6rem 0;
+  padding-bottom:.4rem;
+  border-bottom:2px solid var(--primary-light);
+}
+.mega-col a{
+  display:flex;
+  align-items:center;
+  gap:.4rem;
+  padding:.35rem .5rem;
+  border-radius:8px;
+  color:var(--text);
+  font-size:.82rem;
+  font-weight:500;
+  transition:all .15s;
+  text-decoration:none;
+  line-height:1.3;
+}
+.mega-col a:hover{
+  background:var(--primary-light);
+  color:var(--primary-dark);
+  text-decoration:none;
+}
+.mega-col a .badge{
+  font-size:.6rem;
+  background:var(--primary);
+  color:#fff;
+  padding:.1rem .4rem;
+  border-radius:20px;
+  font-weight:700;
+  margin-left:auto;
+  animation:pulse-badge 2s infinite;
+}
+@keyframes pulse-badge{
+  0%,100%{opacity:1}
+  50%{opacity:.6}
+}
+.mega-col a .desc{
+  font-size:.68rem;
+  color:var(--text-muted);
+  font-weight:400;
+  display:block;
+  margin-left:1.6rem;
+  margin-top:-.1rem;
+}
+.mega-featured{
+  background:linear-gradient(135deg,var(--primary-light),#fff8e1);
+  border-radius:12px;
+  padding:.8rem 1rem;
+  margin-top:.6rem;
+  display:flex;
+  align-items:center;
+  gap:.8rem;
+}
+.mega-featured img{
+  width:52px;
+  height:52px;
+  border-radius:8px;
+  object-fit:cover;
+  flex-shrink:0;
+}
+.mega-featured .meta{flex:1}
+.mega-featured .meta strong{display:block;font-size:.82rem;color:var(--text)}
+.mega-featured .meta span{font-size:.7rem;color:var(--text-muted)}
+.search-btn{
+  background:none;
+  border:none;
+  font-size:1.1rem;
+  cursor:pointer;
+  color:var(--text-muted);
+  padding:.4rem .6rem;
+  border-radius:50px;
+  transition:.2s;
+  display:flex;
+  align-items:center;
+  flex-shrink:0;
+}
+.search-btn:hover{
+  background:var(--primary-light);
+  color:var(--primary);
+}
+.nav-toggle{
+  display:none;
+  background:none;
+  border:none;
+  font-size:1.6rem;
+  cursor:pointer;
+  color:var(--text);
+  padding:.25rem;
+}
+main{flex:1;max-width:1100px;margin:0 auto;padding:2rem 1rem;width:100%}
+
+.article-header{margin-bottom:2rem}
+.article-header h1{font-size:2rem;line-height:1.3;margin-bottom:.5rem;color:var(--primary-dark)}
+.article-meta{display:flex;gap:1rem;flex-wrap:wrap;align-items:center;font-size:.88rem;color:var(--text-muted);margin-bottom:1rem}
+.article-meta .cats span{background:var(--primary);color:#fff;font-size:.75rem;font-weight:600;padding:.2rem .7rem;border-radius:20px;margin-right:.4rem}
+.featured-img{
+  width:100%;
+  max-height:420px;
+  background:var(--bg-alt);
+  border-radius:12px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:var(--text-muted);
+  margin-bottom:2rem;
+  overflow:hidden;
+  min-height:250px;
+}
+.featured-img svg{width:80px;height:80px}
+.article-content{max-width:750px;margin:0 auto}
+.article-content h2{font-size:1.5rem;margin:2rem 0 1rem;color:var(--primary-dark)}
+.article-content h3{font-size:1.2rem;margin:1.5rem 0 .8rem}
+.article-content p{margin-bottom:1.2rem}
+.article-content ul,.article-content ol{margin-bottom:1.2rem;padding-left:1.5rem}
+.article-content li{margin-bottom:.4rem}
+.article-content table{width:100%;border-collapse:collapse;margin:1.5rem 0}
+.article-content th,.article-content td{border:1px solid var(--border);padding:.6rem .8rem;text-align:left}
+.article-content th{background:var(--primary);color:#fff;font-weight:600}
+
+.vorteil{color:#2e7d32;font-weight:600}
+.nachteil{color:#c62828;font-weight:600}
+
+.ad-placeholder{
+  background:var(--bg-alt);
+  border:2px dashed var(--border);
+  border-radius:8px;
+  padding:2rem;
+  text-align:center;
+  margin:2rem 0;
+  color:var(--text-muted);
+  font-size:.85rem;
+}
+.ad-placeholder.amazon{
+  border-color:var(--primary);
+  background:#fff8e1;
+}
+
+.related-posts{margin-top:3rem;padding-top:2rem;border-top:2px solid var(--border)}
+.related-posts h3{margin-bottom:1rem}
+.related-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1.5rem}
+.related-card{
+  background:var(--bg);
+  border:1px solid var(--border);
+  border-radius:10px;
+  overflow:hidden;
+  box-shadow:var(--card-shadow);
+  transition:transform .2s;
+}
+.related-card:hover{transform:translateY(-3px)}
+.related-card .card-img{
+  height:140px;
+  background:var(--bg-alt);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.related-card .card-body{padding:1rem}
+.related-card .card-body h4{font-size:1rem;margin-bottom:.4rem}
+.related-card .card-body h4 a{color:var(--text)}
+.related-card .card-body h4 a:hover{color:var(--primary);text-decoration:none}
+
+.site-footer{
+  background:#1a1a1a;
+  color:#ccc;
+  padding:2rem 1rem;
+  margin-top:3rem;
+  font-size:.88rem;
+}
+.footer-wrap{
+  max-width:1100px;
+  margin:0 auto;
+  display:flex;
+  flex-wrap:wrap;
+  gap:2rem;
+  justify-content:space-between;
+  align-items:center;
+}
+.footer-wrap a{color:#FFB74D}
+.footer-wrap a:hover{color:#fff}
+.footer-copy{text-align:center;width:100%;margin-top:1rem;padding-top:1rem;border-top:1px solid #333;font-size:.82rem}
+
+.cookie-banner{
+  position:fixed;
+  bottom:0;
+  left:0;
+  right:0;
+  background:#1a1a1a;
+  color:#eee;
+  padding:1rem 1.5rem;
+  display:none;
+  z-index:999;
+  box-shadow:0 -4px 20px rgba(0,0,0,.3);
+  font-size:.9rem;
+}
+.cookie-banner.show{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:1rem}
+.cookie-banner p{max-width:700px}
+.cookie-banner button{
+  background:var(--primary);
+  border:none;
+  color:#fff;
+  font-weight:600;
+  padding:.5rem 1.5rem;
+  border-radius:6px;
+  cursor:pointer;
+  font-size:.9rem;
+  white-space:nowrap;
+}
+.cookie-banner button:hover{background:var(--primary-dark)}
+
+@media(max-width:768px){
+  .nav-links{
+    display:none;
+    position:absolute;
+    top:64px;
+    left:0;
+    right:0;
+    background:var(--bg);
+    flex-direction:column;
+    padding:1rem;
+    border-bottom:2px solid var(--primary);
+    box-shadow:0 4px 12px rgba(0,0,0,.1);
+    gap:.25rem;
+  }
+  .nav-links.open{display:flex}
+  .nav-toggle{display:block}
+  .article-header h1{font-size:1.5rem}
+  .related-grid{grid-template-columns:1fr}
+  .cookie-banner{flex-direction:column;text-align:center}
+}
+</style>
+  <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon.png">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9094916118868532" crossorigin="anonymous"></script>
+
+<meta property="og:locale" content="de_DE" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Freigänger vs. Wohnungskatze – Vor- und Nachteile | Haustierzentrum" />
+<meta name="twitter:description" content="Freigänger oder Wohnungskatze? Vor- und Nachteile beider Haltungsformen. Vergleichstabelle, Sicherheitstipps und Beschäftigungsmöglichkeiten." />
+<meta name="twitter:image" content="https://haustierzentrum.com/images/katzen-freigaenger_00001_.webp" />
+</head>
+<body>
+<header class="site-header">
+  <div class="nav-wrap">
+    <a href="/" class="logo">🐾 Haustierzentrum</a>
+    <button class="nav-toggle" aria-label="Menü" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+    <ul class="nav-links">
+      <li><a href="/">Start</a></li>
+      <li><a href="/artikel/hundeerziehung-grundlagen.html">Hunde</a></li>
+      <li><a href="/artikel/katzen-freigaenger.html" class="active">Katzen</a></li>
+      <li><a href="/artikel/kleintiere-hamster-meerschweinchen.html">Kleintiere</a></li>
+      <li><a href="/about.html">Über uns</a></li>
+      <li><a href="/impressum.html">Impressum</a></li>
+    </ul>
+  </div>
+</header>
+
+<main>
+  <article>
+    <div class="article-header">
+      <div class="article-meta">
+        <div class="cats"><span>Katzen</span><span>Haltung</span></div>
+        <span>15. Juni 2026</span>
+        <span>· Lesezeit: 4 Min</span>
+      </div>
+      <h1>Freigänger vs. Wohnungskatze – Vor- und Nachteile</h1>
+    </div>
+
+    <div class="featured-img">
+      <img src="../images/katzen-freigaenger_00001_.webp" alt="Freigänger vs. Wohnungskatze – Vergleich" class="hero-image" style="width:100%;height:auto;border-radius:12px;">
+    </div>
+
+    <div class="article-content">
+      <p>Soll die Katze nach draußen dürfen oder ist eine reine Wohnungshaltung besser? Diese Frage beschäftigt fast jeden Katzenhalter. Beide Varianten haben ihre Berechtigung – entscheidend sind die individuellen Lebensumstände, die Persönlichkeit Deiner Katze und die Umgebung, in der Du wohnst. Hier erfährst Du die Vor- und Nachteile beider Haltungsformen.</p>
+
+      <!-- AdSense -->
+      <div class="ad-placeholder">
+        <p><strong>📢 Google AdSense</strong></p>
+        <p>Anzeige</p>
+      </div>
+
+      <h2>Freigänger – Freiheit und Abenteuer</h2>
+      <p>Eine Freigänger-Katze kann ihr natürliches Bewegungsbedürfnis ausleben, ihr Revier erkunden und auf Mäusejagd gehen. Das sind die wichtigsten Vorteile:</p>
+      <ul>
+        <li><span class="vorteil">✓</span> <strong>Natürliche Bewegung:</strong> Freigänger halten sich durch Rennen, Klettern und Jagen fit und haben ein geringeres Risiko für Übergewicht.</li>
+        <li><span class="vorteil">✓</span> <strong>Weniger Langeweile:</strong> Draußen gibt es immer etwas zu entdecken – das beugt Verhaltensstörungen vor.</li>
+        <li><span class="vorteil">✓</span> <strong>Artgerechte Krallenpflege:</strong> Bäume, Rinden und raue Oberflächen nutzen die Krallen natürlich ab.</li>
+      </ul>
+      <p>Allerdings gibt es auch Risiken:</p>
+      <ul>
+        <li><span class="nachteil">✗</span> <strong>Verkehr:</strong> Straßen sind die häufigste Todesursache bei Freigängern.</li>
+        <li><span class="nachteil">✗</span> <strong>Krankheiten & Parasiten:</strong> Höheres Risiko für Infektionen, Flöhe, Würmer und Zecken.</li>
+        <li><span class="nachteil">✗</span> <strong>Unfälle & Kämpfe:</strong> Auseinandersetzungen mit Artgenossen oder anderen Tieren können zu Verletzungen führen.</li>
+        <li><span class="nachteil">✗</span> <strong>Lebensgefahr durch Giftköder:</strong> Leider kommt das immer wieder vor.</li>
+      </ul>
+
+      <!-- Amazon DE Affiliate -->
+      <div class="ad-placeholder amazon">
+        <p><strong>🛒 Sicherheitsprodukte für Freigänger auf Amazon.de</strong></p>
+        <p>GPS-Tracker, Sicherheitsgeschirre und Zeckenschutz für Deine Freigänger-Katze. <em>(Affiliate-Link)</em></p>
+      </div>
+
+      <h2>Wohnungskatze – Sicherheit und Geborgenheit</h2>
+      <p>Die Wohnungshaltung schützt Deine Katze vor den Gefahren des Außenbereichs. Mit der richtigen Einrichtung und Beschäftigung kann sie genauso glücklich sein wie ein Freigänger.</p>
+      <ul>
+        <li><span class="vorteil">✓</span> <strong>Volle Kontrolle:</strong> Keine Gefahr durch Verkehr, Artgenossen oder Parasiten.</li>
+        <li><span class="vorteil">✓</span> <strong>Tierarztkosten:</strong> In der Regel geringer, da Infektionsrisiken minimiert sind.</li>
+        <li><span class="vorteil">✓</span> <strong>Längere Lebenserwartung:</strong> Wohnungskatzen werden im Schnitt deutlich älter als Freigänger.</li>
+      </ul>
+      <p>Herausforderungen der Wohnungshaltung:</p>
+      <ul>
+        <li><span class="nachteil">✗</span> <strong>Bewegungsmangel:</strong> Ohne ausreichende Beschäftigung drohen Übergewicht und Langeweile.</li>
+        <li><span class="nachteil">✗</span> <strong>Krallenpflege:</strong> Du musst für ausreichend Kratzmöglichkeiten sorgen.</li>
+        <li><span class="nachteil">✗</span> <strong>Artgenosse:</strong> Wohnungskatzen brauchen oft einen Spielpartner – eine Zweitkatze ist empfehlenswert.</li>
+      </ul>
+
+      <h2>Vergleichstabelle: Freigänger vs. Wohnungskatze</h2>
+      <table>
+        <tr><th>Kriterium</th><th>Freigänger</th><th>Wohnungskatze</th></tr>
+        <tr><td>Sicherheit</td><td>Geringer – Verkehr, Kämpfe, Giftköder</td><td>Sehr hoch – geschützt in den eigenen vier Wänden</td></tr>
+        <tr><td>Lebenserwartung</td><td>Durchschnittlich 8–12 Jahre</td><td>Durchschnittlich 14–20 Jahre</td></tr>
+        <tr><td>Bewegung</td><td>Natürlich und ausgiebig</td><td>Muss aktiv gefördert werden</td></tr>
+        <tr><td>Parasitenrisiko</td><td>Hoch (Flöhe, Zecken, Würmer)</td><td>Niedrig</td></tr>
+        <tr><td>Katzenklo nötig</td><td>Nicht zwingend</td><td>Ja, regelmäßige Reinigung</td></tr>
+        <tr><td>Krallenpflege</td><td>Natürlich durch Bäume</td><td>Kratzbaum & Pflege nötig</td></tr>
+        <tr><td>Beschäftigung</td><td>Von selbst gegeben</td><td>Muss durch Spielzeug & Co. bereitgestellt werden</td></tr>
+      </table>
+
+      <h2>Freigänger sichern – So schützt Du Deine Katze</h2>
+      <p>Wenn Du Deiner Katze Freigang erlauben möchtest, solltest Du einige Sicherheitsvorkehrungen treffen:</p>
+      <ul>
+        <li><strong>Kastration:</strong> Unkastrierte Freigänger haben ein deutlich höheres Risiko für Verletzungen durch Kämpfe und ungewollten Nachwuchs.</li>
+        <li><strong>Kennzeichnung:</strong> Chip und Registrierung sind Pflicht. Ein GPS-Tracker gibt zusätzliche Sicherheit.</li>
+        <li><strong>Regelmäßige Impfungen & Entwurmung:</strong> Schütze Deine Katze vor den häufigsten Krankheiten.</li>
+        <li><strong>Katzenklappe:</strong> Eine microchip-gesteuerte Klappe verhindert, dass fremde Tiere ins Haus kommen.</li>
+        <li><strong>Nächtliche Ausgangssperre:</strong> Hol Deine Katze abends rein – nachts ist das Unfallrisiko am höchsten.</li>
+      </ul>
+
+      <h2>Wohnungskatzen beschäftigen – Tipps für ein glückliches Leben</h2>
+      <p>Damit Deine Wohnungskatze nicht verkümmert, braucht sie vielfältige Beschäftigungsmöglichkeiten:</p>
+      <ul>
+        <li>Ein großer Kratzbaum mit mehreren Etagen und Höhlen.</li>
+        <li>Tägliche Spielzeiten mit Angel, Federwedel oder Laserpointer.</li>
+        <li>Intelligenzspiele und Futterbälle für geistige Auslastung.</li>
+        <li>Ein gesicherter Balkon oder ein Katzennetz am Fenster.</li>
+        <li>Der beste Beschäftigungstipp: Eine zweite Katze als Spielkamerad!</li>
+      </ul>
+
+      <!-- Amazon DE Affiliate -->
+      <div class="ad-placeholder amazon">
+        <p><strong>🛒 Beschäftigungszubehör auf Amazon.de</strong></p>
+        <p>Intelligenzspiele, Katzenangeln und sicheres Zubehör für Wohnungskatzen. <em>(Affiliate-Link)</em></p>
+      </div>
+
+      <h2>Fazit</h2>
+      <p>Ob Freigänger oder Wohnungskatze – beide Haltungsformen können artgerecht sein, wenn Du die Bedürfnisse Deiner Katze ernst nimmst. Entscheidend ist, was zu Deiner Lebenssituation, Deiner Wohnumgebung und dem Charakter Deiner Katze passt. Egal, wofür Du Dich entscheidest: Mit Liebe, Aufmerksamkeit und der richtigen Ausstattung schenkst Du Deiner Samtpfote ein erfülltes Katzenleben.</p>
+
+      <!-- AdSense -->
+      <div class="ad-placeholder">
+        <p><strong>📢 Google AdSense</strong></p>
+        <p>Anzeige</p>
+      </div>
+    </div>
+  <div class="amazon-affiliate" style="margin:30px 0;padding:15px;background:#FFF3E0;border:1px solid #FF9800;border-radius:8px;text-align:center"><p><a href="https://www.amazon.de/s?k=Katzenzubeh%C3%B6r+Sicherheit+Besch%C3%A4ftigung&tag=nova079-20" target="_blank" rel="nofollow">👉 Katzenzubehör bei Amazon entdecken</a></p></div>
+</article>
+
+  <section class="related-posts">
+    <h3>Weitere Beiträge</h3>
+    <div class="related-grid">
+      <div class="related-card">
+        <div class="card-img">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#bbb" stroke-width="1.5"><rect x="3" y="8" width="18" height="12" rx="2"/><path d="M7 8V6a2 2 0 012-2h6a2 2 0 012 2v2"/></svg>
+        </div>
+        <div class="card-body">
+          <h4><a href="/artikel/katzen-ernaehrung.html">Katzenernährung – Was dürfen Katzen essen?</a></h4>
+        </div>
+      </div>
+      <div class="related-card">
+        <div class="card-img">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#bbb" stroke-width="1.5"><rect x="3" y="8" width="18" height="12" rx="2"/><path d="M7 8V6a2 2 0 012-2h6a2 2 0 012 2v2"/></svg>
+        </div>
+        <div class="card-body">
+          <h4><a href="/artikel/katzen-kratzbaum.html">Katzenkratzbaum Kaufberatung 2026</a></h4>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-wrap">
+    <div>
+      <strong style="color:#fff;">🐾 Haustierzentrum</strong>
+      <p style="margin-top:.3rem;">Dein Blog für artgerechte Haustierhaltung</p>
+    </div>
+    <div>
+      <a href="/about.html">Über uns</a> &middot;
+      <a href="/impressum.html">Impressum</a> &middot;
+      <a href="/sitemap.xml">Sitemap</a>
+    </div>
+    <div class="footer-copy">
+      <p>&copy; 2026 Haustierzentrum. Alle Rechte vorbehalten.</p>
+      <p style="margin-top:.3rem;font-size:.8rem;">Diese Seite kann Affiliate-Links (Amazon DE) enthalten. Als Amazon-Partner verdienen wir an qualifizierten Verkäufen.</p>
+    </div>
+  </div>
+</footer>
+
+<div class="cookie-banner" id="cookieBanner">
+  <p>🍪 Diese Website verwendet Cookies und technisch notwendige Funktionen. Mit der Nutzung stimmst Du der Verarbeitung zu. <a href="/impressum.html" style="color:#FFB74D;">Mehr Infos</a></p>
+  <button onclick="localStorage.setItem('cookieConsent','1');document.getElementById('cookieBanner').classList.remove('show')">Akzeptieren</button>
+</div>
+
+<script>
+// Mobile: close nav when simple links are clicked
+document.querySelectorAll('.simple-link a').forEach(l=>l.addEventListener('click',()=>{
+  document.querySelector('.main-nav').classList.remove('open');
+  document.querySelector('.nav-toggle').textContent='☰';
+}))
+// Mobile: tap mega-menu items to toggle panels
+document.querySelectorAll('.nav-links > li:not(.simple-link) > a').forEach(l=>l.addEventListener('click',function(e){
+  if(document.querySelector('.main-nav').classList.contains('open')){
+    e.preventDefault();
+    this.parentElement.classList.toggle('open');
+  }
+}))
+</script>
+<script>
+// Cookie-Consent: Banner nur anzeigen wenn nicht bereits akzeptiert
+if(!localStorage.getItem('cookieConsent')){
+  document.getElementById('cookieBanner')?.classList.add('show');
+}
+</script>
+</body>
+</html>

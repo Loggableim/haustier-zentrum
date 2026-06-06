@@ -1,0 +1,9 @@
+color: '#FF9800'
+description: 'Haustier-Blog — Hunde, Katzen, Kleintiere, Ernährung, Gesundheit'
+emoji: '🐾'
+model:
+  default: ''
+  provider: ''
+personality: ''
+project_dir: ''
+reasoning_effort: ''

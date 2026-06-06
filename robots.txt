@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://haustierzentrum.com/sitemap.xml
