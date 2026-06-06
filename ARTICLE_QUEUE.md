@@ -18,7 +18,7 @@
 || 11 | ✅ Fertig 06.06.2026 | Bengal Cat Rasseguide | `bengal-cat-rasseguide` |
 || 12 | ✅ Fertig 06.06.2026 | Katzenfutter selber machen | `katzenfutter-selber-machen` |
 || 13 | ✅ Fertig 06.06.2026 | Katzen-Verhalten: Körpersprache & Kommunikation | `katzen-verhalten-koerpersprache-kommunikation` |
-| 14 | ✅ Bereit | Kaninchen-Ernährung & Gesundheitsvorsorge | `kaninchen-ernaehrung-gesundheit` |
+|| 14 | ✅ Fertig 06.06.2026 | Kaninchen-Ernährung & Gesundheitsvorsorge | `kaninchen-ernaehrung-gesundheit` |
 | 15 | ✅ Bereit | Degus Haltung & Pflege | `degus-haltung-pflege` |
 | 16 | ✅ Bereit | Chinchilla Haltung & Pflege | `chinchilla-haltung-pflege` |
 | 17 | ✅ Bereit | Wellensittich-Ernährung & Gesundheit | `wellensittich-ernaehrung-gesundheit` |
