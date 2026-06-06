@@ -1,0 +1,17 @@
+# Haustierzentrum .gitignore
+
+# Bild-Generierungs-Skripte (lokal, nicht für Deployment)
+_gen_images*.py
+_debug_comfyui.py
+
+# IDE / OS
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+# Logs
+*.log
