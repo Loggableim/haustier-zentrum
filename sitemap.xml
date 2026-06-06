@@ -1,298 +1,363 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://haustierzentrum.com/</loc>
+    <loc>https://haustierzentrum.com/about/</loc>
+    <lastmod>2026-06-06T18:40:01+00:00</lastmod>
     <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://haustierzentrum.com/impressum/</loc>
+    <lastmod>2026-06-06T18:40:01+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://haustierzentrum.com/</loc>
+    <lastmod>2026-06-06T18:40:01+00:00</lastmod>
+    <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://haustierzentrum.com/about.html</loc>
+    <loc>https://haustierzentrum.com/artikel/allergiker-haustiere/</loc>
+    <lastmod>2026-06-06T18:40:01+00:00</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://haustierzentrum.com/artikel/allergiker-haustiere.html</loc>
+    <loc>https://haustierzentrum.com/artikel/aquarium-einrichtung/</loc>
+    <lastmod>2026-06-06T18:40:02+00:00</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://haustierzentrum.com/artikel/aquarium-einrichtung.html</loc>
+    <loc>https://haustierzentrum.com/artikel/australian-shepherd-rasseguide/</loc>
+    <lastmod>2026-06-06T18:40:02+00:00</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://haustierzentrum.com/artikel/bengal-cat-rasseguide.html</loc>
+    <loc>https://haustierzentrum.com/artikel/bengal-cat-rasseguide/</loc>
+    <lastmod>2026-06-06T18:40:02+00:00</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://haustierzentrum.com/artikel/border-collie-rasseguide.html</loc>
+    <loc>https://haustierzentrum.com/artikel/border-collie-rasseguide/</loc>
+    <lastmod>2026-06-06T18:40:02+00:00</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://haustierzentrum.com/artikel/dackel-rasseguide.html</loc>
+    <loc>https://haustierzentrum.com/artikel/britisch-kurzhaar-rasseguide/</loc>
+    <lastmod>2026-06-06T18:40:02+00:00</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://haustierzentrum.com/artikel/hamster-haltung.html</loc>
+    <loc>https://haustierzentrum.com/artikel/chihuahua-rasseguide/</loc>
+    <lastmod>2026-06-06T18:40:02+00:00</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://haustierzentrum.com/artikel/haustier-anschaffung.html</loc>
+    <loc>https://haustierzentrum.com/artikel/dackel-rasseguide/</loc>
+    <lastmod>2026-06-06T18:40:02+00:00</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://haustierzentrum.com/artikel/haustiere-kinder.html</loc>
+    <loc>https://haustierzentrum.com/artikel/deutscher-schaeferhund-rasseguide/</loc>
+    <lastmod>2026-06-06T18:40:02+00:00</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://haustierzentrum.com/artikel/deutscher-schaeferhund-rasseguide.html</loc>
+    <loc>https://haustierzentrum.com/artikel/franzoesische-bulldogge-rasseguide/</loc>
+    <lastmod>2026-06-06T18:40:02+00:00</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://haustierzentrum.com/artikel/franzoesische-bulldogge-rasseguide.html</loc>
+    <loc>https://haustierzentrum.com/artikel/golden-retriever-rasseguide/</loc>
+    <lastmod>2026-06-06T18:40:02+00:00</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://haustierzentrum.com/artikel/golden-retriever-rasseguide.html</loc>
+    <loc>https://haustierzentrum.com/artikel/hamster-haltung/</loc>
+    <lastmod>2026-06-06T18:40:02+00:00</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://haustierzentrum.com/artikel/hunde-gesundheit.html</loc>
+    <loc>https://haustierzentrum.com/artikel/haustier-anschaffung/</loc>
+    <lastmod>2026-06-06T18:40:02+00:00</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://haustierzentrum.com/artikel/hunde-krankheiten-symptome-erste-hilfe.html</loc>
+    <loc>https://haustierzentrum.com/artikel/haustiere-kinder/</loc>
+    <lastmod>2026-06-06T18:40:02+00:00</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://haustierzentrum.com/artikel/hunde-hausmittel.html</loc>
+    <loc>https://haustierzentrum.com/artikel/hunde-ernaehrung-barf-trocken-nass/</loc>
+    <lastmod>2026-06-06T18:40:02+00:00</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://haustierzentrum.com/artikel/hunde-reisen.html</loc>
+    <loc>https://haustierzentrum.com/artikel/hunde-fellpflege-buersten-baden-krallen/</loc>
+    <lastmod>2026-06-06T18:40:02+00:00</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://haustierzentrum.com/artikel/hundeernaehrung.html</loc>
+    <loc>https://haustierzentrum.com/artikel/hunde-gesundheit/</loc>
+    <lastmod>2026-06-06T18:40:02+00:00</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://haustierzentrum.com/artikel/hunde-ernaehrung-barf-trocken-nass.html</loc>
+    <loc>https://haustierzentrum.com/artikel/hunde-hausmittel/</loc>
+    <lastmod>2026-06-06T18:40:02+00:00</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://haustierzentrum.com/artikel/hundeerziehung-grundlagen.html</loc>
+    <loc>https://haustierzentrum.com/artikel/hunde-krankheiten-symptome-erste-hilfe/</loc>
+    <lastmod>2026-06-06T18:40:02+00:00</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://haustierzentrum.com/artikel/hunderassen-anfaenger.html</loc>
+    <loc>https://haustierzentrum.com/artikel/hunde-reisen/</loc>
+    <lastmod>2026-06-06T18:40:02+00:00</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://haustierzentrum.com/artikel/hundespielzeuge-2026.html</loc>
+    <loc>https://haustierzentrum.com/artikel/hunde-uebergewicht/</loc>
+    <lastmod>2026-06-06T18:40:02+00:00</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://haustierzentrum.com/artikel/hundeversicherung.html</loc>
+    <loc>https://haustierzentrum.com/artikel/hunde-zahnpflege/</loc>
+    <lastmod>2026-06-06T18:40:02+00:00</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://haustierzentrum.com/artikel/kaninchenhaltung.html</loc>
+    <loc>https://haustierzentrum.com/artikel/hundeallergien/</loc>
+    <lastmod>2026-06-06T18:40:02+00:00</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://haustierzentrum.com/artikel/katzen-ernaehrung.html</loc>
+    <loc>https://haustierzentrum.com/artikel/hundeernaehrung/</loc>
+    <lastmod>2026-06-06T18:40:02+00:00</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://haustierzentrum.com/artikel/katzen-freigaenger.html</loc>
+    <loc>https://haustierzentrum.com/artikel/hundeerziehung-grundlagen/</loc>
+    <lastmod>2026-06-06T18:40:02+00:00</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://haustierzentrum.com/artikel/katzen-kratzbaum.html</loc>
+    <loc>https://haustierzentrum.com/artikel/hunderassen-anfaenger/</loc>
+    <lastmod>2026-06-06T18:40:02+00:00</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://haustierzentrum.com/artikel/katzen-zahnpflege.html</loc>
+    <loc>https://haustierzentrum.com/artikel/hundespielzeuge-2026/</loc>
+    <lastmod>2026-06-06T18:40:02+00:00</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://haustierzentrum.com/artikel/katzenbeschaeftigung.html</loc>
+    <loc>https://haustierzentrum.com/artikel/hundeversicherung/</loc>
+    <lastmod>2026-06-06T18:40:02+00:00</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://haustierzentrum.com/artikel/katzenfutter-vergleich-2026.html</loc>
+    <loc>https://haustierzentrum.com/artikel/kaninchenhaltung/</loc>
+    <lastmod>2026-06-06T18:40:02+00:00</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://haustierzentrum.com/artikel/katzenhaltung-wohnung.html</loc>
+    <loc>https://haustierzentrum.com/artikel/katzen-ernaehrung/</loc>
+    <lastmod>2026-06-06T18:40:02+00:00</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://haustierzentrum.com/artikel/katzenkrankheiten-erkennen.html</loc>
+    <loc>https://haustierzentrum.com/artikel/katzen-freigaenger/</loc>
+    <lastmod>2026-06-06T18:40:02+00:00</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://haustierzentrum.com/artikel/katzenrassen-vergleich.html</loc>
+    <loc>https://haustierzentrum.com/artikel/katzen-impfungen-vorsorge/</loc>
+    <lastmod>2026-06-06T18:40:02+00:00</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://haustierzentrum.com/artikel/katzentoilette-geruch-vermeiden.html</loc>
+    <loc>https://haustierzentrum.com/artikel/katzen-kratzbaum/</loc>
+    <lastmod>2026-06-06T18:40:02+00:00</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://haustierzentrum.com/artikel/kleintier-gehege.html</loc>
+    <loc>https://haustierzentrum.com/artikel/katzen-zahnpflege/</loc>
+    <lastmod>2026-06-06T18:40:02+00:00</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://haustierzentrum.com/artikel/kleintiere-hamster-meerschweinchen.html</loc>
+    <loc>https://haustierzentrum.com/artikel/katzenbeschaeftigung/</loc>
+    <lastmod>2026-06-06T18:40:02+00:00</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://haustierzentrum.com/artikel/leinenfuehrigkeit.html</loc>
+    <loc>https://haustierzentrum.com/artikel/katzenfutter-vergleich-2026/</loc>
+    <lastmod>2026-06-06T18:40:02+00:00</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://haustierzentrum.com/artikel/meerschweinchen-ernaehrung-vitamin-c.html</loc>
+    <loc>https://haustierzentrum.com/artikel/katzenhaltung-wohnung/</loc>
+    <lastmod>2026-06-06T18:40:02+00:00</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://haustierzentrum.com/artikel/meerschweinchen-haltung.html</loc>
+    <loc>https://haustierzentrum.com/artikel/katzenkrankheiten-erkennen/</loc>
+    <lastmod>2026-06-06T18:40:02+00:00</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://haustierzentrum.com/artikel/tierarztkosten.html</loc>
+    <loc>https://haustierzentrum.com/artikel/katzenrassen-vergleich/</loc>
+    <lastmod>2026-06-06T18:40:02+00:00</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://haustierzentrum.com/artikel/wellensittich-haltung.html</loc>
+    <loc>https://haustierzentrum.com/artikel/katzentoilette-geruch-vermeiden/</loc>
+    <lastmod>2026-06-06T18:40:02+00:00</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://haustierzentrum.com/artikel/welpenkauf-zuuechter-tierheim-checkliste.html</loc>
+    <loc>https://haustierzentrum.com/artikel/kleintier-gehege/</loc>
+    <lastmod>2026-06-06T18:40:02+00:00</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://haustierzentrum.com/artikel/welpen-eingewoehnung.html</loc>
+    <loc>https://haustierzentrum.com/artikel/kleintiere-hamster-meerschweinchen/</loc>
+    <lastmod>2026-06-06T18:40:02+00:00</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://haustierzentrum.com/artikel/zeckenschutz-flohschutz-hund.html</loc>
+    <loc>https://haustierzentrum.com/artikel/labrador-retriever/</loc>
+    <lastmod>2026-06-06T18:40:02+00:00</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://haustierzentrum.com/artikel/seniorkatzen-pflege-ernaehrung-gesundheit.html</loc>
+    <loc>https://haustierzentrum.com/artikel/leinenfuehrigkeit/</loc>
+    <lastmod>2026-06-06T18:40:02+00:00</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://haustierzentrum.com/artikel/hunde-fellpflege-buersten-baden-krallen.html</loc>
+    <loc>https://haustierzentrum.com/artikel/maine-coon-katze-rasseguide/</loc>
+    <lastmod>2026-06-06T18:40:02+00:00</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://haustierzentrum.com/artikel/voegel-haustier-beste-vogelarten-einsteiger.html</loc>
+    <loc>https://haustierzentrum.com/artikel/meerschweinchen-ernaehrung-vitamin-c/</loc>
+    <lastmod>2026-06-06T18:40:02+00:00</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://haustierzentrum.com/artikel/labrador-retriever.html</loc>
+    <loc>https://haustierzentrum.com/artikel/meerschweinchen-haltung/</loc>
+    <lastmod>2026-06-06T18:40:02+00:00</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://haustierzentrum.com/artikel/maine-coon-katze-rasseguide.html</loc>
+    <loc>https://haustierzentrum.com/artikel/reptilien-haustier-anfaenger-vergleich-2026/</loc>
+    <lastmod>2026-06-06T18:40:02+00:00</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://haustierzentrum.com/artikel/hunde-zahnpflege.html</loc>
+    <loc>https://haustierzentrum.com/artikel/seniorkatzen-pflege-ernaehrung-gesundheit/</loc>
+    <lastmod>2026-06-06T18:40:02+00:00</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://haustierzentrum.com/artikel/hundeallergien.html</loc>
+    <loc>https://haustierzentrum.com/artikel/shiba-inu-rasseguide/</loc>
+    <lastmod>2026-06-06T18:40:02+00:00</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://haustierzentrum.com/artikel/katzen-impfungen-vorsorge.html</loc>
+    <loc>https://haustierzentrum.com/artikel/siamkatze-rasseguide/</loc>
+    <lastmod>2026-06-06T18:40:02+00:00</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://haustierzentrum.com/artikel/hunde-uebergewicht.html</loc>
+    <loc>https://haustierzentrum.com/artikel/tierarztkosten/</loc>
+    <lastmod>2026-06-06T18:40:02+00:00</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://haustierzentrum.com/artikel/franzoesische-bulldogge-rasseguide.html</loc>
+    <loc>https://haustierzentrum.com/artikel/voegel-haustier-beste-vogelarten-einsteiger/</loc>
+    <lastmod>2026-06-06T18:40:02+00:00</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://haustierzentrum.com/artikel/reptilien-haustier-anfaenger-vergleich-2026.html</loc>
+    <loc>https://haustierzentrum.com/artikel/wellensittich-haltung/</loc>
+    <lastmod>2026-06-06T18:40:02+00:00</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://haustierzentrum.com/artikel/shiba-inu-rasseguide.html</loc>
+    <loc>https://haustierzentrum.com/artikel/welpen-eingewoehnung/</loc>
+    <lastmod>2026-06-06T18:40:02+00:00</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://haustierzentrum.com/artikel/siamkatze-rasseguide.html</loc>
+    <loc>https://haustierzentrum.com/artikel/welpenkauf-zuuechter-tierheim-checkliste/</loc>
+    <lastmod>2026-06-06T18:40:02+00:00</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://haustierzentrum.com/impressum.html</loc>
+    <loc>https://haustierzentrum.com/artikel/zeckenschutz-flohschutz-hund/</loc>
+    <lastmod>2026-06-06T18:40:02+00:00</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.3</priority>
-  </url>
-  <url>
-    <loc>https://haustierzentrum.com/artikel/britisch-kurzhaar-rasseguide.html</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.7</priority>
   </url>
 </urlset>
