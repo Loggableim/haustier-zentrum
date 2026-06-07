@@ -23,7 +23,7 @@
 || 16 | ✅ Fertig 07.06.2026 | Chinchilla Haltung & Pflege | `chinchilla-haltung-pflege` |
 | 17 | ✅ Fertig 07.06.2026 | Wellensittich-Ernährung & Gesundheit | `wellensittich-ernaehrung-gesundheit` |
 || 18 | ✅ Fertig 07.06.2026 | Aquarium-Fische für Einsteiger | `aquarium-fische-einsteiger` |
-| 19 | ✅ Bereit | Erste Hilfe bei Haustieren – Notfall-Ratgeber | `erste-hilfe-haustiere-notfall-ratgeber` |
+| 19 | ✅ Fertig 17.06.2026 | Erste Hilfe bei Haustieren – Notfall-Ratgeber | `erste-hilfe-haustiere-notfall-ratgeber` |
 | 20 | ✅ Bereit | Haustierfreundliche Wohnung einrichten | `haustierfreundliche-wohnung-einrichten` |
 
 ### 🐕 HUNDE (Rasseguides – Teil 2)
