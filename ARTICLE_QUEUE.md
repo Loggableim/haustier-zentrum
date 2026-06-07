@@ -22,7 +22,7 @@
 || 15 | ✅ Fertig 07.06.2026 | Degus Haltung & Pflege | `degus-haltung-pflege` |
 || 16 | ✅ Fertig 07.06.2026 | Chinchilla Haltung & Pflege | `chinchilla-haltung-pflege` |
 | 17 | ✅ Fertig 07.06.2026 | Wellensittich-Ernährung & Gesundheit | `wellensittich-ernaehrung-gesundheit` |
-| 18 | ✅ Bereit | Aquarium-Fische für Einsteiger | `aquarium-fische-einsteiger` |
+|| 18 | ✅ Fertig 07.06.2026 | Aquarium-Fische für Einsteiger | `aquarium-fische-einsteiger` |
 | 19 | ✅ Bereit | Erste Hilfe bei Haustieren – Notfall-Ratgeber | `erste-hilfe-haustiere-notfall-ratgeber` |
 | 20 | ✅ Bereit | Haustierfreundliche Wohnung einrichten | `haustierfreundliche-wohnung-einrichten` |
 
