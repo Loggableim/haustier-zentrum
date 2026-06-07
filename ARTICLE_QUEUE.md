@@ -20,7 +20,7 @@
 || 13 | ✅ Fertig 06.06.2026 | Katzen-Verhalten: Körpersprache & Kommunikation | `katzen-verhalten-koerpersprache-kommunikation` |
 || 14 | ✅ Fertig 06.06.2026 | Kaninchen-Ernährung & Gesundheitsvorsorge | `kaninchen-ernaehrung-gesundheit` |
 || 15 | ✅ Fertig 07.06.2026 | Degus Haltung & Pflege | `degus-haltung-pflege` |
-| 16 | ✅ Bereit | Chinchilla Haltung & Pflege | `chinchilla-haltung-pflege` |
+|| 16 | ✅ Fertig 07.06.2026 | Chinchilla Haltung & Pflege | `chinchilla-haltung-pflege` |
 | 17 | ✅ Bereit | Wellensittich-Ernährung & Gesundheit | `wellensittich-ernaehrung-gesundheit` |
 | 18 | ✅ Bereit | Aquarium-Fische für Einsteiger | `aquarium-fische-einsteiger` |
 | 19 | ✅ Bereit | Erste Hilfe bei Haustieren – Notfall-Ratgeber | `erste-hilfe-haustiere-notfall-ratgeber` |
