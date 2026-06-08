@@ -371,6 +371,10 @@ main{flex:1;max-width:1100px;margin:0 auto;padding:2rem 1rem;width:100%}
 }
 .cookie-banner button:hover{background:var(--primary-dark)}
 
+.breadcrumb{padding:.5rem 0;margin-bottom:1rem;font-size:.88rem;color:var(--text-muted)}
+.breadcrumb a{color:var(--primary)}
+.breadcrumb a:hover{text-decoration:underline}
+
 @media(max-width:768px){
   .nav-links{
     display:none;
@@ -437,6 +441,11 @@ main{flex:1;max-width:1100px;margin:0 auto;padding:2rem 1rem;width:100%}
     </div>
 
     <div class="article-content">
+      <nav class="breadcrumb" aria-label="Brotkrümelnavigation">
+        <a href="/">Startseite</a> › 
+        <a href="/artikel/kleintiere.html">Kleintiere</a> › 
+        <span>Kleintiere im Vergleich: Hamster vs. Meerschweinchen</span>
+      </nav>
       <p>Hamster und Meerschweinchen zählen zu den beliebtesten Kleintieren in deutschen Haushalten. Doch welches Tier passt besser zu Dir und Deiner Lebenssituation? In diesem ausführlichen Vergleich zeigen wir Dir die wichtigsten Unterschiede – von der Haltung über die Kosten bis zum Charakter.</p>
 
       <h2>Die wichtigsten Unterschiede auf einen Blick</h2>
@@ -567,10 +576,26 @@ main{flex:1;max-width:1100px;margin:0 auto;padding:2rem 1rem;width:100%}
       </div>
       <div class="related-card">
         <div class="card-img">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#bbb" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4"/><path d="M12 16h.01"/></svg>
+        </div>
+        <div class="card-body">
+          <h4><a href="/artikel/hundeernaehrung.html">Hundeernährung – Was darf mein Hund fressen?</a></h4>
+        </div>
+      </div>
+      <div class="related-card">
+        <div class="card-img">
           <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#bbb" stroke-width="1.5"><path d="M12 5c-3.866 0-7 2.686-7 6s3.134 6 7 6 7-2.686 7-6-3.134-6-7-6z"/><path d="M12 9v4"/><path d="M10 11h4"/></svg>
         </div>
         <div class="card-body">
           <h4><a href="/artikel/katzenhaltung-wohnung.html">Katzenhaltung in der Wohnung</a></h4>
+        </div>
+      </div>
+      <div class="related-card">
+        <div class="card-img">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#bbb" stroke-width="1.5"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+        </div>
+        <div class="card-body">
+          <h4><a href="/artikel/katzenkrankheiten-erkennen.html">Katzenkrankheiten erkennen – 7 Warnsignale</a></h4>
         </div>
       </div>
     </div>
