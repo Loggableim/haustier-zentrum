@@ -1,11 +1,11 @@
 {
   "session_id": "fe0a5b219300",
   "title": "Schreibe einen neuen Artikel",
-  "workspace": "C:\\HermesPortable\\home\\spaces\\haustier-zentrum",
+  "workspace": "C:\\hermesportable\\home\\spaces\\haustier-zentrum",
   "model": "deepseek-v4-flash",
   "model_provider": "opencode-go",
   "created_at": 1780485455.8462799,
-  "updated_at": 1780860638.8690636,
+  "updated_at": 1780896851.5388002,
   "pinned": false,
   "archived": true,
   "project_id": null,
