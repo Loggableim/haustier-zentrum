@@ -34,7 +34,7 @@
 | 22 | ✅ Bereit | Boxer Rasseguide | `boxer-rasseguide` |
 | 23 | ✅ Bereit | Beagle Rasseguide | `beagle-rasseguide` |
 | 24 | ✅ Bereit | Border Collie Rasseguide | `border-collie-rasseguide` |
-| 25 | ✅ Bereit | Shih Tzu Rasseguide | `shih-tzu-rasseguide` |
+| 25 | ✅ Fertig 17.06.2026 | Shih Tzu Rasseguide | `shih-tzu-rasseguide` |
 | 26 | ✅ Bereit | Yorkshire Terrier Rasseguide | `yorkshire-terrier-rasseguide` |
 | 27 | ✅ Bereit | Zwergspitz (Pomeranian) Rasseguide | `zwergspitz-pomeranian-rasseguide` |
 | 28 | ✅ Bereit | Malteser Rasseguide | `malteser-rasseguide` |
