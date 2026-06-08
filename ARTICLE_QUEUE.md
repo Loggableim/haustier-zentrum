@@ -30,7 +30,7 @@
 
 | # | Status | Thema | Slug |
 |---|--------|-------|------|
-| 21 | ✅ Bereit | Rottweiler Rasseguide | `rottweiler-rasseguide` |
+| 21 | ✅ Fertig 17.06.2026 | Rottweiler Rasseguide | `rottweiler-rasseguide` |
 | 22 | ✅ Bereit | Boxer Rasseguide | `boxer-rasseguide` |
 | 23 | ✅ Bereit | Beagle Rasseguide | `beagle-rasseguide` |
 | 24 | ✅ Bereit | Border Collie Rasseguide | `border-collie-rasseguide` |
