@@ -59,7 +59,7 @@ def build_html(title, slug, body, category_tags, description, today_str, related
     if "hunde" in cats_lower:
         nav_active = """<li><a href="/artikel/hunderassen-anfaenger.html" class="active">Hunde</a></li>"""
     elif "katzen" in cats_lower:
-        nav_active = """<li><a href="/artikel/katzenhaltung-wohnung.html" class="active">Katzen</a></li>"""
+        nav_active = """<li><a href="/artikel/katzen.html">Katzen</a></li>"""
     else:
         nav_active = """<li><a href="/">Start</a></li>"""
     
@@ -222,7 +222,7 @@ a{{color:var(--primary);text-decoration:none}}a:hover{{text-decoration:underline
       <h4>Themen</h4>
       <ul>
         <li><a href="/artikel/hunderassen-anfaenger.html">Hunde</a></li>
-        <li><a href="/artikel/katzenhaltung-wohnung.html">Katzen</a></li>
+        <li><a href="/artikel/katzen.html">Katzen</a></li>
         <li><a href="/artikel/kleintiere-hamster-meerschweinchen.html">Kleintiere</a></li>
         <li><a href="/sitemap.xml">Sitemap</a></li>
       </ul>
