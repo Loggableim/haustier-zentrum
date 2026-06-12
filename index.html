@@ -11,6 +11,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Haustierzentrum">
 <meta name="robots" content="index, follow">
+<meta name="theme-color" content="#FF9800">
 <link rel="canonical" href="https://haustierzentrum.com">
 <script type="application/ld+json">
 {
@@ -53,7 +54,8 @@
   --radius-xl: 32px;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;-webkit-tap-highlight-color:transparent}
+a,button,.nav-toggle,.search-btn,.btn,.amazon-btn,.faq-question,.read-more{min-height:44px;min-width:44px}
 
 /* --- BODY --- */
 body{
@@ -374,6 +376,16 @@ img{max-width:100%;height:auto;display:block}
 }
 @media(max-width:500px){
   .mega-grid{grid-template-columns:1fr !important}
+  .hero-text h1{font-size:1.6rem}
+  .hero-inner{padding:2rem 1rem}
+  .section-header h2{font-size:1.4rem}
+}
+@media(max-width:375px){
+  .hero-text h1{font-size:1.3rem}
+  .hero-text p{font-size:.9rem}
+  .hero-inner{padding:1.5rem .8rem}
+  .logo{font-size:1.1rem}
+  .stat-num{font-size:1.5rem}
 }
 
 /* --- MAIN --- */

@@ -12,6 +12,7 @@
 <meta property="og:image" content="https://haustierzentrum.com/images/haustierfreundliche-wohnung-einrichten_00001_.webp">
 <meta property="og:site_name" content="Haustierzentrum">
 <meta name="robots" content="index, follow">
+<meta name="theme-color" content="#FF9800">
 <link rel="canonical" href="https://haustierzentrum.com/artikel/haustierfreundliche-wohnung-einrichten.html">
 <script type="application/ld+json">
 {
@@ -30,7 +31,8 @@
 <style>
 :root{--primary:#FF9800;--primary-dark:#e68900;--primary-light:#fff3e0;--border-light:#f0ece1;--bg:#ffffff;--bg-alt:#f7f7f7;--text:#1a1a1a;--text-muted:#666;--border:#e0e0e0;--card-shadow:0 2px 12px rgba(0,0,0,.08);--font:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;-webkit-tap-highlight-color:transparent}
+a,button,.nav-toggle,.search-btn,.btn,.amazon-btn,.faq-question,.read-more{min-height:44px;min-width:44px}
 body{font-family:var(--font);color:var(--text);background:var(--bg);line-height:1.7;display:flex;flex-direction:column;min-height:100vh}
 a{color:var(--primary);text-decoration:none}a:hover{text-decoration:underline}
 img{max-width:100%;height:auto;display:block}
@@ -83,7 +85,17 @@ main{flex:1;max-width:1100px;margin:0 auto;padding:2rem 1rem;width:100%}
 .site-footer{background:#1a1a1a;color:#ccc;padding:2rem 1rem;margin-top:3rem;font-size:.88rem}.footer-wrap{max-width:1100px;margin:0 auto;display:flex;flex-wrap:wrap;gap:2rem;justify-content:space-between;align-items:center}.footer-wrap a{color:#FFB74D}.footer-wrap a:hover{color:#fff}.footer-copy{text-align:center;width:100%;margin-top:1rem;padding-top:1rem;border-top:1px solid #333;font-size:.82rem}
 .cookie-banner{position:fixed;bottom:0;left:0;right:0;background:#1a1a1a;color:#eee;padding:1rem 1.5rem;display:none;z-index:999;box-shadow:0 -4px 20px rgba(0,0,0,.3);font-size:.9rem}.cookie-banner.show{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:1rem}.cookie-banner p{max-width:700px}.cookie-banner button{background:var(--primary);border:none;color:#fff;font-weight:600;padding:.5rem 1.5rem;border-radius:6px;cursor:pointer;font-size:.9rem;white-space:nowrap}.cookie-banner button:hover{background:var(--primary-dark)}
 @media(max-width:900px){.main-nav{position:fixed;top:72px;left:0;right:0;bottom:0;background:rgba(255,255,255,.98);backdrop-filter:blur(20px);flex-direction:column;padding:1rem;overflow-y:auto;transform:translateX(100%);transition:transform .35s cubic-bezier(.16,1,.3,1);z-index:999}.main-nav.open{transform:translateX(0)}.nav-links{flex-direction:column;width:100%;gap:0}.nav-links>li{width:100%}.nav-links>li>a{padding:.8rem 1rem;border-radius:12px;font-size:.95rem;justify-content:space-between}.nav-links>li>a .arrow{font-size:.8rem}.mega-panel{position:static;transform:none;opacity:1;visibility:visible;box-shadow:none;border:none;border-radius:0;min-width:auto;max-width:100%;padding:0;max-height:0;overflow:hidden;transition:max-height .35s cubic-bezier(.16,1,.3,1),padding .35s;pointer-events:auto;background:var(--bg-alt);margin:0;border-radius:12px}.nav-links>li.open .mega-panel{max-height:800px;padding:.8rem;margin-bottom:.5rem}.mega-grid{grid-template-columns:1fr 1fr!important;padding:.5rem;gap:.5rem}.mega-col{border-right:none;padding:0}.mega-col h4{font-size:.75rem;margin-bottom:.4rem}.mega-col a{padding:.3rem .5rem;font-size:.85rem}.search-btn{display:none}.nav-toggle{display:block}.nav-links>li.simple-link{border-top:1px solid var(--border-light);padding-top:.5rem;margin-top:.3rem}}
-@media(max-width:500px){.mega-grid{grid-template-columns:1fr!important}}
+@media(max-width:500px){
+  .mega-grid{grid-template-columns:1fr !important}
+  .article-header h1{font-size:1.3rem}
+  .featured-img{min-height:180px}
+  .article-content{padding:0}
+}
+@media(max-width:375px){
+  .article-header h1{font-size:1.1rem}
+  .article-content h2{font-size:1.2rem}
+  .article-content p{font-size:.93rem}
+}
 @media(max-width:768px){.article-header h1{font-size:1.5rem}.article-content table{font-size:.82rem}.article-content table th,.article-content table td{padding:.5rem}.related-grid{grid-template-columns:1fr}.cookie-banner{flex-direction:column;text-align:center}}
 </style>
 <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon.png">

@@ -11,6 +11,7 @@
 <meta property="og:image" content="https://haustierzentrum.com/images/shih-tzu-rasseguide_00001_.webp">
 <meta property="og:site_name" content="Haustierzentrum">
 <meta name="robots" content="index,follow">
+<meta name="theme-color" content="#FF9800">
 <link rel="canonical" href="https://haustierzentrum.com/artikel/shih-tzu-rasseguide.html">
 <script type="application/ld+json">{
   "@context":"https://schema.org","@type":"BlogPosting",
@@ -26,7 +27,8 @@
 <style>
 :root{--primary:#FF9800;--primary-dark:#e68900;--primary-light:#fff3e0;--bg:#fff;--bg-alt:#f7f7f7;--text:#1a1a1a;--text-muted:#666;--border:#e0e0e0;--card-shadow:0 2px 12px rgba(0,0,0,.08);--font:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;-webkit-tap-highlight-color:transparent}
+a,button,.nav-toggle,.search-btn,.btn,.amazon-btn,.faq-question,.read-more{min-height:44px;min-width:44px}
 body{font-family:var(--font);color:var(--text);background:var(--bg);line-height:1.7}
 a{color:var(--primary);text-decoration:none}a:hover{text-decoration:underline}
 img{max-width:100%;height:auto;display:block}
@@ -88,7 +90,13 @@ tr:nth-child(even){background:var(--bg-alt)}
 .footer-col ul li a{color:#aaa;font-size:.9rem}
 .footer-col ul li a:hover{color:var(--primary)}
 .footer-bottom{max-width:1200px;margin:20px auto 0;padding-top:20px;border-top:1px solid #333;font-size:.8rem;color:#777;text-align:center}
-@media(max-width:768px){.hero h1{font-size:1.5em}.wrap{flex-direction:column}.sidebar{width:100%}.nav-links{display:none}.related-posts{flex-direction:column}}
+@media(max-width:768px){.hero h1{font-size:1.5em}
+@media(max-width:375px){
+  .article-header h1{font-size:1.1rem}
+  .article-content h2{font-size:1.2rem}
+  .article-content p{font-size:.93rem}
+  .featured-img{min-height:150px}
+}.wrap{flex-direction:column}.sidebar{width:100%}.nav-links{display:none}.related-posts{flex-direction:column}}
 </style>
 <meta property="og:locale" content="de_DE" />
 <meta name="twitter:card" content="summary_large_image" />
