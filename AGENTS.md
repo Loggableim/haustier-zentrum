@@ -47,13 +47,15 @@ print(generate_report(result))
 | `deploy.sh` | `./deploy.sh` | Git commit + push |
 | `.github/workflows/deploy.yml` | `.github/workflows/deploy.yml` | GitHub Actions Auto-Deploy |
 | `css/base.css` | `./css/base.css` | Mobile-First CSS Framework |
-| Gen Queue | localhost:8283 | Bildgenerierung (SDXL Lightning) |
-| Content Cron | `haustier-owl-alpha-article` | Alle 180min Long-Content via Owl Alpha |
-| Content Factory | `content_factory.py` (pausiert) | Batch-Artikel-Generierung |
+| Gen Queue | localhost:8283 | Bildgenerierung (SDXL Lightning, nicht mehr aktiv) |
+| MiniMax image-01 API | api.minimax.io | Bildgenerierung (furry pop-art Style, AKTIV) |
+| Content Factory | `content_factory.py` | Batch-Artikel-Generierung (MiniMax M3 → OpenRouter Owl Alpha Fallback) |
+| Content Cron | `haustier-content-factory` | Alle 180min, 12× Repeat |
 
 ## QUALITÄTSSTANDARDS
 - **Mindestlänge:** 1.500 Wörter (Hauptartikel), 800 Wörter (Ratgeber)
-- **Bilder:** Jeder Artikel braucht ein Hero-Bild (mindestens 1200×630px)
+- **Bilder:** Jeder Artikel braucht ein Hero-Bild (mindestens 1200×630px, MiniMax image-01, furry pop-art Style)
+- **Homepage:** Category-Filter + Load More (12er-Pagination), CSS external (css/style.css)
 - **SEO:** Meta-Description, OG-Tags, Canonical, JSON-LD nach jedem Build
 - **Mobile:** Alle Seiten responsive via base.css Framework
 - **Affiliate:** Amazon-Links mit `rel="sponsored noopener nofollow"`
