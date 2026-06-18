@@ -17,6 +17,7 @@
 <meta name="twitter:description" content="Umfassende Ratgeber zur Katzenhaltung: Wohnungseinrichtung, Gesundheit, Ernährung, Beschäftigung und Rassen – praktische Tipps für Deine Samtpfote.">
 <meta name="twitter:image" content="https://haustierzentrum.com/images/katzen-wohnung_00001_.webp">
 <meta name="robots" content="index, follow">
+<meta name="theme-color" content="#FF9800">
 <link rel="canonical" href="https://haustierzentrum.com/artikel/katzen.html">
 <script type="application/ld+json">
 {
@@ -73,7 +74,8 @@
   --radius-xl: 32px;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;-webkit-tap-highlight-color:transparent}
+a,button,.nav-toggle,.search-btn,.btn,.amazon-btn,.faq-question,.read-more{min-height:44px;min-width:44px}
 
 /* --- BODY --- */
 body{
@@ -384,6 +386,14 @@ img{max-width:100%;height:auto;display:block}
 }
 @media(max-width:500px){
   .mega-grid{grid-template-columns:1fr !important}
+  .article-header h1{font-size:1.3rem}
+  .featured-img{min-height:180px}
+  .article-content{padding:0}
+}
+@media(max-width:375px){
+  .article-header h1{font-size:1.1rem}
+  .article-content h2{font-size:1.2rem}
+  .article-content p{font-size:.93rem}
 }
 
 /* --- MAIN --- */
@@ -903,6 +913,10 @@ main{flex:1;width:100%}
   .section-header h2{font-size:1.8rem}
   .hero-visual{display:none}
 }
+
+.breadcrumb{padding:.5rem 0;margin-bottom:1rem;font-size:.88rem;color:var(--text-muted)}
+.breadcrumb a{color:var(--primary)}
+.breadcrumb a:hover{text-decoration:underline}
 </style>
   <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon.png">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9094916118868532" crossorigin="anonymous"></script>
@@ -1036,6 +1050,12 @@ main{flex:1;width:100%}
 </header>
 
 <main>
+      <nav class="breadcrumb" aria-label="Brotkrümelnavigation">
+        <a href="/">Startseite</a> › 
+        <a href="/artikel/katzenhaltung-wohnung.html">Katzen</a> › 
+        <span>Katzen-Ratgeber 🐱 – Alles zur artgerechten Katzenhaltung</span>
+      </nav>
+
 
 <!-- ============ KATEGORIE HEADER ============ -->
 <section class="section-wrap section-pad" style="padding-top:3rem;">

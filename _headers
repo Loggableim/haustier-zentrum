@@ -1,0 +1,37 @@
+# Cache-Control für Cloudflare Pages
+# Statische Assets: 1 Jahr Cache (immutable, hash-gebundene Dateien)
+/images/*.webp
+  Cache-Control: public, max-age=31536000, immutable
+  X-Content-Type-Options: nosniff
+
+/images/*.png
+  Cache-Control: public, max-age=31536000, immutable
+  X-Content-Type-Options: nosniff
+
+# CSS + JS: 7 Tage Cache (ändern sich selten, aber nicht hash-gebunden)
+/css/*
+  Cache-Control: public, max-age=604800, must-revalidate
+
+# HTML-Seiten: kurz cachen, aber immer frisch prüfen
+/artikel/*.html
+  Cache-Control: public, max-age=3600, must-revalidate
+
+# Startseite: 1 Stunde CDN-Cache
+/index.html
+  Cache-Control: public, max-age=3600, must-revalidate
+/
+  Cache-Control: public, max-age=3600, must-revalidate
+
+# RSS + Sitemap: 4 Stunden
+/rss.xml
+  Cache-Control: public, max-age=14400, must-revalidate
+/sitemap.xml
+  Cache-Control: public, max-age=14400, must-revalidate
+
+# 404: nicht cachen
+/404.html
+  Cache-Control: no-cache, no-store, must-revalidate
+
+# TXT-Dateien (robots, IndexNow, ads): 1 Tag
+/*.txt
+  Cache-Control: public, max-age=86400, must-revalidate
