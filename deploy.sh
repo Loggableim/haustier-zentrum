@@ -46,6 +46,18 @@ fi
 
 git add -A
 git commit -m "Auto: $ARTICLE_COUNT articles, $SITEMAP_URLS sitemap URLs, $RSS_ITEMS RSS items ($(date +%Y-%m-%d))"
+
+# Bei parallelen Pushs holt pull --rebase die Remote-Commits
+# und rebased unseren Commit drauf. Wenn Konflikte: Abbruch.
+echo "Pulling remote changes (rebase)..."
+if ! git pull --rebase --autostash; then
+    echo ""
+    echo "ERROR: git pull --rebase failed (likely merge conflicts)."
+    echo "Resolve manually: git status, fix conflicts, then git rebase --continue"
+    echo "After fixing, just run ./deploy.sh again."
+    exit 1
+fi
+
 git push
 
 echo ""
