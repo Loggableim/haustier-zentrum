@@ -636,6 +636,7 @@ main{flex:1;max-width:1100px;margin:0 auto;padding:2rem 1rem;width:100%}
         <li class="simple-link"><a href="/">Start</a></li>
         <li class="simple-link"><a href="/about.html">Über uns</a></li>
         <li class="simple-link"><a href="/impressum.html">Impressum</a></li>
+        <li class="simple-link"><a href="/datenschutz.html">Datenschutz</a></li>
       </ul>
     </nav>
     <button class="search-btn" onclick="window.location.href='/?s='" aria-label="Suche">🔍</button>
@@ -679,6 +680,7 @@ main{flex:1;max-width:1100px;margin:0 auto;padding:2rem 1rem;width:100%}
     <div>
       <a href="/about.html">Über uns</a> &middot;
       <a href="/impressum.html">Impressum</a> &middot;
+      <a href="/datenschutz.html">Datenschutz</a> &middot;
       <a href="/sitemap.xml">Sitemap</a>
     </div>
     <div class="footer-copy">
@@ -689,12 +691,32 @@ main{flex:1;max-width:1100px;margin:0 auto;padding:2rem 1rem;width:100%}
 </footer>
 
 <div class="cookie-banner" id="cookieBanner">
-  <p>🍪 Diese Website verwendet Cookies und technisch notwendige Funktionen. Mit der Nutzung stimmst Du der Verarbeitung zu. <a href="/impressum.html" style="color:#FFB74D;">Mehr Infos</a></p>
-  <button onclick="localStorage.setItem('cookieConsent','1');document.getElementById('cookieBanner').classList.remove('show')">Akzeptieren</button>
+  <p>🍪 Diese Website verwendet Cookies und technisch notwendige Funktionen. Mit Klick auf "Akzeptieren" stimmen Sie auch der Nutzung von Analyse- und Werbe-Cookies (AdSense, Amazon) zu. <a href="/datenschutz.html" style="color:#FFB74D;">Mehr Infos</a></p>
+  <button onclick="window.acceptCookies()">Akzeptieren</button>
+  <button onclick="window.declineCookies()" style="background:#555;">Ablehnen</button>
 </div>
 
 
 <script>
+// Cookie-Consent-Management
+window.cookieState = localStorage.getItem('cookieConsent');
+
+window.acceptCookies = function() {
+  localStorage.setItem('cookieConsent', 'accepted');
+  document.getElementById('cookieBanner').classList.remove('show');
+};
+
+window.declineCookies = function() {
+  localStorage.setItem('cookieConsent', 'declined');
+  document.getElementById('cookieBanner').classList.remove('show');
+};
+
+if (!window.cookieState) {
+  document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('cookieBanner')?.classList.add('show');
+  });
+}
+
 // Mobile: click to open mega panels
 document.querySelectorAll('.nav-links > li').forEach(function(li){
   var link = li.querySelector('a');
@@ -717,13 +739,7 @@ document.querySelectorAll('.simple-link a, .mega-col a').forEach(function(a){
       if(toggle) toggle.textContent = '☰';
     }
   });
-});
-</script>
-<script>
-// Cookie-Consent: Banner nur anzeigen wenn nicht bereits akzeptiert
-if(!localStorage.getItem('cookieConsent')){
-  document.getElementById('cookieBanner')?.classList.add('show');
-}
+
 </script>
 </body>
 </html>

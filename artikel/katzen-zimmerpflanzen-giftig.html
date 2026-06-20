@@ -382,9 +382,33 @@
 <footer class="site-footer">
   <div class="footer-wrap">
     <div><strong style="color:#fff;">🐾 Haustierzentrum</strong><p style="margin-top:.3rem;">Dein Blog für artgerechte Haustierhaltung</p></div>
-    <div><a href="/about.html">Über uns</a> &middot; <a href="/impressum.html">Impressum</a> &middot; <a href="/sitemap.xml">Sitemap</a></div>
+    <div><a href="/about.html">Über uns</a> &middot; <a href="/impressum.html">Impressum</a> &middot; <a href="/datenschutz.html">Datenschutz</a> &middot; <a href="/sitemap.xml">Sitemap</a></div>
     <div class="footer-copy"><p>&copy; 2026 Haustierzentrum. Alle Rechte vorbehalten.</p><p style="margin-top:.3rem;font-size:.8rem;">Als Amazon-Partner verdienen wir an qualifizierten Verkäufen.</p></div>
   </div>
 </footer>
+<script>
+// Cookie-Consent-Management
+window.cookieState = localStorage.getItem('cookieConsent');
+
+window.acceptCookies = function() {
+  localStorage.setItem('cookieConsent', 'accepted');
+  document.getElementById('cookieBanner').classList.remove('show');
+};
+
+window.declineCookies = function() {
+  localStorage.setItem('cookieConsent', 'declined');
+  document.getElementById('cookieBanner').classList.remove('show');
+};
+
+if (!window.cookieState) {
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function() {
+      document.getElementById('cookieBanner')?.classList.add('show');
+    });
+  } else {
+    document.getElementById('cookieBanner')?.classList.add('show');
+  }
+}
+</script>
 </body>
 </html>

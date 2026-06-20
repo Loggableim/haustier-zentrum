@@ -255,6 +255,7 @@ a{color:var(--primary);text-decoration:none}a:hover{text-decoration:underline}im
         <li class="simple-link"><a href="/">Start</a></li>
         <li class="simple-link"><a href="/about.html">Über uns</a></li>
         <li class="simple-link"><a href="/impressum.html">Impressum</a></li>
+        <li class="simple-link"><a href="/datenschutz.html">Datenschutz</a></li>
       </ul>
     </nav>
     <button class="search-btn" onclick="window.location.href='/?s='" aria-label="Suche">🔍</button>
@@ -477,6 +478,30 @@ a{color:var(--primary);text-decoration:none}a:hover{text-decoration:underline}im
 document.querySelectorAll('.nav-links a').forEach(l=>l.addEventListener('click',()=>{
   document.querySelector('.nav-links').classList.remove('open')
 }))
+</script>
+<script>
+// Cookie-Consent-Management
+window.cookieState = localStorage.getItem('cookieConsent');
+
+window.acceptCookies = function() {
+  localStorage.setItem('cookieConsent', 'accepted');
+  document.getElementById('cookieBanner').classList.remove('show');
+};
+
+window.declineCookies = function() {
+  localStorage.setItem('cookieConsent', 'declined');
+  document.getElementById('cookieBanner').classList.remove('show');
+};
+
+if (!window.cookieState) {
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function() {
+      document.getElementById('cookieBanner')?.classList.add('show');
+    });
+  } else {
+    document.getElementById('cookieBanner')?.classList.add('show');
+  }
+}
 </script>
 </body>
 </html>

@@ -180,65 +180,79 @@ def fix_static_pages(dry_run: bool) -> int:
 
 
 def rebuild_sitemap(dry_run: bool, mtime_cache: dict[str, float] | None = None) -> tuple[int, int]:
-    if not SITEMAP.exists():
-        return 0, 0
-    text = SITEMAP.read_text(encoding="utf-8")
-    entry_re = re.compile(
-        r'(  <url>\s*<loc>([^<]+)</loc>\s*<lastmod>)([^<]+)(</lastmod>)(.*?</url>)',
-        re.DOTALL,
-    )
-    new_parts = ['<?xml version="1.0" encoding="UTF-8"?>\n'
-                 '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
-    seen = set()
-    kept = 0
+    # Build sitemap directly from article files — no longer parses old sitemap.xml
     static_map = {
         f"{SITE}/": ROOT / "index.html",
         f"{SITE}/about/": ROOT / "about.html",
         f"{SITE}/impressum/": ROOT / "impressum.html",
         f"{SITE}/datenschutz/": ROOT / "datenschutz.html",
     }
-    for m in entry_re.finditer(text):
-        old_loc = m.group(2)
-        old_lastmod = m.group(3)
-        rest = m.group(5)
-        slug_m = re.search(r"/artikel/([^/]+?)(?:\.html|/)?$", old_loc)
-        if slug_m:
-            slug = slug_m.group(1)
-            new_loc = f"{SITE}/artikel/{slug}"
-        else:
-            # Static URL — normalize
-            new_loc = old_loc.rstrip("/") + "/"
-            slug = None
-        if new_loc in seen:
-            continue
-        seen.add(new_loc)
-        if slug and (ART_DIR / f"{slug}.html").exists():
-            # Best source: dateModified from JSON-LD inside the article.
-            # Fallback: cached mtime, then file mtime.
-            mt = _extract_date_modified(ART_DIR / f"{slug}.html")
-            if mt is None:
-                mt = (mtime_cache or {}).get(f"{slug}.html")
-            if mt is None:
-                mt = (ART_DIR / f"{slug}.html").stat().st_mtime
-            new_lastmod = time.strftime("%Y-%m-%dT%H:%M:%S+00:00", time.gmtime(mt))
-        else:
-            src = static_map.get(new_loc)
-            if src and src.exists():
-                mt = (mtime_cache or {}).get(src.name)
-                if mt is None:
-                    mt = src.stat().st_mtime
-                new_lastmod = time.strftime("%Y-%m-%dT%H:%M:%S+00:00", time.gmtime(mt))
-            else:
-                new_lastmod = old_lastmod
-        new_parts.append(
-            f"  <url>\n    <loc>{new_loc}</loc>\n    <lastmod>{new_lastmod}</lastmod>{rest}"
+
+    article_parts = ['<?xml version="1.0" encoding="UTF-8"?>',
+                     '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
+    static_parts = ['<?xml version="1.0" encoding="UTF-8"?>',
+                    '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
+
+    # Add all articles
+    for p in sorted(ART_DIR.glob("*.html")):
+        slug = p.name[:-5]
+        loc = f"{SITE}/artikel/{slug}"
+        mt = _extract_date_modified(p)
+        if mt is None:
+            mt = (mtime_cache or {}).get(f"{slug}.html")
+        if mt is None:
+            mt = p.stat().st_mtime
+        new_lastmod = time.strftime("%Y-%m-%dT%H:%M:%S+00:00", time.gmtime(mt))
+        article_parts.append(
+            f"  <url>\n    <loc>{loc}</loc>\n    <lastmod>{new_lastmod}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.7</priority>\n  </url>"
         )
-        kept += 1
-    new_parts.append("</urlset>\n")
-    new_text = "\n".join(new_parts) + "\n"
+
+    article_parts.append("</urlset>")
+    article_text = "\n".join(article_parts) + "\n"
+
+    # Add static pages
+    for loc, src in static_map.items():
+        if not src.exists():
+            continue
+        mt = (mtime_cache or {}).get(src.name)
+        if mt is None:
+            mt = src.stat().st_mtime
+        new_lastmod = time.strftime("%Y-%m-%dT%H:%M:%S+00:00", time.gmtime(mt))
+        freq = "daily" if loc == f"{SITE}/" else "monthly"
+        prio = "1.0" if loc == f"{SITE}/" else "0.5"
+        static_parts.append(
+            f"  <url>\n    <loc>{loc}</loc>\n    <lastmod>{new_lastmod}</lastmod>\n    <changefreq>{freq}</changefreq>\n    <priority>{prio}</priority>\n  </url>"
+        )
+
+    static_parts.append("</urlset>")
+    static_text = "\n".join(static_parts) + "\n"
+
+    # Write sub-sitemaps
+    article_file = ROOT / "sitemap-articles.xml"
+    static_file = ROOT / "sitemap-static.xml"
     if not dry_run:
-        SITEMAP.write_text(new_text, encoding="utf-8")
-    return kept, len(re.findall(r"<lastmod>([^<]+)</lastmod>", new_text))
+        article_file.write_text(article_text, encoding="utf-8")
+        static_file.write_text(static_text, encoding="utf-8")
+
+    # Write sitemap index
+    mt_now = time.strftime("%Y-%m-%dT%H:%M:%S+00:00", time.gmtime())
+    index_text = f"""<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <sitemap>
+    <loc>{SITE}/sitemap-articles.xml</loc>
+    <lastmod>{mt_now}</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>{SITE}/sitemap-static.xml</loc>
+    <lastmod>{mt_now}</lastmod>
+  </sitemap>
+</sitemapindex>
+"""
+    if not dry_run:
+        SITEMAP.write_text(index_text, encoding="utf-8")
+
+    article_dates = re.findall(r"<lastmod>([^<]+)</lastmod>", article_text)
+    return len(article_parts) - 3, len(article_dates)
 
 
 def ping_indexnow() -> dict:

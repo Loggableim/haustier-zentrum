@@ -448,7 +448,7 @@ main{flex:1;max-width:1100px;margin:0 auto;padding:2rem 1rem;width:100%}
 .breadcrumb a:hover{text-decoration:underline}
 </style>
   <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon.png">
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9094916118868532" crossorigin="anonymous"></script>
+  <script>if(localStorage.getItem('cookieConsent')==='accepted'){var s=document.createElement('script');s.async=true;s.src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9094916118868532";s.crossOrigin="anonymous";document.head.appendChild(s);}</script>
 
 <meta property="og:locale" content="de_DE" />
 <meta name="twitter:card" content="summary_large_image" />
@@ -684,8 +684,8 @@ main{flex:1;max-width:1100px;margin:0 auto;padding:2rem 1rem;width:100%}
 </footer>
 
 <div class="cookie-banner" id="cookieBanner">
-  <p>🍪 Diese Website verwendet Cookies und technisch notwendige Funktionen. Mit der Nutzung stimmst Du der Verarbeitung zu. <a href="/impressum.html" style="color:#FFB74D;">Mehr Infos</a></p>
-  <button onclick="localStorage.setItem('cookieConsent','1');document.getElementById('cookieBanner').classList.remove('show')">Akzeptieren</button>
+  <p>🍪 Diese Website verwendet Cookies und technisch notwendige Funktionen. Mit der Nutzung stimmst Du der Verarbeitung zu. <a href="/datenschutz.html" style="color:#FFB74D;">Mehr Infos</a></p>
+  <button onclick="window.acceptCookies()">Akzeptieren</button><button onclick="window.declineCookies()" style="background:#555;">Ablehnen</button>
 </div>
 
 <script>
@@ -703,9 +703,23 @@ document.querySelectorAll('.nav-links > li:not(.simple-link) > a').forEach(l=>l.
 }))
 </script>
 <script>
-// Cookie-Consent: Banner nur anzeigen wenn nicht bereits akzeptiert
-if(!localStorage.getItem('cookieConsent')){
-  document.getElementById('cookieBanner')?.classList.add('show');
+// Cookie-Consent-Management
+window.cookieState = localStorage.getItem('cookieConsent');
+
+window.acceptCookies = function() {
+  localStorage.setItem('cookieConsent', 'accepted');
+  document.getElementById('cookieBanner').classList.remove('show');
+};
+
+window.declineCookies = function() {
+  localStorage.setItem('cookieConsent', 'declined');
+  document.getElementById('cookieBanner').classList.remove('show');
+};
+
+if (!window.cookieState) {
+  document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('cookieBanner')?.classList.add('show');
+  });
 }
 </script>
 </body>

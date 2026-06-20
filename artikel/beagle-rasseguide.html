@@ -437,5 +437,29 @@ main{flex:1;max-width:1100px;margin:0 auto;padding:2rem 1rem;width:100%}
 
   <section class="related-posts"><h3>Das könnte Dich auch interessieren</h3><div class="related-grid"><div class="related-card"><div class="card-img"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#bbb" stroke-width="1.5"><path d="M4 9c0-2 1-4 4-4s4 2 4 4v3l-2 1v6H6v-6l-2-1z"/><circle cx="10" cy="6" r="1" fill="#bbb"/></svg></div><div class="card-body"><h4><a href="/artikel/allergien-bei-hund-und-katze-2026-umwelt-futter-und-fell-ganzheitliche-strategie">Allergien bei Hund und Katze 2026: Umwelt, Futter und Fell – ganzheitliche Strategien für empfindliche Vierbeiner</a></h4></div></div><div class="related-card"><div class="card-img"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#bbb" stroke-width="1.5"><path d="M4 9c0-2 1-4 4-4s4 2 4 4v3l-2 1v6H6v-6l-2-1z"/><circle cx="10" cy="6" r="1" fill="#bbb"/></svg></div><div class="card-body"><h4><a href="/artikel/australian-shepherd-rasseguide">Australian Shepherd Rasseguide – Der intelligente Hütehund im Porträt</a></h4></div></div><div class="related-card"><div class="card-img"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#bbb" stroke-width="1.5"><path d="M4 9c0-2 1-4 4-4s4 2 4 4v3l-2 1v6H6v-6l-2-1z"/><circle cx="10" cy="6" r="1" fill="#bbb"/></svg></div><div class="card-body"><h4><a href="/artikel/berner-sennenhund-rasseguide">Berner Sennenhund Rasseguide – Sanfter Riese mit Familiensinn</a></h4></div></div></div></section>
 <footer style="background:#1a1a2e;color:#ccc;padding:30px;margin-top:40px;text-align:center"><p>© 2026 Haustierzentrum</p><p style="font-size:0.85em">Diese Seite kann Affiliate-Links (Amazon DE) enthalten. Als Amazon-Partner verdienen wir an qualifizierten Verkäufen.</p></footer>
+<script>
+// Cookie-Consent-Management
+window.cookieState = localStorage.getItem('cookieConsent');
+
+window.acceptCookies = function() {
+  localStorage.setItem('cookieConsent', 'accepted');
+  document.getElementById('cookieBanner').classList.remove('show');
+};
+
+window.declineCookies = function() {
+  localStorage.setItem('cookieConsent', 'declined');
+  document.getElementById('cookieBanner').classList.remove('show');
+};
+
+if (!window.cookieState) {
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function() {
+      document.getElementById('cookieBanner')?.classList.add('show');
+    });
+  } else {
+    document.getElementById('cookieBanner')?.classList.add('show');
+  }
+}
+</script>
 </body>
 </html>

@@ -550,6 +550,7 @@ main{flex:1;max-width:1100px;margin:0 auto;padding:2rem 1rem;width:100%}
         <li class="simple-link"><a href="/">Start</a></li>
         <li class="simple-link"><a href="/about.html">Über uns</a></li>
         <li class="simple-link"><a href="/impressum.html">Impressum</a></li>
+        <li class="simple-link"><a href="/datenschutz.html">Datenschutz</a></li>
       </ul>
     </nav>
     <button class="search-btn" onclick="window.location.href='/?s='" aria-label="Suche">🔍</button>
@@ -901,8 +902,8 @@ main{flex:1;max-width:1100px;margin:0 auto;padding:2rem 1rem;width:100%}
   </article>
   <section class="related-posts"><h3>Das könnte Dich auch interessieren</h3><div class="related-grid"><div class="related-card"><div class="card-img"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#bbb" stroke-width="1.5"><path d="M12 2C6.48 2 2 6 2 11c0 3.5 2.5 6.5 6 7.5V22h8v-3.5c3.5-1 6-4 6-7.5 0-5-4.48-9-10-9z"/></svg></div><div class="card-body"><h4><a href="/artikel/aquarium-einrichtung">Aquarium Einrichtung</a></h4></div></div><div class="related-card"><div class="card-img"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#bbb" stroke-width="1.5"><path d="M3 12c3-3 6-9 9-9s6 6 9 9c-3 3-6 9-9 9s-6-6-9-9z"/><circle cx="12" cy="12" r="3"/></svg></div><div class="card-body"><h4><a href="/artikel/aquarium-einrichtung">Aquarium Pflanzen & Pflege</a></h4></div></div><div class="related-card"><div class="card-img"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#bbb" stroke-width="1.5"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M8 12h8"/><path d="M12 8v8"/></svg></div><div class="card-body"><h4><a href="/artikel/aquarium-einrichtung">Aquarium Filter Guide</a></h4></div></div></div></section>
 </main>
-<footer class="site-footer"><div class="footer-wrap"><div><strong style="color:#fff;">🐾 Haustierzentrum</strong><p style="margin-top:.3rem;">Dein Blog für artgerechte Haustierhaltung</p></div><div><a href="/about.html">Über uns</a> &middot; <a href="/impressum.html">Impressum</a> &middot; <a href="/sitemap.xml">Sitemap</a></div><div class="footer-copy"><p>&copy; 2026 Haustierzentrum. Alle Rechte vorbehalten.</p><p style="margin-top:.3rem;font-size:.8rem;">Diese Seite kann Affiliate-Links (Amazon DE) enthalten. Als Amazon-Partner verdienen wir an qualifizierten Verkäufen.</p></div></div></footer>
-<div class="cookie-banner" id="cookieBanner"><p>🍪 Diese Website verwendet Cookies und technisch notwendige Funktionen. Mit der Nutzung stimmst Du der Verarbeitung zu. <a href="/impressum.html" style="color:#FFB74D;">Mehr Infos</a></p><button onclick="localStorage.setItem('cookieConsent','1');document.getElementById('cookieBanner').classList.remove('show')">Akzeptieren</button></div>
+<footer class="site-footer"><div class="footer-wrap"><div><strong style="color:#fff;">🐾 Haustierzentrum</strong><p style="margin-top:.3rem;">Dein Blog für artgerechte Haustierhaltung</p></div><div><a href="/about.html">Über uns</a> &middot; <a href="/impressum.html">Impressum</a> &middot; <a href="/datenschutz.html">Datenschutz</a> &middot; <a href="/sitemap.xml">Sitemap</a></div><div class="footer-copy"><p>&copy; 2026 Haustierzentrum. Alle Rechte vorbehalten.</p><p style="margin-top:.3rem;font-size:.8rem;">Diese Seite kann Affiliate-Links (Amazon DE) enthalten. Als Amazon-Partner verdienen wir an qualifizierten Verkäufen.</p></div></div></footer>
+<div class="cookie-banner" id="cookieBanner"><p>🍪 Diese Website verwendet Cookies und technisch notwendige Funktionen. Mit der Nutzung stimmst Du der Verarbeitung zu. <a href="/datenschutz.html" style="color:#FFB74D;">Mehr Infos</a></p><button onclick="window.acceptCookies()">Akzeptieren</button><button onclick="window.declineCookies()" style="background:#555;">Ablehnen</button></div>
 <script>// Mobile: close nav when simple links are clicked
 document.querySelectorAll('.simple-link a').forEach(l=>l.addEventListener('click',()=>{
   document.querySelector('.main-nav').classList.remove('open');
@@ -916,9 +917,23 @@ document.querySelectorAll('.nav-links > li:not(.simple-link) > a').forEach(l=>l.
   }
 }))</script>
 <script>
-// Cookie-Consent: Banner nur anzeigen wenn nicht bereits akzeptiert
-if(!localStorage.getItem('cookieConsent')){
-  document.getElementById('cookieBanner')?.classList.add('show');
+// Cookie-Consent-Management
+window.cookieState = localStorage.getItem('cookieConsent');
+
+window.acceptCookies = function() {
+  localStorage.setItem('cookieConsent', 'accepted');
+  document.getElementById('cookieBanner').classList.remove('show');
+};
+
+window.declineCookies = function() {
+  localStorage.setItem('cookieConsent', 'declined');
+  document.getElementById('cookieBanner').classList.remove('show');
+};
+
+if (!window.cookieState) {
+  document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('cookieBanner')?.classList.add('show');
+  });
 }
 </script>
 </body>
