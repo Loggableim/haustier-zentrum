@@ -49,8 +49,8 @@ print(generate_report(result))
 | `css/base.css` | `./css/base.css` | Mobile-First CSS Framework |
 | Gen Queue | localhost:8283 | Bildgenerierung (SDXL Lightning, nicht mehr aktiv) |
 | MiniMax image-01 API | api.minimax.io | Bildgenerierung (furry pop-art Style, AKTIV) |
-| Content Factory | `content_factory.py` | Batch-Artikel-Generierung (MiniMax M3 → OpenRouter Owl Alpha Fallback) |
-| Content Cron | `haustier-content-factory` | Alle 180min, 12× Repeat |
+| Content Factory | `content_factory.py` | Batch-Artikel-Generierung (MiniMax M3 → OpenRouter Owl Alpha Fallback) ✅ REAKTIVIERT |
+| Content Cron | `haustier-content-factory` (job_id: a8249bcfb836) | Alle 180min, 9× Repeat — generiert nacheinander die 9 ausstehenden Themen |
 
 ## QUALITÄTSSTANDARDS
 - **Mindestlänge:** 1.500 Wörter (Hauptartikel), 800 Wörter (Ratgeber)
@@ -60,11 +60,12 @@ print(generate_report(result))
 - **Mobile:** Alle Seiten responsive via base.css Framework
 - **Affiliate:** Amazon-Links mit `rel="sponsored noopener nofollow"`
 
-## KRITISCHE BAUSTELLEN
-1. Content-Factory (content_factory.py) ist pausiert seit 3. Juni — reaktivieren wenn stabil
-2. `haustier-owl-alpha-article` läuft (alle 180min, Owl Alpha) — primäre Content-Quelle
-3. Bilder fehlen bei ~30% der Artikel — Gen Queue priorisieren
-4. Kein Template-System — Artikel sind standalone HTMLs (Framework hilft nur bei SEO + Bildern)
+## AKTUELLER STATUS (Stand 20. Juni 2026)
+1. ✅ Content-Factory (content_factory.py) — reaktiviert, Cron `haustier-content-factory` (job_id: a8249bcfb836) läuft alle 180min, 9× Repeat für die restlichen 9 Themen
+2. ❌ `haustier-owl-alpha-article` NICHT im Cron-System vorhanden (war laut alter Doku primäre Content-Quelle)
+3. ⚠️ Bilder fehlen bei ~30% der Artikel — Gen Queue priorisieren
+4. ✅ Thin Article Extender (`hzextender01`) — alle 6 Artikel erweitert, Cron läuft noch alle 12h (kann entfernt werden)
+5. ⚠️ Kein Template-System — Artikel sind standalone HTMLs (Framework hilft nur bei SEO + Bildern)
 
 ## KOMMUNIKATION
 - Bei Problemen → Report an Nova

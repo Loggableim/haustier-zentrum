@@ -6,7 +6,7 @@
     <description>Dein Ratgeber für artgerechte Haustierhaltung – Hunde, Katzen, Kleintiere, Vögel, Aquarium. Rasseporträts, Erziehung, Gesundheit und Produktvergleiche.</description>
     <language>de-DE</language>
     <copyright>© 2026 Haustierzentrum</copyright>
-    <lastBuildDate>Sat, 20 Jun 2026 00:51:16 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 20 Jun 2026 09:36:48 GMT</lastBuildDate>
     <pubDate>Sat, 20 Jun 2026 00:00:00 GMT</pubDate>
     <ttl>180</ttl>
     <atom:link href="https://haustierzentrum.com/rss.xml" rel="self" type="application/rss+xml"/>
@@ -647,7 +647,7 @@
     <div class="featured-img"><img src="../images/hunde-ernaehrung-barf-trocken-nass_00001_.webp" alt="Hunde-Ernährung BARF Trocken Nass" style="width:100%;height:100%;object-fit:cover;"></div>
     <div class="article-content">
 
-      <p><strong>Die Ernährung Deines Hundes</strong> ist eine der wichtigsten Entscheidungen, die Du als Hundebesitzer triffst. Sie beeinflusst nicht nur das Wohlbefinden und die Laune Deines Vierbeiners, sondern auch seine Gesundheit, sein Fell, seine Verdauung und letztlich seine Lebenserwartung. Dennoch gibt es kaum ein Thema, das so hitzig diskutiert wird wie die Frage: <strong>Welches Futter ist das beste für meinen Hund?</strong></p>
+      <p><strong>Die <a href="/artikel/katzen-zimmerpflanzen-giftig" title="Giftige Zimmerpflanzen für Katzen">Ernährung</a> Deines Hundes</strong> ist eine der wichtigsten Entscheidungen, die Du als Hundebesitzer triffst. Sie beeinflusst nicht nur das Wohlbefinden und die Laune Deines Vierbeiners, sondern auch seine Gesundheit, sein Fell, seine Verdauung und letztlich seine Lebenserwartung. Dennoch gibt es kaum ein Thema, das so hitzig diskutiert wird wie die Frage: <strong>Welches Futter ist das beste für meinen Hund?</strong></p>
 
       <p>BARF, Trockenfutter, Nassfutter, Mischfutter, vegetarisch, vegan – die Angebot und Meinungen sind schier endlos. In diesem umfassenden Ratgeber nehmen wir die gängigsten Fütterungsformen unter die Lupe. Du erfährst, was BARF genau bedeutet, welche Vor- und Nachteile Trocken- und Nassfutter haben, wie Du die Umstellung richtig durchführst und welche Fehler Du unbedingt vermeiden solltest. Basierend auf aktuellen Erkenntnissen der Tierernährungswissenschaft und praktischer Erfahrung.</p>
 
@@ -849,6 +849,7 @@
 <html lang="de">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link rel="alternate" type="application/rss+xml" title="Haustierzentrum RSS Feed" href="https://haustierzentrum.com/rss.xml">
   <link rel="preconnect" href="https://pagead2.googlesyndication.com">
   <link rel="preconnect" href="https://www.googletagservices.com">
 <title>Shih Tzu Rasseguide – Der chinesische Löwe im Hundenformat | Haustierzentrum</title>
@@ -898,7 +899,7 @@
 </ol>
 </div>
 
-<p>Der Shih Tzu – der Name bedeitet auf Chinesisch „Löwenhund" – ist einer der ältesten Hunderassen der Welt und hat eine Geschichte, die tief in den königlichen Palästen Chinas verwurzelt ist. Mit seinem üppigen, seidigen Fell, seinen warmen Augen und seinem selbstbewussten, aber liebevollen Charakter hat der Shih Tzu über Jahrhunderte hinweg Herzen erobert. Einst als Begleiter der chinesischen Kaiser geschätzt, zählt er heute zu den beliebtesten Begleithunden weltweit – und das aus gutem Grund.</p...]]></content:encoded>
+<p>Der Shih Tzu – der Name bedeitet auf Chinesisch „Löwenhund" – ist einer der ältesten Hunderassen der Welt und hat eine Geschichte, die tief in den königlichen Palästen Chinas verwurzelt ist. Mit seinem üppigen, seidigen Fell, seinen warmen Augen und seinem selbstbewussten, aber liebevollen Charakter hat der Shih Tzu über Jahrhunderte hinweg Herzen erobert. Einst als Begl...]]></content:encoded>
     </item>
     <item>
       <title>Siamkatze Rasseguide – Die orientale Schönheit im Porträt</title>
@@ -1047,7 +1048,7 @@
 <p>Die absolut allergikerfreundlichste Option. Fische haben keine Haare, keine Hautschuppen und kein Fell. Ein Aquarium ist nicht nur schön anzusehen, sondern auch wissenschaftlich erwiesen stressreduzierend. Zudem erhöht es die Luftfeuchtigkeit, was Allergiesymptome lindern kann.</p>
 
 <h3>Reptilien & Amphibien</h3>
-<p>Bartagamen, Leopardgeckos, Schildkröten und Kornnattern sind ebenfalls perfekt für Allergiker. Sie produzieren keine Fell-Allergene und sind faszinierende Beobachtungstiere. Wichtig: Das Terrarium muss artgerecht eingerichtet sein – die Haltung ist anspruchsvoller, als viele denken.</p>
+<p>Bartagamen, Leopardgeckos, Schildkröten und Kornnattern sind ebenfalls perfekt für Allergiker. Sie produzieren keine Fell-Allergene und sind faszinierende Beobachtungstiere. Wichtig: Das Terrarium muss artgerecht <a href="/artikel/katzen-zimmerpflanzen-giftig" title="Giftige Zimmerpflanzen für Katzen">eingerichtet</a> sein – die Haltung ist anspruchsvoller, als viele denken.</p>
 
 <h3>Allergikerfreundliche Hunderassen</h3>
 <p>Es gibt keine „hypoallergenen" Hunde, aber einige Rassen verlieren weniger Haare und Hautschuppen:</p>
@@ -1078,6 +1079,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="alternate" type="application/rss+xml" title="Haustierzentrum RSS Feed" href="https://haustierzentrum.com/rss.xml">
   <link rel="preconnect" href="https://pagead2.googlesyndication.com">
   <link rel="preconnect" href="https://www.googletagservices.com">
 <title>Aquarium einrichten für Anfänger – Schritt für Schritt | Haustierzentrum</title>

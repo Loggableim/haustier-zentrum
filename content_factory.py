@@ -17,7 +17,7 @@ from datetime import datetime
 from PIL import Image
 
 # ── Paths ──
-REPO = "C:/HermesPortable/home/scripts/blog-automation/haustier-zentrum"
+REPO = "C:/sidekick/home/spaces/haustier-zentrum"
 IMG_DIR = os.path.join(REPO, "images")
 os.chdir(REPO)
 os.makedirs(IMG_DIR, exist_ok=True)
@@ -496,16 +496,12 @@ def update_sitemap(slug, today_iso):
 
 def update_homepage_count():
     """Update the stat counter on the homepage."""
-    index_path = os.path.join(os.path.dirname(REPO), "index.html")
-    # Use the actual index.html in the space
-    index_path = "C:/HermesPortable/home/spaces/haustier-zentrum/index.html"
+    index_path = os.path.join(REPO, "index.html")
     with open(index_path, 'r', encoding='utf-8') as f:
         content = f.read()
     
     # Count actual articles
-    articles_dir = os.path.join(os.path.dirname(REPO), "artikel")
-    # Use actual articles dir
-    articles_dir = "C:/HermesPortable/home/spaces/haustier-zentrum/artikel"
+    articles_dir = os.path.join(REPO, "artikel")
     count = len([f for f in os.listdir(articles_dir) if f.endswith('.html')])
     
     pattern = r'(class="stat-num">)(\d+)(</div>\s*<div class="stat-label">Ratgeber)'
@@ -522,8 +518,7 @@ def update_homepage_count():
 def git_commit_push(slug):
     """Git add, commit and push."""
     import subprocess
-    repo = os.path.dirname(REPO)  # the actual space repo
-    repo = "C:/HermesPortable/home/spaces/haustier-zentrum"
+    repo = REPO
     
     try:
         subprocess.run(["git", "add", "-A"], cwd=repo, capture_output=True, timeout=30)
@@ -557,7 +552,7 @@ def main():
     
     # Pick next ungenerated topic
     existing = set(f.replace('.html','') for f in os.listdir(
-        "C:/HermesPortable/home/spaces/haustier-zentrum/artikel"
+        os.path.join(REPO, "artikel")
     ) if f.endswith('.html'))
     
     available = [t for t in TOPICS if t['slug'] not in existing]
@@ -585,7 +580,7 @@ def main():
     
     # Step 3: Build HTML
     html = build_html(topic, body, today_str, today_iso)
-    art_path = f"C:/HermesPortable/home/spaces/haustier-zentrum/artikel/{topic['slug']}.html"
+    art_path = os.path.join(REPO, "artikel", f"{topic['slug']}.html")
     os.makedirs(os.path.dirname(art_path), exist_ok=True)
     with open(art_path, 'w', encoding='utf-8') as f:
         f.write(html)

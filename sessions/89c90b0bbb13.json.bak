@@ -5,7 +5,7 @@
   "model": "@minimax:MiniMax-M3",
   "model_provider": "minimax",
   "created_at": 1781911647.9905503,
-  "updated_at": 1781948207.674037,
+  "updated_at": 1781948094.0698802,
   "pinned": false,
   "archived": false,
   "project_id": null,
@@ -14,10 +14,10 @@
   "output_tokens": 78520,
   "estimated_cost": 0.0,
   "personality": null,
-  "active_stream_id": "206ffdfb505148f9ad4d20fa71eff656",
-  "pending_user_message": "Den RSS-Generator in den deploy.sh einhängen, damit der Feed bei jedem Push automatisch aktualisiert wird",
+  "active_stream_id": null,
+  "pending_user_message": null,
   "pending_attachments": [],
-  "pending_started_at": 1781948092.5245156,
+  "pending_started_at": null,
   "compression_anchor_visible_idx": null,
   "compression_anchor_message_key": null,
   "compression_anchor_summary": null,
@@ -5744,6 +5744,12 @@
       "timestamp": 1781916942,
       "_turnDuration": 400.103,
       "_turnTps": 196.2
+    },
+    {
+      "role": "user",
+      "content": "Den RSS-Generator in den deploy.sh einhängen, damit der Feed bei jedem Push automatisch aktualisiert wird",
+      "timestamp": 1781948092,
+      "_recovered": true
     }
   ],
   "tool_calls": [
@@ -13247,5 +13253,6 @@
       "reasoning": null,
       "finish_reason": "stop"
     }
-  ]
+  ],
+  "message_count": 423
 }
