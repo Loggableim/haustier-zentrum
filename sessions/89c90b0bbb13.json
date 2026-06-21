@@ -5,7 +5,7 @@
   "model": "@minimax:MiniMax-M3",
   "model_provider": "minimax",
   "created_at": 1781911647.9905503,
-  "updated_at": 1781950254.4376013,
+  "updated_at": 1782033477.358482,
   "pinned": false,
   "archived": false,
   "project_id": null,
@@ -39,7 +39,7 @@
   "source_label": null,
   "enabled_toolsets": null,
   "composer_draft": {
-    "text": "",
+    "text": "wie ist der status",
     "files": []
   },
   "workspace_slug": "haustier-zentrum",
