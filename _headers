@@ -27,6 +27,10 @@
   Cache-Control: public, max-age=14400, must-revalidate
 /sitemap.xml
   Cache-Control: public, max-age=14400, must-revalidate
+/sitemap-articles.xml
+  Cache-Control: public, max-age=14400, must-revalidate
+/sitemap-static.xml
+  Cache-Control: public, max-age=14400, must-revalidate
 
 # 404: nicht cachen
 /404.html

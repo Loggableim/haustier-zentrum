@@ -17,21 +17,37 @@
 <meta name="robots" content="index, follow">
 <meta name="theme-color" content="#FF9800">
 <link rel="canonical" href="https://haustierzentrum.com/artikel/katzentoilette-geruch-vermeiden">
-<script type="application/ld+json">
-{
+<script type="application/ld+json">{
   "@context": "https://schema.org",
   "@type": "BlogPosting",
   "headline": "Katzentoilette richtig einrichten und Geruch vermeiden",
   "description": "So richtest Du die Katzentoilette richtig ein, wählst den passenden Standort und die passende Streu, hältst das Katzenklo hygienisch sauber und erkennst Probleme bei Unsauberkeit.",
-  "author": {"@type":"Person","name":"Haustierzentrum Redaktion"},
+  "author": {
+    "@type": "Person",
+    "name": "Haustierzentrum Redaktion"
+  },
   "datePublished": "2026-06-02",
   "dateModified": "2026-06-02",
   "image": "https://haustierzentrum.com/images/katzentoilette-geruch-vermeiden_00001_.png",
-  "articleSection": ["Katzen"],
-  "mainEntityOfPage": {"@type":"WebPage","@id":"https://haustierzentrum.com/artikel/katzentoilette-geruch-vermeiden.html"},
-  "publisher": {"@type":"Organization","name":"Haustierzentrum","url":"https://haustierzentrum.com"}
-}
-</script>
+  "articleSection": [
+    "Katzen"
+  ],
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://haustierzentrum.com/artikel/katzentoilette-geruch-vermeiden.html"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Haustierzentrum",
+    "url": "https://haustierzentrum.com"
+  },
+  "reviewer": {
+    "@type": "Person",
+    "name": ""
+  },
+  "lastReviewed": "2026-06-21",
+  "sources": []
+}</script>
 <style>
 :root {
   --primary: #FF9800;
@@ -263,7 +279,7 @@ main{flex:1;max-width:1100px;margin:0 auto;padding:2rem 1rem;width:100%}
 .breadcrumb a:hover{text-decoration:underline}
 </style>
   <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon.png">
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9094916118868532" crossorigin="anonymous"></script>
+  <script>if(localStorage.getItem('cookieConsent')==='accepted'){var s=document.createElement('script');s.async=true;s.src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9094916118868532";s.crossOrigin="anonymous";document.head.appendChild(s);}</script>
 
 <meta property="og:locale" content="de_DE" />
 <meta name="twitter:card" content="summary_large_image" />
@@ -399,6 +415,7 @@ main{flex:1;max-width:1100px;margin:0 auto;padding:2rem 1rem;width:100%}
         <li class="simple-link"><a href="/">Start</a></li>
         <li class="simple-link"><a href="/about.html">Über uns</a></li>
         <li class="simple-link"><a href="/impressum.html">Impressum</a></li>
+        <li class="simple-link"><a href="/datenschutz.html">Datenschutz</a></li>
       </ul>
     </nav>
     <button class="search-btn" onclick="window.location.href='/?s='" aria-label="Suche">🔍</button>
@@ -419,7 +436,7 @@ main{flex:1;max-width:1100px;margin:0 auto;padding:2rem 1rem;width:100%}
         <span>2. Juni 2026</span>
         <span>· Lesezeit: 8 Min</span>
       </div>
-      <h1>Katzentoilette richtig einrichten und Geruch vermeiden</h1>
+      <div class="author-reviewer-box" style="border-top:1px solid #ccc;padding-top:1rem;margin-top:1rem;"><p><strong>Autor:</strong> Haustierzentrum Redaktion</p><p><strong>Reviewer:</strong> (noch nicht geprüft)</p><p><strong>Letztes Review:</strong> 2026-06-21</p></div><h1>Katzentoilette richtig einrichten und Geruch vermeiden</h1>
     </div>
 
     <div class="featured-img">
@@ -557,8 +574,8 @@ main{flex:1;max-width:1100px;margin:0 auto;padding:2rem 1rem;width:100%}
 </footer>
 
 <div class="cookie-banner" id="cookieBanner">
-  <p>🍪 Diese Website verwendet Cookies und technisch notwendige Funktionen. Mit der Nutzung stimmst Du der Verarbeitung zu. <a href="/impressum.html" style="color:#FFB74D;">Mehr Infos</a></p>
-  <button onclick="localStorage.setItem('cookieConsent','1');document.getElementById('cookieBanner').classList.remove('show')">Akzeptieren</button>
+  <p>🍪 Diese Website verwendet Cookies und technisch notwendige Funktionen. Mit der Nutzung stimmst Du der Verarbeitung zu. <a href="/datenschutz.html" style="color:#FFB74D;">Mehr Infos</a></p>
+  <button onclick="window.acceptCookies()">Akzeptieren</button><button onclick="window.declineCookies()" style="background:#555;">Ablehnen</button>
 </div>
 
 <script>
@@ -576,9 +593,23 @@ document.querySelectorAll('.nav-links > li:not(.simple-link) > a').forEach(l=>l.
 }))
 </script>
 <script>
-// Cookie-Consent: Banner nur anzeigen wenn nicht bereits akzeptiert
-if(!localStorage.getItem('cookieConsent')){
-  document.getElementById('cookieBanner')?.classList.add('show');
+// Cookie-Consent-Management
+window.cookieState = localStorage.getItem('cookieConsent');
+
+window.acceptCookies = function() {
+  localStorage.setItem('cookieConsent', 'accepted');
+  document.getElementById('cookieBanner').classList.remove('show');
+};
+
+window.declineCookies = function() {
+  localStorage.setItem('cookieConsent', 'declined');
+  document.getElementById('cookieBanner').classList.remove('show');
+};
+
+if (!window.cookieState) {
+  document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('cookieBanner')?.classList.add('show');
+  });
 }
 </script>
 </body>

@@ -47,10 +47,14 @@ print(generate_report(result))
 | `deploy.sh` | `./deploy.sh` | Git commit + push |
 | `.github/workflows/deploy.yml` | `.github/workflows/deploy.yml` | GitHub Actions Auto-Deploy |
 | `css/base.css` | `./css/base.css` | Mobile-First CSS Framework |
-| Gen Queue | localhost:8283 | Bildgenerierung (SDXL Lightning, nicht mehr aktiv) |
+| `_headers` | `./_headers` | Cache-Control + Security Headers für Cloudflare Pages |
+| `_redirects` | `./_redirects` | 301 Redirects (haustier-zentrum.com → haustierzentrum.com) |
+| `_refresh_indexing.py` | `./_refresh_indexing.py` | URL-Normalisierung + Sitemap-Index-Generierung (3 Sub-Sitemaps) |
+| `_generate_sitemap.py` | `./_generate_sitemap.py` | Standalone Sitemap-Generator |
+| `_bulk_fix_articles.py` | `./_bulk_fix_articles.py` | Massen-Update für Artikel (Nav/Footer/Cookie/Health) |
 | MiniMax image-01 API | api.minimax.io | Bildgenerierung (furry pop-art Style, AKTIV) |
-| Content Factory | `content_factory.py` | Batch-Artikel-Generierung (MiniMax M3 → OpenRouter Owl Alpha Fallback) |
-| Content Cron | `haustier-content-factory` | Alle 180min, 12× Repeat |
+| Content Factory | `content_factory.py` | Batch-Artikel-Generierung (MiniMax M3 → OpenRouter Owl Alpha Fallback) ✅ REAKTIVIERT |
+| Content Cron | `haustier-content-factory` (job_id: a8249bcfb836) | Alle 180min, 9× Repeat — generiert nacheinander die 9 ausstehenden Themen |
 
 ## QUALITÄTSSTANDARDS
 - **Mindestlänge:** 1.500 Wörter (Hauptartikel), 800 Wörter (Ratgeber)
@@ -60,11 +64,39 @@ print(generate_report(result))
 - **Mobile:** Alle Seiten responsive via base.css Framework
 - **Affiliate:** Amazon-Links mit `rel="sponsored noopener nofollow"`
 
-## KRITISCHE BAUSTELLEN
-1. Content-Factory (content_factory.py) ist pausiert seit 3. Juni — reaktivieren wenn stabil
-2. `haustier-owl-alpha-article` läuft (alle 180min, Owl Alpha) — primäre Content-Quelle
-3. Bilder fehlen bei ~30% der Artikel — Gen Queue priorisieren
-4. Kein Template-System — Artikel sind standalone HTMLs (Framework hilft nur bei SEO + Bildern)
+## SITEMAP-STRUKTUR (seit 20. Juni 2026)
+- `sitemap.xml` = Sitemap-Index → 2 Sub-Sitemaps
+- `sitemap-articles.xml` = 109 Artikel-URLs
+- `sitemap-static.xml` = Startseite, About, Impressum, Datenschutz
+- Generiert durch: `_refresh_indexing.py` (wird bei jedem deploy.sh ausgeführt)
+- CI: GitHub Actions deployt automatisch
+
+## CONSENT-MANAGEMENT (seit 20. Juni 2026)
+- Cookie-Banner mit 3 Optionen: Akzeptieren, Ablehnen, Mehr Infos (→ /datenschutz.html)
+- Consent-State in localStorage (`cookieConsent`: `accepted`/`declined`)
+- AdSense wird NUR nach Consent geladen (conditional script injection)
+- Google Fonts werden NUR nach Consent geladen
+- Alle 4 statischen Seiten + 107/109 Artikel haben Consent-Funktionen
+
+## HEALTH-CONTENT-GOVERNANCE (seit 20. Juni 2026)
+- 32/33 Health-Artikeln haben medizinischen Disclaimer
+- 4 Notfall-Artikel haben zusätzliche Emergency-Notice
+- Health-Liste definiert in `_bulk_fix_articles.py` (HEALTH_ARTICLES)
+
+## LEGAL PAGES (seit 20. Juni 2026)
+- `/impressum/` = nur Impressum (keine Datenschutz-Mixed mehr)
+- `/datenschutz/` = eigene Datenschutzseite mit AdSense, Amazon, Cookies, Serverlogs
+- Footer überall: "Über uns · Impressum · Datenschutz"
+- Cookie-Banner linkt auf /datenschutz/ — nicht mehr auf /impressum/
+
+## AKTUELLER STATUS (Stand 20. Juni 2026)
+1. ✅ P0.1 Sitemap — Sitemap-Index mit Sub-Sitemaps, 109 Artikel, 4 statische Seiten
+2. ✅ P0.2 Legal Pages — Impressum/Datenschutz getrennt, alle Footer/Nav-Links fixiert
+3. ✅ P0.3 Consent — Cookie-Banner mit Ablehnen, AdSense erst nach Consent
+4. ✅ P0.4 Health — 32/33 Health-Artikel mit Disclaimer + Emergency-Notices
+5. ⚠️ Content-Factory (content_factory.py) — reaktiviert, Cron läuft alle 180min
+6. ⚠️ 28 Artikel ohne Cookie-Banner (älteres Template) — niedrige Priorität
+7. ⚠️ Bilder fehlen bei ~30% der Artikel — MiniMax priorisieren
 
 ## KOMMUNIKATION
 - Bei Problemen → Report an Nova

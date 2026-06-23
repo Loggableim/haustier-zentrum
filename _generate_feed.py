@@ -237,17 +237,21 @@ def build_feed() -> str:
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--dry-run", action="store_true")
+    ap.add_argument("--quiet", action="store_true",
+                    help="Suppress output (for use in deploy scripts)")
     args = ap.parse_args()
-    print(f"=== _generate_feed.py (dry_run={args.dry_run}) ===")
     xml = build_feed()
     size_kb = len(xml.encode("utf-8")) / 1024
     item_count = xml.count("<item>")
-    print(f"  Items: {item_count}")
-    print(f"  Size:  {size_kb:.1f} KB")
     if not args.dry_run:
         FEED.write_text(xml, encoding="utf-8")
-        print(f"  Wrote: {FEED}")
-    print("Done.")
+    if not args.quiet:
+        print(f"=== _generate_feed.py (dry_run={args.dry_run}) ===")
+        print(f"  Items: {item_count}")
+        print(f"  Size:  {size_kb:.1f} KB")
+        if not args.dry_run:
+            print(f"  Wrote: {FEED}")
+        print("Done.")
 
 
 if __name__ == "__main__":
