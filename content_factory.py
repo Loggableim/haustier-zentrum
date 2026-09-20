@@ -243,22 +243,100 @@ def call_openrouter(prompt_text, system=SYSTEM_PROMPT, retries=3):
     return None
 
 
+def validate_topic_match(topic, body):
+    """Verify the generated body actually covers the topic.
+
+    Root-cause guard: the original bug passed only ARTICLE_STRUCTURE to the LLM
+    (without the topic), so the model invented a random article that was then
+    saved under the wrong slug/title. This check rejects such mismatches.
+    """
+    body_lower = body.lower()
+    stop = {"der", "die", "das", "und", "für", "fuer", "bei", "mit", "von",
+            "den", "dem", "des", "einer", "eines", "einem", "einen", "oder",
+            "was", "wie", "warum", "welche", "dein", "deine", "deinem"}
+    words = [w for w in re.findall(r'[a-zäöüß]{5,}', topic['title'].lower()) if w not in stop]
+    if not words:
+        return True
+    # Main subject = first significant word of the title
+    main = words[0]
+    count = body_lower.count(main)
+    if count < 3:
+        print(f"  ⚠️  Topic-Mismatch: '{main}' erscheint nur {count}x im generierten Text")
+        return False
+    return True
+
+
+def build_topic_prompt(topic):
+    """Build the full generation prompt INCLUDING the topic (root-cause fix)."""
+    return f"""THEMA: {topic['title']}
+SLUG: {topic['slug']}
+KATEGORIE: {', '.join(topic['category_tags'])}
+META-BESCHREIBUNG: {topic['description']}
+
+WICHTIG: Der Artikel MUSS exakt dieses Thema behandeln. Schreibe über "{topic['title']}" — nichts anderes.
+
+{ARTICLE_STRUCTURE}"""
+
+
+def call_ollama_cloud(prompt_text, system=SYSTEM_PROMPT, retries=3):
+    """Fallback to Ollama Cloud (used when MiniMax + OpenRouter unavailable)."""
+    try:
+        with open("C:/sidekick/home/auth.json", encoding="utf-8") as f:
+            auth = json.load(f)
+        key = auth["credential_pool"]["ollama-cloud"][0]["access_token"]
+    except Exception:
+        return None
+    payload = json.dumps({
+        "model": "minimax-m3",
+        "messages": [
+            {"role": "system", "content": system},
+            {"role": "user", "content": prompt_text},
+        ],
+        "max_tokens": 8192,
+        "temperature": 0.7,
+    }).encode()
+    headers = {"Authorization": f"Bearer {key}", "Content-Type": "application/json"}
+    ctx = ssl.create_default_context()
+    req = urllib.request.Request("https://ollama.com/v1/chat/completions", data=payload, headers=headers, method="POST")
+
+    for attempt in range(retries):
+        try:
+            with urllib.request.urlopen(req, context=ctx, timeout=300) as resp:
+                result = json.loads(resp.read())
+            content = result["choices"][0]["message"]["content"]
+            return content.strip() if content else None
+        except Exception as e:
+            print(f"  ⚠️  Ollama-Cloud {attempt+1}: {str(e)[:120]}")
+            if attempt == retries - 1:
+                return None
+            time.sleep(10 * (attempt + 1))
+    return None
+
+
 def generate_text(topic):
-    """Generate article text. MiniMax -> OpenRouter fallback."""
+    """Generate article text. MiniMax -> OpenRouter -> Ollama-Cloud fallback."""
     print(f"\n📝 Generiere Text für: {topic['title']}")
     print(f"  Provider: MiniMax-M3...", end=" ", flush=True)
-    
-    result = call_minimax(ARTICLE_STRUCTURE)
-    
-    if result == "TOKEN_LIMIT":
+
+    prompt = build_topic_prompt(topic)
+    result = call_minimax(prompt)
+
+    if result == "TOKEN_LIMIT" or result is None:
         print("⛔ Fallback zu OpenRouter...", end=" ", flush=True)
-        result = call_openrouter(ARTICLE_STRUCTURE)
-    
+        result = call_openrouter(prompt)
+
+    if result is None:
+        print("⛔ Fallback zu Ollama-Cloud...", end=" ", flush=True)
+        result = call_ollama_cloud(prompt)
+
     if result:
         print(f"✅ {len(result)} Zeichen")
-        result = re.sub(r'<think>.*?</think>', '', result, flags=re.DOTALL)
+        result = re.sub(r' thinking.*?</think>', '', result, flags=re.DOTALL)
         result = result.replace('\u00a0', ' ').replace('\u202f', ' ')
         result = re.sub(r'\*\*(.+?)\*\*', r'<strong>\1</strong>', result)
+        if not validate_topic_match(topic, result):
+            print("  ❌ Generierung verworfen (falsches Thema).")
+            return None
         return result
     else:
         print("❌ Fehlgeschlagen")

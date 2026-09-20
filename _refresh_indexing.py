@@ -181,11 +181,14 @@ def fix_static_pages(dry_run: bool) -> int:
 
 def rebuild_sitemap(dry_run: bool, mtime_cache: dict[str, float] | None = None) -> tuple[int, int]:
     # Build sitemap directly from article files — no longer parses old sitemap.xml
+    # NOTE: Cloudflare Pages 308-redirects /about/ → /about and /artikel/foo/ → /artikel/foo,
+    # so the sitemap must list the extensionless form (no trailing slash) to avoid
+    # pointing Google at redirects.
     static_map = {
         f"{SITE}/": ROOT / "index.html",
-        f"{SITE}/about/": ROOT / "about.html",
-        f"{SITE}/impressum/": ROOT / "impressum.html",
-        f"{SITE}/datenschutz/": ROOT / "datenschutz.html",
+        f"{SITE}/about": ROOT / "about.html",
+        f"{SITE}/impressum": ROOT / "impressum.html",
+        f"{SITE}/datenschutz": ROOT / "datenschutz.html",
     }
 
     article_parts = ['<?xml version="1.0" encoding="UTF-8"?>',
