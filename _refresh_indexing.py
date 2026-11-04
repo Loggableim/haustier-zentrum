@@ -15,11 +15,13 @@ import os
 import re
 import sys
 import time
+import subprocess
+from datetime import datetime, timezone
 import urllib.request
 import urllib.error
 from pathlib import Path
 
-ROOT = Path(r"C:\sidekick\home\spaces\haustier-zentrum")
+ROOT = Path(__file__).resolve().parent
 ART_DIR = ROOT / "artikel"
 SITEMAP = ROOT / "sitemap.xml"
 SITE = "https://haustierzentrum.com"
@@ -81,11 +83,23 @@ def _extract_date_modified(path: Path) -> float | None:
     # Parse ISO date; if date-only, treat as midnight UTC
     s = str(target)
     try:
-        if re.match(r"^\d{4}-\d{2}-\d{2}$", s):
-            return time.mktime(time.strptime(s, "%Y-%m-%d"))
-        return time.mktime(time.strptime(s[:19], "%Y-%m-%dT%H:%M:%S"))
+        dt = datetime.fromisoformat(s.replace("Z", "+00:00"))
+        if dt.tzinfo is None:
+            dt = dt.replace(tzinfo=timezone.utc)
+        return dt.timestamp()
     except Exception:
         return None
+
+
+def source_mtime(path: Path) -> float:
+    """A fresh checkout must not look like an editorial update."""
+    try:
+        date = subprocess.check_output(
+            ["git", "log", "-1", "--format=%cI", "--", str(path.relative_to(ROOT))],
+            cwd=ROOT, text=True, stderr=subprocess.DEVNULL).strip()
+        return datetime.fromisoformat(date).timestamp()
+    except (ValueError, OSError, subprocess.CalledProcessError):
+        return path.stat().st_mtime
 
 
 def normalize_href(href: str) -> str:
@@ -150,7 +164,7 @@ def fix_article_file(path: Path, dry_run: bool) -> int:
 
     if text != original and not dry_run:
         path.write_text(text, encoding="utf-8")
-    return changes
+    return changes if text != original else 0
 
 
 def fix_static_pages(dry_run: bool) -> int:
@@ -255,7 +269,7 @@ def rebuild_sitemap(dry_run: bool, mtime_cache: dict[str, float] | None = None) 
         SITEMAP.write_text(index_text, encoding="utf-8")
 
     article_dates = re.findall(r"<lastmod>([^<]+)</lastmod>", article_text)
-    return len(article_parts) - 3, len(article_dates)
+    return len(article_dates), len(article_dates)
 
 
 def ping_indexnow() -> dict:
@@ -298,11 +312,11 @@ def main():
     args = ap.parse_args()
     print(f"=== _refresh_indexing.py (dry_run={args.dry_run}) ===\n")
     # Cache mtimes BEFORE we modify anything (so sitemap reflects real lastmod)
-    mtime_cache = {p.name: p.stat().st_mtime for p in ART_DIR.glob("*.html")}
+    mtime_cache = {p.name: source_mtime(p) for p in ART_DIR.glob("*.html")}
     for fn in ["index.html", "about.html", "impressum.html", "datenschutz.html"]:
         p = ROOT / fn
         if p.exists():
-            mtime_cache[fn] = p.stat().st_mtime
+            mtime_cache[fn] = source_mtime(p)
     n = 0
     touched = 0
     for p in sorted(ART_DIR.glob("*.html")):
@@ -314,9 +328,7 @@ def main():
     n = fix_static_pages(args.dry_run)
     print(f"[2/3] Static pages: {n} href edits")
     kept, dates = rebuild_sitemap(args.dry_run, mtime_cache)
-    with open(SITEMAP, encoding="utf-8") as f:
-        all_dates = re.findall(r"<lastmod>([^<]+)</lastmod>", f.read())
-    print(f"[3/3] Sitemap: {kept} URLs, oldest={min(all_dates) if all_dates else 'n/a'}, newest={max(all_dates) if all_dates else 'n/a'}")
+    print(f"[3/3] Sitemap: {kept} article URLs, {dates} article lastmod values")
     if args.ping and not args.dry_run:
         print("\n[ping] IndexNow:", ping_indexnow())
         print("[ping] Google:  ", ping_google())

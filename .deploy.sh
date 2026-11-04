@@ -1,6 +1,4 @@
-#!/bin/bash
-cd /c/HermesPortable/home/scripts/blog-automation/haustier-zentrum && \
-git add artikel/katzenfutter-vergleich-2026.html sitemap.xml && \
-git commit -m "Neuer Artikel: Katzenfutter Vergleich 2026 – Nassfutter vs. Trockenfutter" && \
-git push
-echo "--- DONE ---"
+#!/usr/bin/env bash
+# Kompatibilitaetsaufruf fuer den bisherigen Einstiegspunkt.
+set -euo pipefail
+exec bash "$(dirname "${BASH_SOURCE[0]}")/deploy.sh" "$@"

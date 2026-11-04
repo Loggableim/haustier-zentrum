@@ -1,64 +1,25 @@
-#!/bin/bash
-# Auto-Deploy Script — Haustierzentrum
-#
-# Reihenfolge:
-#   1. Refresh Sitemap + canonicals (idempotent)
-#   2. Generate RSS feed
-#   3. Git add + commit + push
-#
-# `set -e` sorgt dafür, dass bei Fehler sofort abgebrochen wird.
-# `python3` ist Fallback falls `python` nicht verfügbar (Linux/Mac).
-
-set -e
-cd "$(dirname "$0")"
-
-# Python finden (Windows: python, Linux: python3)
-PY=$(command -v python3 || command -v python)
-if [ -z "$PY" ]; then
-    echo "ERROR: Python nicht gefunden"
-    exit 1
+#!/usr/bin/env bash
+# Ohne --push nur lokal vorbereiten. QA_APPROVED_COMMIT erst nach Merles Freigabe setzen.
+set -euo pipefail
+cd "$(dirname "${BASH_SOURCE[0]}")"
+mode=${1:---prepare}
+case "$mode" in --prepare|--push) ;; *) echo 'Aufruf: bash deploy.sh [--prepare|--push]' >&2; exit 2 ;; esac
+PY=${PYTHON:-$(command -v python3 || command -v python || true)}
+if [[ -z "$PY" ]]; then echo 'Python 3 fehlt.' >&2; exit 1; fi
+if [[ "$mode" == --push ]]; then
+    [[ "$(git branch --show-current)" == main ]] || { echo 'Push nur von main.' >&2; exit 1; }
+    [[ "${QA_APPROVED_COMMIT:-}" == "$(git rev-parse HEAD)" ]] || { echo 'Merles QA-Freigabe fuer diesen Commit fehlt (QA_APPROVED_COMMIT).' >&2; exit 1; }
+    [[ -z "$(git status --porcelain)" ]] || { echo 'Vor Push alle geprueften Aenderungen lokal committen.' >&2; exit 1; }
+    "$PY" _refresh_indexing.py --dry-run
+    "$PY" _generate_feed.py --dry-run
+    "$PY" _build_public.py
+    git push origin HEAD:main
+    echo 'Push erfolgt; Deployment-Ergebnis in GitHub Actions pruefen.'
+else
+    "$PY" _refresh_indexing.py --dry-run
+    "$PY" _generate_feed.py --dry-run
+    "$PY" _refresh_indexing.py
+    "$PY" _generate_feed.py
+    "$PY" _build_public.py
+    echo 'Lokal vorbereitet. Aenderungen pruefen und gezielt committen; kein Push ausgefuehrt.'
 fi
-
-echo "=== Deploy $(date +%Y-%m-%d\ %H:%M:%S) ==="
-echo ""
-
-# 1. Sitemap + canonicals refresh (legt sitemap.xml neu an wenn nötig)
-echo "[1/3] Refreshing sitemap..."
-$PY _refresh_indexing.py
-
-# 2. RSS-Feed neu generieren
-echo "[2/3] Generating RSS feed..."
-$PY _generate_feed.py --quiet
-
-# 3. Git commit + push
-echo "[3/3] Committing + pushing..."
-
-# Stat für Commit-Message
-ARTICLE_COUNT=$(ls artikel/*.html 2>/dev/null | wc -l)
-RSS_ITEMS=$(grep -c '<item>' rss.xml 2>/dev/null || echo 0)
-SITEMAP_URLS=$(grep -c '<loc>' sitemap.xml 2>/dev/null || echo 0)
-
-# Nur committen wenn es Änderungen gibt
-if git diff --cached --quiet 2>/dev/null && git diff --quiet 2>/dev/null; then
-    echo "Keine Änderungen — überspringe commit."
-    exit 0
-fi
-
-git add -A
-git commit -m "Auto: $ARTICLE_COUNT articles, $SITEMAP_URLS sitemap URLs, $RSS_ITEMS RSS items ($(date +%Y-%m-%d))"
-
-# Bei parallelen Pushs holt pull --rebase die Remote-Commits
-# und rebased unseren Commit drauf. Wenn Konflikte: Abbruch.
-echo "Pulling remote changes (rebase)..."
-if ! git pull --rebase --autostash; then
-    echo ""
-    echo "ERROR: git pull --rebase failed (likely merge conflicts)."
-    echo "Resolve manually: git status, fix conflicts, then git rebase --continue"
-    echo "After fixing, just run ./deploy.sh again."
-    exit 1
-fi
-
-git push
-
-echo ""
-echo "--- DEPLOYED ---"

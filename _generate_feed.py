@@ -17,12 +17,14 @@ import argparse
 import json
 import re
 import time
-from html import escape
+from html import escape, unescape
+from urllib.parse import urlsplit
+import mimetypes
 from pathlib import Path
 from datetime import datetime, timezone
 from email.utils import format_datetime
 
-ROOT = Path(r"C:\sidekick\home\spaces\haustier-zentrum")
+ROOT = Path(__file__).resolve().parent
 ART_DIR = ROOT / "artikel"
 FEED = ROOT / "rss.xml"
 SITE = "https://haustierzentrum.com"
@@ -89,7 +91,7 @@ def extract_main_text(html: str) -> str:
     # Remove inline event handlers (for safety in feed readers)
     body = re.sub(r' on[a-z]+="[^"]*"', '', body, flags=re.IGNORECASE)
     body = re.sub(r'\s+on[a-z]+=\'[^\']*\'', '', body, flags=re.IGNORECASE)
-    return body.strip()
+    return "\n".join(line.rstrip() for line in body.strip().splitlines())
 
 
 def article_metadata(p: Path) -> dict | None:
@@ -104,13 +106,13 @@ def article_metadata(p: Path) -> dict | None:
     m = re.search(r"<title>([^<]+)</title>", text)
     if not m:
         return None
-    title = m.group(1).replace(" | Haustierzentrum", "").strip()
+    title = unescape(m.group(1)).replace(" | Haustierzentrum", "").strip()
     if not title:
         return None
 
     # Description: meta description
     m = re.search(r'<meta name="description" content="([^"]+)"', text)
-    description = m.group(1) if m else ""
+    description = unescape(m.group(1)) if m else ""
 
     # JSON-LD
     m = re.search(r'<script type="application/ld\+json">(.*?)</script>', text, re.DOTALL)
@@ -131,6 +133,13 @@ def article_metadata(p: Path) -> dict | None:
             category = sec[0]
         elif isinstance(sec, str):
             category = sec
+
+    # Use a real public image rather than a stale PNG reference in JSON-LD.
+    og = re.search(r'<meta property="og:image" content="([^"]+)"', text)
+    candidates = [og.group(1) if og else None, image]
+    image = next((url for url in candidates if isinstance(url, str)
+                  and url.startswith(SITE + "/images/")
+                  and (ROOT / urlsplit(url).path.lstrip("/")).is_file()), None)
 
     # Fallbacks
     if not date_pub:
@@ -223,7 +232,9 @@ def build_feed() -> str:
             lines.append(f'      <description>{xml_escape(it["description"])}</description>')
         if it.get("image"):
             # media:content (RSS extension) is widely supported
-            lines.append(f'      <enclosure url="{xml_escape(it["image"])}" type="image/webp" length="0"/>')
+            image_path = ROOT / urlsplit(it["image"]).path.lstrip("/")
+            mime = mimetypes.guess_type(image_path.name)[0] or "application/octet-stream"
+            lines.append(f'      <enclosure url="{xml_escape(it["image"])}" type="{mime}" length="{image_path.stat().st_size}"/>')
         # content:encoded (HTML)
         if it.get("content_html"):
             lines.append(f'      <content:encoded><![CDATA[{cdata(it["content_html"])}]]></content:encoded>')

@@ -1,0 +1,356 @@
+{
+  "articles": 125,
+  "internal_links_checked": 4899,
+  "broken_links": [
+    {
+      "source": "artikel/aquarium-pflanzen-einsteiger.html",
+      "href": "/aquarium-bodengrund-wahl",
+      "path": "/aquarium-bodengrund-wahl"
+    },
+    {
+      "source": "artikel/aquarium-pflanzen-einsteiger.html",
+      "href": "/aquarium-wasserwechsel-anleitung",
+      "path": "/aquarium-wasserwechsel-anleitung"
+    },
+    {
+      "source": "artikel/aquarium-pflanzen-einsteiger.html",
+      "href": "/aquarium-einsteiger-guide",
+      "path": "/aquarium-einsteiger-guide"
+    },
+    {
+      "source": "artikel/chinchilla-ernaehrung-futter.html",
+      "href": "/kleintiere",
+      "path": "/kleintiere"
+    },
+    {
+      "source": "artikel/chinchilla-ernaehrung-futter.html",
+      "href": "/kleintiere/chinchilla-haltung",
+      "path": "/kleintiere/chinchilla-haltung"
+    },
+    {
+      "source": "artikel/chinchilla-ernaehrung-futter.html",
+      "href": "/kleintiere/chinchilla-kaefig-einrichten",
+      "path": "/kleintiere/chinchilla-kaefig-einrichten"
+    },
+    {
+      "source": "artikel/chinchilla-ernaehrung-futter.html",
+      "href": "/kleintiere/beschäftigung-kleintiere",
+      "path": "/kleintiere/beschäftigung-kleintiere"
+    },
+    {
+      "source": "artikel/dog-sitting-hundesitter-finden.html",
+      "href": "/hunde/hundeerziehung-grundlagen",
+      "path": "/hunde/hundeerziehung-grundlagen"
+    },
+    {
+      "source": "artikel/dog-sitting-hundesitter-finden.html",
+      "href": "/hunde/hundefutter-ratgeber",
+      "path": "/hunde/hundefutter-ratgeber"
+    },
+    {
+      "source": "artikel/dog-sitting-hundesitter-finden.html",
+      "href": "/hunde/hundespielzeug",
+      "path": "/hunde/hundespielzeug"
+    },
+    {
+      "source": "artikel/dog-sitting-hundesitter-finden.html",
+      "href": "/hunde/hundegesundheit-vorsorge",
+      "path": "/hunde/hundegesundheit-vorsorge"
+    },
+    {
+      "source": "artikel/dog-sitting-hundesitter-finden.html",
+      "href": "/hunde/hundegeschirr",
+      "path": "/hunde/hundegeschirr"
+    },
+    {
+      "source": "artikel/hamster-ernaehrung-futterplan.html",
+      "href": "/kleintiere/hamster/hamsterratten-ratgeber",
+      "path": "/kleintiere/hamster/hamsterratten-ratgeber"
+    },
+    {
+      "source": "artikel/hamster-ernaehrung-futterplan.html",
+      "href": "/kleintiere/hamster/goldhamster-vs-zwerghamster",
+      "path": "/kleintiere/hamster/goldhamster-vs-zwerghamster"
+    },
+    {
+      "source": "artikel/hamster-ernaehrung-futterplan.html",
+      "href": "/kleintiere/hamster/hamster-krankheiten-erkennen",
+      "path": "/kleintiere/hamster/hamster-krankheiten-erkennen"
+    },
+    {
+      "source": "artikel/hundeangst-training-tipps.html",
+      "href": "/hunde/erziehung/silvester-mit-hund",
+      "path": "/hunde/erziehung/silvester-mit-hund"
+    },
+    {
+      "source": "artikel/hundeangst-training-tipps.html",
+      "href": "/hunde/erziehung/welpen-erziehung",
+      "path": "/hunde/erziehung/welpen-erziehung"
+    },
+    {
+      "source": "artikel/hundeangst-training-tipps.html",
+      "href": "/hunde/gesundheit/hundestress-erkennen",
+      "path": "/hunde/gesundheit/hundestress-erkennen"
+    },
+    {
+      "source": "artikel/hundeangst-training-tipps.html",
+      "href": "/hunde/erziehung/hund-bleibt-allein",
+      "path": "/hunde/erziehung/hund-bleibt-allein"
+    },
+    {
+      "source": "artikel/hundeangst-training-tipps.html",
+      "href": "/hunde/erziehung/hundeschule-tipps",
+      "path": "/hunde/erziehung/hundeschule-tipps"
+    },
+    {
+      "source": "artikel/hundeangst-training-tipps.html",
+      "href": "/hunde/erziehung/silvester-mit-hund",
+      "path": "/hunde/erziehung/silvester-mit-hund"
+    },
+    {
+      "source": "artikel/hundeangst-training-tipps.html",
+      "href": "/hunde/erziehung/ruhiges-spazierengehen",
+      "path": "/hunde/erziehung/ruhiges-spazierengehen"
+    },
+    {
+      "source": "artikel/hundefutter-vergleich-2026.html",
+      "href": "/trockenfutter-vs-nassfutter-hund/",
+      "path": "/trockenfutter-vs-nassfutter-hund/"
+    },
+    {
+      "source": "artikel/hundefutter-vergleich-2026.html",
+      "href": "/barfen-hund-anleitung/",
+      "path": "/barfen-hund-anleitung/"
+    },
+    {
+      "source": "artikel/hundefutter-vergleich-2026.html",
+      "href": "/welpenfutter-empfehlung/",
+      "path": "/welpenfutter-empfehlung/"
+    },
+    {
+      "source": "artikel/hundefutter-vergleich-2026.html",
+      "href": "/hunde-snacks-gesund/",
+      "path": "/hunde-snacks-gesund/"
+    },
+    {
+      "source": "artikel/hundefutter-vergleich-2026.html",
+      "href": "/futtermittelunvertraeglichkeit-hund/",
+      "path": "/futtermittelunvertraeglichkeit-hund/"
+    },
+    {
+      "source": "artikel/katzen-kratzmoebel-test.html",
+      "href": "/katzen/katzenerziehung/",
+      "path": "/katzen/katzenerziehung/"
+    },
+    {
+      "source": "artikel/katzen-kratzmoebel-test.html",
+      "href": "/katzen/katzengerechte-wohnung/",
+      "path": "/katzen/katzengerechte-wohnung/"
+    },
+    {
+      "source": "artikel/katzen-kratzmoebel-test.html",
+      "href": "/katzen/zubehoer/",
+      "path": "/katzen/zubehoer/"
+    },
+    {
+      "source": "artikel/katzen-kratzmoebel-test.html",
+      "href": "/katzen/spiel-und-beschaeftigung/",
+      "path": "/katzen/spiel-und-beschaeftigung/"
+    },
+    {
+      "source": "artikel/katzen-zimmerpflanzen-giftig.html",
+      "href": "/katzen/erste-hilfe-katze",
+      "path": "/katzen/erste-hilfe-katze"
+    },
+    {
+      "source": "artikel/katzen-zimmerpflanzen-giftig.html",
+      "href": "/katzen/gesundheit",
+      "path": "/katzen/gesundheit"
+    },
+    {
+      "source": "artikel/katzen-zimmerpflanzen-giftig.html",
+      "href": "/katzen/tierarzt-kosten",
+      "path": "/katzen/tierarzt-kosten"
+    },
+    {
+      "source": "artikel/katzen-zimmerpflanzen-giftig.html",
+      "href": "/katzen/transportbox",
+      "path": "/katzen/transportbox"
+    },
+    {
+      "source": "artikel/katzen-zimmerpflanzen-giftig.html",
+      "href": "/katzen/katzenbalkon-gestaltung",
+      "path": "/katzen/katzenbalkon-gestaltung"
+    },
+    {
+      "source": "artikel/katzen-zimmerpflanzen-giftig.html",
+      "href": "/katzen/tierkrankenversicherung",
+      "path": "/katzen/tierkrankenversicherung"
+    },
+    {
+      "source": "artikel/katzenfreundliche-wohnung-gestalten.html",
+      "href": "/mehrkatzenhaushalt-harmonisch-gestalten",
+      "path": "/mehrkatzenhaushalt-harmonisch-gestalten"
+    },
+    {
+      "source": "artikel/katzenfreundliche-wohnung-gestalten.html",
+      "href": "/katze-kratzt-moebel-was-tun",
+      "path": "/katze-kratzt-moebel-was-tun"
+    },
+    {
+      "source": "artikel/katzenfreundliche-wohnung-gestalten.html",
+      "href": "/ungefaehrliche-pflanzen-fuer-katzen",
+      "path": "/ungefaehrliche-pflanzen-fuer-katzen"
+    },
+    {
+      "source": "artikel/katzenfreundliche-wohnung-gestalten.html",
+      "href": "/katzen-mit-nierenerkrankung-richtig-fuettern",
+      "path": "/katzen-mit-nierenerkrankung-richtig-fuettern"
+    },
+    {
+      "source": "artikel/katzenfreundliche-wohnung-gestalten.html",
+      "href": "/wohnungshaltung-katze-tipps",
+      "path": "/wohnungshaltung-katze-tipps"
+    },
+    {
+      "source": "artikel/katzenrassen-vergleich.html",
+      "href": "/kategorie/hunde.html",
+      "path": "/kategorie/hunde.html"
+    },
+    {
+      "source": "artikel/katzenrassen-vergleich.html",
+      "href": "/kategorie/kleintiere.html",
+      "path": "/kategorie/kleintiere.html"
+    },
+    {
+      "source": "artikel/vogelvoliere-kaufen-checkliste.html",
+      "href": "/wellensittich-haltung/",
+      "path": "/wellensittich-haltung/"
+    },
+    {
+      "source": "artikel/vogelvoliere-kaufen-checkliste.html",
+      "href": "/kanarienvogel-pflege/",
+      "path": "/kanarienvogel-pflege/"
+    },
+    {
+      "source": "artikel/vogelvoliere-kaufen-checkliste.html",
+      "href": "/papageien-als-haustiere/",
+      "path": "/papageien-als-haustiere/"
+    },
+    {
+      "source": "artikel/vogelvoliere-kaufen-checkliste.html",
+      "href": "/voegel/voegelfutter-grundlagen/",
+      "path": "/voegel/voegelfutter-grundlagen/"
+    },
+    {
+      "source": "artikel/vogelvoliere-kaufen-checkliste.html",
+      "href": "/voegel/erstausstattung-voegel/",
+      "path": "/voegel/erstausstattung-voegel/"
+    },
+    {
+      "source": "artikel/welpenschule-finden-kosten.html",
+      "href": "https://haustierzentrum.com/hunde/welpen/welpenerziehung-tipps",
+      "path": "/hunde/welpen/welpenerziehung-tipps"
+    },
+    {
+      "source": "artikel/welpenschule-finden-kosten.html",
+      "href": "https://haustierzentrum.com/hunde/welpen/welpenspielgruppe",
+      "path": "/hunde/welpen/welpenspielgruppe"
+    },
+    {
+      "source": "artikel/welpenschule-finden-kosten.html",
+      "href": "https://haustierzentrum.com/hunde/welpen/ersthund-welpen",
+      "path": "/hunde/welpen/ersthund-welpen"
+    },
+    {
+      "source": "artikel/welpenschule-finden-kosten.html",
+      "href": "https://haustierzentrum.com/hunde/welpen/positive-verstaerkung",
+      "path": "/hunde/welpen/positive-verstaerkung"
+    },
+    {
+      "source": "artikel/welpenschule-finden-kosten.html",
+      "href": "https://haustierzentrum.com/hunde/welpen/konsequenz-bei-der-erziehung",
+      "path": "/hunde/welpen/konsequenz-bei-der-erziehung"
+    },
+    {
+      "source": "artikel/whippet-rasseguide.html",
+      "href": "/hunde/hund-und-kind",
+      "path": "/hunde/hund-und-kind"
+    },
+    {
+      "source": "artikel/whippet-rasseguide.html",
+      "href": "/hunde/hundemantel-groessen",
+      "path": "/hunde/hundemantel-groessen"
+    },
+    {
+      "source": "artikel/whippet-rasseguide.html",
+      "href": "/hunde/zweiter-hund-einziehen",
+      "path": "/hunde/zweiter-hund-einziehen"
+    },
+    {
+      "source": "artikel/whippet-rasseguide.html",
+      "href": "/hunde/welpenerziehung-tipps",
+      "path": "/hunde/welpenerziehung-tipps"
+    },
+    {
+      "source": "artikel/whippet-rasseguide.html",
+      "href": "/hunde/barf-fuer-hunde-einstieg",
+      "path": "/hunde/barf-fuer-hunde-einstieg"
+    },
+    {
+      "source": "artikel/whippet-rasseguide.html",
+      "href": "/hunde/erstausstattung-hund",
+      "path": "/hunde/erstausstattung-hund"
+    }
+  ],
+  "canonical_errors": [],
+  "jsonld_errors": [],
+  "schema_pages": {
+    "Question": 71,
+    "FAQPage": 71,
+    "Answer": 71,
+    "BlogPosting": 112,
+    "Organization": 118,
+    "Person": 112,
+    "ListItem": 7,
+    "WebPage": 70,
+    "WebSite": 6,
+    "BreadcrumbList": 6,
+    "Article": 6,
+    "ItemList": 1
+  },
+  "missing_article_schema": [
+    "artikel/allergien-bei-hund-und-katze-2026-umwelt-futter-und-fell-ganzheitliche-strategie.html",
+    "artikel/ganzheitliche-hundegesundheit-2026-wie-sie-krankheiten-fruehzeitig-erkennen-und-.html",
+    "artikel/hundeerziehung-neu-gedacht-2026-warum-klassisches-gehorsamstraining-an-modernen-.html",
+    "artikel/katzen.html",
+    "artikel/naehrstoff-kompass-2026-so-waehlen-sie-das-richtige-futter-fuer-hund-katze-und-k.html",
+    "artikel/notfall-checkliste-2026-erste-hilfe-fuer-hund-katze-und-kleintier-was-jede-halte.html",
+    "artikel/stille-signale-erkennen-wie-hunde-und-katzen-schmerzen-zeigen-und-was-halter-202.html"
+  ],
+  "h1_errors": [
+    "artikel/aquarium-einrichtung.html"
+  ],
+  "hreflang_pages": [],
+  "direct_ads_pages": [
+    "artikel/vogelkaefig-voliere-kaufen-vergleich-2026.html"
+  ],
+  "sitemaps": {
+    "sitemap.xml": {
+      "root": "sitemapindex",
+      "locs": 2,
+      "unique": 2
+    },
+    "sitemap-articles.xml": {
+      "root": "urlset",
+      "locs": 125,
+      "unique": 125
+    },
+    "sitemap-static.xml": {
+      "root": "urlset",
+      "locs": 4,
+      "unique": 4
+    }
+  },
+  "rss_items": 40
+}
