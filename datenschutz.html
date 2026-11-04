@@ -226,7 +226,7 @@ main{flex:1;max-width:1100px;margin:0 auto;padding:2rem 1rem;width:100%}
     <h3>3.1 Technisch notwendige Cookies</h3>
     <p>Diese Cookies sind für den Betrieb der Website erforderlich:</p>
     <ul>
-      <li><strong>cookieConsent</strong>: Speichert Ihre Cookie-Einstellungen (LocalStorage, kein Cookie)</li>
+      <li><strong>cookieConsentV2</strong>: Speichert Ihre Cookie-Einstellungen (LocalStorage, kein Cookie)</li>
     </ul>
 
     <h3>3.2 Einwilligungspflichtige Dienste</h3>
@@ -279,51 +279,9 @@ main{flex:1;max-width:1100px;margin:0 auto;padding:2rem 1rem;width:100%}
     <div class="footer-copy"><p>© 2026 Haustierzentrum</p></div>
   </div>
 </footer>
-<div class="cookie-banner" id="cookieBanner">
-  <p>🍪 Diese Website verwendet Cookies und technisch notwendige Funktionen. Mit Klick auf "Akzeptieren" stimmen Sie auch der Nutzung von Analyse- und Werbe-Cookies (AdSense, Amazon) zu. <a href="/datenschutz.html" style="color:#FFB74D;">Mehr Infos</a></p>
-  <button onclick="window.acceptCookies()">Akzeptieren</button>
-  <button onclick="window.declineCookies()" style="background:#555;">Ablehnen</button>
-</div>
+
 <script>
 // Verbessertes Cookie-Consent-Management
-window.cookieState = localStorage.getItem('cookieConsent');
-
-window.acceptCookies = function() {
-  localStorage.setItem('cookieConsent', 'accepted');
-  document.getElementById('cookieBanner').classList.remove('show');
-  window.loadThirdParty();
-};
-
-window.declineCookies = function() {
-  localStorage.setItem('cookieConsent', 'declined');
-  document.getElementById('cookieBanner').classList.remove('show');
-};
-
-window.loadThirdParty = function() {
-  // AdSense nachladen (wurde vorher blockiert)
-  if (typeof window.adsbygoogle !== 'undefined' && !document.querySelector('ins.adsbygoogle')) {
-    // AdSense wird dynamisch geladen
-  }
-  // Google Fonts nachladen
-  var fontLink = document.createElement('link');
-  fontLink.rel = 'stylesheet';
-  fontLink.href = 'https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap';
-  fontLink.id = 'consent-fonts';
-  document.head.appendChild(fontLink);
-};
-
-// Cookie-Banner anzeigen nur wenn kein Consent gesetzt
-if (!window.cookieState) {
-  document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById('cookieBanner')?.classList.add('show');
-  });
-}
-
-// Falls bereits zugestimmt, Third-Party direkt laden
-if (window.cookieState === 'accepted') {
-  window.loadThirdParty();
-}
-
 document.querySelectorAll('.nav-links > li').forEach(function(li){
   var link = li.querySelector('a');
   if(li.querySelector('.mega-panel')){
@@ -342,5 +300,6 @@ document.querySelectorAll('.simple-link a, .mega-col a').forEach(function(a){
   });
 });
 </script>
+<script src="/js/consent.js" defer></script>
 </body>
 </html>

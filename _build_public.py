@@ -39,7 +39,7 @@ def build():
     for source in ROOT.glob("*.txt"):
         if len(source.stem) == 32 and all(c in "0123456789abcdef" for c in source.stem):
             shutil.copy2(source, OUT / source.name)
-    extensions = {"artikel": {".html"}, "css": {".css"},
+    extensions = {"artikel": {".html"}, "css": {".css"}, "js": {".js"},
                   "images": {".png", ".webp", ".jpg", ".jpeg", ".svg", ".gif", ".ico", ".avif"}}
     for folder, allowed in extensions.items():
         for source in (ROOT / folder).rglob("*"):

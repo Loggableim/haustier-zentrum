@@ -1,0 +1,43 @@
+{
+  "articles": 125,
+  "internal_links_checked": 4856,
+  "broken_links": [],
+  "canonical_errors": [],
+  "jsonld_errors": [],
+  "schema_pages": {
+    "FAQPage": 71,
+    "Answer": 71,
+    "Article": 13,
+    "Question": 71,
+    "BlogPosting": 112,
+    "Organization": 118,
+    "Person": 112,
+    "WebSite": 6,
+    "WebPage": 70,
+    "ListItem": 7,
+    "BreadcrumbList": 6,
+    "ItemList": 1
+  },
+  "missing_article_schema": [],
+  "h1_errors": [],
+  "hreflang_pages": [],
+  "direct_ads_pages": [],
+  "sitemaps": {
+    "sitemap.xml": {
+      "root": "sitemapindex",
+      "locs": 2,
+      "unique": 2
+    },
+    "sitemap-articles.xml": {
+      "root": "urlset",
+      "locs": 125,
+      "unique": 125
+    },
+    "sitemap-static.xml": {
+      "root": "urlset",
+      "locs": 4,
+      "unique": 4
+    }
+  },
+  "rss_items": 40
+}

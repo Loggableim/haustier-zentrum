@@ -19,6 +19,8 @@ jobs:
           python _refresh_indexing.py --dry-run
           python _generate_feed.py --dry-run
           python _build_public.py
+          python _check_release.py dist
+          node _test_consent.cjs
       - name: Deploy to Cloudflare Pages
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}

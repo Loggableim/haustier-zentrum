@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="alternate" type="application/rss+xml" title="Haustierzentrum RSS Feed" href="https://haustierzentrum.com/rss.xml">
-  <link rel="preconnect" href="https://pagead2.googlesyndication.com">
-  <link rel="preconnect" href="https://www.googletagservices.com">
+
+
 <title>Pferdehaltung für Einsteiger – Kosten, Stall, Ausrüstung &amp;…</title>
 <meta name="description" content="Pferdehaltung für Anfänger: Alle Kosten, Haltungsformen, Ausrüstung und tägliche Pflege im Überblick. Der große Einsteiger-Ratgeber 2026 mit wertvollen Tipps.">
 <meta property="og:title" content="Pferdehaltung für Einsteiger – Kosten, Stall">
@@ -512,8 +512,8 @@ main{flex:1;max-width:1100px;margin:0 auto;padding:2rem 1rem;width:100%}
 </header>
 <main>
       <nav class="breadcrumb" aria-label="Brotkrümelnavigation">
-        <a href="/">Startseite</a> › 
-        <a href="/artikel/pferdehaltung-einsteiger">Pferde</a> › 
+        <a href="/">Startseite</a> ›
+        <a href="/artikel/pferdehaltung-einsteiger">Pferde</a> ›
         <span>Pferdehaltung für Einsteiger – Kosten, Stall, Ausrüstung &…</span>
       </nav>
 
@@ -533,7 +533,7 @@ main{flex:1;max-width:1100px;margin:0 auto;padding:2rem 1rem;width:100%}
       <p>Ein eigenes Pferd – für viele Tierfreunde ist das ein Lebenstraum. Doch die Realität der Pferdehaltung sieht anders aus als die romantischen Bilder von galoppierenden Pferden auf grünen Weiden. Pferdehaltung bedeutet tägliche Verantwortung, hohe Kosten und viel Zeitaufwand. Dieser Guide gibt Dir einen realistischen Überblick über alles, was Du als Einsteiger wissen musst: von den Kosten über die richtige Haltungsform bis zur täglichen Pflege und Gesundheitsvorsorge.</p>
 
       <!-- AdSense -->
-      <div class="ad-placeholder"><p><strong>📢 Google AdSense</strong></p><p>Anzeige</p></div>
+
 
       <h2>Die erste und wichtigste Frage: Passt ein Pferd in mein Leben?</h2>
       <p>Bevor Du Dich in die Kosten und Details stürzt, solltest Du Dir drei grundlegende Fragen ehrlich beantworten: <strong>Habe ich genug Zeit?</strong> Ein Pferd braucht täglich mindestens 1–2 Stunden Zuwendung, dazu kommen Weidegang, Stallarbeit und Ausritte. <strong>Habe ich genug Geld?</strong> Die monatlichen Kosten liegen selten unter 400–800 Euro – und das ohne unvorhergesehene Tierarztrechnungen. <strong>Habe ich das nötige Wissen?</strong> Pferde sind Fluchttiere mit komplexen Bedürfnissen. Ohne fundiertes Wissen kann man schnell Fehler machen, die dem Tier schaden.</p>
@@ -755,10 +755,7 @@ main{flex:1;max-width:1100px;margin:0 auto;padding:2rem 1rem;width:100%}
     <div class="footer-copy"><p>&copy; 2026 Haustierzentrum. Alle Rechte vorbehalten.</p><p style="margin-top:.3rem;font-size:.8rem;">Diese Seite kann Affiliate-Links (Amazon DE) enthalten. Als Amazon-Partner verdienen wir an qualifizierten Verkäufen.</p></div>
   </div>
 </footer>
-<div class="cookie-banner" id="cookieBanner">
-  <p>🍪 Diese Website verwendet Cookies und technisch notwendige Funktionen. Mit der Nutzung stimmst Du der Verarbeitung zu. <a href="/datenschutz.html" style="color:#FFB74D;">Mehr Infos</a></p>
-  <button onclick="window.acceptCookies()">Akzeptieren</button><button onclick="window.declineCookies()" style="background:#555;">Ablehnen</button>
-</div>
+
 <script>
 document.querySelectorAll('.nav-links > li').forEach(function(li){
   var link = li.querySelector('a');
@@ -781,23 +778,7 @@ document.querySelectorAll('.simple-link a, .mega-col a').forEach(function(a){
 </script>
 <script>
 // Cookie-Consent-Management
-window.cookieState = localStorage.getItem('cookieConsent');
-
-window.acceptCookies = function() {
-  localStorage.setItem('cookieConsent', 'accepted');
-  document.getElementById('cookieBanner').classList.remove('show');
-};
-
-window.declineCookies = function() {
-  localStorage.setItem('cookieConsent', 'declined');
-  document.getElementById('cookieBanner').classList.remove('show');
-};
-
-if (!window.cookieState) {
-  document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById('cookieBanner')?.classList.add('show');
-  });
-}
 </script>
+<script src="/js/consent.js" defer></script>
 </body>
 </html>

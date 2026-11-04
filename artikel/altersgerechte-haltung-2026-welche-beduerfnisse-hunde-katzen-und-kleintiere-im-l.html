@@ -233,27 +233,7 @@
     </article>
 <script>
 // Cookie-Consent-Management
-window.cookieState = localStorage.getItem('cookieConsent');
-
-window.acceptCookies = function() {
-  localStorage.setItem('cookieConsent', 'accepted');
-  document.getElementById('cookieBanner').classList.remove('show');
-};
-
-window.declineCookies = function() {
-  localStorage.setItem('cookieConsent', 'declined');
-  document.getElementById('cookieBanner').classList.remove('show');
-};
-
-if (!window.cookieState) {
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', function() {
-      document.getElementById('cookieBanner')?.classList.add('show');
-    });
-  } else {
-    document.getElementById('cookieBanner')?.classList.add('show');
-  }
-}
 </script>
+<script src="/js/consent.js" defer></script>
 </body>
 </html>

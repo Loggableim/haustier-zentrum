@@ -13,6 +13,7 @@ if [[ "$mode" == --push ]]; then
     "$PY" _refresh_indexing.py --dry-run
     "$PY" _generate_feed.py --dry-run
     "$PY" _build_public.py
+    "$PY" _check_release.py dist
     git push origin HEAD:main
     echo 'Push erfolgt; Deployment-Ergebnis in GitHub Actions pruefen.'
 else
@@ -21,5 +22,6 @@ else
     "$PY" _refresh_indexing.py
     "$PY" _generate_feed.py
     "$PY" _build_public.py
+    "$PY" _check_release.py dist
     echo 'Lokal vorbereitet. Aenderungen pruefen und gezielt committen; kein Push ausgefuehrt.'
 fi

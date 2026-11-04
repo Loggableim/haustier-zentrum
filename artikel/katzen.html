@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="alternate" type="application/rss+xml" title="Haustierzentrum RSS Feed" href="https://haustierzentrum.com/rss.xml">
-  <link rel="preconnect" href="https://pagead2.googlesyndication.com">
-  <link rel="preconnect" href="https://www.googletagservices.com">
+
+
 <title>Katzen-Ratgeber 🐱 – Alles zur artgerechten Katzenhaltung…</title>
 <meta name="description" content="Umfassende Ratgeber zur Katzenhaltung: Wohnungseinrichtung, Gesundheit, Ernährung, Beschäftigung und Rassen – praktische Tipps für Deine Samtpfote.">
 <meta property="og:title" content="Katzen-Ratgeber 🐱 – Alles zur artgerechten">
@@ -921,7 +921,8 @@ main{flex:1;width:100%}
 .breadcrumb a:hover{text-decoration:underline}
 </style>
   <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon.png">
-  <script>if(localStorage.getItem('cookieConsent')==='accepted'){var s=document.createElement('script');s.async=true;s.src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9094916118868532";s.crossOrigin="anonymous";document.head.appendChild(s);}</script>
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Katzen-Ratgeber 🐱 – Alles zur artgerechten Katzenhaltung…", "description": "Umfassende Ratgeber zur Katzenhaltung: Wohnungseinrichtung, Gesundheit, Ernährung, Beschäftigung und Rassen – praktische Tipps für Deine Samtpfote.", "url": "https://haustierzentrum.com/artikel/katzen", "inLanguage": "de"}</script>
 </head>
 <body>
 
@@ -1054,8 +1055,8 @@ main{flex:1;width:100%}
 
 <main>
       <nav class="breadcrumb" aria-label="Brotkrümelnavigation">
-        <a href="/">Startseite</a> › 
-        <a href="/artikel/katzenhaltung-wohnung">Katzen</a> › 
+        <a href="/">Startseite</a> ›
+        <a href="/artikel/katzenhaltung-wohnung">Katzen</a> ›
         <span>Katzen-Ratgeber 🐱 – Alles zur artgerechten Katzenhaltung</span>
       </nav>
 
@@ -1121,7 +1122,7 @@ main{flex:1;width:100%}
 </section>
 
 
-  
+
   <p>Katzen begleiten uns Menschen seit Jahrtausenden, und trotzdem ranken sich um die Samtpfoten jede Menge Mythen, Halbwissen und widersprüchliche Ratschläge. Mal gelten sie als pflegeleichte Einzelgänger, mal als anspruchsvolle Mitbewohner mit ganz eigenen Regeln. Die Wahrheit liegt, wie so oft, irgendwo dazwischen. Wer eine Katze bei sich aufnimmt, holt sich ein Lebewesen ins Haus, das sowohl eigenständig als auch überraschend sozial sein kann, das seinen eigenen Kopf durchsetzt und trotzdem Nähe sucht, wenn du es zulässt.</p>
 
 <p>In diesem Ratgeber bekommst du das geballte Wissen, das du für ein entspanntes Zusammenleben mit deiner Katze brauchst. Wir schauen uns an, was du vor der Anschaffung wissen solltest, wie die tägliche Pflege aussieht, welche Fehler du dir getrost sparen kannst, und mit welchen Kosten und welchem Zeitaufwand du realistisch rechnen musst. Egal, ob du zum ersten Mal eine Katze aufnimmst oder schon länger mit einer zusammenlebst und dein Wissen auffrischen möchtest – hier findest du ehrliche, praxisnahe Antworten ohne Schönfärberei.</p>
@@ -1214,10 +1215,7 @@ main{flex:1;width:100%}
 </footer>
 
 <!-- ============ COOKIE BANNER ============ -->
-<div class="cookie-banner" id="cookieBanner">
-  <p>🍪 Diese Website verwendet Cookies und technisch notwendige Funktionen. Mit der Nutzung stimmst Du der Verarbeitung zu. <a href="/impressum.html">Mehr Infos</a></p>
-  <button onclick="window.acceptCookies()">Akzeptieren</button><button onclick="window.declineCookies()" style="background:#555;">Ablehnen</button>
-</div>
+
 
 <script>
 document.querySelectorAll('.nav-links a').forEach(l=>l.addEventListener('click',()=>{
@@ -1227,32 +1225,8 @@ document.querySelectorAll('.nav-links a').forEach(l=>l.addEventListener('click',
 
 <script>
 // Cookie-Consent-Management
-window.cookieState = localStorage.getItem('cookieConsent');
-
-window.acceptCookies = function() {
-  localStorage.setItem('cookieConsent', 'accepted');
-  document.getElementById('cookieBanner').classList.remove('show');
-};
-
-window.declineCookies = function() {
-  localStorage.setItem('cookieConsent', 'declined');
-  document.getElementById('cookieBanner').classList.remove('show');
-};
-
-if (!window.cookieState) {
-  (function() {
-    var showBanner = function() {
-      var b = document.getElementById('cookieBanner');
-      if (b) b.classList.add('show');
-    };
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', showBanner);
-    } else {
-      showBanner();
-    }
-  })();
-}
 </script>
 
+<script src="/js/consent.js" defer></script>
 </body>
 </html>
