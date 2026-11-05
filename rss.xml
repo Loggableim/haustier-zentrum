@@ -6,7 +6,7 @@
     <description>Dein Ratgeber für artgerechte Haustierhaltung – Hunde, Katzen, Kleintiere, Vögel, Aquarium. Rasseporträts, Erziehung, Gesundheit und Produktvergleiche.</description>
     <language>de-DE</language>
     <copyright>© 2026 Haustierzentrum</copyright>
-    <lastBuildDate>Thu, 05 Nov 2026 08:20:37 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 05 Nov 2026 16:16:16 GMT</lastBuildDate>
     <pubDate>Tue, 07 Jul 2026 00:00:00 GMT</pubDate>
     <ttl>180</ttl>
     <atom:link href="https://haustierzentrum.com/rss.xml" rel="self" type="application/rss+xml"/>
@@ -273,7 +273,7 @@
       <pubDate>Sun, 21 Jun 2026 00:00:00 GMT</pubDate>
       <category>Vögel</category>
       <description>Vogelvoliere kaufen: Checkliste mit Größe, Material, Gitterabstand und Standort. Innen- und Außenvoliere im Vergleich. Inklusive Modell-Empfehlungen mit Am</description>
-      <enclosure url="https://haustierzentrum.com/images/vogelvoliere-kaufen-checkliste_00001_.webp" type="application/octet-stream" length="307522"/>
+      <enclosure url="https://haustierzentrum.com/images/vogelvoliere-kaufen-checkliste_00001_.webp" type="image/webp" length="307522"/>
       <content:encoded><![CDATA[<div class="featured-img">
     <img src="../images/vogelvoliere-kaufen-checkliste_00001_.webp" alt="Vogelvoliere kaufen – Die ultimative Checkliste für die richtige Wahl" style="width:100%;height:auto;border-radius:12px;">
   </div>
@@ -318,7 +318,7 @@
       <pubDate>Sun, 21 Jun 2026 00:00:00 GMT</pubDate>
       <category>Kleintiere</category>
       <description>Hamster Ernährung richtig gemacht: Was dürfen Hamster fressen? Futterplan, verbotene Lebensmittel, Leckerlis und die richtige Menge für Zwerghamster und Go</description>
-      <enclosure url="https://haustierzentrum.com/images/hamster-ernaehrung-futterplan_00001_.webp" type="application/octet-stream" length="334708"/>
+      <enclosure url="https://haustierzentrum.com/images/hamster-ernaehrung-futterplan_00001_.webp" type="image/webp" length="334708"/>
       <content:encoded><![CDATA[<div class="featured-img">
     <img src="../images/hamster-ernaehrung-futterplan_00001_.webp" alt="Hamster Ernährung – Der komplette Futterplan für gesunde Hamster" style="width:100%;height:auto;border-radius:12px;">
   </div>
@@ -357,7 +357,7 @@
       <pubDate>Sun, 21 Jun 2026 00:00:00 GMT</pubDate>
       <category>Aquarium</category>
       <description>Aquarium Pflanzen für Einsteiger: Die 10 pflegeleichtesten Wasserpflanzen. Mit Pflanzanleitung, Lichtbedarf und Düngungstipps für dein erstes Aquarium.</description>
-      <enclosure url="https://haustierzentrum.com/images/aquarium-pflanzen-einsteiger_00001_.webp" type="application/octet-stream" length="386634"/>
+      <enclosure url="https://haustierzentrum.com/images/aquarium-pflanzen-einsteiger_00001_.webp" type="image/webp" length="386634"/>
       <content:encoded><![CDATA[<div class="featured-img">
     <img src="../images/aquarium-pflanzen-einsteiger_00001_.webp" alt="Aquarium Pflanzen für Einsteiger – 10 pflegeleichte Arten" style="width:100%;height:auto;border-radius:12px;">
   </div>
@@ -400,7 +400,7 @@
       <pubDate>Sun, 21 Jun 2026 00:00:00 GMT</pubDate>
       <category>Hunde</category>
       <description>Hilfe bei Hundeangst: Ursachen erkennen, Training bei Angst vor Geräuschen, Menschen oder Artgenossen. Mit Übungen, Desensibilisierung und Tipps für ängstl</description>
-      <enclosure url="https://haustierzentrum.com/images/hundeangst-training-tipps_00001_.webp" type="application/octet-stream" length="279752"/>
+      <enclosure url="https://haustierzentrum.com/images/hundeangst-training-tipps_00001_.webp" type="image/webp" length="279752"/>
       <content:encoded><![CDATA[<div class="featured-img">
     <img src="../images/hundeangst-training-tipps_00001_.webp" alt="Hundeangst überwinden – Training bei Angst, Stress &amp; Unsicherheit" style="width:100%;height:auto;border-radius:12px;">
   </div>
@@ -439,7 +439,7 @@
       <pubDate>Sun, 21 Jun 2026 00:00:00 GMT</pubDate>
       <category>Katzen</category>
       <description>Kratzmöbel für Katzen im Vergleich: Kratzbaum, Kratzbrett, Kratzpappe und Kratztonne. Welches Möbelstück für welche Katze? Inkl. Kauftipps mit Amazon-Links</description>
-      <enclosure url="https://haustierzentrum.com/images/katzen-kratzmoebel-test_00001_.webp" type="application/octet-stream" length="287874"/>
+      <enclosure url="https://haustierzentrum.com/images/katzen-kratzmoebel-test_00001_.webp" type="image/webp" length="287874"/>
       <content:encoded><![CDATA[<div class="featured-img">
     <img src="../images/katzen-kratzmoebel-test_00001_.webp" alt="Kratzmöbel für Katzen – Kratzbaum, Kratzbrett &amp; Kratzpappe im Test" style="width:100%;height:auto;border-radius:12px;">
   </div>
@@ -526,7 +526,7 @@
       <pubDate>Sat, 20 Jun 2026 00:00:00 GMT</pubDate>
       <category>Katzen</category>
       <description>So gestaltest du deine Wohnung katzenfreundlich: Klettermöglichkeiten, Rückzugsorte, Balkonsicherung und artgerechte Beschäftigung für Wohnungskatzen.</description>
-      <enclosure url="https://haustierzentrum.com/images/katzenfreundliche-wohnung-gestalten_00001_.webp" type="application/octet-stream" length="342534"/>
+      <enclosure url="https://haustierzentrum.com/images/katzenfreundliche-wohnung-gestalten_00001_.webp" type="image/webp" length="342534"/>
       <content:encoded><![CDATA[<div class="featured-img">
     <img src="../images/katzenfreundliche-wohnung-gestalten_00001_.webp" alt="Katzenfreundliche Wohnung gestalten – 12 Tipps für glückliche Wohnungskatzen" style="width:100%;height:auto;border-radius:12px;">
   </div>
@@ -565,7 +565,7 @@
       <pubDate>Sat, 20 Jun 2026 00:00:00 GMT</pubDate>
       <category>Kleintiere</category>
       <description>Chinchilla Ernährung komplett erklärt: Heu, Pellets, Leckerlis und verbotene Lebensmittel. Mit Futterplan für eine gesunde, artgerechte Chinchilla-Haltung.</description>
-      <enclosure url="https://haustierzentrum.com/images/chinchilla-ernaehrung-futter_00001_.webp" type="application/octet-stream" length="354886"/>
+      <enclosure url="https://haustierzentrum.com/images/chinchilla-ernaehrung-futter_00001_.webp" type="image/webp" length="354886"/>
       <content:encoded><![CDATA[<div class="featured-img">
     <img src="../images/chinchilla-ernaehrung-futter_00001_.webp" alt="Chinchilla Ernährung – Was fressen Chinchillas wirklich? Futterplan &amp; Tipps" style="width:100%;height:auto;border-radius:12px;">
   </div>
@@ -602,7 +602,7 @@
       <pubDate>Sat, 20 Jun 2026 00:00:00 GMT</pubDate>
       <category>Hunde</category>
       <description>Hundefutter Vergleich 2026: Trockenfutter, Nassfutter, BARF und Frischfutter im Test. Die besten Marken, Preisvergleich und Fütterungsempfehlungen.</description>
-      <enclosure url="https://haustierzentrum.com/images/hundefutter-vergleich-2026_00001_.webp" type="application/octet-stream" length="263652"/>
+      <enclosure url="https://haustierzentrum.com/images/hundefutter-vergleich-2026_00001_.webp" type="image/webp" length="263652"/>
       <content:encoded><![CDATA[<div class="featured-img">
     <img src="../images/hundefutter-vergleich-2026_00001_.webp" alt="Hundefutter Vergleich 2026 – Trockenfutter, Nassfutter &amp; BARF im Test" style="width:100%;height:auto;border-radius:12px;">
   </div>
@@ -645,7 +645,7 @@
       <pubDate>Sat, 20 Jun 2026 00:00:00 GMT</pubDate>
       <category>Hunde</category>
       <description>Die richtige Welpenschule finden: Kosten 2026, Kursarten, Qualitätskriterien und Tipps für die Auswahl. Inklusive Checkliste für den ersten Besuch.</description>
-      <enclosure url="https://haustierzentrum.com/images/welpenschule-finden-kosten_00001_.webp" type="application/octet-stream" length="308582"/>
+      <enclosure url="https://haustierzentrum.com/images/welpenschule-finden-kosten_00001_.webp" type="image/webp" length="308582"/>
       <content:encoded><![CDATA[<div class="featured-img">
     <img src="../images/welpenschule-finden-kosten_00001_.webp" alt="Welpenschule finden – Kosten, Kursarten und worauf du achten musst" style="width:100%;height:auto;border-radius:12px;">
   </div>
@@ -684,7 +684,7 @@
       <pubDate>Fri, 19 Jun 2026 00:00:00 GMT</pubDate>
       <category>Hunde</category>
       <description>Pudel Rasseguide: Von der Größenwahl (Toy bis Königspudel) über Charakter, Erziehung, Fellpflege und Gesundheit. Alles für Allergiker, Familien &amp;</description>
-      <enclosure url="https://haustierzentrum.com/images/pudel-rasseguide_00001_.webp" type="application/octet-stream" length="285694"/>
+      <enclosure url="https://haustierzentrum.com/images/pudel-rasseguide_00001_.webp" type="image/webp" length="285694"/>
       <content:encoded><![CDATA[<article>
     <span>19. Juni 2026</span><span>· Lesezeit: ca. 35 Min</span></div><div class="author-reviewer-box" style="border-top:1px solid #ccc;padding-top:1rem;margin-top:1rem;"><p><strong>Autor:</strong> Haustierzentrum Redaktion — Tierhalter mit langjähriger Erfahrung in Hunde-, Katzen- und Kleintierhaltung.</p><p><strong>Stand:</strong> 2026-06-21 · Dieser Ratgeber wird regelmäßig an aktuelle Erkenntnisse angepasst.</p></div><h1>Pudel Rasseguide – Intelligent, charmant, hypoallergen</h1></div>
 <div class="featured-img"><img src="../images/pudel-rasseguide_00001_.webp" alt="Pudel Rasseguide" style="width:100%;height:100%;object-fit:cover;"></div>
@@ -860,7 +860,7 @@
       <pubDate>Wed, 17 Jun 2026 00:00:00 GMT</pubDate>
       <category>Hunde</category>
       <description>Boxer Rasseguide: Alles zu Herkunft, Charakter, Haltung, Pflege, Ernährung und Gesundheit des Boxers. Inkl. Vergleichstabelle, FAQ und Tipps für Halter.</description>
-      <enclosure url="https://haustierzentrum.com/images/boxer-rasseguide_00001_.webp" type="application/octet-stream" length="262494"/>
+      <enclosure url="https://haustierzentrum.com/images/boxer-rasseguide_00001_.webp" type="image/webp" length="262494"/>
       <content:encoded><![CDATA[<article>
     <span>17. Juni 2026</span><span>· Lesezeit: 12 Min</span></div><div class="author-reviewer-box" style="border-top:1px solid #ccc;padding-top:1rem;margin-top:1rem;"><p><strong>Autor:</strong> Haustierzentrum Redaktion — Tierhalter mit langjähriger Erfahrung in Hunde-, Katzen- und Kleintierhaltung.</p><p><strong>Stand:</strong> 2026-06-21 · Dieser Ratgeber wird regelmäßig an aktuelle Erkenntnisse angepasst.</p></div><h1>Boxer Rasseguide – Der wachsame, verspielte Athlet im Porträt</h1></div>
     <div class="featured-img"><img src="../images/boxer-rasseguide_00001_.webp" alt="Boxer Rasseguide – Der wachsame, verspielte Athlet" style="width:100%;height:100%;object-fit:cover;"></div>
@@ -886,7 +886,7 @@
       <pubDate>Wed, 17 Jun 2026 00:00:00 GMT</pubDate>
       <category>Katzen</category>
       <description>Katzen-Körpersprache verstehen: Von Ohren, Schwanz, Augen bis Miauen – erfahre, was Deine Katze Dir sagen will. Umfassender Ratgeber mit Bildern, Tipps &amp; FAQ.</description>
-      <enclosure url="https://haustierzentrum.com/images/katzen-verhalten-koerpersprache-kommunikation_00001_.webp" type="application/octet-stream" length="318058"/>
+      <enclosure url="https://haustierzentrum.com/images/katzen-verhalten-koerpersprache-kommunikation_00001_.webp" type="image/webp" length="318058"/>
       <content:encoded><![CDATA[<article>
     <span>17. Juni 2026</span><span>· Lesezeit: 14 Min</span></div><div class="author-reviewer-box" style="border-top:1px solid #ccc;padding-top:1rem;margin-top:1rem;"><p><strong>Autor:</strong> Haustierzentrum Redaktion — Tierhalter mit langjähriger Erfahrung in Hunde-, Katzen- und Kleintierhaltung.</p><p><strong>Stand:</strong> 2026-06-21 · Dieser Ratgeber wird regelmäßig an aktuelle Erkenntnisse angepasst.</p></div><h1>Katzen-Verhalten: Körpersprache & Kommunikation – So verstehst Du Deine Katze</h1>
       <img loading="lazy" src="../images/katzen-verhalten-koerpersprache-kommunikation_00001_.webp" alt="Katzen-Verhalten: Körpersprache & Kommunikation" class="hero-image">
@@ -914,7 +914,7 @@
       <pubDate>Wed, 17 Jun 2026 00:00:00 GMT</pubDate>
       <category>Katzen</category>
       <description>Siamkatze Rasseguide: Alles zu Herkunft, Charakter, Haltung, Pflege, Ernährung und Gesundheit der Siamkatze. Inkl. Vergleichstabelle, FAQ und Pflegetipps.</description>
-      <enclosure url="https://haustierzentrum.com/images/siamkatze-rasseguide_00001_.webp" type="application/octet-stream" length="272398"/>
+      <enclosure url="https://haustierzentrum.com/images/siamkatze-rasseguide_00001_.webp" type="image/webp" length="272398"/>
       <content:encoded><![CDATA[<article>
     <span>17. Juni 2026</span><span>· Lesezeit: 10 Min</span></div><div class="author-reviewer-box" style="border-top:1px solid #ccc;padding-top:1rem;margin-top:1rem;"><p><strong>Autor:</strong> Haustierzentrum Redaktion — Tierhalter mit langjähriger Erfahrung in Hunde-, Katzen- und Kleintierhaltung.</p><p><strong>Stand:</strong> 2026-06-21 · Dieser Ratgeber wird regelmäßig an aktuelle Erkenntnisse angepasst.</p></div><h1>Siamkatze Rasseguide – Die orientale Schönheit im Porträt</h1>
       <img loading="lazy" src="../images/siamkatze-rasseguide_00001_.webp" alt="Siamkatze Rasseguide – Die orientale Schönheit im Porträt" class="hero-image">
@@ -942,7 +942,7 @@
       <pubDate>Wed, 17 Jun 2026 00:00:00 GMT</pubDate>
       <category>Hunde</category>
       <description>Welpenkauf Ratgeber: Alles über Züchter, Tierheim, Privatverkauf &amp; Checkliste. Worauf beim Welpenkauf achten, Kosten, Rechtliches &amp; Tipps für den Einzug.</description>
-      <enclosure url="https://haustierzentrum.com/images/welpenkauf-zuuechter-tierheim-checkliste_00001_.webp" type="application/octet-stream" length="235256"/>
+      <enclosure url="https://haustierzentrum.com/images/welpenkauf-zuuechter-tierheim-checkliste_00001_.webp" type="image/webp" length="235256"/>
       <content:encoded><![CDATA[<article>
 
         <span>17. Juni 2026</span><span>· Lesezeit: 14 Min</span>
@@ -977,7 +977,7 @@
       <pubDate>Wed, 17 Jun 2026 00:00:00 GMT</pubDate>
       <category>Allgemein</category>
       <description>Haustierfreundliche Wohnung einrichten: Tipps fuer Hunde, Katzen, Kleintiere und Voegel. Welche Gefahren es gibt, welche Raeume besonders wichtig sind und</description>
-      <enclosure url="https://haustierzentrum.com/images/haustierfreundliche-wohnung-einrichten_00001_.webp" type="application/octet-stream" length="322208"/>
+      <enclosure url="https://haustierzentrum.com/images/haustierfreundliche-wohnung-einrichten_00001_.webp" type="image/webp" length="322208"/>
       <content:encoded><![CDATA[<article>
 
         <span>17. Juni 2026</span><span>· Lesezeit: 18 Min</span>
@@ -1016,7 +1016,7 @@
       <pubDate>Wed, 17 Jun 2026 00:00:00 GMT</pubDate>
       <category>Vögel</category>
       <description>Wellensittich-Ernährung &amp; Gesundheit: Alles über die richtige Ernährung, Gesundheitsvorsorge, Krankheiten erkennen und Lebensqualität für deinen</description>
-      <enclosure url="https://haustierzentrum.com/images/wellensittich-ernaehrung-gesundheit_00001_.webp" type="application/octet-stream" length="321060"/>
+      <enclosure url="https://haustierzentrum.com/images/wellensittich-ernaehrung-gesundheit_00001_.webp" type="image/webp" length="321060"/>
       <content:encoded><![CDATA[<!-- MEDICAL DISCLAIMER --><div class="author-reviewer-box" style="border-top:1px solid #ccc;padding-top:1rem;margin-top:1rem;"><p><strong>Autor:</strong> Haustierzentrum Redaktion — Tierhalter mit langjähriger Erfahrung in Hunde-, Katzen- und Kleintierhaltung.</p><p><strong>Stand:</strong> 2026-06-21 · Dieser Ratgeber wird regelmäßig an aktuelle Erkenntnisse angepasst.</p></div><div class="health-disclaimer" style="background:#fff3e0;border-left:4px solid #FF9800;padding:1rem 1.2rem;margin-bottom:1.5rem;border-radius:0 8px 8px 0;font-size:.9rem;"><strong>⚠️ Wichtiger Hinweis:</strong> Dieser Artikel dient nur zu Informationszwecken und ersetzt <strong>keine tierärztliche Beratung, Diagnose oder Behandlung</strong>. Bei gesundheitlichen Problemen Ihres Tieres wenden Sie sich bitte umgehend an einen Tierarzt.</div>
 
 
@@ -1040,7 +1040,7 @@
       <pubDate>Wed, 17 Jun 2026 00:00:00 GMT</pubDate>
       <category>Kleintiere</category>
       <description>Kaninchen-Ernährung &amp; Gesundheitsvorsorge: Alles über artgerechte Ernährung, Heu, Gemüse, Gesundheitsvorsorge, häufige Krankheiten und Tippe für ein langes</description>
-      <enclosure url="https://haustierzentrum.com/images/kaninchen-ernaehrung-gesundheit_00001_.webp" type="application/octet-stream" length="312982"/>
+      <enclosure url="https://haustierzentrum.com/images/kaninchen-ernaehrung-gesundheit_00001_.webp" type="image/webp" length="312982"/>
       <content:encoded><![CDATA[<!-- MEDICAL DISCLAIMER --><div class="author-reviewer-box" style="border-top:1px solid #ccc;padding-top:1rem;margin-top:1rem;"><p><strong>Autor:</strong> Haustierzentrum Redaktion — Tierhalter mit langjähriger Erfahrung in Hunde-, Katzen- und Kleintierhaltung.</p><p><strong>Stand:</strong> 2026-06-21 · Dieser Ratgeber wird regelmäßig an aktuelle Erkenntnisse angepasst.</p></div><div class="health-disclaimer" style="background:#fff3e0;border-left:4px solid #FF9800;padding:1rem 1.2rem;margin-bottom:1.5rem;border-radius:0 8px 8px 0;font-size:.9rem;"><strong>⚠️ Wichtiger Hinweis:</strong> Dieser Artikel dient nur zu Informationszwecken und ersetzt <strong>keine tierärztliche Beratung, Diagnose oder Behandlung</strong>. Bei gesundheitlichen Problemen Ihres Tieres wenden Sie sich bitte umgehend an einen Tierarzt.</div>
 
 
@@ -1069,7 +1069,7 @@
       <pubDate>Wed, 17 Jun 2026 00:00:00 GMT</pubDate>
       <category>Hunde</category>
       <description>Deutscher Schäferhund Rasseguide: Alles über Herkunft, Charakter, Haltung, Pflege, Ernährung und Gesundheit des Deutschen Schäferhunds. Mit</description>
-      <enclosure url="https://haustierzentrum.com/images/deutscher-schaeferhund_00001_.webp" type="application/octet-stream" length="191382"/>
+      <enclosure url="https://haustierzentrum.com/images/deutscher-schaeferhund_00001_.webp" type="image/webp" length="191382"/>
       <content:encoded><![CDATA[<article>
 <span>17. Juni 2026</span><span>· Lesezeit: 35 Min</span></div><div class="author-reviewer-box" style="border-top:1px solid #ccc;padding-top:1rem;margin-top:1rem;"><p><strong>Autor:</strong> Haustierzentrum Redaktion — Tierhalter mit langjähriger Erfahrung in Hunde-, Katzen- und Kleintierhaltung.</p><p><strong>Stand:</strong> 2026-06-21 · Dieser Ratgeber wird regelmäßig an aktuelle Erkenntnisse angepasst.</p></div><h1>Deutscher Schäferhund Rasseguide – Vielseitig, loyal, intelligent</h1></div>
 
@@ -1096,7 +1096,7 @@
       <pubDate>Wed, 17 Jun 2026 00:00:00 GMT</pubDate>
       <category>Hunde</category>
       <description>Hunde-Krankheiten erkennen &amp; erste Hilfe: Die häufigsten Hundekrankheiten, Warnsignale, Symptome und was Du im Notfall tun musst. Inkl. Erste-Hilfe-Set &amp;</description>
-      <enclosure url="https://haustierzentrum.com/images/hunde-krankheiten-symptome-erste-hilfe_00001_.webp" type="application/octet-stream" length="332248"/>
+      <enclosure url="https://haustierzentrum.com/images/hunde-krankheiten-symptome-erste-hilfe_00001_.webp" type="image/webp" length="332248"/>
       <content:encoded><![CDATA[<!-- EMERGENCY NOTICE --><div class="emergency-notice" style="background:#fdecea;border-left:4px solid #d32f2f;padding:1rem 1.2rem;margin-bottom:1.5rem;border-radius:0 8px 8px 0;font-size:.9rem;"><strong>🚨 Notfall?</strong> Bei akuten Symptomen wie Atemnot, Krampfanfällen, starken Blutungen oder Vergiftungsverdacht zögern Sie nicht – fahren Sie sofort zum nächsten Tierarzt oder zur Tierklinik!</div>
 <!-- MEDICAL DISCLAIMER --><div class="author-reviewer-box" style="border-top:1px solid #ccc;padding-top:1rem;margin-top:1rem;"><p><strong>Autor:</strong> Haustierzentrum Redaktion — Tierhalter mit langjähriger Erfahrung in Hunde-, Katzen- und Kleintierhaltung.</p><p><strong>Stand:</strong> 2026-06-21 · Dieser Ratgeber wird regelmäßig an aktuelle Erkenntnisse angepasst.</p></div><div class="health-disclaimer" style="background:#fff3e0;border-left:4px solid #FF9800;padding:1rem 1.2rem;margin-bottom:1.5rem;border-radius:0 8px 8px 0;font-size:.9rem;"><strong>⚠️ Wichtiger Hinweis:</strong> Dieser Artikel dient nur zu Informationszwecken und ersetzt <strong>keine tierärztliche Beratung, Diagnose oder Behandlung</strong>. Bei gesundheitlichen Problemen Ihres Tieres wenden Sie sich bitte umgehend an einen Tierarzt.</div>
 
@@ -1120,7 +1120,7 @@
       <pubDate>Wed, 17 Jun 2026 00:00:00 GMT</pubDate>
       <category>Aquarium</category>
       <description>Aquarium-Fische für Einsteiger: Welche Fischarten sind für Anfänger geeignet? Alles über Einrichtung, Pflege, Ernährung und die besten Anfängerfische im</description>
-      <enclosure url="https://haustierzentrum.com/images/aquarium-fische-einsteiger_00001_.webp" type="application/octet-stream" length="371560"/>
+      <enclosure url="https://haustierzentrum.com/images/aquarium-fische-einsteiger_00001_.webp" type="image/webp" length="371560"/>
       <content:encoded><![CDATA[<article>
     <span>17. Juni 2026</span><span>· Lesezeit: 14 Min</span></div><div class="author-reviewer-box" style="border-top:1px solid #ccc;padding-top:1rem;margin-top:1rem;"><p><strong>Autor:</strong> Haustierzentrum Redaktion — Tierhalter mit langjähriger Erfahrung in Hunde-, Katzen- und Kleintierhaltung.</p><p><strong>Stand:</strong> 2026-06-21 · Dieser Ratgeber wird regelmäßig an aktuelle Erkenntnisse angepasst.</p></div><h1>Aquarium-Fische für Einsteiger – Die besten Arten für den Einstieg</h1>
       <img loading="lazy" src="../images/aquarium-fische-einsteiger_00001_.webp" alt="Aquarium-Fische für Einsteiger – Die besten Arten für den Einstieg" class="hero-image">
@@ -1146,7 +1146,7 @@
       <pubDate>Wed, 17 Jun 2026 00:00:00 GMT</pubDate>
       <category>Hunde</category>
       <description>Australian Shepherd Rasseguide: Alles zu Herkunft, Charakter, Haltung, Training, Ernährung und Gesundheit des hochintelligenten Aussies. Inkl</description>
-      <enclosure url="https://haustierzentrum.com/images/australian-shepherd-rasseguide_00001_.webp" type="application/octet-stream" length="288716"/>
+      <enclosure url="https://haustierzentrum.com/images/australian-shepherd-rasseguide_00001_.webp" type="image/webp" length="288716"/>
       <content:encoded><![CDATA[<article>
     <span>17. Juni 2026</span><span>· Lesezeit: 14 Min</span></div><div class="author-reviewer-box" style="border-top:1px solid #ccc;padding-top:1rem;margin-top:1rem;"><p><strong>Autor:</strong> Haustierzentrum Redaktion — Tierhalter mit langjähriger Erfahrung in Hunde-, Katzen- und Kleintierhaltung.</p><p><strong>Stand:</strong> 2026-06-21 · Dieser Ratgeber wird regelmäßig an aktuelle Erkenntnisse angepasst.</p></div><h1>Australian Shepherd Rasseguide – Der intelligente Hütehund im Porträt</h1>
       <img loading="lazy" src="../images/australian-shepherd-rasseguide_00001_.webp" alt="Australian Shepherd Rasseguide – Der intelligente Hütehund im Porträt" class="hero-image">
@@ -1174,7 +1174,7 @@
       <pubDate>Wed, 17 Jun 2026 00:00:00 GMT</pubDate>
       <category>Hunde</category>
       <description>Hunde-Ernährung im Überblick: BARF, Trockenfutter, Nassfutter – Vor- und Nachteile, Kosten, Gesundheitseffekte. Welches Futter ist das beste für Deinen Hund?</description>
-      <enclosure url="https://haustierzentrum.com/images/hunde-ernaehrung-barf-trocken-nass_00001_.webp" type="application/octet-stream" length="285882"/>
+      <enclosure url="https://haustierzentrum.com/images/hunde-ernaehrung-barf-trocken-nass_00001_.webp" type="image/webp" length="285882"/>
       <content:encoded><![CDATA[<!-- MEDICAL DISCLAIMER --><div class="author-reviewer-box" style="border-top:1px solid #ccc;padding-top:1rem;margin-top:1rem;"><p><strong>Autor:</strong> Haustierzentrum Redaktion — Tierhalter mit langjähriger Erfahrung in Hunde-, Katzen- und Kleintierhaltung.</p><p><strong>Stand:</strong> 2026-06-21 · Dieser Ratgeber wird regelmäßig an aktuelle Erkenntnisse angepasst.</p></div><div class="health-disclaimer" style="background:#fff3e0;border-left:4px solid #FF9800;padding:1rem 1.2rem;margin-bottom:1.5rem;border-radius:0 8px 8px 0;font-size:.9rem;"><strong>⚠️ Wichtiger Hinweis:</strong> Dieser Artikel dient nur zu Informationszwecken und ersetzt <strong>keine tierärztliche Beratung, Diagnose oder Behandlung</strong>. Bei gesundheitlichen Problemen Ihres Tieres wenden Sie sich bitte umgehend an einen Tierarzt.</div>
 
 
@@ -1203,7 +1203,7 @@
       <pubDate>Wed, 17 Jun 2026 00:00:00 GMT</pubDate>
       <category>Katzen</category>
       <description>Katzenfutter selber machen: Alles über Nährstoffe, sichere Zutaten, 5 einfache Rezepte, Fehler vermeiden &amp; Schritt-für-Schritt-Anleitung. Inkl. FAQ &amp;</description>
-      <enclosure url="https://haustierzentrum.com/images/katzenfutter-selber-machen_00001_.webp" type="application/octet-stream" length="328728"/>
+      <enclosure url="https://haustierzentrum.com/images/katzenfutter-selber-machen_00001_.webp" type="image/webp" length="328728"/>
       <content:encoded><![CDATA[<!-- MEDICAL DISCLAIMER --><div class="author-reviewer-box" style="border-top:1px solid #ccc;padding-top:1rem;margin-top:1rem;"><p><strong>Autor:</strong> Haustierzentrum Redaktion — Tierhalter mit langjähriger Erfahrung in Hunde-, Katzen- und Kleintierhaltung.</p><p><strong>Stand:</strong> 2026-06-21 · Dieser Ratgeber wird regelmäßig an aktuelle Erkenntnisse angepasst.</p></div><div class="health-disclaimer" style="background:#fff3e0;border-left:4px solid #FF9800;padding:1rem 1.2rem;margin-bottom:1.5rem;border-radius:0 8px 8px 0;font-size:.9rem;"><strong>⚠️ Wichtiger Hinweis:</strong> Dieser Artikel dient nur zu Informationszwecken und ersetzt <strong>keine tierärztliche Beratung, Diagnose oder Behandlung</strong>. Bei gesundheitlichen Problemen Ihres Tieres wenden Sie sich bitte umgehend an einen Tierarzt.</div>
 
 
@@ -1226,7 +1226,7 @@
       <pubDate>Wed, 17 Jun 2026 00:00:00 GMT</pubDate>
       <category>Katzen</category>
       <description>Bengal Cat Rasseguide: Alles zu Herkunft, Charakter, Haltung, Pflege, Ernährung und Gesundheit der faszinierenden Bengalkatze. Inkl. Vergleichstabelle, FAQ</description>
-      <enclosure url="https://haustierzentrum.com/images/bengal-cat-rasseguide_00001_.webp" type="application/octet-stream" length="320832"/>
+      <enclosure url="https://haustierzentrum.com/images/bengal-cat-rasseguide_00001_.webp" type="image/webp" length="320832"/>
       <content:encoded><![CDATA[<article>
     <span>17. Juni 2026</span><span>· Lesezeit: 10 Min</span></div><div class="author-reviewer-box" style="border-top:1px solid #ccc;padding-top:1rem;margin-top:1rem;"><p><strong>Autor:</strong> Haustierzentrum Redaktion — Tierhalter mit langjähriger Erfahrung in Hunde-, Katzen- und Kleintierhaltung.</p><p><strong>Stand:</strong> 2026-06-21 · Dieser Ratgeber wird regelmäßig an aktuelle Erkenntnisse angepasst.</p></div><h1>Bengal Cat Rasseguide – Die wilde Schönheit mit dem Leopardenfell</h1>
       <img loading="lazy" src="../images/bengal-cat-rasseguide_00001_.webp" alt="Bengal Cat Rasseguide – Die wilde Schönheit mit dem Leopardenfell" class="hero-image">
@@ -1252,7 +1252,7 @@
       <pubDate>Wed, 17 Jun 2026 00:00:00 GMT</pubDate>
       <category>Hunde</category>
       <description>Dackel Rasseguide: Alles zu Herkunft, Charakter, Haltung, Pflege, Ernährung und Gesundheit des beliebten Kurzbeiners. Inkl. Vergleichstabelle, FAQ und</description>
-      <enclosure url="https://haustierzentrum.com/images/dackel-rasseguide_00001_.webp" type="application/octet-stream" length="174088"/>
+      <enclosure url="https://haustierzentrum.com/images/dackel-rasseguide_00001_.webp" type="image/webp" length="174088"/>
       <content:encoded><![CDATA[<article>
     <span>17. Juni 2026</span><span>· Lesezeit: 12 Min</span></div><div class="author-reviewer-box" style="border-top:1px solid #ccc;padding-top:1rem;margin-top:1rem;"><p><strong>Autor:</strong> Haustierzentrum Redaktion — Tierhalter mit langjähriger Erfahrung in Hunde-, Katzen- und Kleintierhaltung.</p><p><strong>Stand:</strong> 2026-06-21 · Dieser Ratgeber wird regelmäßig an aktuelle Erkenntnisse angepasst.</p></div><h1>Dackel (Teckel) Rasseguide – Der kleine Jagdhund mit großem Charakter</h1>
       <img loading="lazy" src="../images/dackel-rasseguide_00001_.webp" alt="Dackel (Teckel) Rasseguide – Der kleine Jagdhund mit großem Charakter" class="hero-image">
