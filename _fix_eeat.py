@@ -34,10 +34,8 @@ OLD_BOX_RE = re.compile(
 NEW_BOX = (
     '<div class="author-reviewer-box" style="border-top:1px solid #ccc;'
     'padding-top:1rem;margin-top:1rem;">'
-    '<p><strong>Autor:</strong> Haustierzentrum Redaktion — '
-    'Tierhalter mit langjähriger Erfahrung in Hunde-, Katzen- und Kleintierhaltung.</p>'
-    '<p><strong>Stand:</strong> {date} · Dieser Ratgeber wird regelmäßig '
-    'an aktuelle Erkenntnisse angepasst.</p>'
+    '<p><strong>Autor:</strong> Haustierzentrum Redaktion</p>'
+    '<p><strong>Stand:</strong> {date}</p>'
     '</div>'
 )
 
