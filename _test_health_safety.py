@@ -22,6 +22,14 @@ class HealthSafetyTests(unittest.TestCase):
             self.assertNotIn(old, s)
         for new in ['first-aid-for-bleeding', 'how-to-safely-move-an-injured-pet', 'sofort den tierärztlichen Notdienst kontaktieren']:
             self.assertIn(new, s)
+    def test_no_unsupervised_emergency_procedures(self):
+        s = (R/'erste-hilfe-haustiere-notfall-ratgeber.html').read_text()
+        for old in ['zwei Finger links und rechts', 'Stabile Schienung improvisieren', 'Pfoten-Schiene (improvisiert)', 'Octenisept', 'Kranke Vögel brauchen Wärme (30–32', 'Wasser oder Elektrolytlösung an den Schnabel', 'Deckel öffnen (Sauerstoffzufuhr)', '0700 5000 9911', '<li>Wärme und Ruhe.</li>']:
+            self.assertNotIn(old, s)
+        for new in ['first-aid-for-choking', 'first-aid-for-broken-bones', 'heatstroke-in-rabbits', 'care-of-open-wounds-in-cats', 'injuries-and-accidents-of-pet-birds']:
+            self.assertIn(new, s)
+        section = s.split('<h3>Hitzeunfall bei Kleintieren</h3>')[1].split('<h2>Erste Hilfe bei Vögeln</h2>')[0]
+        self.assertIn('sofort den tierärztlichen Notdienst', section)
     def test_home_remedies(self):
         s = (R/'hunde-hausmittel.html').read_text()
         for old in ['ganz ohne Nebenwirkungen', 'absolut unbedenklich', 'kaum Nebenwirkungen', '1/4 Teelöffel', '1 Teelöffel pro 10 kg', 'Einfach 1 Teelöffel', '1–2 Esslöffel']:
