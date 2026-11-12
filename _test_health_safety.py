@@ -30,6 +30,12 @@ class HealthSafetyTests(unittest.TestCase):
             self.assertIn(new, s)
         section = s.split('<h3>Hitzeunfall bei Kleintieren</h3>')[1].split('<h2>Erste Hilfe bei Vögeln</h2>')[0]
         self.assertIn('sofort den tierärztlichen Notdienst', section)
+    def test_dog_emergency_guide(self):
+        s = (R/'hunde-krankheiten-symptome-erste-hilfe.html').read_text()
+        for old in ['Ausnahme: innerhalb von 10 Minuten', 'Kein Urin über 12+', 'Parvovirose (Hundestaupe)', 'Bei komplettem Harnaufhalt', 'kein Urin über mehrere Stunden']:
+            self.assertNotIn(old, s)
+        for source in ['first-aid-for-poisons-and-toxins', 'what-to-do-if-your-catdog-can-t-pee', 'canine-parvovirus-infection']:
+            self.assertIn(source, s)
     def test_home_remedies(self):
         s = (R/'hunde-hausmittel.html').read_text()
         for old in ['ganz ohne Nebenwirkungen', 'absolut unbedenklich', 'kaum Nebenwirkungen', '1/4 Teelöffel', '1 Teelöffel pro 10 kg', 'Einfach 1 Teelöffel', '1–2 Esslöffel']:
