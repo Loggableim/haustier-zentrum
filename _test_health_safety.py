@@ -3,6 +3,21 @@ from pathlib import Path
 import unittest
 R = Path(__file__).resolve().parent / 'artikel'
 class HealthSafetyTests(unittest.TestCase):
+    def test_cat_vaccination_schedule(self):
+        import re, json, html
+        s = (R/'katzen-impfungen-vorsorge.html').read_text()
+        for old in ['optional in der 16.', '3. Teil – optional', 'Zweite Tollwutimpfung', 'Kernimpfungen (Katzenschnupfen, Katzenseuche, Tollwut)', 'Mit 12 Monaten', 'frühestens in der 8.', 'Grundimmunisierung, 3×', 'alle drei Termine', 'Eine jährliche Auffrischung', 'insgesamt etwa 120–180']:
+            self.assertNotIn(old, s)
+        for new in ['15 Lebensmonaten', 'Impfleitlinie_Kleintiere_2025-01-06.pdf', 'Friedrich-Loeffler-Institut', 'kein starrer Plan', 'Nicht-Kernimpfung']:
+            self.assertIn(new, s)
+        core = s.split('<h3>Kernimpfungen')[1].split('<h3>Nicht-Kernimpfungen')[0]
+        self.assertNotIn('Tollwut', core)
+        visible = dict(re.findall(r'<div class="faq-item"><h3>(.*?)</h3><p>(.*?)</p></div>', s))
+        for block in re.findall(r'<script type="application/ld\+json">(.*?)</script>', s, re.S):
+            data=json.loads(block)
+            if data.get('@type') == 'FAQPage':
+                for item in data['mainEntity']:
+                    self.assertEqual(html.unescape(visible[item['name']]), item['acceptedAnswer']['text'])
     def test_first_aid(self):
         s = (R/'erste-hilfe-haustiere-notfall-ratgeber.html').read_text()
         for old in ['Apomorphin', 'Knobi-Vergiftung', 'Schwächen der Blutgefäße', 'vorsichtig ins Maul spritzen', 'Bauchmassage:']:
