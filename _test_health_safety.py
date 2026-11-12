@@ -10,6 +10,18 @@ class HealthSafetyTests(unittest.TestCase):
         for source in ['msdvetmanual.com', 'merckvetmanual.com', 'rspca.org.uk', 'rabbitwelfare.co.uk']:
             self.assertIn(source, s)
         self.assertGreaterEqual(s.count('Nicht selbst Erbrechen auslösen'), 2)
+    def test_cat_plants_and_heatstroke(self):
+        s = (R/'erste-hilfe-haustiere-notfall-ratgeber.html').read_text()
+        for old in ['Alle Lilienarten', 'schon ein Tierchen Blatt', 'innerhalb von 18 Stunden', 'feuchte kühle Tücher auf Pfoten und Bauch']:
+            self.assertNotIn(old, s)
+        for new in ['Lilium', 'Hemerocallis', 'healthtopics.vetmed.ucdavis.edu', 'aspca.org', 'conditions/heatstroke-in-cats', 'Nicht auf eine Temperaturmessung warten', 'nicht mit nassen Tüchern zudecken']:
+            self.assertIn(new, s)
+    def test_bleeding_and_fall_transport(self):
+        s = (R/'erste-hilfe-haustiere-notfall-ratgeber.html').read_text()
+        for old in ['innerhalb von 5 Minuten abdrücken', 'Fixierung, Abbinde', 'Abbinde oberhalb', 'maximal 15 Minuten', 'Wenn die Blutung nach 5 Minuten', 'Blutung, die nach 5 Minuten', 'am Sofa liegen', 'ab dem 3. Stock']:
+            self.assertNotIn(old, s)
+        for new in ['first-aid-for-bleeding', 'how-to-safely-move-an-injured-pet', 'sofort den tierärztlichen Notdienst kontaktieren']:
+            self.assertIn(new, s)
     def test_home_remedies(self):
         s = (R/'hunde-hausmittel.html').read_text()
         for old in ['ganz ohne Nebenwirkungen', 'absolut unbedenklich', 'kaum Nebenwirkungen', '1/4 Teelöffel', '1 Teelöffel pro 10 kg', 'Einfach 1 Teelöffel', '1–2 Esslöffel']:
