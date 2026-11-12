@@ -23,6 +23,7 @@ jobs:
           node _test_consent.cjs
           python _test_editorial_claims.py
           python _test_health_safety.py
+          python _test_cat_nutrition.py
       - name: Deploy to Cloudflare Pages
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
