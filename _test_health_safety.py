@@ -36,6 +36,13 @@ class HealthSafetyTests(unittest.TestCase):
             self.assertNotIn(old, s)
         for source in ['first-aid-for-poisons-and-toxins', 'what-to-do-if-your-catdog-can-t-pee', 'canine-parvovirus-infection']:
             self.assertIn(source, s)
+    def test_small_animal_emergency_duplicates(self):
+        for prefix in ['kleintier-gesundheit-2026-', 'notfall-checkliste-2026-', 'meerschweinchen-krankheiten-gesundheit', 'wellensittich-ernaehrung-gesundheit']:
+            p = next(R.glob(prefix+'*.html'))
+            s = p.read_text()
+            for old in ['Kotabsatz über 12 Stunden', 'zum Eingeben von Flüssigkeit', 'Massiere vorsichtig den Bauch', 'massiere den Bauch sanft', 'länger als 12 Stunden', 'mehr als einen Tag nichts frisst', 'Einfach ins Trinkwasser', 'Ergänzung ins Trinkwasser', 'ohne Futter nur 24–48 Stunden', 'keine Injektionsnarkose!', 'vertragen Injektionsnarkosen sehr schlecht']:
+                self.assertNotIn(old, s, str(p))
+            self.assertTrue('pdsa.org.uk' in s or 'vcahospitals.com' in s, str(p))
     def test_home_remedies(self):
         s = (R/'hunde-hausmittel.html').read_text()
         for old in ['ganz ohne Nebenwirkungen', 'absolut unbedenklich', 'kaum Nebenwirkungen', '1/4 Teelöffel', '1 Teelöffel pro 10 kg', 'Einfach 1 Teelöffel', '1–2 Esslöffel']:
