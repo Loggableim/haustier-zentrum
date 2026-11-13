@@ -3,6 +3,10 @@ from pathlib import Path
 import unittest
 R = Path(__file__).resolve().parent / 'artikel'
 class HealthSafetyTests(unittest.TestCase):
+    def test_emergency_survival_statistic_removed(self):
+        for p in [R/'notfall-checkliste-2026-erste-hilfe-fuer-hund-katze-und-kleintier-was-jede-halte.html', R.parent/'rss.xml']:
+            self.assertNotIn('Überlebenschancen von Tieren bei Notfällen um bis zu 40 Prozent', p.read_text())
+
     def test_emergency_checklist_heatstroke(self):
         import re, json, html
         s=(R/'notfall-checkliste-2026-erste-hilfe-fuer-hund-katze-und-kleintier-was-jede-halte.html').read_text()
