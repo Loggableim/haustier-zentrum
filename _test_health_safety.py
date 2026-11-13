@@ -24,6 +24,21 @@ class HealthSafetyTests(unittest.TestCase):
             self.assertNotIn(old,s)
         for term in ['esccap.de/parasiten/wuermer/wie-oft-katzen-entwurmen/', 'negativer Kotbefund schließt', 'individuellen Risiko', 'esccap.de/parasiten/basisvorsorge/']:
             self.assertIn(term,s)
+    def test_dog_food_selection(self):
+        s=(R/'hundefutter-vergleich-2026.html').read_text()
+        for old in ['50-70 %', 'Praxiswissen aus dem Alltag', 'Protein an erster Stelle', 'Billigprodukte vom Discounter', 'sollten deshalb an erster Stelle']:
+            self.assertNotIn(old,s)
+        import json, re, html
+        visible = re.search(r'<p>(Prüfe, ob es als Alleinfuttermittel.*?)</p>',s)[1]
+        for block in re.findall(r'<script type="application/ld\+json">(.*?)</script>',s,re.S):
+            data=json.loads(block)
+            if data.get('@type')=='FAQPage':
+                answers=[x['acceptedAnswer']['text'] for x in data['mainEntity']]
+                self.assertIn(html.unescape(visible),answers)
+        for name in ['index.html','rss.xml']:
+            self.assertNotIn('Die besten Marken, Preisvergleich und Fütterungsempfehlungen.',(R.parent/name).read_text())
+        for term in ['kein eigener Produkt- oder Fütterungstest', 'Selecting-a-pet-food-for-your-pet-updated-2021', 'Alleinfuttermittel']:
+            self.assertIn(term,s)
     def test_first_aid(self):
         s = (R/'erste-hilfe-haustiere-notfall-ratgeber.html').read_text()
         for old in ['Apomorphin', 'Knobi-Vergiftung', 'Schwächen der Blutgefäße', 'vorsichtig ins Maul spritzen', 'Bauchmassage:']:
