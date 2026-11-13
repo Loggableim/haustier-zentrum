@@ -45,6 +45,14 @@ class HealthSafetyTests(unittest.TestCase):
             self.assertNotIn('Die besten Marken, Preisvergleich und Fütterungsempfehlungen.',(R.parent/name).read_text())
         for term in ['kein eigener Produkt- oder Fütterungstest', 'Selecting-a-pet-food-for-your-pet-updated-2021', 'Alleinfuttermittel']:
             self.assertIn(term,s)
+    def test_rabbit_appetite_and_hamster_incisors(self):
+        s=(R/'kaninchen-ernaehrung-gesundheit.html').read_text()
+        self.assertNotIn('Kein Futteraufnahme über 12 Stunden',s)
+        self.assertIn('Bei weniger oder keiner Futteraufnahme sofort',s)
+        h=next(R.glob('kleintier-gesundheit-2026-*.html')).read_text()
+        self.assertNotIn('keine durchgehend wachsenden Zähne',h)
+        self.assertIn('Schneidezähne wachsen lebenslang',h)
+        self.assertIn('routine-health-care-of-hamsters',h)
     def test_first_aid(self):
         s = (R/'erste-hilfe-haustiere-notfall-ratgeber.html').read_text()
         for old in ['Apomorphin', 'Knobi-Vergiftung', 'Schwächen der Blutgefäße', 'vorsichtig ins Maul spritzen', 'Bauchmassage:']:
