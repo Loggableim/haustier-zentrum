@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="alternate" type="application/rss+xml" title="Haustierzentrum RSS Feed" href="https://haustierzentrum.com/rss.xml">
+
+
+<title>Umzug mit Katze: Checkliste für vorher, unterwegs und danach</title>
+<meta name="description" content="Umzug mit Katze organisieren: Aufgaben verteilen, Rückzugszimmer vorbereiten, Transport planen und Kontaktdaten ändern. Mit druckbarer Checkliste und Türschild.">
+<meta property="og:title" content="Umzug mit Katze: Checkliste für vorher, unterwegs und danach">
+<meta property="og:description" content="Umzug mit Katze organisieren: Aufgaben verteilen, Rückzugszimmer vorbereiten, Transport planen und Kontaktdaten ändern. Mit druckbarer Checkliste und Türschild.">
+<meta property="og:url" content="https://haustierzentrum.com/artikel/umzug-mit-katze-checkliste">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://haustierzentrum.com/images/umzug-mit-katze-checkliste.svg">
+<meta property="og:site_name" content="Haustierzentrum">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#FF9800">
+<link rel="canonical" href="https://haustierzentrum.com/artikel/umzug-mit-katze-checkliste">
+
+<style>
+:root {
+  --primary: #FF9800;
+  --primary-dark: #e68900;
+  --primary-light: #fff3e0;
+  --border-light: #f0ece1;
+  --bg: #ffffff;
+  --bg-alt: #f7f7f7;
+  --text: #1a1a1a;
+  --text-muted: #666;
+  --border: #e0e0e0;
+  --border-light: #f0ece1;
+  --card-shadow: 0 2px 12px rgba(0,0,0,.08);
+  --font: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-tap-highlight-color:transparent}
+a,button,.nav-toggle,.search-btn,.btn,.amazon-btn,.faq-question,.read-more{min-height:44px;min-width:44px}
+body{font-family:var(--font);color:var(--text);background:var(--bg);line-height:1.7;display:flex;flex-direction:column;min-height:100vh}
+a{color:var(--primary);text-decoration:none}a:hover{text-decoration:underline}img{max-width:100%;height:auto;display:block}
+.site-header{
+  background:rgba(255,255,255,.92);
+  backdrop-filter:blur(16px) saturate(1.2);
+  border-bottom:3px solid var(--primary);
+  padding:0 1rem;
+  position:sticky;
+  top:0;
+  z-index:1000;
+}
+.nav-wrap{
+  max-width:1200px;
+  margin:0 auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  height:72px;
+}
+.logo{
+  font-size:1.4rem;
+  font-weight:900;
+  letter-spacing:-1px;
+  background:linear-gradient(135deg,var(--primary-dark),var(--primary));
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  background-clip:text;
+  flex-shrink:0;
+}
+.logo span{font-weight:400;color:var(--text-muted);-webkit-text-fill-color:var(--text-muted);}
+.logo:hover{text-decoration:none}
+.main-nav{display:flex;align-items:center}
+.nav-links{display:flex;gap:0;list-style:none;align-items:center;margin:0;padding:0}
+.nav-links > li{position:relative}
+.nav-links > li > a{
+  color:var(--text);
+  font-weight:600;
+  font-size:.85rem;
+  padding:.4rem 1rem;
+  border-radius:50px;
+  transition:.2s;
+  letter-spacing:.2px;
+  display:flex;
+  align-items:center;
+  gap:.3rem;
+  white-space:nowrap;
+}
+.nav-links > li > a .arrow{
+  font-size:.6rem;
+  transition:transform .25s;
+  display:inline-block;
+}
+.nav-links > li:hover > a .arrow{
+  transform:rotate(180deg);
+}
+.nav-links > li > a:hover,
+.nav-links > li > a.active{
+  color:#fff;
+  background:var(--primary);
+  text-decoration:none;
+}
+.nav-links > li.simple-link > a{
+  color:var(--text-muted);
+  font-weight:500;
+  font-size:.8rem;
+}
+.nav-links > li.simple-link > a:hover{
+  color:#fff;
+}
+.mega-panel{
+  position:absolute;
+  top:100%;
+  left:50%;
+  transform:translateX(-50%) translateY(12px);
+  background:#fff;
+  border-radius:16px;
+  box-shadow:0 20px 60px rgba(0,0,0,.15), 0 4px 20px rgba(0,0,0,.06);
+  min-width:680px;
+  max-width:900px;
+  padding:0;
+  opacity:0;
+  visibility:hidden;
+  transition:all .25s cubic-bezier(.16,1,.3,1);
+  border:1px solid var(--border-light);
+  overflow:hidden;
+  pointer-events:none;
+}
+.nav-links > li:hover .mega-panel{
+  opacity:1;
+  visibility:visible;
+  transform:translateX(-50%) translateY(8px);
+  pointer-events:auto;
+}
+.mega-grid{
+  display:grid;
+  gap:0;
+  padding:1.5rem;
+}
+.mega-grid.cols-2{grid-template-columns:1fr 1fr}
+.mega-grid.cols-3{grid-template-columns:1fr 1fr 1fr}
+.mega-grid.cols-4{grid-template-columns:1fr 1fr 1fr 1fr}
+.mega-col{
+  padding:0 .8rem;
+  border-right:1px solid var(--border-light);
+}
+.mega-col:last-child{border-right:none}
+.mega-col h4{
+  font-size:.7rem;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  color:var(--primary);
+  font-weight:700;
+  margin:0 0 .6rem 0;
+  padding-bottom:.4rem;
+  border-bottom:2px solid var(--primary-light);
+}
+.mega-col a{
+  display:flex;
+  align-items:center;
+  gap:.4rem;
+  padding:.35rem .5rem;
+  border-radius:8px;
+  color:var(--text);
+  font-size:.82rem;
+  font-weight:500;
+  transition:all .15s;
+  text-decoration:none;
+  line-height:1.3;
+}
+.mega-col a:hover{
+  background:var(--primary-light);
+  color:var(--primary-dark);
+  text-decoration:none;
+}
+.mega-col a .badge{
+  font-size:.6rem;
+  background:var(--primary);
+  color:#fff;
+  padding:.1rem .4rem;
+  border-radius:20px;
+  font-weight:700;
+  margin-left:auto;
+  animation:pulse-badge 2s infinite;
+}
+@keyframes pulse-badge{
+  0%,100%{opacity:1}
+  50%{opacity:.6}
+}
+.mega-col a .desc{
+  font-size:.68rem;
+  color:var(--text-muted);
+  font-weight:400;
+  display:block;
+  margin-left:1.6rem;
+  margin-top:-.1rem;
+}
+.mega-featured{
+  background:linear-gradient(135deg,var(--primary-light),#fff8e1);
+  border-radius:12px;
+  padding:.8rem 1rem;
+  margin-top:.6rem;
+  display:flex;
+  align-items:center;
+  gap:.8rem;
+}
+.mega-featured img{
+  width:52px;
+  height:52px;
+  border-radius:8px;
+  object-fit:cover;
+  flex-shrink:0;
+}
+.mega-featured .meta{flex:1}
+.mega-featured .meta strong{display:block;font-size:.82rem;color:var(--text)}
+.mega-featured .meta span{font-size:.7rem;color:var(--text-muted)}
+.search-btn{
+  background:none;
+  border:none;
+  font-size:1.1rem;
+  cursor:pointer;
+  color:var(--text-muted);
+  padding:.4rem .6rem;
+  border-radius:50px;
+  transition:.2s;
+  display:flex;
+  align-items:center;
+  flex-shrink:0;
+}
+.search-btn:hover{
+  background:var(--primary-light);
+  color:var(--primary);
+}
+.nav-toggle{
+  display:none;
+  background:none;
+  border:none;
+  font-size:1.6rem;
+  cursor:pointer;
+  color:var(--text);
+  padding:.25rem;
+}
+main{flex:1;max-width:1100px;margin:0 auto;padding:2rem 1rem;width:100%}
+
+.article-header{margin-bottom:2rem}.article-header h1{font-size:2rem;line-height:1.3;margin-bottom:.5rem;color:var(--primary-dark)}.article-meta{display:flex;gap:1rem;flex-wrap:wrap;align-items:center;font-size:.88rem;color:var(--text-muted);margin-bottom:1rem}.article-meta .cats span{background:var(--primary);color:#fff;font-size:.75rem;font-weight:600;padding:.2rem .7rem;border-radius:20px;margin-right:.4rem}.featured-img{width:100%;max-height:420px;background:var(--bg-alt);border-radius:12px;display:flex;align-items:center;justify-content:center;color:var(--text-muted);margin-bottom:2rem;overflow:hidden;min-height:250px}.hero-image{width:100%;height:auto;border-radius:12px;display:block;object-fit:cover}.article-content{max-width:750px;margin:0 auto}.article-content h2{font-size:1.5rem;margin:2rem 0 1rem;color:var(--primary-dark)}.article-content h3{font-size:1.2rem;margin:1.5rem 0 .8rem}.article-content p{margin-bottom:1.2rem}.article-content ul,.article-content ol{margin-bottom:1.2rem;padding-left:1.5rem}.article-content li{margin-bottom:.4rem}
+.ad-placeholder{background:var(--bg-alt);border:2px dashed var(--border);border-radius:8px;padding:2rem;text-align:center;margin:2rem 0;color:var(--text-muted);font-size:.85rem}.ad-placeholder.amazon{border-color:var(--primary);background:#fff8e1}.article-content table{width:100%;border-collapse:collapse;margin:1.5rem 0;font-size:.95rem}.article-content table th,.article-content table td{border:1px solid var(--border);padding:.75rem 1rem;text-align:left}.article-content table th{background:var(--primary);color:#fff;font-weight:600}.article-content table tr:nth-child(even){background:var(--bg-alt)}.faq-item{margin:1.5rem 0;padding:1rem 1.2rem;background:var(--bg-alt);border-left:4px solid var(--primary);border-radius:0 8px 8px 0}.faq-item h3{margin:0 0 .5rem 0;font-size:1.1rem;color:var(--primary-dark)}.related-posts{margin-top:3rem;padding-top:2rem;border-top:2px solid var(--border)}.related-posts h3{margin-bottom:1rem}.related-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1.5rem}.related-card{background:var(--bg);border:1px solid var(--border);border-radius:10px;overflow:hidden;box-shadow:var(--card-shadow);transition:transform .2s}.related-card:hover{transform:translateY(-3px)}.related-card .card-img{height:140px;background:var(--bg-alt);display:flex;align-items:center;justify-content:center}.related-card .card-body{padding:1rem}.related-card .card-body h4{font-size:1rem;margin-bottom:.4rem}.related-card .card-body h4 a{color:var(--text)}.related-card .card-body h4 a:hover{color:var(--primary);text-decoration:none}
+.site-footer{background:#1a1a1a;color:#ccc;padding:2rem 1rem;margin-top:3rem;font-size:.88rem}.footer-wrap{max-width:1100px;margin:0 auto;display:flex;flex-wrap:wrap;gap:2rem;justify-content:space-between;align-items:center}.footer-wrap a{color:#FFB74D}.footer-wrap a:hover{color:#fff}.footer-copy{text-align:center;width:100%;margin-top:1rem;padding-top:1rem;border-top:1px solid #333;font-size:.82rem}.cookie-banner{position:fixed;bottom:0;left:0;right:0;background:#1a1a1a;color:#eee;padding:1rem 1.5rem;display:none;z-index:999;box-shadow:0 -4px 20px rgba(0,0,0,.3);font-size:.9rem}.cookie-banner.show{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:1rem}.cookie-banner p{max-width:700px}.cookie-banner button{background:var(--primary);border:none;color:#fff;font-weight:600;padding:.5rem 1.5rem;border-radius:6px;cursor:pointer;font-size:.9rem;white-space:nowrap}.cookie-banner button:hover{background:var(--primary-dark)}
+@media(max-width:900px){
+  .main-nav{
+    position:fixed;
+    top:72px;
+    left:0;
+    right:0;
+    bottom:0;
+    background:rgba(255,255,255,.98);
+    backdrop-filter:blur(20px);
+    flex-direction:column;
+    padding:1rem;
+    overflow-y:auto;
+    transform:translateX(100%);
+    transition:transform .35s cubic-bezier(.16,1,.3,1);
+    z-index:999;
+  }
+  .main-nav.open{transform:translateX(0)}
+  .nav-links{flex-direction:column;width:100%;gap:0}
+  .nav-links > li{width:100%}
+  .nav-links > li > a{
+    padding:.8rem 1rem;
+    border-radius:12px;
+    font-size:.95rem;
+    justify-content:space-between;
+  }
+  .nav-links > li > a .arrow{font-size:.8rem}
+  .mega-panel{
+    position:static;
+    transform:none;
+    opacity:1;
+    visibility:visible;
+    box-shadow:none;
+    border:none;
+    border-radius:0;
+    min-width:auto;
+    max-width:100%;
+    padding:0;
+    max-height:0;
+    overflow:hidden;
+    transition:max-height .35s cubic-bezier(.16,1,.3,1),padding .35s;
+    pointer-events:auto;
+    background:var(--bg-alt);
+    margin:0;
+    border-radius:12px;
+  }
+  .nav-links > li.open .mega-panel{
+    max-height:800px;
+    padding:.8rem;
+    margin-bottom:.5rem;
+  }
+  .mega-grid{
+    grid-template-columns:1fr 1fr !important;
+    padding:.5rem;
+    gap:.5rem;
+  }
+  .mega-col{
+    border-right:none;
+    padding:0;
+  }
+  .mega-col h4{font-size:.75rem;margin-bottom:.4rem}
+  .mega-col a{padding:.3rem .5rem;font-size:.85rem}
+  .search-btn{display:none}
+  .nav-toggle{display:block}
+  .nav-links > li.simple-link{
+    border-top:1px solid var(--border-light);
+    padding-top:.5rem;
+    margin-top:.3rem;
+  }
+}
+@media(max-width:500px){
+  .mega-grid{grid-template-columns:1fr !important}
+  .article-header h1{font-size:1.3rem}
+  .featured-img{min-height:180px}
+  .article-content{padding:0}
+}
+@media(max-width:375px){
+  .article-header h1{font-size:1.1rem}
+  .article-content h2{font-size:1.2rem}
+  .article-content p{font-size:.93rem}
+}
+@media(max-width:768px){
+  .article-header h1{font-size:1.5rem}
+  .article-content table{font-size:.82rem}
+  .article-content table th,.article-content table td{padding:.5rem}
+  .related-grid{grid-template-columns:1fr}
+  .cookie-banner{flex-direction:column;text-align:center}
+}
+
+.breadcrumb{padding:.5rem 0;margin-bottom:1rem;font-size:.88rem;color:var(--text-muted)}
+.breadcrumb a{color:var(--primary)}
+.breadcrumb a:hover{text-decoration:underline}
+</style>
+  <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon.png">
+
+<meta property="og:locale" content="de_DE" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Umzug mit Katze: Checkliste für vorher, unterwegs und danach" />
+<meta name="twitter:description" content="Umzug mit Katze organisieren: Aufgaben verteilen, Rückzugszimmer vorbereiten, Transport planen und Kontaktdaten ändern. Mit druckbarer Checkliste und Türschild." />
+<meta name="twitter:image" content="https://haustierzentrum.com/images/umzug-mit-katze-checkliste.svg" />
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Umzug mit Katze: Checkliste für vorher, unterwegs und danach", "description": "Umzug mit Katze organisieren: Aufgaben verteilen, Rückzugszimmer vorbereiten, Transport planen und Kontaktdaten ändern. Mit druckbarer Checkliste und Türschild.", "author": {"@type": "Organization", "name": "Haustierzentrum Redaktion"}, "datePublished": "2026-11-13", "dateModified": "2026-11-13", "image": "https://haustierzentrum.com/images/umzug-mit-katze-checkliste.svg", "publisher": {"@type": "Organization", "name": "Haustierzentrum", "url": "https://haustierzentrum.com"}, "articleSection": ["Katzen"], "mainEntityOfPage": {"@type": "WebPage", "@id": "https://haustierzentrum.com/artikel/umzug-mit-katze-checkliste"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://haustierzentrum.com/"}, {"@type": "ListItem", "position": 2, "name": "Umzug mit Katze: Checkliste für vorher, unterwegs und danach", "item": "https://haustierzentrum.com/artikel/umzug-mit-katze-checkliste"}]}</script>
+<style>
+.article-content a{color:#8a4800;text-decoration:underline}.article-content h2,.article-content h3,.article-header h1{color:#8a4800}@media(max-width:500px){.article-header h1{font-size:1.3rem}}@media(max-width:375px){.article-header h1{font-size:1.1rem}}
+.move-checklist{border:2px solid var(--primary);border-radius:12px;padding:1.2rem;margin:1.5rem 0}.move-checklist ul{list-style:none;padding-left:0}.move-checklist li{padding-left:1.5rem;position:relative}.move-checklist li::before{content:"□";position:absolute;left:0;color:#333}.door-sign{border:3px dashed #444;padding:1.5rem;margin:2rem 0;text-align:center;break-inside:avoid}.door-sign strong{display:block;font-size:1.5rem}.write-line{display:block;border-bottom:1px solid #666;min-height:2rem;margin:.5rem 0}.source-note{font-size:.9rem;color:#555}
+@media print{#hz-consent,#hz-consent-settings,#cookie-banner,.cookie-banner,.site-header,.site-footer,.hero-image,.health-disclaimer,.breadcrumb,.author-reviewer-box{display:none!important}body,main,.article-content{display:block!important;max-width:none!important;margin:0!important;padding:0!important;background:white!important;color:black!important}.article-header h1{font-size:20pt}.article-content{font-size:11pt}.article-content h2{font-size:15pt;break-after:avoid}.move-checklist{border:1px solid #333;break-inside:avoid}.door-sign{break-before:page}a{color:black!important}a[href^="https"]::after{content:" (" attr(href) ")";font-size:8pt;overflow-wrap:anywhere}*{box-shadow:none!important}}
+</style></head>
+<body>
+<!-- ============ HEADER ============ -->
+<header class="site-header">
+  <div class="nav-wrap">
+    <a href="/" class="logo">🐾 Haustier<span>zentrum</span></a>
+    <button class="nav-toggle" aria-label="Menü" onclick="document.querySelector('.main-nav').classList.toggle('open');this.textContent=this.textContent=='☰'?'✕':'☰'">☰</button>
+    <nav class="main-nav">
+      <ul class="nav-links">
+        <!-- HUNDE -->
+        <li>
+          <a href="/artikel/hunderassen-anfaenger">Hunde <span class="arrow">▾</span></a>
+          <div class="mega-panel">
+            <div class="mega-grid cols-4">
+              <div class="mega-col">
+                <h4>🐕 Rassen</h4>
+                <a href="/artikel/hunderassen-anfaenger">🐕 Hunderassen für Anfänger <span class="badge">Top</span></a>
+                <a href="/artikel/labrador-retriever">🐕 Labrador Retriever <span class="badge">Neu</span></a>
+                <a href="/artikel/franzoesische-bulldogge-rasseguide">🐕 Französische Bulldogge</a>
+              </div>
+              <div class="mega-col">
+                <h4>🎓 Erziehung</h4>
+                <a href="/artikel/hundeerziehung-grundlagen">🎓 Hundeerziehung Grundlagen</a>
+                <a href="/artikel/leinenfuehrigkeit">🦮 Leinenführigkeit & Ziehen</a>
+                <a href="/artikel/welpen-eingewoehnung">🐾 Welpeneingewöhnung</a>
+              </div>
+              <div class="mega-col">
+                <h4>🏥 Gesundheit & Pflege</h4>
+                <a href="/artikel/hunde-gesundheit">🏥 Hundegesundheit & Vorsorge</a>
+                <a href="/artikel/hunde-fellpflege-buersten-baden-krallen">🧴 Fellpflege & Baden</a>
+                <a href="/artikel/hunde-zahnpflege">🪥 Zahnpflege für Hunde</a>
+                <a href="/artikel/zeckenschutz-flohschutz-hund">🌿 Zecken- & Flohschutz</a>
+                <a href="/artikel/hunde-hausmittel">🏡 Hausmittel für Hunde</a>
+              </div>
+              <div class="mega-col">
+                <h4>🥩 Ernährung & Mehr</h4>
+                <a href="/artikel/hundeernaehrung">🥩 Hundeernährung</a>
+                <a href="/artikel/hunde-uebergewicht">⚖️ Übergewicht bei Hunden</a>
+                <a href="/artikel/hundespielzeuge-2026">🎾 Hundespielzeug 2026</a>
+                <a href="/artikel/hundeversicherung">🛡️ Hundeversicherung</a>
+                <a href="/artikel/hunde-reisen">✈️ Reisen mit Hund</a>
+              </div>
+            </div>
+          </div>
+        </li>
+        <!-- KATZEN -->
+        <li>
+          <a href="/artikel/katzen">Katzen <span class="arrow">▾</span></a>
+          <div class="mega-panel">
+            <div class="mega-grid cols-3">
+              <div class="mega-col">
+                <h4>🏠 Haltung</h4>
+                <a href="/artikel/katzenhaltung-wohnung">🏠 Wohnungshaltung</a>
+                <a href="/artikel/katzen-freigaenger">🌳 Freigänger</a>
+                <a href="/artikel/seniorkatzen-pflege-ernaehrung-gesundheit">👵 Seniorkatzen</a>
+              </div>
+              <div class="mega-col">
+                <h4>🥫 Ernährung & Gesundheit</h4>
+                <a href="/artikel/katzen-ernaehrung">🥫 Katzenernährung</a>
+                <a href="/artikel/katzenfutter-vergleich-2026">🥩 Katzenfutter Vergleich</a>
+                <a href="/artikel/katzenkrankheiten-erkennen">🏥 Katzenkrankheiten</a>
+                <a href="/artikel/katzen-impfungen-vorsorge">💉 Impfungen & Vorsorge</a>
+                <a href="/artikel/katzen-zahnpflege">🪥 Zahnpflege</a>
+              </div>
+              <div class="mega-col">
+                <h4>🎾 Beschäftigung & Rassen</h4>
+                <a href="/artikel/katzenbeschaeftigung">🎾 Beschäftigungsideen</a>
+                <a href="/artikel/katzen-kratzbaum">🌲 Kratzbäume</a>
+                <a href="/artikel/katzentoilette-geruch-vermeiden">🚽 Katzentoilette</a>
+                <a href="/artikel/katzenrassen-vergleich">🐱 Katzenrassen Vergleich</a>
+              </div>
+            </div>
+          </div>
+        </li>
+        <!-- KLEINTIERE -->
+        <li>
+          <a href="/artikel/kleintiere-hamster-meerschweinchen">Kleintiere <span class="arrow">▾</span></a>
+          <div class="mega-panel">
+            <div class="mega-grid cols-3">
+              <div class="mega-col">
+                <h4>🐹 Nagetiere</h4>
+                <a href="/artikel/hamster-haltung">🐹 Hamster Haltung</a>
+                <a href="/artikel/meerschweinchen-haltung">🐹 Meerschweinchen Haltung</a>
+                <a href="/artikel/kaninchenhaltung">🐰 Kaninchenhaltung</a>
+              </div>
+              <div class="mega-col">
+                <h4>🥗 Ernährung & Gehege</h4>
+                <a href="/artikel/meerschweinchen-ernaehrung-vitamin-c">🥗 Meerschweinchen Ernährung</a>
+                <a href="/artikel/kleintier-gehege">🏠 Kleintiergehege</a>
+                <a href="/artikel/kleintiere-hamster-meerschweinchen">🐹 Hamster & Meerschweinchen</a>
+              </div>
+              <div class="mega-col">
+                <h4>🐦 Vögel & Aquarien</h4>
+                <a href="/artikel/voegel-haustier-beste-vogelarten-einsteiger">🐦 Vögel als Haustiere</a>
+                <a href="/artikel/wellensittich-haltung">🐦 Wellensittich Haltung</a>
+                <a href="/artikel/aquarium-einrichtung">🐟 Aquarium Einrichtung</a>
+              </div>
+            </div>
+          </div>
+        </li>
+        <!-- RATGEBER -->
+        <li>
+          <a href="/artikel/haustier-anschaffung">Ratgeber <span class="arrow">▾</span></a>
+          <div class="mega-panel">
+            <div class="mega-grid cols-2">
+              <div class="mega-col">
+                <h4>📋 Allgemein</h4>
+                <a href="/artikel/haustier-anschaffung">📋 Haustier Anschaffung</a>
+                <a href="/artikel/haustiere-kinder">👨‍👩‍👧‍👦 Haustiere & Kinder</a>
+              </div>
+              <div class="mega-col">
+                <h4>💰 Gesundheit & Kosten</h4>
+                <a href="/artikel/tierarztkosten">💰 Tierarztkosten</a>
+                <a href="/artikel/allergiker-haustiere">🤧 Allergiker & Haustiere</a>
+                <div class="mega-featured">
+                  <img src="../images/labrador-retriever_00001_.webp" alt="Labrador" loading="lazy">
+                  <div class="meta">
+                    <strong>📖 Neuer Artikel</strong>
+                    <span>Labrador Retriever Rasseguide</span>
+                    <a href="/artikel/labrador-retriever" style="font-size:.7rem;">Jetzt lesen →</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+        <!-- Simple Links -->
+        <li class="simple-link"><a href="/">Start</a></li>
+        <li class="simple-link"><a href="/about.html">Über uns</a></li>
+        <li class="simple-link"><a href="/impressum.html">Impressum</a></li>
+        <li class="simple-link"><a href="/datenschutz.html">Datenschutz</a></li>
+      </ul>
+    </nav>
+    <button class="search-btn" onclick="window.location.href='/?s='" aria-label="Suche">🔍</button>
+  </div>
+</header>
+<main>
+<nav class="breadcrumb" aria-label="Brotkrümelnavigation"><a href="/">Startseite</a> › <span>Umzug mit Katze</span></nav>
+<article>
+<div class="article-header"><div class="article-meta"><div class="cats"><span>Katzen</span><span>Haltung</span></div><time datetime="2026-11-13">13. November 2026</time><span>· Lesezeit: 6 Min</span></div><h1>Umzug mit Katze: Checkliste für vorher, unterwegs und danach</h1><p>Von der Haustierzentrum Redaktion</p><img src="/images/umzug-mit-katze-checkliste.svg" alt="Drei Planungsphasen: vorbereiten, sicher umziehen und in Ruhe ankommen" class="hero-image" width="1200" height="630"></div>
+<div class="article-content">
+<p><strong>Am Umzugstag sollte nicht erst zwischen zwei Kartons geklärt werden, wer auf die Katze achtet.</strong> Diese Checkliste verbindet Sicherheitsregeln mit einer konkreten Aufgabenverteilung. Sie ist für einen Umzug innerhalb Deutschlands gedacht. Bei einem Grenzübertritt brauchst Du zusätzlich die aktuellen Einreise- und Transportvorgaben des Ziellandes.</p>
+<p>Unser Organisationsvorschlag: Eine Person übernimmt die Katze, eine andere koordiniert Möbel und Helfer. Wenn Du allein umziehst, plane die Arbeitsschritte nacheinander oder vereinbare gezielte Unterstützung. Ein Türschild ersetzt keine Aufsicht. Die Liste ist eine Planungshilfe, kein Versprechen eines stressfreien Umzugs und keine tierärztliche Beurteilung Deines Tieres.</p>
+<h2>1. Vor dem Packen: Zuständigkeiten festlegen</h2>
+<p>Schreibe die Namen nicht nur in eine Chatgruppe, sondern auch auf den ausgedruckten Plan. Vereinbart ausdrücklich, wer die Aufgabe übernimmt, wenn die erste Person telefoniert, fährt oder Möbel trägt. „Das macht bestimmt jemand“ ist keine Übergabe.</p>
+<div class="move-checklist"><h3>Unser Umzugsplan zum Ausfüllen</h3><p>Umzugstag: <span class="write-line"></span>Verantwortlich für die Katze / Vertretung: <span class="write-line"></span>Verantwortlich für Helfer und Türen: <span class="write-line"></span>Rückzugszimmer alt / neu: <span class="write-line"></span>Tierarztpraxis und erreichbarer Notdienst am Ziel: <span class="write-line"></span></p><ul><li>Schlüsselübergabe und Zugang zur neuen Wohnung geklärt.</li><li>Alle Helfer wissen, welche Aufgabe sie haben und welche Tür geschlossen bleibt.</li><li>Termin für die Transportfahrt festgelegt, getrennt vom Möbeltransport.</li><li>Plan B vereinbart, falls sich die Wohnungsübergabe verspätet.</li></ul></div>
+<p>Lege außerdem eine kleine Mappe an: Chipnummer, Registerdaten, aktuelles Foto, Kontaktdaten der bisherigen Praxis und vorhandene Befunde. Frage die neue Praxis frühzeitig, wie sie Unterlagen übernehmen kann. Verordnete Medikamente und den aktuellen Behandlungsplan packst Du nicht in einen beliebigen Umzugskarton. Änderungen an der Behandlung besprichst Du mit der Praxis.</p>
+<h2>2. Rückzugszimmer und Transportbox vorbereiten</h2>
+<p>Cats Protection empfiehlt einen ruhigen, gesicherten Raum in beiden Wohnungen. Vertraute Decken, Versteck, Kratzmöglichkeit, Futter, Wasser und Toilette gehören hinein. Unverträgliche Katzen brauchen getrennte Rückzugsbereiche. Informiere Helfer und kennzeichne die Tür. Die neue Wohnung wird später schrittweise erkundet; der Rückzugsraum bleibt erreichbar. <a href="https://www.cats.org.uk/help-and-advice/caring-for-your-cat/home-and-environment/moving-home-with-your-cat">Quelle: Cats Protection, Umzug mit Katze</a>.</p>
+<p>Die Transportbox sollte stabil, gut belüftet und ausreichend groß zum Aufstehen und Umdrehen sein. Stelle sie schon vor dem Umzug offen in der Wohnung auf, damit Deine Katze sie freiwillig kennenlernen kann. Prüfe Tür, Verschlüsse und Verbindung zwischen Ober- und Unterteil. <a href="https://www.cats.org.uk/help-and-advice/getting-a-cat/how-to-choose-and-use-a-cat-carrier">Quelle: Cats Protection, Transportbox auswählen und nutzen</a>.</p>
+<div class="move-checklist"><h3>Die Tasche, die nicht im Möbelwagen landet</h3><ul><li>Gewohntes Futter, Wasser und Näpfe eingepackt.</li><li>Toilette, gewohnte Streu, Schaufel und Abfallbeutel griffbereit.</li><li>Vertraute Decke, saugfähige Unterlage und Ersatzunterlage dabei.</li><li>Unterlagen, nötige Medikamente nach Praxisanweisung und Telefonnummern verfügbar.</li><li>Neue Adresse und Anfahrt auch ohne laufende Internetverbindung gespeichert.</li></ul></div>
+<p>Beschrifte diese Tasche auffällig, etwa mit „Katze: bleibt bei uns“. Lege fest, wer sie trägt. Ein Foto der gepackten Tasche hilft beim abschließenden Abgleich, ersetzt aber nicht den Blick hinein. Packe nur Dinge ein, die zu Deiner Katze und zur geplanten Fahrt passen.</p>
+<h2>3. Am Umzugstag: Übergaben statt Zurufe</h2>
+<p>Nutze drei kurze Kontrollen: vor Beginn des Tragens, vor der Abfahrt und vor dem Öffnen der Box am Ziel. Dabei bestätigt die zuständige Person jeweils, wo die Katze ist. Das ist unser organisatorischer Vorschlag, kein tiermedizinisches Verfahren.</p>
+<div class="move-checklist"><h3>Kontrollpunkte für den Tag</h3><ul><li>Vor dem Tragen: Katze im vorgesehenen Raum, Fenster und Tür gesichert, Helfer informiert.</li><li>Vor der Abfahrt: Katze in der geschlossenen Box, Verschlüsse geprüft, Tasche und Schlüssel dabei.</li><li>Am Ziel: Rückzugszimmer vorbereitet und geschlossen, bevor die Box geöffnet wird.</li><li>Bei jedem Wechsel der Betreuung: Die nächste Person bestätigt ausdrücklich die Übernahme.</li></ul></div>
+<p>Während der Fahrt bleibt die Katze in einer gesicherten Transportbox, nicht frei im Fahrzeug. Öffne die Box nicht auf einem Parkplatz, um sie zu beruhigen. Lass sie nicht allein im Auto zurück. Plane längere Fahrten, Versorgung und mögliche Reiseübelkeit vorher mit der Tierarztpraxis; verabreiche keine Beruhigungsmittel auf eigene Faust. <a href="https://www.cats.org.uk/help-and-advice/caring-for-your-cat/home-and-environment/travelling-with-your-cat">Quelle: Cats Protection, Reisen mit Katze</a>.</p>
+<h2>4. Nach dem Ankommen: beobachten, nicht drängen</h2>
+<p>Orientiere Dich am Verhalten, nicht an einem Kalendertermin. Cats Protection empfiehlt für bisherige Freigänger zunächst mindestens drei Wochen im Haus. Das ist keine Garantie, dass jede Katze danach bereit ist. Vor Freigang müssen Orientierung, sichere Umgebung und individuelle Bedürfnisse berücksichtigt werden. Gerade bei älteren oder kranken Katzen solltest Du den Ablauf vorab tierärztlich besprechen. <a href="https://www.cats.org.uk/help-and-advice/caring-for-your-cat/home-and-environment/moving-home-with-your-cat">Quelle: Cats Protection, Eingewöhnung und Freigang</a>.</p>
+<p>Notiere in den ersten Tagen kurz, was Du tatsächlich beobachtest: gefressen, getrunken, Toilette benutzt, Verhalten verändert. Schreibe lieber „Abendfutter nicht angerührt“ als „bestimmt nur aufgeregt“. Wenn mehrere Menschen füttern, verhindert eine gemeinsame Notiz widersprüchliche Eindrücke.</p>
+<p><strong>Frisst die Katze nicht, hole umgehend tierärztlichen Rat ein.</strong> Schiebe Futterverweigerung nicht einfach auf den Umzug und warte nicht auf ein vermeintliches Ende der Eingewöhnungszeit. Cornell beschreibt Appetitverlust als mögliches Zeichen sehr unterschiedlicher Gesundheitsprobleme. Futter nicht eigenständig ins Maul zwingen. <a href="https://www.vet.cornell.edu/departments-centers-and-institutes/cornell-feline-health-center/health-information/feline-health-topics/anorexia">Quelle: Cornell Feline Health Center, Anorexia</a>.</p>
+<h2>5. Kontaktdaten wirklich ändern</h2>
+<p>Bei TASSO kannst Du Adresse und Telefonnummer über MeinTASSO aktualisieren. Prüfe auch andere Register, in denen Dein Tier tatsächlich angemeldet ist, sowie Praxis und gegebenenfalls Versicherung. Eine Änderung an einer Stelle ist kein Nachweis, dass alle anderen Stellen informiert sind. <a href="https://www.tasso.net/Tierregister/Daten-aendern">Quelle: TASSO, Daten ändern</a>.</p>
+<div class="move-checklist"><h3>Abschlusskontrolle</h3><ul><li>Neue Anschrift und erreichbare Telefonnummer im Tierregister geprüft.</li><li>Bestätigung oder aktualisierten Datensatz kontrolliert.</li><li>Neue Praxis und Notdienst gespeichert, Unterlagenübergabe geklärt.</li><li>Offene Aufgaben mit einer verantwortlichen Person und einem Termin versehen.</li></ul></div>
+<p><strong>Drucktipp:</strong> Nutze „Drucken“ im Browser, alternativ „Als PDF speichern“. Die Druckansicht blendet Navigation und Schmuckbild aus; das folgende Türschild beginnt auf einer neuen Seite. Prüfe vor dem Drucken die Vorschau. Trage private Telefonnummern nur auf Deiner eigenen Kopie ein.</p>
+<section class="door-sign" aria-label="Türschild zum Ausdrucken"><strong>Bitte geschlossen halten!</strong><p>Hier ist der Rückzugsraum unserer Katze.<br>Nicht zum Tragen oder Abstellen von Kartons öffnen.</p><p>Vor dem Öffnen bitte diese Person ansprechen:</p><span class="write-line"></span><p>Vertretung:</p><span class="write-line"></span><p>Danke, dass Du mit aufpasst.</p></section>
+<p class="source-note">Quellenstand: 13. November 2026. Sicherheitsinformationen sind oben direkt verlinkt. Aufgabenfelder, Übergabepunkte und Türschild sind redaktionelle Organisationshilfen. Die verlinkten Quellen sind keine medizinische Prüfung dieses Artikels.</p>
+</div></article>
+</main>
+<footer class="site-footer"><div class="footer-wrap"><div><strong style="color:#fff;">🐾 Haustierzentrum</strong><p style="margin-top:.3rem;">Dein Blog für artgerechte Haustierhaltung</p></div><div><a href="/about.html">Über uns</a> &middot; <a href="/impressum.html">Impressum</a> &middot; <a href="/datenschutz.html">Datenschutz</a> &middot; <a href="/sitemap.xml">Sitemap</a></div><div class="footer-copy"><p>&copy; 2026 Haustierzentrum. Alle Rechte vorbehalten.</p><p style="margin-top:.3rem;font-size:.8rem;">Diese Seite kann Affiliate-Links (Amazon DE) enthalten. Als Amazon-Partner verdienen wir an qualifizierten Verkäufen.</p></div></div></footer>
+
+<script>// Mobile: close nav when simple links are clicked
+document.querySelectorAll('.simple-link a').forEach(l=>l.addEventListener('click',()=>{
+  document.querySelector('.main-nav').classList.remove('open');
+  document.querySelector('.nav-toggle').textContent='☰';
+}))
+// Mobile: tap mega-menu items to toggle panels
+document.querySelectorAll('.nav-links > li:not(.simple-link) > a').forEach(l=>l.addEventListener('click',function(e){
+  if(document.querySelector('.main-nav').classList.contains('open')){
+    e.preventDefault();
+    this.parentElement.classList.toggle('open');
+  }
+}))</script>
+<script>
+// Cookie-Consent-Management
+</script>
+<script src="/js/consent.js" defer></script>
+</body>
+</html>

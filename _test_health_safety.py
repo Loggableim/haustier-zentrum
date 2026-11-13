@@ -18,6 +18,12 @@ class HealthSafetyTests(unittest.TestCase):
             if data.get('@type') == 'FAQPage':
                 for item in data['mainEntity']:
                     self.assertEqual(html.unescape(visible[item['name']]), item['acceptedAnswer']['text'])
+    def test_cat_parasite_advice(self):
+        s=(R/'katzen-impfungen-vorsorge.html').read_text()
+        for old in ['entlauben', 'Wohnungskatzen alle 3–4 Monate', 'Pro Behandlung, alle 3 Monate empfohlen', 'Monatliche Anwendung in der Saison', 'So wird nur behandelt, wenn es wirklich nötig ist']:
+            self.assertNotIn(old,s)
+        for term in ['esccap.de/parasiten/wuermer/wie-oft-katzen-entwurmen/', 'negativer Kotbefund schließt', 'individuellen Risiko', 'esccap.de/parasiten/basisvorsorge/']:
+            self.assertIn(term,s)
     def test_first_aid(self):
         s = (R/'erste-hilfe-haustiere-notfall-ratgeber.html').read_text()
         for old in ['Apomorphin', 'Knobi-Vergiftung', 'Schwächen der Blutgefäße', 'vorsichtig ins Maul spritzen', 'Bauchmassage:']:
