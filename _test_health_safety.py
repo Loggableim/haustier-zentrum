@@ -24,6 +24,12 @@ class HealthSafetyTests(unittest.TestCase):
             self.assertNotIn(old,s)
         for term in ['esccap.de/parasiten/wuermer/wie-oft-katzen-entwurmen/', 'negativer Kotbefund schließt', 'individuellen Risiko', 'esccap.de/parasiten/basisvorsorge/']:
             self.assertIn(term,s)
+    def test_dog_food_portions_bones_and_puppy_calcium(self):
+        s=(R/'hundefutter-vergleich-2026.html').read_text()
+        for old in ['2-3 % seines Körpergewichts', '400-600 g Nassfutter', '250-350 g Trockenfutter', 'mehr Protein und Calcium', 'besonders protein- und calciumreich', 'Knochen immer nur roh und unter Aufsicht']:
+            self.assertNotIn(old,s)
+        for term in ['Energiedichte', 'Gewichtsverlauf', 'Auch rohe Knochen', 'Zahnbrüche', 'keine Calciumpräparate', 'Raw-Meat-Based-Diets-for-Pets_WSAVA-Global-Nutrition-Toolkit.pdf', 'Frequently-Asked-Questions-and-Myths.pdf', 'introduction-to-feeding-dogs.pdf']:
+            self.assertIn(term,s)
     def test_dog_food_selection(self):
         s=(R/'hundefutter-vergleich-2026.html').read_text()
         for old in ['50-70 %', 'Praxiswissen aus dem Alltag', 'Protein an erster Stelle', 'Billigprodukte vom Discounter', 'sollten deshalb an erster Stelle']:
