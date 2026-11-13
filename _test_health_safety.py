@@ -3,6 +3,20 @@ from pathlib import Path
 import unittest
 R = Path(__file__).resolve().parent / 'artikel'
 class HealthSafetyTests(unittest.TestCase):
+    def test_emergency_checklist_heatstroke(self):
+        import re, json, html
+        s=(R/'notfall-checkliste-2026-erste-hilfe-fuer-hund-katze-und-kleintier-was-jede-halte.html').read_text()
+        for old in ['kühle ihn langsam', 'kühle es langsam', 'Kein Eiswasser verwenden', 'Eiswasser oder Eisbeutel direkt auf der Haut können zu Schock', 'Pfoten, Bauch und Kopf']:
+            self.assertNotIn(old,s)
+        for term in ['kaltem Leitungswasser', 'Nase und Maul', 'nicht zum Trinken zwingen', 'auch bei scheinbarer Besserung', 'nicht mit nassen Handtüchern', 'heatstroke-in-rabbits', 'first-aid-for-heatstroke']:
+            self.assertIn(term,s)
+        question='Wie erkenne ich einen Hitzschlag bei meinem Haustier?'
+        visible=re.search(r'<h3>'+re.escape(question)+r'</h3>\s*<p>(.*?)</p>',s,re.S)[1]
+        visible=html.unescape(re.sub('<[^>]+>','',visible))
+        for block in re.findall(r'<script type="application/ld\+json">(.*?)</script>',s,re.S):
+            data=json.loads(block)
+            if data.get('@type')=='FAQPage':
+                self.assertEqual(next(q['acceptedAnswer']['text'] for q in data['mainEntity'] if q['name']==question),visible)
     def test_cat_vaccination_schedule(self):
         import re, json, html
         s = (R/'katzen-impfungen-vorsorge.html').read_text()
