@@ -3,6 +3,18 @@ from pathlib import Path
 import unittest
 R = Path(__file__).resolve().parent / 'artikel'
 class HealthSafetyTests(unittest.TestCase):
+    def test_puppy_buying_law_and_import(self):
+        import json,re
+        s=(R/'welpenkauf-zuuechter-tierheim-checkliste.html').read_text()
+        for old in ['§ 4 Abs. 2','mindestens 12 Wochen alt sein','andere Hunde (nach Impfung!)','mindestens eine Grundimmunisierung','getrennt und verkauft werden']:
+            self.assertNotIn(old,s)
+        for new in ['§ 2 Absatz 4','über acht Wochen','frühestens 15 Wochen','TRACES','Eigentumsübertragung','Tollwut-Antikörpertest']:
+            self.assertIn(new,s)
+        data=[json.loads(x) for x in re.findall(r'<script type="application/ld\+json">(.*?)</script>',s,re.S)]
+        faq=next(x for x in data if x.get('@type')=='FAQPage')
+        q=next(x for x in faq['mainEntity'] if 'alt' in x['name'].lower())
+        self.assertIn(q['acceptedAnswer']['text'],s)
+
     def test_puppy_vaccination_socialisation(self):
         import json,re
         s=(R/'welpen-eingewoehnung.html').read_text()
