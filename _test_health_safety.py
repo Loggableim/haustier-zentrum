@@ -3,6 +3,22 @@ from pathlib import Path
 import unittest
 R = Path(__file__).resolve().parent / 'artikel'
 class HealthSafetyTests(unittest.TestCase):
+    def test_cross_species_dental_no_wait_threshold(self):
+        import re, json, xml.etree.ElementTree as ET
+        name='stille-leiden-vermeiden-2026-wie-sie-zahnprobleme-bei-hund-katze-und-kleintier-r'
+        s=(R/(name+'.html')).read_text()
+        for text in [s,(R.parent/'rss.xml').read_text()]:
+            for old in ['Verweigerung von Futter und Wasser über mehr als 24 Stunden','binnen 24 Stunden in eine lebensbedrohliche Stoffwechsellage']:
+                self.assertNotIn(old,text)
+        for term in ['nicht bis zum nächsten Tag warten','weniger oder keine Köttel','nicht schlucken kann','my-rabbit-isn-t-eating-properly','guinea-pig-health','symptom-choking-or-difficulty-swallowing']:
+            self.assertIn(term,s)
+        data=json.loads(re.search(r'<script type="application/ld\+json">(.*?)</script>',s,re.S)[1])
+        article=next(d for d in data['@graph'] if d.get('@type')=='Article')
+        self.assertEqual(article['dateModified'],'2026-11-14')
+        sm=ET.parse(R.parent/'sitemap-articles.xml'); ns={'s':'http://www.sitemaps.org/schemas/sitemap/0.9'}
+        item=next(u for u in sm.findall('s:url',ns) if u.findtext('s:loc',namespaces=ns).endswith('/'+name))
+        self.assertEqual(item.findtext('s:lastmod',namespaces=ns),'2026-11-14')
+
     def test_emergency_survival_statistic_removed(self):
         for p in [R/'notfall-checkliste-2026-erste-hilfe-fuer-hund-katze-und-kleintier-was-jede-halte.html', R.parent/'rss.xml']:
             self.assertNotIn('Überlebenschancen von Tieren bei Notfällen um bis zu 40 Prozent', p.read_text())
