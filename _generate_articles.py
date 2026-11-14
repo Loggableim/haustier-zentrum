@@ -232,7 +232,7 @@ a{{color:var(--primary);text-decoration:none}}a:hover{{text-decoration:underline
       <ul>
         <li><a href="/about.html">Über uns</a></li>
         <li><a href="/impressum.html">Impressum</a></li>
-        <li><a href="/impressum.html">Datenschutz</a></li>
+        <li><a href="/datenschutz.html">Datenschutz</a></li>
       </ul>
     </div>
   </div>
@@ -345,38 +345,17 @@ WICHTIGE REGELN:
         "slug": "ragdoll-katze-rasseguide",
         "title": "Ragdoll Katze Rasseguide – Sanfter Riese mit blauen Augen",
         "category_tags": ["Katzen", "Katzenrassen"],
-        "description": "Ragdoll Rasseguide: Herkunft, Charakter, Haltung in der Wohnung, Fellpflege, Ernährung, Gesundheit und Preise der beliebten Halblanghaarkatze aus den USA.",
+        "description": "Ragdoll Rasseguide: Herkunft, Charakter, Haltung in der Wohnung, Fellpflege, Fütterung, HCM-Vorsorge und eine Checkliste vor der Übernahme.",
         "scene": "Eine Ragdoll-Katze mit blauen Augen, mittellangem seidigem Fell, farblich Seal Point oder Blue Point, entspannt auf weichem Teppich liegend",
         "system_prompt": "Du bist ein deutscher SEO-Content-Autor für eine hundefreundliche Website. Schreibe direkt, persönlich (Du-Form), bodenständig. Verwende echte Umlaute (ä/ö/ü/ß). Kein BWL-Geschwafel.",
-        "prompt": """Schreibe einen ausführlichen Ragdoll Katzen Rasseguide für haustierzentrum.com.
-Der Artikel sollte 1500-2500 Wörter haben.
-
-STRUKTUR (in dieser Reihenfolge):
-1. **Key-Takeaways** Box (3-5 Punkte in div.key-takeaways)
-2. **Herkunft & Geschichte** – Ann Baker, 1960er Jahre, Kalifornien. Josephine (die Mutterkatze), Zuchtstart mit Persian-ähnlichen und Burmese-Einflüssen. Name "Ragdoll" wegen der Neigung, beim Hochnehmen schlaff wie eine Stoffpuppe zu werden
-3. **Charakter & Wesen** – Sehr ruhig, sanft, menschenbezogen, "hundähnlich" (folgt Besitzern, apportiert). Kein typisches "Katzen-Verhalten". Sehr verschmust, sozial. Vergleich zu anderen Katzenrassen
-4. **AdSense Platzhalter** (div.ad-placeholder)
-5. **Haltung in der Wohnung** – Ideal für Wohnungshaltung! Braucht Gesellschaft (besser nicht allein). Kratzbaum, Spielzeug, erhöhte Schlafplätze. Kein Freigänger – zu zutraulich und wertvoll
-6. **Amazon Affiliate Block** (div.amazon-affiliate mit Link zu https://www.amazon.de/s?k=Ragdoll+Katze+Zubehör&tag=nova079-20)
-7. **Fellpflege** – Mittellanges seidiges Fell ohne starke Unterwolle. Weniger Verfilzungsgefahr als Perser. Regelmäßiges Bürsten (2-3x/Woche). Das Fell verfilzt seltener als bei Persern
-8. **Ernährung** – Hochwertiges Katzenfutter mit viel Fleisch. Neigt zu Übergewicht. Nasses Futter bevorzugen. Portionsgrößen und Fütterungsrhythmus
-9. **Gesundheit & typische Krankheiten** – HCM (Hypertrophe Kardiomyopathie) häufigste Erkrankung! PKD (Polyzystische Nierenerkrankung). Hüftdysplasie. Regelmäßige Vorsorge. Lebenserwartung 12-17 Jahre
-10. **Amazon Affiliate Block** (div.amazon-affiliate mit Link zu https://www.amazon.de/s?k=Ragdoll+Katzenfutter+Gesundheit&tag=nova079-20)
-11. **Aussehen & Farbvarianten** – Colourpoint-Muster (Seal Point, Blue Point, Chocolate Point, Lilac Point). Mitted, Bicolor, Van. Blaue Augen sind Pflicht. 4-9 kg (Kater deutlich größer als Katzen)
-12. **Vergleichstabelle** – Ragdoll vs. Maine Coon vs. Perserkatze (Größe, Gewicht, Charakter, Fellpflege, Wohnungstauglich, Familienfreundlich, Gesundheitsrisiken, Lebenserwartung)
-13. **FAQ** (5-6 Fragen in div.faq-item Blöcken)
-14. **Kosten** – Welpe von Züchter: 800-1500 EUR. Wichtige Züchterkriterien (HCM-Testung, PKD-Test, Freigang der Elterntiere)
-15. **Fazit** – Ideale Katze für ruhige Haushalte, Familien, Wohnungshaltung. Keine Katze für Vielreisende
-16. **Amazon Affiliate Block** (div.amazon-affiliate mit Link zu https://www.amazon.de/s?k=Ragdoll+Katze+Züchter&tag=nova079-20)
-
-WICHTIGE REGELN:
-- Nur HTML-Body-Fragment
-- Amazon-Links IMMER mit tag=nova079-20 (NICHT nova03e-21!)
-- 5+ H2-Überschriften
-- Echte Umlaute ä/ö/ü/ß
-- Mindestens 1500 Wörter
-- Vergleichstabelle mit <table>
-- Interne Links zu /artikel/perserkatze-rasseguide.html, /artikel/maine-coon-katze-rasseguide.html, /artikel/katzenrassen-vergleich.html"""
+        "prompt": """Schreibe einen sachlichen Ragdoll-Ratgeber für haustierzentrum.com.
+Nur ein HTML-Body-Fragment mit Key-Takeaways, klaren H2-Abschnitten und FAQ.
+Trenne Rassemerkmale von individuellen Eigenschaften. Keine Garantie für Kinderfreundlichkeit, Wohnungstauglichkeit oder bestimmtes Verhalten.
+Praktische Schwerpunkte: Kennenlernen, Ausstattung, Beschäftigung, Fellpflege, Fütterungsprotokoll, Kostenplanung und Fragen vor der Übernahme.
+Gesundheitsinformationen nur mit überprüfbarer veterinärmedizinischer Quelle und genauer Zuordnung. HCM-Gentests sind keine pauschale Gesundheitsgarantie. Keine unbelegten PKD-/Hüft-Risiken, Preis- oder Lebensdauerspannen und keine pauschalen Fleischanteil-Regeln.
+Keine erfundenen nummerierten Quellenmarker. Quellen als direkte Links an den jeweiligen Aussagen; nicht belegbare Aussagen weglassen.
+Keine Werbeplatzhalter, Scaffold-Überschriften oder Amazon-Suchen nach Züchtern/Behandlungen. Kein Zwang zu Produktblöcken oder Vergleichstabellen.
+Verlinke passende Ratgeber /artikel/katzenhaltung-wohnung und /artikel/katzen-ernaehrung. Verwende echte Umlaute."""
     }
 ]
 
