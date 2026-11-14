@@ -3,6 +3,18 @@ from pathlib import Path
 import unittest
 R = Path(__file__).resolve().parent / 'artikel'
 class HealthSafetyTests(unittest.TestCase):
+    def test_puppy_vaccination_socialisation(self):
+        import json,re
+        s=(R/'welpen-eingewoehnung.html').read_text()
+        for old in ['Grundimmunisierung (zweite Impfung)','wenn alle Impfungen durch sind','auf dem Schoß oder','wird als erwachsener Hund selbstbewusst, ausgeglichen und angstfrei sein']:
+            self.assertNotIn(old,s)
+        for new in ['örtlichem Infektionsrisiko','16 Wochen','mindestens sieben Tage','keine pauschale Teilnahmefreigabe','nicht automatisch infektionssicher']:
+            self.assertIn(new,s)
+        data=[json.loads(x) for x in re.findall(r'<script type="application/ld\+json">(.*?)</script>',s,re.S)]
+        faq=next(x for x in data if x.get('@type')=='FAQPage')
+        q=next(x for x in faq['mainEntity'] if x['name']=='Wann darf mein Welpe das erste Mal unter andere Hunde?')
+        self.assertIn(q['acceptedAnswer']['text'],s)
+
     def test_ferret_feeding_and_faq(self):
         import json,re
         s=(R/'frettchen-haustier-haltung-pflege-kosten.html').read_text()
