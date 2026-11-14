@@ -3,6 +3,18 @@ from pathlib import Path
 import unittest
 R = Path(__file__).resolve().parent / 'artikel'
 class HealthSafetyTests(unittest.TestCase):
+    def test_anxiety_comfort_and_timing(self):
+        import json,re
+        s=(R/'hundeangst-training-tipps.html').read_text()
+        for old in ['übermäßiges Trösten, da dies die Angst verstärken kann','erst zu belohnen, sobald der Hund sich entspannt','Tröstende Zuwendung im falschen Moment','aber nur, wenn dein Hund ruhig bleibt']:
+            self.assertNotIn(old,s)
+        for new in ['Angst ist eine Emotion','erst Auslöser, dann Futter','ohne es aufzudrängen','Bei Stress beende die Belastung']:
+            self.assertIn(new,s)
+        data=[json.loads(x) for x in re.findall(r'<script type="application/ld\+json">(.*?)</script>',s,re.S)]
+        faq=next(x for x in data if x.get('@type')=='FAQPage')
+        q=next(x for x in faq['mainEntity'] if 'trösten' in x['name'])
+        self.assertIn(q['acceptedAnswer']['text'],s)
+
     def test_small_pet_comparison_welfare(self):
         s=(R/'kleintiere-hamster-meerschweinchen.html').read_text()
         for old in ['bewusst anonymisiert, aber wahr','Familie Hoffmann','Erfahrungen aus unserem Freundeskreis','Markus','lassen sich gerne streicheln','verschmuste Familienfreund','80 x 50 cm','120 × 60 × 50 cm']:
