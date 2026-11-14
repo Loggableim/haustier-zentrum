@@ -3,6 +3,18 @@ from pathlib import Path
 import unittest
 R = Path(__file__).resolve().parent / 'artikel'
 class HealthSafetyTests(unittest.TestCase):
+    def test_ferret_feeding_and_faq(self):
+        import json,re
+        s=(R/'frettchen-haustier-haltung-pflege-kosten.html').read_text()
+        for old in ['20–30 %','entsprechende Mengen Frischfleisch','niemals länger als 3–4 Stunden','rohe Eier (nur das Eigelb)','aus Rinderhaut']:
+            self.assertNotIn(old,s)
+        for new in ['Alleinfuttermittel','nicht einfach grammweise','feeding-ferrets','Infektions- und Darmverschlussrisiken']:
+            self.assertIn(new,s)
+        data=[json.loads(x) for x in re.findall(r'<script type="application/ld\+json">(.*?)</script>',s,re.S)]
+        faq=next(x for x in data if x.get('@type')=='FAQPage')
+        q=next(x for x in faq['mainEntity'] if x['name']=='Was fressen Frettchen am liebsten?')
+        self.assertIn(q['acceptedAnswer']['text'],s)
+
     def test_parasite_risk_based_guidance(self):
         s=next(R.glob('parasiten-alarm*.html')).read_text()
         for old in ['Kotproben statt Routine','authochthone Fälle','Resistenzen bei Spulwürmern (Toxocara spp.)','Peilomavirus','Trixacarus diversus','jährliche E.-cuniculi-Blutprobe','prophylaktische Therapie mit Fenbendazol']:
