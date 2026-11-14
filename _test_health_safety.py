@@ -3,6 +3,13 @@ from pathlib import Path
 import unittest
 R = Path(__file__).resolve().parent / 'artikel'
 class HealthSafetyTests(unittest.TestCase):
+    def test_small_pet_comparison_welfare(self):
+        s=(R/'kleintiere-hamster-meerschweinchen.html').read_text()
+        for old in ['bewusst anonymisiert, aber wahr','Familie Hoffmann','Erfahrungen aus unserem Freundeskreis','Markus','lassen sich gerne streicheln','verschmuste Familienfreund','80 x 50 cm','120 × 60 × 50 cm']:
+            self.assertNotIn(old,s)
+        for new in ['keine Berichte über konkrete Halter','Kleine Kinder sollen Meerschweinchen nicht tragen','Angstreaktion','Torpor','100 × 50 cm']:
+            self.assertIn(new,s)
+
     def test_chihuahua_chip_scope(self):
         s=next(R.glob('*chihuahua*.html')).read_text()
         self.assertNotIn('Seit 2011 müssen alle Hunde in Deutschland',s)
