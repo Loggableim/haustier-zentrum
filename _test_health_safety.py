@@ -222,4 +222,17 @@ class HealthSafetyTests(unittest.TestCase):
             self.assertNotIn(old, rabbit)
         self.assertGreaterEqual(rabbit.count('Vor einer Zwangsfütterung muss ein Darmverschluss ausgeschlossen sein.'), 2)
         self.assertIn('rabbitwelfare.co.uk', rabbit)
+    def test_dog_illness_heatstroke(self):
+        import re, json
+        s=(R/'hunde-krankheiten-symptome-erste-hilfe.html').read_text()
+        for old in ['41,5', '(nicht eiskaltem)', 'Körpertemperatur messen (Zwischenraum)', 'Keine Autos in der Sonne parken']:
+            self.assertNotIn(old,s)
+        for new in ['kaltem Leitungswasser', 'Halte Nase und Maul frei', 'vor der Fahrt zu kühlen', 'nicht mit nassen Handtüchern', 'Auch bei scheinbarer Besserung', 'pdsa.org.uk', 'HOW%20TO%20COOL']:
+            self.assertIn(new,s)
+        blocks=[json.loads(x) for x in re.findall(r'<script type="application/ld\+json">(.*?)</script>',s,re.S)]
+        faq=next(x for x in blocks if x.get('@type')=='FAQPage')
+        answer=faq['mainEntity'][0]['acceptedAnswer']['text']
+        visible=re.search(r'<div class="faq-item"><h3>Wie messe.*?</h3><p>(.*?)</p>',s,re.S)[1]
+        self.assertEqual(answer,re.sub('<[^>]+>','',visible))
+        self.assertNotIn('lastReviewed',blocks[0])
 if __name__ == '__main__': unittest.main()
