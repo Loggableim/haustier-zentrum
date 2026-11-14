@@ -3,6 +3,12 @@ from pathlib import Path
 import unittest
 R = Path(__file__).resolve().parent / 'artikel'
 class HealthSafetyTests(unittest.TestCase):
+    def test_chihuahua_chip_scope(self):
+        s=next(R.glob('*chihuahua*.html')).read_text()
+        self.assertNotIn('Seit 2011 müssen alle Hunde in Deutschland',s)
+        for term in ['3. Juli 2011','landesrechtliche Vorgaben','31. August 2030','31. August 2036','Suchregister','Tätowierung']:
+            self.assertIn(term,s)
+
     def test_puppy_buying_law_and_import(self):
         import json,re
         s=(R/'welpenkauf-zuuechter-tierheim-checkliste.html').read_text()
