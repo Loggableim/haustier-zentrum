@@ -44,4 +44,22 @@ class CatNutritionTests(unittest.TestCase):
         self.assertEqual([(q['name'], q['acceptedAnswer']['text']) for q in faq['mainEntity']],
                          [(plain(q), plain(a)) for q, a in visible])
 
+class CatSelectionTests(unittest.TestCase):
+    def test_raw_feeding_risks_and_correct_link(self):
+        text = (PAGE.parent / 'katzen-ernaehrung.html').read_text(encoding='utf-8')
+        for phrase in ['Die Vorteile: glänzendes Fell', 'gute Alternative für', 'mindestens 70 % Fleischanteil', 'BARF-Zubehör', 'Nassfutter oder einer ausgewogenen BARF-Ration']:
+            self.assertNotIn(phrase, text)
+        for phrase in ['keinen belegten gesundheitlichen Vorteil', 'Krankheitserreger', 'Alleinfuttermittel', 'kein Qualitätsnachweis', 'tierärztliche Ernährungsberatung', 'Raw-Meat-Based-Diets-for-Pets', 'Frequently-Asked-Questions-and-Myths', '/artikel/katzenfutter-selber-machen']:
+            self.assertIn(phrase, text)
+        self.assertNotRegex(text, r'katzen-zimmerpflanzen-giftig[^>]*>Einsteiger')
+
+    def test_revision_metadata_and_schema(self):
+        text = (PAGE.parent / 'katzen-ernaehrung.html').read_text(encoding='utf-8')
+        blocks = [json.loads(b) for b in re.findall(r'<script type="application/ld\+json">(.*?)</script>', text, re.S)]
+        post = next(b for b in blocks if b.get('@type') == 'BlogPosting')
+        self.assertEqual(post['datePublished'], '2026-06-15')
+        self.assertEqual(post['dateModified'], '2026-11-14')
+        self.assertIn('Redaktionell aktualisiert: 14. November 2026', text)
+        self.assertNotIn('lastReviewed', post)
+
 if __name__ == '__main__': unittest.main()
