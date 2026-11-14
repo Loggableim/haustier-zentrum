@@ -21,4 +21,28 @@ class DogWeightTests(unittest.TestCase):
     self.assertGreater(len(visible),0)
     for q in d['mainEntity']:self.assertEqual(html.unescape(re.sub('<[^>]+>','',visible[q['name']])),q['acceptedAnswer']['text'])
   self.assertTrue(found,'FAQPage missing')
+class DogRawDentalTests(unittest.TestCase):
+ def test_removed_raw_and_hard_chew_claims(self):
+  for name in ['hundeernaehrung','hunde-ernaehrung-barf-trocken-nass']:
+   s=(R/f'artikel/{name}.html').read_text()
+   for phrase in ['fördert die Zahngesundheit durch Kauen','40–50 % rohes','natürliche Zahnbürste','nur weiche, rohe Knochen','über 90 %','5. Trächtigkeitsmonat']:
+    self.assertNotIn(phrase,s)
+   for phrase in ['Raw-Meat-Based-Diets-for-Pets','tierärztliche Ernährungsberatung','Zahnfrakturen']:
+    self.assertIn(phrase,s)
+  s=(R/'artikel/hunde-zahnpflege.html').read_text()
+  for phrase in ['Sehr hart, extrem langanhaltend','Nur für kräftige Kauer','splittert kaum','Enzymatische Unterstützung','natürliche Zahnbürste']:
+   self.assertNotIn(phrase,s)
+  for phrase in ['Zahnfrakturen','vohc.org/accepted-products','Pet-Health-Info-Teeth-Brushing-ADA']:
+   self.assertIn(phrase,s)
+ def test_faq_alignment_and_revision(self):
+  for name in ['hundeernaehrung','hunde-ernaehrung-barf-trocken-nass','hunde-zahnpflege']:
+   s=(R/f'artikel/{name}.html').read_text()
+   visible=re.findall(r'<div class="faq-item">\s*<h3>(.*?)</h3>\s*<p>(.*?)</p>\s*</div>',s,re.S)
+   plain=lambda x:html.unescape(re.sub('<[^>]+>','',x))
+   blocks=[json.loads(b) for b in re.findall(r'<script type="application/ld\+json">(.*?)</script>',s,re.S)]
+   faq=next(b for b in blocks if b.get('@type')=='FAQPage')
+   self.assertEqual([(q['name'],q['acceptedAnswer']['text']) for q in faq['mainEntity']],[(plain(q),plain(a)) for q,a in visible])
+   post=next(b for b in blocks if b.get('@type')=='BlogPosting')
+   self.assertEqual(post['dateModified'],'2026-11-14')
+   self.assertNotIn('lastReviewed',post)
 if __name__=='__main__':unittest.main()
