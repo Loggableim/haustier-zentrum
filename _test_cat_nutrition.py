@@ -62,4 +62,22 @@ class CatSelectionTests(unittest.TestCase):
         self.assertIn('Redaktionell aktualisiert: 14. November 2026', text)
         self.assertNotIn('lastReviewed', post)
 
+class CatDentalTests(unittest.TestCase):
+    def test_no_raw_bone_cleaning_advice(self):
+        text = (PAGE.parent / 'katzen-zahnpflege.html').read_text(encoding='utf-8')
+        for phrase in ['reinigt die Zähne auf natürliche Weise', 'Hühnerhälse oder spezielle', 'helfen, Entzündungen vorzubeugen', 'beugt Zahnstein, Karies']:
+            self.assertNotIn(phrase, text)
+        for phrase in ['keine Zahnpflege-Empfehlung', 'Zahnfrakturen', 'Krankheitserreger', 'vohc.org/accepted-products', 'Raw-Meat-Based-Diets-for-Pets', 'vor dem Putzen tierärztlich', 'feline-dental-disease']:
+            self.assertIn(phrase, text)
+
+    def test_dental_metadata(self):
+        text = (PAGE.parent / 'katzen-zahnpflege.html').read_text(encoding='utf-8')
+        blocks = [json.loads(b) for b in re.findall(r'<script type="application/ld\+json">(.*?)</script>', text, re.S)]
+        post = next(b for b in blocks if b.get('@type') == 'BlogPosting')
+        self.assertEqual(post['dateModified'], '2026-11-14')
+        self.assertEqual(post['datePublished'], '2026-06-15')
+        self.assertNotIn('lastReviewed', post)
+        self.assertEqual(post['author']['@type'], 'Organization')
+        self.assertIn('Redaktionell aktualisiert: 14. November 2026', text)
+
 if __name__ == '__main__': unittest.main()
