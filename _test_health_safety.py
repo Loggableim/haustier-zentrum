@@ -3,6 +3,13 @@ from pathlib import Path
 import unittest
 R = Path(__file__).resolve().parent / 'artikel'
 class HealthSafetyTests(unittest.TestCase):
+    def test_parasite_risk_based_guidance(self):
+        s=next(R.glob('parasiten-alarm*.html')).read_text()
+        for old in ['Kotproben statt Routine','authochthone Fälle','Resistenzen bei Spulwürmern (Toxocara spp.)','Peilomavirus','Trixacarus diversus','jährliche E.-cuniculi-Blutprobe','prophylaktische Therapie mit Fenbendazol']:
+            self.assertNotIn(old,s)
+        for new in ['nicht als Endemiegebiet','mindestens vier','negativer Kotbefund schließt','gleichen Abständen','Bandwürmer','Trixacarus caviae','risikobasiert','positiver Antikörpertest']:
+            self.assertIn(new,s)
+
     def test_cross_species_dental_no_wait_threshold(self):
         import re, json, xml.etree.ElementTree as ET
         name='stille-leiden-vermeiden-2026-wie-sie-zahnprobleme-bei-hund-katze-und-kleintier-r'
