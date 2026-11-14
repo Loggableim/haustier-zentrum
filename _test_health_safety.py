@@ -235,4 +235,17 @@ class HealthSafetyTests(unittest.TestCase):
         visible=re.search(r'<div class="faq-item"><h3>Wie messe.*?</h3><p>(.*?)</p>',s,re.S)[1]
         self.assertEqual(answer,re.sub('<[^>]+>','',visible))
         self.assertNotIn('lastReviewed',blocks[0])
+    def test_emergency_kit_species_specific_products(self):
+        import re, json
+        s=next(R.glob('notfall-checkliste*')).read_text()
+        for old in ['z. B. Octenidin-Lösung', 'z. B. mit Panthenol oder Zink', '<strong>Elektrolytlösung</strong> bei Durchfall und Erbrechen']:
+            self.assertNotIn(old,s)
+        for new in ['nur nach tierärztlichem Plan', 'keine pauschale Selbstbehandlung', 'Wiederholtes Ablecken', 'unter Druck ins Gewebe', 'keine Freigabe für die Anwendung am Tier', 'Sterile Kochsalzlösung']:
+            self.assertIn(new,s)
+        blocks=[json.loads(x) for x in re.findall(r'<script type="application/ld\+json">(.*?)</script>',s,re.S)]
+        faq=next(x for x in blocks if x.get('@type')=='FAQPage')
+        answer=faq['mainEntity'][1]['acceptedAnswer']['text']
+        visible=re.search(r'<h3>Was gehört in eine Notfallapotheke für unterwegs\?</h3>\s*<p>(.*?)</p>',s,re.S)[1]
+        self.assertEqual(answer,visible)
+        self.assertNotIn('lastReviewed',faq)
 if __name__ == '__main__': unittest.main()
