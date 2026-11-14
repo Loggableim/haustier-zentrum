@@ -127,6 +127,19 @@ class HealthSafetyTests(unittest.TestCase):
             for old in ['Kotabsatz über 12 Stunden', 'zum Eingeben von Flüssigkeit', 'Massiere vorsichtig den Bauch', 'massiere den Bauch sanft', 'länger als 12 Stunden', 'mehr als einen Tag nichts frisst', 'Einfach ins Trinkwasser', 'Ergänzung ins Trinkwasser', 'ohne Futter nur 24–48 Stunden', 'keine Injektionsnarkose!', 'vertragen Injektionsnarkosen sehr schlecht']:
                 self.assertNotIn(old, s, str(p))
             self.assertTrue('pdsa.org.uk' in s or 'vcahospitals.com' in s, str(p))
+    def test_home_remedy_urgency_and_sales_consistency(self):
+        import re,json
+        s=(R/'hunde-hausmittel.html').read_text()
+        for old in ['Fressunlust über 24 Stunden','Erbrechen länger als 24 Stunden','Quark kühlt und wirkt entzündungshemmend','Naturheilkunde+Hunde','Hundegesundheit+Hausmittel+Natur','Kurkuma-Präparate und Pflegeprodukte']:
+            self.assertNotIn(old,s)
+        for new in ['keine sichere Wartefrist','erfolgloses Würgen','insect-bites-and-stings-in-dogs','common-emergencies-in-dogs','kaltes, feuchtes Tuch','Gesicht, Hals oder Rachen']:
+            self.assertIn(new,s)
+        post=json.loads(re.search(r'<script type="application/ld\+json">(.*?)</script>',s,re.S)[1])
+        self.assertEqual(post['dateModified'],'2026-11-14')
+        self.assertNotIn('lastReviewed',post)
+        for path in [R.parent/'index.html',R.parent/'rss.xml']:
+            self.assertNotIn('Natürliche Hilfe bei Durchfall',path.read_text())
+
     def test_home_remedies(self):
         s = (R/'hunde-hausmittel.html').read_text()
         for old in ['ganz ohne Nebenwirkungen', 'absolut unbedenklich', 'kaum Nebenwirkungen', '1/4 Teelöffel', '1 Teelöffel pro 10 kg', 'Einfach 1 Teelöffel', '1–2 Esslöffel']:
