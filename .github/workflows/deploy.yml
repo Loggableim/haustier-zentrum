@@ -22,6 +22,7 @@ jobs:
           python _check_release.py dist
           node _test_consent.cjs
           python _test_editorial_claims.py
+          python _test_faq_consistency.py
           python _test_health_safety.py
           python _test_cat_nutrition.py
           python _test_cat_moving.py

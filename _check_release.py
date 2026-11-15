@@ -4,6 +4,7 @@ from pathlib import Path
 import re
 import sys
 import _audit_technical as audit
+from _faq_consistency import check_faq
 
 
 def check(root):
@@ -15,6 +16,7 @@ def check(root):
     pages = [root / 'index.html', *(root / 'artikel').glob('*.html')]
     for page in pages:
         text = page.read_text(encoding='utf-8')
+        check_faq(text, page.name)
         scripts = re.findall(r'<script\b([^>]*)>(.*?)</script>', text, re.I | re.S)
         loaders = [a for a, _ in scripts if re.search(r'src=["\']/js/consent.js["\']', a)]
         if len(loaders) != 1 or not re.search(r'\bdefer\b', loaders[0]):
