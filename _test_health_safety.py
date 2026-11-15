@@ -335,4 +335,13 @@ class HealthSafetyTests(unittest.TestCase):
                 self.assertNotIn(old,s)
             for new in ['Alleinfuttermittel','Körperzustand','Krankheitserreger','zuerst tierärztlich abklären']:
                 self.assertIn(new,s)
+    def test_breed_health_second_batch(self):
+        for n in ['dalmatiner','malteser','beagle','havaneser']:
+            s=(R/(n+'-rasseguide.html')).read_text()
+            for old in ['300 bis 500 g', '60–80 g', '200–450 g', '40–60 g', 'mindestens 70 %', 'Beagle-Erkrankung', 'wöchentlich mit spezieller Lösung', 'Ohren wöchentlich reinigen', 'Reinige sie wöchentlich']:
+                self.assertNotIn(old,s)
+            for new in ['Alleinfuttermittel','Körperzustand','Krankheitserreger','zuerst tierärztlich abklären']: self.assertIn(new,s)
+        d=(R/'dalmatiner-rasseguide.html').read_text()
+        for new in ['Low-Uric-Acid','nicht gleich pauschal proteinarm','wenig oder keinem Urin']: self.assertIn(new,d)
+        self.assertIn('SRMA', (R/'beagle-rasseguide.html').read_text())
 if __name__ == '__main__': unittest.main()
