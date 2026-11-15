@@ -248,4 +248,10 @@ class HealthSafetyTests(unittest.TestCase):
         visible=re.search(r'<h3>Was gehört in eine Notfallapotheke für unterwegs\?</h3>\s*<p>(.*?)</p>',s,re.S)[1]
         self.assertEqual(answer,visible)
         self.assertNotIn('lastReviewed',faq)
+    def test_cat_plant_emergency_and_deterrents(self):
+        s=(R/'katzen-zimmerpflanzen-giftig.html').read_text()
+        for old in ['Maul vorsichtig spülen', 'mit Orangen- oder Zitronenschalen mulchen', '030 – 192 40', '089 – 192 40', 'oder den Giftnotruf kontaktieren', 'Zimt oder Pfeffer']:
+            self.assertNotIn(old,s)
+        for new in ['Keine eigenständige Maulspülung', 'Flöße nichts ein', 'tierärztlichen Notdienst', 'nicht für Tiervergiftungen ausgebildet', 'Keine Zitrusschalen', 'first-aid-for-poisons-and-toxins']:
+            self.assertIn(new,s)
 if __name__ == '__main__': unittest.main()
