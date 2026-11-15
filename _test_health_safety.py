@@ -322,4 +322,10 @@ class HealthSafetyTests(unittest.TestCase):
             for old in ['<<','**','## ','<p>---</p>']: self.assertNotIn(old,s)
             a=s.index('<div class="content">');b=s.index('<section class="related-posts">',a)
             parser=Structure();parser.feed(s[a:b]);self.assertEqual(parser.stack,[])
+    def test_berner_care_and_health_qualified(self):
+        s=(R/'berner-sennenhund-rasseguide.html').read_text()
+        for old in ['6–8 Jahren', 'nicht wegen des Hundes', '1,5–2 Stunden', 'Ein Bad alle 6–8', 'Bei Temperaturen über 25', 'zwischen 4 und 7 Jahren']:
+            self.assertNotIn(old,s)
+        for new in ['8,4 Jahren', 'Geburtsjahrgängen 2001 und 2002', 'aktiv beaufsichtigen', 'kinderfreien Rückzugsort', 'SOD1A und SOD1B', 'keine feste Lebenserwartung']:
+            self.assertIn(new,s)
 if __name__ == '__main__': unittest.main()
