@@ -272,4 +272,12 @@ class HealthSafetyTests(unittest.TestCase):
             self.assertNotIn(old,s)
         for new in ['Symptome, keine fertige Diagnose', 'Keine pauschale Fasten-', 'mindestens 30 Tage', 'Ammonium/Ammoniak', 'nicht automatisch', 'edis.ifas.ufl.edu', 'cafishvet.com']:
             self.assertIn(new,s)
+    def test_guinea_pig_anorexia_no_wait_or_forced_feeding(self):
+        for name in ['meerschweinchen-haltung', 'meerschweinchen-krankheiten-gesundheit']:
+            s=(R/(name+'.html')).read_text()
+            for old in ['6–8 Stunden', '6–12 Stunden', 'biete unverzüglich Breifutter', 'Wärme das Tier an']:
+                self.assertNotIn(old,s)
+            for new in ['Spritzenfütterung nur nach tierärztlicher Beurteilung', 'fehlendem Schlucken', 'nichts ins Maul zwingen', 'Tierarzt', 'vcahospitals.com']:
+                self.assertIn(new,s)
+            self.assertNotIn('lastReviewed',s)
 if __name__ == '__main__': unittest.main()
