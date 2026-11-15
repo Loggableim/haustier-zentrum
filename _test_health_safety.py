@@ -287,4 +287,24 @@ class HealthSafetyTests(unittest.TestCase):
         for new in ['Rückfälle sind möglich', 'angepasste Calciumzufuhr', 'trächtigen oder säugenden', 'Futterpigmente', 'mspca.org', 'standsichere Schale']:
             self.assertIn(new,s)
         self.assertNotIn('Begünstigt durch falsche Calcium-Fütterung', (R/'meerschweinchen-haltung.html').read_text())
+    def test_berner_markup_and_nutrition(self):
+        import re
+        s=(R/'berner-sennenhund-rasseguide.html').read_text()
+        for old in ['<<', '**', '## ', '500–700 g', 'mindestens 25 %', 'Allergien reduzieren', 'kein Trinken in großen Mengen']:
+            self.assertNotIn(old,s)
+        for new in ['Wasser nicht vorenthalten', 'nicht automatisch', 'Alleinfuttermittel', 'Zahnfrakturen', 'dateModified']:
+            self.assertIn(new,s)
+        for h in re.findall(r'<h[23]>(.*?)</h[23]>',s):
+            self.assertLess(len(h),150)
+        from html.parser import HTMLParser
+        class Structure(HTMLParser):
+            def __init__(self): super().__init__(); self.stack=[]
+            def handle_starttag(self,tag,attrs):
+                if tag in ['div','section','ul','li','p','h1','h2','h3']: self.stack.append(tag)
+            def handle_endtag(self,tag):
+                if tag in ['div','section','ul','li','p','h1','h2','h3']:
+                    assert self.stack and self.stack.pop()==tag
+        a=s.index('<div class="content">'); b=s.index('<section class="related-posts">',a)
+        parser=Structure(); parser.feed(s[a:b]); self.assertEqual(parser.stack,[])
+
 if __name__ == '__main__': unittest.main()
