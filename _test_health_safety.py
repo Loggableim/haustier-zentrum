@@ -3,6 +3,17 @@ from pathlib import Path
 import unittest
 R = Path(__file__).resolve().parent / 'artikel'
 class HealthSafetyTests(unittest.TestCase):
+    def test_small_pet_antiparasitic_safety(self):
+        g=(R/'meerschweinchen-krankheiten-gesundheit.html').read_text()
+        for old in ['ein Tropfen genügt','Alle Tiere der Gruppe müssen','Spot-on bei Amazon','<div class="product-card">']:
+            self.assertNotIn(old,g)
+        for term in ['Wirkstoffkonzentration','symptomloser Tiere','Permethrin-Spot-ons','vom Erreger und Befund']:
+            self.assertIn(term,g)
+        r=(R/'kaninchen-ernaehrung-gesundheit.html').read_text()
+        self.assertNotIn('regelmäßiger Flohschutz',r)
+        self.assertIn('Fipronil darf bei Kaninchen nicht verwendet werden',r)
+        self.assertIn('versehentlicher Anwendung sofort',r)
+
     def test_bird_cage_evidence_and_zinc(self):
         s=(R/'vogelkaefig-voliere-kaufen-vergleich-2026.html').read_text()
         for old in ['tag=nova079-20', 'Weatherproof 200', 'FOPATO', 'Die 7 besten', 'Unser Urteil:', '80 × 50 × 50', 'mindestens 80 cm']:
