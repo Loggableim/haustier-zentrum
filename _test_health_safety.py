@@ -3,6 +3,13 @@ from pathlib import Path
 import unittest
 R = Path(__file__).resolve().parent / 'artikel'
 class HealthSafetyTests(unittest.TestCase):
+    def test_ferret_ear_care(self):
+        s=(R/'frettchen-haustier-haltung-pflege-kosten.html').read_text()
+        for old in ['etwas Babyöl kann', 'Tierarzt aufsuchen (Ohrmilben!)', 'Wattestäbchen (nur im sichtbaren Bereich!)']:
+            self.assertNotIn(old,s)
+        for term in ['Farbe allein beweist keinen Milbenbefall', 'Keine Wattestäbchen in den Gehörgang', 'Reinigung ersetzt keine Behandlung', 'Kontakttiere']:
+            self.assertIn(term,s)
+
     def test_small_pet_antiparasitic_safety(self):
         g=(R/'meerschweinchen-krankheiten-gesundheit.html').read_text()
         for old in ['ein Tropfen genügt','Alle Tiere der Gruppe müssen','Spot-on bei Amazon','<div class="product-card">']:
