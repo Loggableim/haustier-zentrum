@@ -3,6 +3,15 @@ from pathlib import Path
 import unittest
 R = Path(__file__).resolve().parent / 'artikel'
 class HealthSafetyTests(unittest.TestCase):
+    def test_raw_breed_first_followup(self):
+        for slug in ['chihuahua','deutscher-schaeferhund','bengal-cat','golden-retriever']:
+            s=(R/(slug+'-rasseguide.html')).read_text()
+            self.assertIn('Knochen können Zähne brechen',s)
+            for old in ['Vermeidung von Kehlkopflähmung durch','Die natürlichste Fütterungsart','gesünderen Zähnen und mehr Vitalität','kann zu einem glänzenden Fell, guter Gesundheit']:
+                self.assertNotIn(old,s)
+        c=(R/'chihuahua-rasseguide.html').read_text()
+        self.assertIn('nicht mit einem steckengebliebenen Futterstück',c)
+
     def test_shih_rottweiler_aussie_nutrition(self):
         for slug in ['shih-tzu-rasseguide','rottweiler-rasseguide','australian-shepherd-rasseguide']:
             s=(R/(slug+'.html')).read_text()
