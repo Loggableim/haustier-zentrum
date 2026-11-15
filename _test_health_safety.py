@@ -408,4 +408,10 @@ class HealthSafetyTests(unittest.TestCase):
         c=(R/'chihuahua-rasseguide.html').read_text()
         for new in ['nicht krampft','Nichts einflößen','Transport nicht verzögern','keine pauschale Prophylaxe']:
             self.assertIn(new,c)
+    def test_shepherd_epi_claims(self):
+        s=(R/'deutscher-schaeferhund-rasseguide.html').read_text()
+        for old in ['PAA-Gen-Mutation auf Chromosom 12', 'Ein Gentest ist verfügbar', 'Rasse macht etwa 60 %', 'Creon, Pancrelipase']:
+            self.assertNotIn(old,s)
+        for new in ['cTLI', 'Funktionstest, kein DNA-Test', 'Vitamin B12', 'tierärztlich abklären', 'nicht belegt und wurde entfernt']:
+            self.assertIn(new,s)
 if __name__ == '__main__': unittest.main()
