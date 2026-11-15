@@ -3,6 +3,16 @@ from pathlib import Path
 import unittest
 R = Path(__file__).resolve().parent / 'artikel'
 class HealthSafetyTests(unittest.TestCase):
+    def test_raw_breed_second_followup(self):
+        for slug in ['yorkshire-terrier','border-collie','pudel','shiba-inu','whippet']:
+            s=(R/(slug+'-rasseguide.html')).read_text()
+            self.assertIn('zusätzliche Keim- und Knochenrisiken',s)
+            self.assertNotIn('getreidefrei+',s)
+            self.assertNotIn('getreidefrei&',s)
+            self.assertIn('Fleischquoten und Getreidefreiheit belegen keine Qualität',s)
+            for old in ['mindestens 60–70 %','mindestens 50 %, besser 70 %','mindestens 60 %','Fleischanteil (70 %+)','Zahnpflege-Kauknochen','zu viel Kauknochen']:
+                self.assertNotIn(old,s)
+
     def test_raw_breed_first_followup(self):
         for slug in ['chihuahua','deutscher-schaeferhund','bengal-cat','golden-retriever']:
             s=(R/(slug+'-rasseguide.html')).read_text()
