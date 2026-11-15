@@ -260,4 +260,10 @@ class HealthSafetyTests(unittest.TestCase):
             self.assertNotIn(old,s)
         for new in ['Kein unlöslicher Verdauungsgrit', 'Kein Futterentzug', 'Schnittlauch', 'budgies-feeding', 'vetmed.illinois.edu', 'rvc.ac.uk']:
             self.assertIn(new,s)
+    def test_budgie_millet_sprouts_and_toxicity(self):
+        s=(R/'wellensittich-ernaehrung-futter.html').read_text()
+        for old in ['15+', 'Schritt-für-Schritt', 'Kolbenhirse enthält sehr viel Fett', 'verfettetem Gefieder', 'nicht länger als 12 Stunden an', 'innerhalb von 12 Stunden verfüttert', 'damit kein Schimmel entsteht', 'Fördert Verdauung, Gefieder & Brutstimmung', 'ätherische Öle reizen die Nieren', 'Adipositas (Fettleber)']:
+            self.assertNotIn(old,s)
+        for new in ['kohlenhydratreiche Saat', 'Spülen garantiert keine Keimfreiheit', 'spätestens nach zwei Stunden', 'Ungeeignet ist nicht automatisch akut giftig', 'nicht für ihre Grit-Empfehlung']:
+            self.assertIn(new,s)
 if __name__ == '__main__': unittest.main()
