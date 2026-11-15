@@ -280,4 +280,11 @@ class HealthSafetyTests(unittest.TestCase):
             for new in ['Spritzenfütterung nur nach tierärztlicher Beurteilung', 'fehlendem Schlucken', 'nichts ins Maul zwingen', 'Tierarzt', 'vcahospitals.com']:
                 self.assertIn(new,s)
             self.assertNotIn('lastReviewed',s)
+    def test_guinea_pig_stone_prevention_not_calcium_panacea(self):
+        s=(R/'meerschweinchen-krankheiten-gesundheit.html').read_text()
+        for old in ['ist die beste Vorbeugung gegen Blasensteine', 'am besten aus einer Trinkflasche', 'spült die Harnwege durch', 'tropft nicht']:
+            self.assertNotIn(old,s)
+        for new in ['Rückfälle sind möglich', 'angepasste Calciumzufuhr', 'trächtigen oder säugenden', 'Futterpigmente', 'mspca.org', 'standsichere Schale']:
+            self.assertIn(new,s)
+        self.assertNotIn('Begünstigt durch falsche Calcium-Fütterung', (R/'meerschweinchen-haltung.html').read_text())
 if __name__ == '__main__': unittest.main()
