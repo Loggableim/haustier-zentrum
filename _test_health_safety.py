@@ -266,4 +266,10 @@ class HealthSafetyTests(unittest.TestCase):
             self.assertNotIn(old,s)
         for new in ['kohlenhydratreiche Saat', 'Spülen garantiert keine Keimfreiheit', 'spätestens nach zwei Stunden', 'Ungeeignet ist nicht automatisch akut giftig', 'nicht für ihre Grit-Empfehlung']:
             self.assertIn(new,s)
+    def test_fish_symptoms_not_blanket_treatments(self):
+        s=(R/'aquarium-fische-einsteiger.html').read_text()
+        for old in ['Wöchentliche Wasserwechsel sind Pflicht', '1 cm Fischlänge pro Liter', 'Temperatur langsam auf 28–30 °C erhöhen', 'Fasten für 2–3 Tage', 'Schwimmblasenmedikation', 'Bauchflossenfäule', 'ein Teelöffel Meersalz pro 10 Liter', '2–3 Wochen in einem Quarantäne']:
+            self.assertNotIn(old,s)
+        for new in ['Symptome, keine fertige Diagnose', 'Keine pauschale Fasten-', 'mindestens 30 Tage', 'Ammonium/Ammoniak', 'nicht automatisch', 'edis.ifas.ufl.edu', 'cafishvet.com']:
+            self.assertIn(new,s)
 if __name__ == '__main__': unittest.main()
