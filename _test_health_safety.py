@@ -3,6 +3,14 @@ from pathlib import Path
 import unittest
 R = Path(__file__).resolve().parent / 'artikel'
 class HealthSafetyTests(unittest.TestCase):
+    def test_shih_rottweiler_aussie_nutrition(self):
+        for slug in ['shih-tzu-rasseguide','rottweiler-rasseguide','australian-shepherd-rasseguide']:
+            s=(R/(slug+'.html')).read_text()
+            for old in ['40–50 g pro kg','10–15 % rohes','70–80 % Fleisch','70–80 % des Futters','Trockenfutter sollte nur ergänzend','Trockenfutter</strong> sollte nur ergänzend']:
+                self.assertNotIn(old,s)
+            for term in ['Alleinfuttermittel','nicht möglichst viel Calcium','Zahnfrakturen','keine verlässlichen Qualitätsmaßstäbe']:
+                self.assertIn(term,s)
+
     def test_ferret_ear_care(self):
         s=(R/'frettchen-haustier-haltung-pflege-kosten.html').read_text()
         for old in ['etwas Babyöl kann', 'Tierarzt aufsuchen (Ohrmilben!)', 'Wattestäbchen (nur im sichtbaren Bereich!)']:
