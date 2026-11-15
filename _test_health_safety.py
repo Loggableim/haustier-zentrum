@@ -398,4 +398,14 @@ class HealthSafetyTests(unittest.TestCase):
         d=(R/'dalmatiner-rasseguide.html').read_text()
         for new in ['Low-Uric-Acid','nicht gleich pauschal proteinarm','wenig oder keinem Urin']: self.assertIn(new,d)
         self.assertIn('SRMA', (R/'beagle-rasseguide.html').read_text())
+    def test_four_breed_nutrition_followup(self):
+        for name in ['chihuahua','deutscher-schaeferhund','bengal-cat','golden-retriever']:
+            s=(R/(name+'-rasseguide.html')).read_text()
+            for old in ['kohlenhydratarme Mahlzeiten','always-available','mindestens 80 Prozent','22–26 %','mindestens 60–70','mindestens 50 %','1.200–1.800 kcal','Futtermenge sollte ab dem 8. Lebensjahr','erhöhter Fressnapf','kein Wasser direkt nach dem Fressen']:
+                self.assertNotIn(old,s)
+            for new in ['Alleinfuttermittel','Körperzustand','Seniorfutter','Keine vollständige tiermedizinische Prüfung']:
+                self.assertIn(new,s)
+        c=(R/'chihuahua-rasseguide.html').read_text()
+        for new in ['nicht krampft','Nichts einflößen','Transport nicht verzögern','keine pauschale Prophylaxe']:
+            self.assertIn(new,c)
 if __name__ == '__main__': unittest.main()
