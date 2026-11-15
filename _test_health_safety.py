@@ -3,6 +3,15 @@ from pathlib import Path
 import unittest
 R = Path(__file__).resolve().parent / 'artikel'
 class HealthSafetyTests(unittest.TestCase):
+    def test_bird_cage_evidence_and_zinc(self):
+        s=(R/'vogelkaefig-voliere-kaufen-vergleich-2026.html').read_text()
+        for old in ['tag=nova079-20', 'Weatherproof 200', 'FOPATO', 'Die 7 besten', 'Unser Urteil:', '80 × 50 × 50', 'mindestens 80 cm']:
+            self.assertNotIn(old,s)
+        for new in ['Zinkvergiftung', 'keine Sicherheitsgarantie', '2 × 1 × 2 Meter', 'keine Testauszeichnung', 'Herstellerkatalog 2026', 'keine tierärztliche Freigabe']:
+            self.assertIn(new,s)
+        self.assertNotIn('FAQPage',s)
+        self.assertNotIn('lastReviewed',s)
+
     def test_anxiety_comfort_and_timing(self):
         import json,re
         s=(R/'hundeangst-training-tipps.html').read_text()
