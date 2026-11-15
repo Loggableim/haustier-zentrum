@@ -307,4 +307,19 @@ class HealthSafetyTests(unittest.TestCase):
         a=s.index('<div class="content">'); b=s.index('<section class="related-posts">',a)
         parser=Structure(); parser.feed(s[a:b]); self.assertEqual(parser.stack,[])
 
+    def test_breed_guides_no_generator_artifacts(self):
+        from html.parser import HTMLParser
+        class Structure(HTMLParser):
+            def __init__(self): super().__init__(); self.stack=[]
+            def handle_starttag(self,tag,attrs):
+                if tag in ['div','section','ul','li','p','h1','h2','h3']:
+                    if tag=='li': assert self.stack and self.stack[-1]=='ul'
+                    self.stack.append(tag)
+            def handle_endtag(self,tag):
+                if tag in ['div','section','ul','li','p','h1','h2','h3']: assert self.stack and self.stack.pop()==tag
+        for name in ['cocker-spaniel','dalmatiner','malteser','beagle','havaneser','zwergspitz-pomeranian','westie-west-highland-white-terrier']:
+            s=(R/(name+'-rasseguide.html')).read_text()
+            for old in ['<<','**','## ','<p>---</p>']: self.assertNotIn(old,s)
+            a=s.index('<div class="content">');b=s.index('<section class="related-posts">',a)
+            parser=Structure();parser.feed(s[a:b]);self.assertEqual(parser.stack,[])
 if __name__ == '__main__': unittest.main()
