@@ -328,4 +328,11 @@ class HealthSafetyTests(unittest.TestCase):
             self.assertNotIn(old,s)
         for new in ['8,4 Jahren', 'Geburtsjahrgängen 2001 und 2002', 'aktiv beaufsichtigen', 'kinderfreien Rückzugsort', 'SOD1A und SOD1B', 'keine feste Lebenserwartung']:
             self.assertIn(new,s)
+    def test_breed_health_first_batch(self):
+        for n in ['cocker-spaniel','zwergspitz-pomeranian','westie-west-highland-white-terrier']:
+            s=(R/(n+'-rasseguide.html')).read_text()
+            for old in ['60–80 g Trockenfutter pro Kilogramm', '300–400 g', '150 und 250 Gramm', 'mindestens 70 %', 'Kauknochen', 'In vielen Fällen heilt sie von selbst aus', 'Reinige sie wöchentlich', 'Reinige die Ohren wöchlich']:
+                self.assertNotIn(old,s)
+            for new in ['Alleinfuttermittel','Körperzustand','Krankheitserreger','zuerst tierärztlich abklären']:
+                self.assertIn(new,s)
 if __name__ == '__main__': unittest.main()
