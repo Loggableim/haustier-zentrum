@@ -254,4 +254,10 @@ class HealthSafetyTests(unittest.TestCase):
             self.assertNotIn(old,s)
         for new in ['Keine eigenständige Maulspülung', 'Flöße nichts ein', 'tierärztlichen Notdienst', 'nicht für Tiervergiftungen ausgebildet', 'Keine Zitrusschalen', 'first-aid-for-poisons-and-toxins']:
             self.assertIn(new,s)
+    def test_budgie_feeding_risks(self):
+        s=(R/'wellensittich-ernaehrung-futter.html').read_text()
+        for old in ['Schnittlauch (selten)', 'Nierenschädigend', 'Weintrauben & Rosinen', 'Keine Pellets als Hauptfutter', 'in kleinen Mengen frei zur Verfügung stehen', 'sichtbarer Kropf am Abend ist normal']:
+            self.assertNotIn(old,s)
+        for new in ['Kein unlöslicher Verdauungsgrit', 'Kein Futterentzug', 'Schnittlauch', 'budgies-feeding', 'vetmed.illinois.edu', 'rvc.ac.uk']:
+            self.assertIn(new,s)
 if __name__ == '__main__': unittest.main()
