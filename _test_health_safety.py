@@ -414,4 +414,10 @@ class HealthSafetyTests(unittest.TestCase):
             self.assertNotIn(old,s)
         for new in ['cTLI', 'Funktionstest, kein DNA-Test', 'Vitamin B12', 'tierärztlich abklären', 'nicht belegt und wurde entfernt']:
             self.assertIn(new,s)
+    def test_chinchilla_nutrition_safety(self):
+        s=(R/'chinchilla-ernaehrung-futter.html').read_text()
+        for old in ['Bei Übergewicht oder träger Verdauung kannst', 'Kein Problem. Viele Halter', 'Nein, frisches Gemüse gehört nicht', 'Eine einzige Sonnenblumenkerne enthält', 'Wasser-reiches Futter sind tabu']:
+            self.assertNotIn(old,s)
+        for new in ['sofort eine chinchillaerfahrene', 'nicht auf Gewichtsverlust warten', 'kein pauschales Wasserverbot', 'Spritzenfütterung und Medikamente nur nach tierärztlicher Anleitung', 'Keine vollständige tiermedizinische Prüfung']:
+            self.assertIn(new,s)
 if __name__ == '__main__': unittest.main()
