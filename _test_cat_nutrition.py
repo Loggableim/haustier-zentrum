@@ -45,6 +45,18 @@ class CatNutritionTests(unittest.TestCase):
                          [(plain(q), plain(a)) for q, a in visible])
 
 class CatSelectionTests(unittest.TestCase):
+    def test_grapes_do_not_overstate_cat_evidence(self):
+        text = (PAGE.parent / 'katzen-ernaehrung.html').read_text(encoding='utf-8')
+        self.assertNotIn('Weintrauben & Rosinen:</strong> Können akutes Nierenversagen auslösen.', text)
+        for phrase in ['bei Katzen ist das tatsächliche Vergiftungsrisiko', 'Nicht verfüttern', 'grape-raisin-and-currant-poisoning-in-dogs']:
+            self.assertIn(phrase, text)
+
+    def test_xylitol_warning_distinguishes_cats_and_dogs(self):
+        text = (PAGE.parent / 'katzen-ernaehrung.html').read_text(encoding='utf-8')
+        self.assertNotIn('Führt zu gefährlicher Unterzuckerung und Leberschäden.', text)
+        for phrase in ['Bei Hunden', 'bei Katzen nicht zu erwarten', 'andere Inhaltsstoffe', 'Tierarztpraxis', 'xylitol-toxicosis-in-dogs', 'updated-safety-warning-xylitol']:
+            self.assertIn(phrase, text)
+
     def test_raw_feeding_risks_and_correct_link(self):
         text = (PAGE.parent / 'katzen-ernaehrung.html').read_text(encoding='utf-8')
         for phrase in ['Die Vorteile: glänzendes Fell', 'gute Alternative für', 'mindestens 70 % Fleischanteil', 'BARF-Zubehör', 'Nassfutter oder einer ausgewogenen BARF-Ration']:
@@ -58,8 +70,8 @@ class CatSelectionTests(unittest.TestCase):
         blocks = [json.loads(b) for b in re.findall(r'<script type="application/ld\+json">(.*?)</script>', text, re.S)]
         post = next(b for b in blocks if b.get('@type') == 'BlogPosting')
         self.assertEqual(post['datePublished'], '2026-06-15')
-        self.assertEqual(post['dateModified'], '2026-11-14')
-        self.assertIn('Redaktionell aktualisiert: 14. November 2026', text)
+        self.assertEqual(post['dateModified'], '2026-11-16')
+        self.assertIn('Redaktionell aktualisiert: 16. November 2026', text)
         self.assertNotIn('lastReviewed', post)
 
 class CatDentalTests(unittest.TestCase):
