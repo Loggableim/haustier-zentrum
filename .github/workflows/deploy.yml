@@ -24,6 +24,7 @@ jobs:
           python _test_editorial_claims.py
           python _test_faq_consistency.py
           python _test_health_safety.py
+          python _test_poison_contact.py
           python _test_cat_nutrition.py
           python _test_cat_moving.py
           python _test_dog_weight.py
