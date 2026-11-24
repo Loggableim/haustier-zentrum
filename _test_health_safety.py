@@ -308,6 +308,29 @@ class HealthSafetyTests(unittest.TestCase):
             self.assertNotIn(old,s)
         for new in ['Keine eigenständige Maulspülung', 'Flöße nichts ein', 'tierärztlichen Notdienst', 'nicht für Tiervergiftungen ausgebildet', 'Keine Zitrusschalen', 'first-aid-for-poisons-and-toxins']:
             self.assertIn(new,s)
+    def test_cat_lily_warning_is_prominent_and_does_not_delay_transport(self):
+        html=(R/'katzen-zimmerpflanzen-giftig.html').read_text()
+        lead=html.split('<div class="article-content">',1)[1].split('<h2>',1)[0]
+        for text in ['Lilium','Hemerocallis','Pollen','Vasenwasser','sofort',
+                     'tierärztlichen Notdienst','nicht auf Symptome warten',
+                     'ohne die Abfahrt zu verzögern','warte nicht auf einen Rückruf',
+                     'healthtopics.vetmed.ucdavis.edu/health-topics/feline/lily-toxicity-cats']:
+            self.assertIn(text,lead)
+        self.assertNotIn('Ruf vor der Anfahrt an',html)
+        self.assertIn('ein separater Raum reicht dafür nicht',html)
+
+    def test_cat_lily_faq_has_no_misleading_waiting_window(self):
+        import json, re
+        html=(R/'katzen-zimmerpflanzen-giftig.html').read_text()
+        self.assertNotIn('24 bis 72 Stunden',html)
+        blocks=[json.loads(x) for x in re.findall(r'<script type="application/ld\+json">(.*?)</script>',html,re.S)]
+        faq=next(x for x in blocks if x.get('@type')=='FAQPage')
+        question='Welche Zimmerpflanzen sind für Katzen am gefährlichsten?'
+        answer=next(x['acceptedAnswer']['text'] for x in faq['mainEntity'] if x['name']==question)
+        visible=re.search(r'<h3>'+re.escape(question)+r'</h3>\s*<p>(.*?)</p>',html,re.S)[1]
+        self.assertEqual(answer,visible)
+        self.assertIn('Bei möglicher Aufnahme sofort tierärztliche Hilfe holen.',answer)
+
     def test_budgie_feeding_risks(self):
         s=(R/'wellensittich-ernaehrung-futter.html').read_text()
         for old in ['Schnittlauch (selten)', 'Nierenschädigend', 'Weintrauben & Rosinen', 'Keine Pellets als Hauptfutter', 'in kleinen Mengen frei zur Verfügung stehen', 'sichtbarer Kropf am Abend ist normal']:
