@@ -533,4 +533,28 @@ class HealthSafetyTests(unittest.TestCase):
         self.assertIn('Nicht nach einer pauschalen Frist abwarten.', section[1])
         self.assertNotIn('Geburtskomplikationen, die länger als eine Stunde andauern', s)
 
+    def test_emergency_checklist_apnea_and_guinea_pig_triage(self):
+        import re
+        s = (R / ('notfall-checkliste-2026-erste-hilfe-fuer-hund-katze-'
+                  'und-kleintier-was-jede-halte.html')).read_text()
+        checklist = re.search(r'<h2[^>]*>Der Ernstfall: So reagierst du richtig</h2>(.*?)(?=<h2>)', s, re.S)[1]
+        dog = re.search(r'<h2>Erste Hilfe beim Hund:.*?</h2>(.*?)(?=<h3>Blutungen stillen)', s, re.S)[1]
+        pig = re.search(r'<h3>Meerschweinchen:.*?</h3>(.*?)(?=<h3>)', s, re.S)[1]
+        self.assertIn('Hund oder eine Katze nicht reagiert und nicht normal atmet', checklist)
+        self.assertIn('sofort mit Herzdruckmassagen beginnen', checklist)
+        self.assertIn('Keinen Puls suchen', checklist)
+        self.assertIn('Freisprechfunktion', checklist)
+        self.assertIn('warte nicht auf eine Antwort', checklist)
+        self.assertIn('Nicht auf einen Rückruf warten', checklist)
+        self.assertIn('Wer fährt, darf nicht gleichzeitig reanimieren', checklist)
+        self.assertIn('keine Herzdruckmassage', checklist)
+        self.assertIn('sofort mit Herzdruckmassagen', dog)
+        self.assertIn('vec.70138', checklist)
+        self.assertIn('Frisst ein Meerschweinchen nicht mehr', pig)
+        self.assertIn('sofort eine meerschweinchenerfahrene Tierarztpraxis', pig)
+        for old in ('Herzschlag fühlen', 'Puls am Oberschenkel', 'Abtasten des Pulses',
+                    'Ziehe die Zunge', '30 Kompressionen, 2 Atemstöße'):
+            self.assertNotIn(old, s)
+        self.assertNotIn('zeitnah', pig.casefold())
+
 if __name__ == '__main__': unittest.main()
