@@ -72,5 +72,33 @@ class HomeNavigationTest(unittest.TestCase):
         self.assertRegex(css, r'\.home-nav-ready \.main-nav:not\(\.open\),\s*\.home-nav-ready \.main-nav \.mega-panel\[hidden\]\s*\{\s*display:none')
         self.assertRegex(css, r'@media\(max-width:900px\)')
 
+class LegacyArticleNavigationTest(unittest.TestCase):
+    def test_shared_mobile_styles_follow_legacy_drawer_state_only(self):
+        css = (ROOT / 'css/style.css').read_text()
+        selector = ('body:not(.home-page) .site-header > .nav-wrap > '
+                    '.nav-toggle[onclick*=".main-nav"] + .main-nav')
+        start = css.index('@media(max-width:900px)')
+        boundary = css.index('@media(max-width:500px)', start)
+        self.assertIn(selector + ':not(.open){display:none}', css[start:boundary])
+        phone = css.index('@media(max-width:768px)', boundary)
+        self.assertIn(selector + '.open > .nav-links{display:flex;position:static}', css[phone:])
+        # Some other templates use an open class on the list itself.
+        self.assertIn('.nav-links.open{display:flex}', css[phone:])
+
+    def test_shared_legacy_articles_use_the_scoped_header_structure(self):
+        tested = []
+        for path in (ROOT / 'artikel').glob('*.html'):
+            html = path.read_text()
+            if 'css/style.css' not in html or "querySelector('.main-nav').classList.toggle('open')" not in html:
+                continue
+            with self.subTest(article=path.name):
+                self.assertRegex(html, r'<header class="site-header">\s*<div class="nav-wrap">')
+                self.assertRegex(html, r'<button class="nav-toggle"[^>]+onclick="[^"]*\.main-nav[^"]*"[^>]*>[^<]*</button>\s*'
+                                      r'<nav class="main-nav">\s*<ul class="nav-links">')
+                self.assertNotIn('class="home-page"', html)
+            tested.append(path.stem)
+        self.assertIn('hundeangst-training-tipps', tested)
+        self.assertIn('chinchilla-ernaehrung-futter', tested)
+
 if __name__ == '__main__':
     unittest.main()

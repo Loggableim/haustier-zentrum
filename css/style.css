@@ -297,6 +297,8 @@ img{max-width:100%;height:auto;display:block}
     z-index:999;
   }
   .main-nav.open{transform:translateX(0)}
+  /* Legacy article drawers toggle the outer nav, not the link list. */
+  body:not(.home-page) .site-header > .nav-wrap > .nav-toggle[onclick*=".main-nav"] + .main-nav:not(.open){display:none}
   .nav-links{flex-direction:column;width:100%;gap:0}
   .nav-links > li{width:100%}
   .nav-links > li > a{
@@ -861,6 +863,7 @@ main{flex:1;width:100%}
     gap:0;
   }
   .nav-links.open{display:flex}
+  body:not(.home-page) .site-header > .nav-wrap > .nav-toggle[onclick*=".main-nav"] + .main-nav.open > .nav-links{display:flex;position:static}
   .nav-links a{padding:.7rem 1rem;border-radius:8px}
   .nav-toggle{display:block}
   .hero-inner{padding:2.5rem 1.5rem}
