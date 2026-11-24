@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <title>Hund neben einer Vorsorge-Checkliste</title>
+  <rect width="1200" height="630" rx="36" fill="#fff4e6"/>
+  <path d="M0 503c180 32 295 83 459 67s301-76 459-49c87 14 177 51 282 18v91H0z" fill="#f5debf"/>
+  <circle cx="369" cy="315" r="217" fill="#f9d9aa"/>
+  <path d="M662 125c99-41 253-23 324 38s82 156 25 217-183 75-267 47-138-139-127-225c4-31 19-65 45-77z" fill="#e1ebe1"/>
+  <g stroke="#614439" stroke-width="12" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M501 487c65-27 117-73 111-112-4-27-32-31-44-9-10 17-22 32-46 40" fill="#bd7547"/>
+    <path d="M274 510c-2-79 30-153 83-175 66-28 133 19 155 80 10 27 11 63 11 95z" fill="#c98d5b"/>
+    <path d="M316 506v-69m103 69v-69" fill="none"/>
+    <path d="M250 202c12-56 66-94 124-94 68 0 120 55 123 124 4 92-57 154-126 154-89 0-145-67-134-141z" fill="#d89a65"/>
+    <path d="M276 144c-55-20-98 99-79 156 8 25 33 29 49 9 21-28 31-71 40-106z" fill="#9d583d"/>
+    <path d="M462 144c56-19 93 96 79 147-7 25-33 33-52 13-24-28-32-82-39-107z" fill="#9d583d"/>
+    <path d="M304 290c4-30 30-54 65-54 41 0 71 25 76 57 5 36-35 62-76 62-39 0-70-28-65-65z" fill="#fff4e6"/>
+    <path d="M356 281q15-10 30 0l-15 17z" fill="#614439" stroke-width="8"/>
+    <path d="M371 298v17m0 0q-12 13-27 4m27-4q12 13 27 4" fill="none" stroke-width="7"/>
+  </g>
+  <g fill="#614439"><circle cx="316" cy="224" r="10"/><circle cx="424" cy="224" r="10"/></g>
+  <path d="M329 381q41 16 85 0" fill="none" stroke="#47726b" stroke-width="15" stroke-linecap="round"/>
+  <circle cx="372" cy="398" r="13" fill="#e7a243"/>
+  <g transform="rotate(7 822 306)">
+    <rect x="689" y="124" width="277" height="361" rx="27" fill="#48766c"/>
+    <rect x="708" y="146" width="239" height="319" rx="18" fill="#fffaf2"/>
+    <path d="M780 115h94a12 12 0 0 1 12 12v37H768v-37a12 12 0 0 1 12-12z" fill="#b96a3e"/>
+    <g fill="none" stroke="#47726b" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="m742 238 13 13 22-30m-35 88 13 13 22-30m-35 88 13 13 22-30"/>
+      <path d="M809 237h96m-96 71h96m-96 71h77" stroke="#896f5c"/>
+    </g>
+  </g>
+  <path d="M160 455h68m322 43h54m374-84h43" stroke="#c38553" stroke-width="7" stroke-linecap="round" opacity=".55"/>
+</svg>

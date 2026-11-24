@@ -29,6 +29,7 @@ jobs:
           python _test_cat_moving.py
           python _test_dog_weight.py
           python _test_image_refs.py
+          python _test_hero_attribution.py
       - name: Deploy to Cloudflare Pages
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
