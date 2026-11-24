@@ -1,0 +1,39 @@
+/* Match the outer open state while preserving each legacy panel layout. */
+@media (max-width: 900px) {
+  #legacy-article-navigation[data-layout="fixed"]:not(.open),
+  #legacy-article-navigation[data-layout="fixed"] .nav-links > li:not(.open) .mega-panel {
+    display: none;
+  }
+
+  #legacy-article-navigation[data-layout="fixed"].open {
+    position: absolute;
+    top: 100%;
+    bottom: auto;
+    transform: none;
+    transition: none;
+    max-height: calc(100vh - 72px);
+    max-height: calc(100dvh - 72px);
+    overflow: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  #legacy-article-navigation.open > .nav-links {
+    display: flex;
+    align-items: stretch;
+  }
+
+  #legacy-article-navigation[data-layout="fixed"].open > .nav-links {
+    position: static;
+  }
+
+  #legacy-article-navigation[data-layout="list"].open > .nav-links {
+    max-height: calc(100vh - 72px);
+    max-height: calc(100dvh - 72px);
+    overflow: auto;
+  }
+
+  #legacy-article-navigation[data-layout="list"] .mega-panel {
+    min-width: 0 !important; /* Override one legacy inline 450px minimum. */
+  }
+}

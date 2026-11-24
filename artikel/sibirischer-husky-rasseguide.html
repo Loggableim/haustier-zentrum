@@ -136,14 +136,15 @@ a{color:var(--primary);text-decoration:none}a:hover{text-decoration:underline}im
 <meta name="twitter:title" content="Sibirischer Husky Rasseguide – Aussehen, Charakter" />
 <meta name="twitter:description" content="Alles über den Sibirischen Husky: Herkunft als Schlittenhund, charakterliche Eigenschaften, Bewegungsbedarf, Erziehung, Ernährung, Fellpflege und typische " />
 <meta name="twitter:image" content="https://haustierzentrum.com/images/sibirischer-husky-rasseguide_00001_.webp" />
+<link rel="stylesheet" href="/css/inline-article-navigation-compat.css">
 </head>
 <body>
 
 <header class="site-header">
   <div class="nav-wrap">
     <a href="/" class="logo">🐾 Haustier<span>zentrum</span></a>
-    <button class="nav-toggle" aria-label="Menü" onclick="document.querySelector('.main-nav').classList.toggle('open');this.textContent=this.textContent=='☰'?'✕':'☰'">☰</button>
-    <nav class="main-nav">
+    <button class="nav-toggle" type="button" aria-label="Menü" aria-controls="legacy-article-navigation" aria-expanded="false" onclick="const open=document.getElementById('legacy-article-navigation').classList.toggle('open');this.setAttribute('aria-expanded',String(open));this.textContent=open?'✕':'☰'">☰</button>
+    <nav class="main-nav" id="legacy-article-navigation" data-layout="list" aria-label="Hauptnavigation">
       <ul class="nav-links">
         <!-- HUNDE -->
         <li>
@@ -476,11 +477,6 @@ a{color:var(--primary);text-decoration:none}a:hover{text-decoration:underline}im
   </div>
 </footer>
 
-<script>
-document.querySelectorAll('.nav-links a').forEach(l=>l.addEventListener('click',()=>{
-  document.querySelector('.nav-links').classList.remove('open')
-}))
-</script>
 <script>
 // Cookie-Consent-Management
 </script>

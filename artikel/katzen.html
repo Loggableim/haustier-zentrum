@@ -923,6 +923,7 @@ main{flex:1;width:100%}
   <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon.png">
 
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Katzen-Ratgeber 🐱 – Alles zur artgerechten Katzenhaltung…", "description": "Umfassende Ratgeber zur Katzenhaltung: Wohnungseinrichtung, Gesundheit, Ernährung, Beschäftigung und Rassen – praktische Tipps für Deine Samtpfote.", "url": "https://haustierzentrum.com/artikel/katzen", "inLanguage": "de"}</script>
+<link rel="stylesheet" href="/css/inline-article-navigation-compat.css">
 </head>
 <body>
 
@@ -930,8 +931,8 @@ main{flex:1;width:100%}
 <header class="site-header">
   <div class="nav-wrap">
     <a href="/" class="logo">🐾 Haustier<span>zentrum</span></a>
-    <button class="nav-toggle" aria-label="Menü" onclick="document.querySelector('.main-nav').classList.toggle('open');this.textContent=this.textContent=='☰'?'✕':'☰'">☰</button>
-    <nav class="main-nav">
+    <button class="nav-toggle" type="button" aria-label="Menü" aria-controls="legacy-article-navigation" aria-expanded="false" onclick="const open=document.getElementById('legacy-article-navigation').classList.toggle('open');this.setAttribute('aria-expanded',String(open));this.textContent=open?'✕':'☰'">☰</button>
+    <nav class="main-nav" id="legacy-article-navigation" data-layout="fixed" aria-label="Hauptnavigation">
       <ul class="nav-links">
         <!-- HUNDE -->
         <li>
@@ -1218,11 +1219,6 @@ main{flex:1;width:100%}
 <!-- ============ COOKIE BANNER ============ -->
 
 
-<script>
-document.querySelectorAll('.nav-links a').forEach(l=>l.addEventListener('click',()=>{
-  document.querySelector('.nav-links').classList.remove('open')
-}))
-</script>
 
 <script>
 // Cookie-Consent-Management

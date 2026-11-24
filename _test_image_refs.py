@@ -153,5 +153,34 @@ class InlineArticleNavigationTest(unittest.TestCase):
                 self.assertEqual(page.count('src="/js/consent.js" defer'), 1)
 
 
+class RemainingInlineArticleNavigationTest(unittest.TestCase):
+    PAGES = {
+        'katzen': 'fixed',
+        'mops-rasseguide': 'list',
+        'ragdoll-katze-rasseguide': 'list',
+        'sibirischer-husky-rasseguide': 'list',
+    }
+
+    def test_remaining_templates_keep_category_and_guide_destinations(self):
+        asset = ROOT / 'css/inline-article-navigation-compat.css'
+        self.assertTrue(asset.is_file())
+        css = asset.read_text()
+        self.assertNotRegex(css, r'@import|url\(')
+        self.assertRegex(css, r'#legacy-article-navigation\.open > \.nav-links\s*\{\s*display: flex')
+        self.assertRegex(css, r'(?s)\[data-layout="fixed"\]\.open\s*\{[^}]*'
+                              r'position: absolute;[^}]*top: 100%;[^}]*bottom: auto;[^}]*overflow: auto;')
+        self.assertIn('li:not(.open) .mega-panel', css)
+        for name, layout in self.PAGES.items():
+            with self.subTest(article=name):
+                page = (ROOT / 'artikel' / (name + '.html')).read_text()
+                self.assertIn('href="/css/inline-article-navigation-compat.css"', page)
+                self.assertIn('aria-controls="legacy-article-navigation" aria-expanded="false"', page)
+                self.assertIn(f'id="legacy-article-navigation" data-layout="{layout}"', page)
+                self.assertIn('href="/artikel/hunderassen-anfaenger"', page)
+                self.assertIn('href="/artikel/hunde-zahnpflege"', page)
+                self.assertEqual(page.count('src="/js/consent.js" defer'), 1)
+                self.assertNotIn("querySelector('.nav-links').classList.remove('open')", page)
+
+
 if __name__ == '__main__':
     unittest.main()
