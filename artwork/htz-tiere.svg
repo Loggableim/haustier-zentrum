@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+<title>Hund, Katze und Pfotenabdruck</title>
+<rect width="1200" height="630" fill="#fff4e6"/>
+<path d="M0 503c180 32 295 83 459 67s301-76 459-49c87 14 177 51 282 18v91H0z" fill="#f5debf"/>
+
+<circle cx="600" cy="320" r="220" fill="#e1ebe1"/>
+<circle cx="365" cy="324" r="166" fill="#f9d9aa"/>
+<circle cx="838" cy="324" r="166" fill="#eee0f2"/>
+<g stroke-width="12" stroke-linejoin="round" stroke-linecap="round">
+<g stroke="#614439">
+<path d="M254 327q-8-99 113-105 118 9 112 130-7 74-111 75-117-5-114-100z" fill="#d89a65"/>
+<path d="M280 226q-46-21-60 76-6 52 22 55 28-1 51-87zm177 0q46-21 60 76 6 52-22 55-28-1-51-87z" fill="#9d583d"/>
+<path d="M319 343q5-37 49-37 46 0 50 37 3 37-49 38-51 0-50-38z" fill="#fff4e6"/>
+<path d="M324 298h3m82 0h3m-55 39 12 10 12-10m-12 10v14" fill="none" stroke-width="9"/>
+</g>
+<g stroke="#493f55">
+<path d="M727 329l8-112 65 44q48-14 78 0l66-44 7 112q-2 98-112 98-111-5-112-98z" fill="#cdb9d6"/>
+<path d="M795 328h7m73 0h7m-53 24 10 10 10-10m-10 10q-6 15-20 9m20-9q6 15 20 9" fill="none" stroke-width="8"/>
+</g></g>
+<g fill="#608173">
+<ellipse cx="562" cy="222" rx="20" ry="28" transform="rotate(-22 562 222)"/><ellipse cx="604" cy="201" rx="20" ry="29"/><ellipse cx="646" cy="222" rx="20" ry="28" transform="rotate(22 646 222)"/>
+<path d="M558 284q10-32 46-39 36 7 46 39 6 26-18 27-15 0-28-9-14 10-28 9-24-1-18-27z"/>
+</g>
+</svg>

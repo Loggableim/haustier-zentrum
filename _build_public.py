@@ -41,11 +41,14 @@ def build():
             shutil.copy2(source, OUT / source.name)
     extensions = {"artikel": {".html"}, "css": {".css"}, "js": {".js"},
                   "images": {".png", ".webp", ".jpg", ".jpeg", ".svg", ".gif", ".ico", ".avif"}}
+    # Keep the original files in Git for provenance, not in the public build.
+    retired_images = set((ROOT / "artwork/retired-hero-images.txt").read_text().splitlines())
     for folder, allowed in extensions.items():
         for source in (ROOT / folder).rglob("*"):
             if source.is_symlink():
                 raise ValueError(f"Symlink is not a public asset: {source.relative_to(ROOT)}")
-            if source.is_file() and source.suffix.lower() in allowed:
+            if (source.is_file() and source.suffix.lower() in allowed
+                    and source.relative_to(ROOT).as_posix() not in retired_images):
                 target = OUT / source.relative_to(ROOT)
                 target.parent.mkdir(parents=True, exist_ok=True)
                 shutil.copy2(source, target)

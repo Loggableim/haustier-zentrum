@@ -2,6 +2,8 @@
 from pathlib import Path
 import unittest
 import xml.etree.ElementTree as ET
+from urllib.parse import unquote
+from _build_public import OUT
 
 ROOT = Path(__file__).resolve().parent
 SLUG = 'ganzheitliche-hundegesundheit-2026-wie-sie-krankheiten-fruehzeitig-erkennen-und-'
@@ -15,6 +17,17 @@ class HeroAttributionTests(unittest.TestCase):
             self.assertNotIn(OLD, content)
             self.assertIn('/images/' + NEW, content)
         self.assertNotIn(OLD, (ROOT / 'rss.xml').read_text())
+
+    def test_legacy_batch_is_never_referenced_or_staged(self):
+        old = (ROOT / 'artwork/retired-hero-images.txt').read_text().splitlines()
+        self.assertEqual(len(set(old)), 18)
+        pages = [*ROOT.glob('*.html'), *(ROOT / 'artikel').glob('*.html'), ROOT / 'rss.xml']
+        public = '\n'.join(unquote(page.read_text()) for page in pages)
+        for path in old:
+            with self.subTest(image=path):
+                self.assertNotIn(path, public)
+                if OUT.is_dir():
+                    self.assertFalse((OUT / path).exists())
 
     def test_original_hero_and_preview(self):
         svg = ET.parse(ROOT / 'artwork/hundegesundheit-vorsorge.svg').getroot()

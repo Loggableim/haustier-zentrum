@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+<title>Katze auf einem Kissen neben einem Spielball</title>
+<rect width="1200" height="630" fill="#fff4e6"/>
+<path d="M0 503c180 32 295 83 459 67s301-76 459-49c87 14 177 51 282 18v91H0z" fill="#f5debf"/>
+
+<circle cx="564" cy="316" r="220" fill="#eee0f2"/>
+<ellipse cx="582" cy="490" rx="275" ry="54" fill="#b785aa"/>
+<g stroke="#493f55" stroke-width="12" stroke-linecap="round" stroke-linejoin="round">
+<path d="M622 452q145 50 184-49 18-46-18-51-25-1-39 29" fill="none"/>
+<path d="M428 456q-13-83 59-146 110-65 177 48 30 50 11 98z" fill="#ad96ba"/>
+<path d="M439 270l2-131 85 55q42-12 74 0l78-55-3 132q-5 91-120 93-108-1-116-94z" fill="#cdb9d6"/>
+<path d="M494 262h17m91 0h17m-67 25 8 8 8-8m-8 8q-6 20-23 12m23-12q6 20 23 12m-93-21-44-9m44 24-42 8m181-23 42-9m-42 24 40 8" fill="none" stroke-width="8"/>
+<circle cx="337" cy="459" r="46" fill="#e59b58"/><path d="M300 447q32-22 73 15m-58-43q-6 44 34 83" fill="none" stroke-width="6"/>
+</g>
+</svg>

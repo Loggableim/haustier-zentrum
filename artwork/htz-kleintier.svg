@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+<title>Meerschweinchen und ein Zweig neben Heu</title>
+<rect width="1200" height="630" fill="#fff4e6"/>
+<path d="M0 503c180 32 295 83 459 67s301-76 459-49c87 14 177 51 282 18v91H0z" fill="#f5debf"/>
+
+<circle cx="577" cy="322" r="222" fill="#f9d9aa"/>
+<ellipse cx="586" cy="494" rx="304" ry="48" fill="#edd3a6"/>
+<g stroke="#68493c" stroke-width="12" stroke-linecap="round" stroke-linejoin="round">
+<path d="M326 419q-5-127 150-187 117-42 228 22 79 44 110 105 40 20 34 66-5 56-111 56H466q-133 2-140-62z" fill="#d28a53"/>
+<path d="M461 244q51-25 108-25 43 0 85 17-58 69-3 143 39 54-55 102h-83q-73-89-52-237z" fill="#fff7eb"/>
+<path d="M732 292q-3-52 41-44 35 10 32 49-5 22-26 25" fill="#c38176"/>
+<circle cx="801" cy="359" r="8" fill="#68493c"/><path d="m842 399 10 9-12 12m-57 28h27" fill="none" stroke-width="8"/>
+</g>
+<path d="M284 485q-42-54-76-78m17 85-51-31m661 10q48-73 93-105m-45 78 63-26" fill="none" stroke="#79956c" stroke-width="11" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+<title>Lupe mit Pfotenabdruck</title>
+<rect width="1200" height="630" fill="#fff4e6"/>
+<path d="M0 503c180 32 295 83 459 67s301-76 459-49c87 14 177 51 282 18v91H0z" fill="#f5debf"/>
+
+<circle cx="580" cy="303" r="231" fill="#e1ebe1"/>
+<path d="M715 413l173 122" stroke="#65483e" stroke-width="63" stroke-linecap="round"/>
+<path d="M716 412l173 122" stroke="#c38660" stroke-width="35" stroke-linecap="round"/>
+<circle cx="580" cy="307" r="170" fill="#fff8ec" stroke="#52786a" stroke-width="21"/>
+<g fill="#678f80"><ellipse cx="516" cy="279" rx="23" ry="33" transform="rotate(-25 516 279)"/><ellipse cx="561" cy="252" rx="25" ry="35"/><ellipse cx="609" cy="254" rx="25" ry="35"/><ellipse cx="648" cy="282" rx="23" ry="33" transform="rotate(25 648 282)"/>
+<path d="M518 366q15-51 65-60 48 10 64 60 6 32-28 34-12 0-36-14-25 14-36 14-34-2-29-34z"/></g>
+</svg>
