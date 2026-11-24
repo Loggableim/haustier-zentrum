@@ -100,5 +100,31 @@ class LegacyArticleNavigationTest(unittest.TestCase):
         self.assertIn('hundeangst-training-tipps', tested)
         self.assertIn('chinchilla-ernaehrung-futter', tested)
 
+class ErrorPageNavigationTest(unittest.TestCase):
+    def test_nested_missing_route_resolves_public_assets_at_root(self):
+        page = (ROOT / '404.html').read_text()
+        stylesheet = re.search(r'<link rel="stylesheet" href="([^"]+)"', page)[1]
+        for route in ['/artikel/fehlt/tief', '/artikel/fehlt/tief/']:
+            self.assertEqual(urljoin(SITE + route, stylesheet), SITE + '/css/style.css')
+        self.assertIn('src="/images/htz-404-v1.webp"', page)
+        self.assertEqual(page.count('src="/js/consent.js" defer'), 1)
+        self.assertIn('content="noindex, follow"', page)
+
+    def test_early_error_page_policy_blocks_third_party_styles_and_fonts(self):
+        page = (ROOT / '404.html').read_text()
+        policy = re.search(r'<meta http-equiv="Content-Security-Policy" content="([^"]+)">', page)
+        self.assertIsNotNone(policy)
+        self.assertEqual(policy[1], "style-src 'self' 'unsafe-inline'; font-src 'self'")
+        self.assertLess(policy.start(), page.index('<link rel="stylesheet"'))
+        self.assertLess(policy.start(), page.index('<style>'))
+
+    def test_error_menu_needs_no_script_or_hamburger(self):
+        page = (ROOT / '404.html').read_text()
+        self.assertNotIn('class="nav-toggle"', page)
+        self.assertIn('id="error-navigation"', page)
+        self.assertRegex(page, r'(?s)@media\(max-width:900px\).*?#error-navigation > \.nav-links\{[^}]*display:flex')
+        self.assertIn('href="/#alle-artikel"', page)
+
+
 if __name__ == '__main__':
     unittest.main()

@@ -2,6 +2,7 @@
 <html lang="de">
 <head>
 <meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="style-src 'self' 'unsafe-inline'; font-src 'self'">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Seite nicht gefunden – 404 | Haustierzentrum</title>
 <meta name="description" content="Die gesuchte Seite existiert leider nicht. Finde hier weiter zu unseren Ratgebern für Hunde, Katzen und Kleintiere.">
@@ -12,7 +13,7 @@
 <meta name="robots" content="noindex, follow">
 <meta name="theme-color" content="#FF9800">
 <link rel="canonical" href="https://haustierzentrum.com/404">
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="/css/style.css">
 <style>
 .error-page{text-align:center;padding:6rem 1rem;max-width:600px;margin:0 auto}
 .error-code{font-size:6rem;font-weight:900;color:var(--primary);line-height:1;margin-bottom:.5rem;font-family:var(--font-display,serif)}
@@ -23,6 +24,13 @@
 .error-actions{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
 .error-actions .btn{font-size:1rem;padding:.8rem 2rem}
 .error-paw{font-size:4rem;margin-bottom:1rem;opacity:.3}
+/* Keep recovery links available even without JavaScript. */
+@media(max-width:900px){
+  .error-nav-wrap{height:auto;min-height:72px;flex-wrap:wrap;padding:.5rem 0}
+  #error-navigation{position:static;transform:none;display:block;flex-basis:100%;min-width:0;padding:0;overflow:visible}
+  #error-navigation > .nav-links{position:static;display:flex;flex-direction:row;flex-wrap:wrap;justify-content:flex-start;width:100%;padding:0;border:0;background:transparent}
+  #error-navigation .nav-links > li.simple-link{width:auto;border:0;padding:0;margin:0}
+}
 </style>
 
 <meta property="og:description" content="Die gesuchte Seite existiert leider nicht. Finde hier weiter zu unseren Ratgebern für Hunde, Katzen und Kleintiere." />
@@ -93,10 +101,9 @@
 <img src="/images/htz-404-v1.webp" alt="Illustration: Lupe mit Pfotenabdruck" class="article-hero" />
 
 <header class="site-header">
-  <div class="nav-wrap">
+  <div class="nav-wrap error-nav-wrap">
     <a href="/" class="logo">🐾 Haustier<span>zentrum</span></a>
-    <button class="nav-toggle" aria-label="Menü">☰</button>
-    <nav class="main-nav">
+    <nav class="main-nav" id="error-navigation" aria-label="Hauptnavigation">
       <ul class="nav-links">
         <li class="simple-link"><a href="/">Start</a></li>
         <li class="simple-link"><a href="/artikel/hunderassen-anfaenger">Hunde</a></li>
@@ -115,7 +122,7 @@
     <div class="error-actions">
       <a href="/" class="btn btn-primary">🏠 Zur Startseite</a>
       <a href="/#alle-artikel" class="btn btn-outline">📚 Alle Ratgeber</a>
-      <a href="/artikel/degus-haltung-pflege" class="btn btn-outline">🐹 Neuester Artikel</a>
+      <a href="/artikel/degus-haltung-pflege" class="btn btn-outline">🐹 Degus-Ratgeber</a>
     </div>
   </div>
 </main>
