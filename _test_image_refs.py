@@ -1,4 +1,4 @@
-"""Verify public image references point to files Cloudflare can actually serve."""
+"""Verify public image references and homepage navigation integration."""
 import unittest
 from html.parser import HTMLParser
 from pathlib import Path
@@ -34,6 +34,25 @@ class ImageTests(unittest.TestCase):
                         target = ROOT / unquote(url.path.lstrip('/'))
                         self.assertTrue(target.is_file())
                         self.assertIn(target.suffix.lower(), {'.png', '.webp', '.jpg', '.jpeg', '.svg', '.gif', '.ico', '.avif'})
+
+class HomeNavigationTest(unittest.TestCase):
+    def test_markup_uses_single_drawer_state_and_preserves_links(self):
+        html = (ROOT / 'index.html').read_text()
+        self.assertIn('aria-controls="home-navigation" aria-expanded="false"', html)
+        self.assertIn('id="home-navigation"', html)
+        self.assertNotIn("querySelector('.main-nav').classList.toggle('open')", html)
+        self.assertIn('/js/home-navigation.js', html)
+        self.assertIn('/css/home-navigation.css', html)
+        self.assertIn('/artikel/hunderassen-anfaenger', html)
+        self.assertIn('/artikel/hunde-zahnpflege', html)
+        self.assertIn('/artikel/silvester-hund-katze-checkliste', html)
+        self.assertEqual(html.count('/js/consent.js'), 1)
+
+    def test_drawer_visibility_uses_outer_state_and_excludes_hidden_links(self):
+        css = (ROOT / 'css/home-navigation.css').read_text()
+        self.assertRegex(css, r'\.home-nav-ready \.main-nav\.open > \.nav-links\s*\{\s*display:flex')
+        self.assertRegex(css, r'\.home-nav-ready \.main-nav:not\(\.open\),\s*\.home-nav-ready \.main-nav \.mega-panel\[hidden\]\s*\{\s*display:none')
+        self.assertRegex(css, r'@media\(max-width:900px\)')
 
 if __name__ == '__main__':
     unittest.main()

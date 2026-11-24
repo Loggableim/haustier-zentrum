@@ -1,0 +1,37 @@
+/* Homepage navigation: the drawer, not a second list class, controls visibility. */
+.home-nav-disclosure { display:none; }
+@media(max-width:900px){
+  .home-page:not(.home-nav-ready) .nav-wrap { flex-wrap:wrap; height:auto; min-height:72px; }
+  .home-page:not(.home-nav-ready) .nav-toggle { display:none; }
+  .home-page:not(.home-nav-ready) .main-nav {
+    position:static; transform:none; padding:0; order:1; flex-basis:100%; overflow-x:auto;
+  }
+  .home-page:not(.home-nav-ready) .main-nav > .nav-links {
+    position:static; display:flex; flex-direction:row; width:max-content;
+  }
+  .home-page:not(.home-nav-ready) .nav-links > li { width:auto; }
+  .home-page:not(.home-nav-ready) .mega-panel,
+  .home-nav-ready .main-nav:not(.open),
+  .home-nav-ready .main-nav .mega-panel[hidden] { display:none; }
+  .home-nav-ready .main-nav {
+    position:absolute; top:100%; bottom:auto; padding:.5rem;
+    transform:none; max-height:calc(100vh - 72px);
+    max-height:calc(100dvh - 72px); transition:none;
+  }
+  .home-nav-ready .main-nav.open { display:block; }
+  .home-nav-ready .main-nav.open > .nav-links {
+    display:flex; position:static; width:100%; padding:.5rem; border:0;
+  }
+  .home-nav-ready .nav-links > li > a { display:inline-flex; }
+  .home-nav-ready .nav-links > li > a .arrow { display:none; }
+  .home-nav-ready .home-nav-disclosure {
+    display:inline-flex; align-items:center; justify-content:center;
+    border:0; border-radius:8px; background:var(--bg-alt); color:var(--text); cursor:pointer;
+  }
+  .home-nav-ready .home-nav-disclosure:focus-visible { outline:2px solid currentColor; }
+  .home-nav-ready .nav-links > li > .mega-panel:not([hidden]) {
+    position:static; transform:none; min-width:0 !important; max-height:none;
+    visibility:visible; opacity:1; padding:.5rem; margin:0; overflow:visible;
+  }
+  .home-nav-ready .mega-grid {grid-template-columns:1fr !important;}
+}
