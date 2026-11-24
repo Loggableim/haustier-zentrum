@@ -37,6 +37,35 @@ class ImageTests(unittest.TestCase):
         article_schema = [data for data in schemas if data.get('@type') in {'Article', 'BlogPosting'}]
         self.assertEqual([data.get('image') for data in article_schema], [expected])
 
+    def test_repaired_article_schema_uses_the_same_working_visible_image(self):
+        for slug in (
+            'allergiker-haustiere',
+            'franzoesische-bulldogge-rasseguide',
+            'hamster-haltung',
+            'haustier-anschaffung',
+            'haustiere-kinder',
+            'hunde-fellpflege-buersten-baden-krallen',
+            'hunde-gesundheit',
+            'hunde-uebergewicht',
+        ):
+            with self.subTest(page=slug):
+                html = (ROOT / 'artikel' / (slug + '.html')).read_text()
+                article = SITE + '/artikel/' + slug
+                parsed = ImageRefs(html)
+                previews = parsed.preview
+                self.assertEqual(previews['og:image'], previews['twitter:image'])
+                self.assertEqual(len(previews['og:image']), 1)
+                expected = previews['og:image'][0]
+                featured = re.findall(
+                    r'<div class="featured-img"[^>]*>\s*<img\b[^>]*?\bsrc="([^"]+)"',
+                    html)
+                self.assertEqual([urljoin(article, ref) for ref in featured], [expected])
+                self.assertTrue((ROOT / urlsplit(expected).path.lstrip('/')).is_file())
+                schemas = [json.loads(block) for block in re.findall(
+                    r'<script type="application/ld\+json">(.*?)</script>', html, re.S)]
+                articles = [data for data in schemas if data.get('@type') in {'Article', 'BlogPosting'}]
+                self.assertEqual([data.get('image') for data in articles], [expected])
+
     def test_public_html_has_no_missing_site_images(self):
         pages = [*ROOT.glob('*.html'), *(ROOT / 'artikel').glob('*.html')]
         for page in pages:
