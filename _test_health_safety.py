@@ -461,4 +461,19 @@ class HealthSafetyTests(unittest.TestCase):
                     'Futter einstellen (nur Heu und Wasser)', 'zu viel Wasser → Durchfall']:
             self.assertNotIn(old, s)
 
+    def test_chinchilla_heatstroke_is_an_immediate_emergency(self):
+        import re
+        s = (R / 'chinchilla-haltung-pflege.html').read_text()
+        section = re.search(r'<h3>Hitzschlag[^<]*</h3>(.*?)(?=<h3>)', s, re.S)
+        self.assertIsNotNone(section, 'Heatstroke section missing')
+        for symptom in ('Hecheln', 'Atmen mit offenem Maul', 'Teilnahmslosigkeit'):
+            self.assertIn(symptom, section[1])
+        for action in ('sofort den tierärztlichen Notdienst kontaktieren',
+                       'kühlen, gut belüfteten Ort', 'Transport nicht verzögern',
+                       'zur Kühlung den Anweisungen'):
+            self.assertIn(action, section[1])
+        for old in ('Ohrenatmen', 'Tüchern umwickeln', 'über 28°C droht',
+                    'niemals über 28°C'):
+            self.assertNotIn(old, s)
+
 if __name__ == '__main__': unittest.main()
