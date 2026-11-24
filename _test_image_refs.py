@@ -47,6 +47,22 @@ class ImageTests(unittest.TestCase):
             'hunde-fellpflege-buersten-baden-krallen',
             'hunde-gesundheit',
             'hunde-uebergewicht',
+            'hunde-zahnpflege',
+            'kaninchenhaltung',
+            'katzen-impfungen-vorsorge',
+            'katzenbeschaeftigung',
+            'katzenrassen-vergleich',
+            'katzentoilette-geruch-vermeiden',
+            'kleintier-gehege',
+            'labrador-retriever',
+            'meerschweinchen-ernaehrung-vitamin-c',
+            'meerschweinchen-haltung',
+            'seniorkatzen-pflege-ernaehrung-gesundheit',
+            'siamkatze-rasseguide',
+            'tierarztkosten',
+            'voegel-haustier-beste-vogelarten-einsteiger',
+            'wellensittich-haltung',
+            'zeckenschutz-flohschutz-hund',
         ):
             with self.subTest(page=slug):
                 html = (ROOT / 'artikel' / (slug + '.html')).read_text()
@@ -56,9 +72,11 @@ class ImageTests(unittest.TestCase):
                 self.assertEqual(previews['og:image'], previews['twitter:image'])
                 self.assertEqual(len(previews['og:image']), 1)
                 expected = previews['og:image'][0]
+                # Ignore other featured-image wrappers used for illustrations in the body.
+                lead = html.split('<div class="article-content">', 1)[0]
                 featured = re.findall(
-                    r'<div class="featured-img"[^>]*>\s*<img\b[^>]*?\bsrc="([^"]+)"',
-                    html)
+                    r'<div class="featured-img"[^>]*>(?:\s|<!--.*?-->)*<img\b[^>]*?\bsrc="([^"]+)"',
+                    lead, re.S)
                 self.assertEqual([urljoin(article, ref) for ref in featured], [expected])
                 self.assertTrue((ROOT / urlsplit(expected).path.lstrip('/')).is_file())
                 schemas = [json.loads(block) for block in re.findall(
