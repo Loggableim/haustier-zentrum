@@ -259,14 +259,15 @@ main{flex:1;max-width:1100px;margin:0 auto;padding:2rem 1rem;width:100%}
 <meta name="twitter:title" content="Haustiere für Kinder – Die besten Familienhaustiere" />
 <meta name="twitter:description" content="Haustiere für Kinder: Welches Haustier passt zu welchem Alter? Hund, Katze, Hamster, Meerschweinchen, Kaninchen im Vergleich. Mit Checkliste für Eltern." />
 <meta name="twitter:image" content="https://haustierzentrum.com/images/haustiere-kinder_00001_.webp" />
+<link rel="stylesheet" href="/css/inline-article-navigation.css">
 </head>
 <body>
 <!-- ============ HEADER ============ -->
 <header class="site-header">
   <div class="nav-wrap">
     <a href="/" class="logo">🐾 Haustier<span>zentrum</span></a>
-    <button class="nav-toggle" aria-label="Menü" onclick="document.querySelector('.main-nav').classList.toggle('open');this.textContent=this.textContent=='☰'?'✕':'☰'">☰</button>
-    <nav class="main-nav">
+    <button class="nav-toggle" type="button" aria-label="Menü" aria-controls="article-navigation" aria-expanded="false" onclick="const open=document.getElementById('article-navigation').classList.toggle('open');this.setAttribute('aria-expanded',String(open));this.textContent=open?'✕':'☰'">☰</button>
+    <nav class="main-nav" id="article-navigation" aria-label="Hauptnavigation">
       <ul class="nav-links">
         <!-- HUNDE -->
         <li>
@@ -453,18 +454,6 @@ main{flex:1;max-width:1100px;margin:0 auto;padding:2rem 1rem;width:100%}
 </main>
 <footer class="site-footer"><div class="footer-wrap"><div><strong style="color:#fff;">🐾 Haustierzentrum</strong><p style="margin-top:.3rem;">Dein Blog für artgerechte Haustierhaltung</p></div><div><a href="/about.html">Über uns</a> &middot; <a href="/impressum.html">Impressum</a> &middot; <a href="/datenschutz.html">Datenschutz</a> &middot; <a href="/sitemap.xml">Sitemap</a></div><div class="footer-copy"><p>&copy; 2026 Haustierzentrum. Alle Rechte vorbehalten.</p><p style="margin-top:.3rem;font-size:.8rem;">Diese Seite kann Affiliate-Links (Amazon DE) enthalten. Als Amazon-Partner verdienen wir an qualifizierten Verkäufen.</p></div></div></footer>
 
-<script>// Mobile: close nav when simple links are clicked
-document.querySelectorAll('.simple-link a').forEach(l=>l.addEventListener('click',()=>{
-  document.querySelector('.main-nav').classList.remove('open');
-  document.querySelector('.nav-toggle').textContent='☰';
-}))
-// Mobile: tap mega-menu items to toggle panels
-document.querySelectorAll('.nav-links > li:not(.simple-link) > a').forEach(l=>l.addEventListener('click',function(e){
-  if(document.querySelector('.main-nav').classList.contains('open')){
-    e.preventDefault();
-    this.parentElement.classList.toggle('open');
-  }
-}))</script>
 <script>
 // Cookie-Consent-Management
 </script>

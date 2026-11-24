@@ -126,5 +126,32 @@ class ErrorPageNavigationTest(unittest.TestCase):
         self.assertIn('href="/#alle-artikel"', page)
 
 
+class InlineArticleNavigationTest(unittest.TestCase):
+    PAGES = (
+        'allergiker-haustiere', 'haustier-anschaffung', 'haustiere-kinder',
+        'katzentoilette-geruch-vermeiden', 'kleintier-gehege',
+        'meerschweinchen-ernaehrung-vitamin-c', 'tierarztkosten',
+        'wellensittich-haltung',
+    )
+
+    def test_homogeneous_inline_articles_expose_direct_mobile_category_links(self):
+        asset = ROOT / 'css/inline-article-navigation.css'
+        self.assertTrue(asset.is_file())
+        css = asset.read_text()
+        self.assertIn('@media (max-width: 768px)', css)
+        self.assertRegex(css, r'#article-navigation:not\(\.open\)\s*\{\s*display: none')
+        self.assertRegex(css, r'#article-navigation\.open > \.nav-links\s*\{[^}]*display: flex')
+        self.assertNotRegex(css, r'@import|url\(')
+        for name in self.PAGES:
+            with self.subTest(article=name):
+                page = (ROOT / 'artikel' / (name + '.html')).read_text()
+                self.assertIn('href="/css/inline-article-navigation.css"', page)
+                self.assertIn('aria-controls="article-navigation" aria-expanded="false"', page)
+                self.assertIn('id="article-navigation"', page)
+                self.assertNotIn("this.parentElement.classList.toggle('open')", page)
+                self.assertIn('href="/artikel/hunderassen-anfaenger"', page)
+                self.assertEqual(page.count('src="/js/consent.js" defer'), 1)
+
+
 if __name__ == '__main__':
     unittest.main()
