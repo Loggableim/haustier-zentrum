@@ -229,5 +229,36 @@ class RemainingInlineArticleNavigationTest(unittest.TestCase):
                 self.assertNotIn("querySelector('.nav-links').classList.remove('open')", page)
 
 
+class RestoredArticleTemplateTest(unittest.TestCase):
+    def test_no_public_article_has_an_unstyled_document(self):
+        for path in (ROOT / 'artikel').glob('*.html'):
+            with self.subTest(article=path.name):
+                self.assertRegex(path.read_text(), r'<style(?:\s|>)|<link[^>]+rel="stylesheet"')
+
+    def test_restored_guides_print_without_navigation_or_consent_overlay(self):
+        css = (ROOT / 'css/article-template.css').read_text()
+        printed = css.split('@media print {', 1)[1]
+        self.assertRegex(printed, r'(?s)#hz-consent,[^{}]*#hz-consent-settings\s*\{\s*display: none !important;')
+        self.assertRegex(css, r'(?s)\.restored-guide\s*\{[^}]*scroll-margin-top:')
+
+    def test_restored_template_wraps_twelve_raw_articles(self):
+        pages = [(p.name, p.read_text()) for p in (ROOT / 'artikel').glob('*.html')]
+        pages = [(name, html) for name, html in pages if 'class="restored-guide-page"' in html]
+        self.assertEqual(len(pages), 12)
+        stylesheet = (ROOT / 'css/article-template.css').read_text()
+        self.assertNotRegex(stylesheet, r'@import|url\(')
+        for name, html in pages:
+            with self.subTest(article=name):
+                self.assertIn('<header class="site-header">', html)
+                self.assertIn('<main id="artikel" class="restored-guide" tabindex="-1">', html)
+                self.assertIn('<footer class="site-footer">', html)
+                self.assertIn('href="/css/style.css"', html)
+                self.assertIn('href="/css/article-template.css"', html)
+                self.assertLess(html.index('Content-Security-Policy'), html.index('rel="stylesheet"'))
+                self.assertEqual(html.count('src="/js/consent.js" defer'), 1)
+                self.assertRegex(html, r'<img [^>]+class="article-hero" width="1200" height="630"')
+                self.assertEqual(len(re.findall(r'<h1(?=\s|>)', html)), 1)
+
+
 if __name__ == '__main__':
     unittest.main()
