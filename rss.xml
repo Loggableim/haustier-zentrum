@@ -6,8 +6,8 @@
     <description>Dein Ratgeber für artgerechte Haustierhaltung – Hunde, Katzen, Kleintiere, Vögel, Aquarium. Rasseporträts, Erziehung, Gesundheit und Produktvergleiche.</description>
     <language>de-DE</language>
     <copyright>© 2026 Haustierzentrum</copyright>
-    <lastBuildDate>Fri, 13 Nov 2026 10:31:19 GMT</lastBuildDate>
-    <pubDate>Fri, 13 Nov 2026 00:00:00 GMT</pubDate>
+    <lastBuildDate>Tue, 24 Nov 2026 04:11:04 GMT</lastBuildDate>
+    <pubDate>Tue, 24 Nov 2026 00:00:00 GMT</pubDate>
     <ttl>180</ttl>
     <atom:link href="https://haustierzentrum.com/rss.xml" rel="self" type="application/rss+xml"/>
     <image>
@@ -15,6 +15,16 @@
       <title>Haustierzentrum</title>
       <link>https://haustierzentrum.com/</link>
     </image>
+    <item>
+      <title>Silvester mit Hund und Katze: Sicherheits-Checkliste</title>
+      <link>https://haustierzentrum.com/artikel/silvester-hund-katze-checkliste</link>
+      <guid isPermaLink="true">https://haustierzentrum.com/artikel/silvester-hund-katze-checkliste</guid>
+      <pubDate>Tue, 24 Nov 2026 00:00:00 GMT</pubDate>
+      <category>Hunde</category>
+      <category>Katzen</category>
+      <description>Leine und Rückzugsort vorbereiten, Freigänger rechtzeitig hereinholen und wissen, was zu tun ist, wenn Hund oder Katze entlaufen.</description>
+      <enclosure url="https://haustierzentrum.com/images/silvester-hund-katze-checkliste.webp" type="image/webp" length="12114"/>
+    </item>
     <item>
       <title>Umzug mit Katze: Checkliste für vorher, unterwegs und danach</title>
       <link>https://haustierzentrum.com/artikel/umzug-mit-katze-checkliste</link>
@@ -1233,32 +1243,6 @@
 
       <h2>Wann ist selbst zubereitetes Futter sinnvoll?</h2>
       <p>Die Kontrolle über Zutaten kann ein Grund sein, sich für selbst zubereitetes Futter zu interessieren. Bei Erkrankungen ist die Auswahl aber Teil der Behandlung, nicht bloß eine Geschmacksfrage. Besprich Deine Ziele zuerst mit der Tierarztpraxis. Sie kann an eine qualifizierte tierärztliche Ernährungsberatung vermitteln. Ein geeignetes Alleinfutter bleibt eine praktische Alternative; selbst gekocht ist nicht automatisch gesünder.</p>
-<p><em>[...]</em></p>]]></content:encoded>
-    </item>
-    <item>
-      <title>Bengal Cat Rasseguide – Die wilde Schönheit mit dem…</title>
-      <link>https://haustierzentrum.com/artikel/bengal-cat-rasseguide</link>
-      <guid isPermaLink="true">https://haustierzentrum.com/artikel/bengal-cat-rasseguide</guid>
-      <pubDate>Wed, 17 Jun 2026 00:00:00 GMT</pubDate>
-      <category>Katzen</category>
-      <description>Bengal Cat Rasseguide: Alles zu Herkunft, Charakter, Haltung, Pflege, Ernährung und Gesundheit der faszinierenden Bengalkatze. Inkl. Vergleichstabelle, FAQ</description>
-      <enclosure url="https://haustierzentrum.com/images/bengal-cat-rasseguide_00001_.webp" type="image/webp" length="320832"/>
-      <content:encoded><![CDATA[<article>
-    <span>17. Juni 2026</span><span>· Lesezeit: 10 Min</span></div><div class="author-reviewer-box" style="border-top:1px solid #ccc;padding-top:1rem;margin-top:1rem;"><p><strong>Autor:</strong> Haustierzentrum Redaktion</p><p><strong>Stand:</strong> 2026-06-21</p></div><h1>Bengal Cat Rasseguide – Die wilde Schönheit mit dem Leopardenfell</h1>
-      <img loading="lazy" src="../images/bengal-cat-rasseguide_00001_.webp" alt="Bengal Cat Rasseguide – Die wilde Schönheit mit dem Leopardenfell" class="hero-image">
-      </div>
-    <div class="featured-img"><img src="../images/bengal-cat-rasseguide_00001_.webp" alt="Bengal Cat Rasseguide" style="width:100%;height:100%;object-fit:cover;"></div>
-    <div class="article-content">
-
-      <p><strong>Die Bengalkatze</strong> ist eine der spektakulärsten Katzenrassen der Welt. Mit ihrem leopardartigen Fell, das in goldenen, orangefarbenen oder grauen Tönen schimmert und mit markanten Rosetten, Marmorierungen oder Tupfen übersät ist, sieht sie aus wie ein kleiner Leopard, der es sich in deinem Wohnzimmer bequem gemacht hat. Doch die Bengalkatze ist weit mehr als nur ein hübsches Gesicht – sie ist intelligent, verspielt, extrem aktiv und fordert ihre Besitzer auf eine Weise, die kaum eine andere Hauskatze kann.</p>
-
-      <p>In diesem ausführlichen Rasseguide erfährst Du alles Wichtige über die Bengalkatze: ihre faszinierende Herkunft aus der Kreuzung von Wild- und Hauskatzen, den lebhaften und einzigartigen Charakter, die besonderen Ansprüche an Haltung und Beschäftigung, die Ernährung, typische Gesundheitsaspekte sowie eine ehrliche Einschätzung, für wen diese außergewöhnliche Rasse wirklich geeignet ist.</p>
-
-
-
-      <h2>Herkunft &amp; Geschichte der Bengalkatze</h2>
-
-      <p>Die Geschichte der Bengalkatze beginnt in den <strong>1960er Jahren</strong> in den USA, wo die Katzenzüchterin <strong>Jean Mill</strong> aus Kalifornien einen revolutionären Plan verfolgte: Sie wollte eine Hauskatze mit dem exotischen Aussehen einer Wildkatze züchten, aber mit dem freundlichen, verlässlichen Charakter einer Hauskatze. Ausgangspunkt war die Kreuzung zwischen einer schwarzen Hauskatze und einer <strong>Asiatischen Leopardenkatze</strong> (Prionailurus bengalensis), einer kleinen Wildkatze aus Südostasien.</p>
 <p><em>[...]</em></p>]]></content:encoded>
     </item>
 

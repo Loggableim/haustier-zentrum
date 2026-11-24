@@ -331,6 +331,48 @@ class HealthSafetyTests(unittest.TestCase):
         self.assertEqual(answer,visible)
         self.assertIn('Bei möglicher Aufnahme sofort tierärztliche Hilfe holen.',answer)
 
+    def test_silvester_guide_uses_verified_safety_and_discovery_paths(self):
+        root=R.parent
+        slug='silvester-hund-katze-checkliste'
+        html=(R/(slug+'.html')).read_text()
+        for marker in ['Hund draußen anleinen','Freigängerkatze früh hereinholen',
+                       'Tierarztpraxis','www.tasso.net/Tierregister/Tier-vermisst',
+                       'tierschutzbund.de/tiere-themen/tierschutz-im-alltag/tiere-an-silvester/',
+                       'vet.cornell.edu/','href="/impressum"','href="/datenschutz"','/js/consent.js']:
+            self.assertIn(marker,html)
+        for page in [root/'index.html',R/'hundeangst-training-tipps.html',R/'katzen.html']:
+            self.assertIn('href="/artikel/'+slug+'"',page.read_text())
+        self.assertNotIn("so wird's stressfrei",(R/'hundeangst-training-tipps.html').read_text())
+
+    def test_silvester_article_feed_and_sitemap_agree(self):
+        import json, re
+        import xml.etree.ElementTree as ET
+        from email.utils import parsedate_to_datetime
+        root=R.parent
+        slug='silvester-hund-katze-checkliste'
+        url='https://haustierzentrum.com/artikel/'+slug
+        html=(R/(slug+'.html')).read_text()
+        schema=json.loads(re.search(r'<script type="application/ld\+json">(.*?)</script>',html,re.S)[1])
+        feed=ET.parse(root/'rss.xml')
+        items=feed.findall('./channel/item')
+        seasonal=[item for item in items if item.findtext('link')==url]
+        self.assertLessEqual(len(seasonal),1)
+        date=schema['datePublished']
+        self.assertRegex(date,r'^\d{4}-\d{2}-\d{2}$')
+        self.assertEqual(schema['datePublished'],date)
+        self.assertIn('<time datetime="'+date+'">',html)
+        self.assertIn('<loc>'+url+'</loc>\n    <lastmod>'+date+'</lastmod>',(root/'sitemap-articles.xml').read_text())
+        asset=root/'images'/(slug+'.webp')
+        if seasonal:  # The feed eventually ages this item out.
+            item=seasonal[0]
+            self.assertEqual(item.findtext('guid'),url)
+            self.assertEqual(parsedate_to_datetime(item.findtext('pubDate')).date().isoformat(),date)
+            enclosure=item.find('enclosure').attrib
+            self.assertEqual(enclosure['url'],schema['image'])
+            self.assertEqual(enclosure['type'],'image/webp')
+            self.assertEqual(int(enclosure['length']),asset.stat().st_size)
+        self.assertEqual(asset.read_bytes()[:4]+asset.read_bytes()[8:12],b'RIFFWEBP')
+
     def test_budgie_feeding_risks(self):
         s=(R/'wellensittich-ernaehrung-futter.html').read_text()
         for old in ['Schnittlauch (selten)', 'Nierenschädigend', 'Weintrauben & Rosinen', 'Keine Pellets als Hauptfutter', 'in kleinen Mengen frei zur Verfügung stehen', 'sichtbarer Kropf am Abend ist normal']:
