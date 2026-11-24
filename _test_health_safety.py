@@ -518,4 +518,19 @@ class HealthSafetyTests(unittest.TestCase):
                     'niemals über 28°C'):
             self.assertNotIn(old, s)
 
+    def test_emergency_checklist_birth_triage_has_no_waiting_period(self):
+        import re
+        s = (R / ('notfall-checkliste-2026-erste-hilfe-fuer-hund-katze-'
+                  'und-kleintier-was-jede-halte.html')).read_text()
+        section = re.search(r'<h2>Wann muss ich sofort zum Tierarzt\?</h2>(.*?)(?=<h2>)', s, re.S)
+        self.assertIsNotNone(section)
+        triage = re.search(r'<li>[^<]*<strong>Verdacht auf Geburtskomplikationen:</strong>(.*?)</li>',
+                           section[1], re.S)
+        self.assertIsNotNone(triage, 'Suspected dystocia must be listed as an emergency')
+        for term in ('sofort den tierärztlichen Notdienst kontaktieren', 'starkem Pressen ohne Fortschritt',
+                     'feststeckt', 'starker Blutung', 'deutlicher Erschöpfung'):
+            self.assertIn(term, triage[1])
+        self.assertIn('Nicht nach einer pauschalen Frist abwarten.', section[1])
+        self.assertNotIn('Geburtskomplikationen, die länger als eine Stunde andauern', s)
+
 if __name__ == '__main__': unittest.main()
