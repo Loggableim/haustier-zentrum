@@ -189,6 +189,52 @@ class LegacyArticleNavigationTest(unittest.TestCase):
         self.assertIn('hundeangst-training-tipps', tested)
         self.assertIn('chinchilla-ernaehrung-futter', tested)
 
+class HomeCatalog(HTMLParser):
+    VOID = {'area', 'base', 'br', 'col', 'embed', 'hr', 'img', 'input',
+            'link', 'meta', 'param', 'source', 'track', 'wbr'}
+
+    def __init__(self, html):
+        super().__init__()
+        self.stack = []
+        self.cards = []
+        self.load_more = []
+        self.feed(html)
+
+    def handle_starttag(self, tag, attrs):
+        attr = dict(attrs)
+        if tag == 'article' and 'blog-card' in attr.get('class', '').split():
+            self.cards.append((attr['data-index'], [elem_id for _, elem_id in self.stack]))
+        if attr.get('id') == 'loadMoreBtn':
+            self.load_more.append([elem_id for _, elem_id in self.stack])
+        if tag not in self.VOID:
+            self.stack.append((tag, attr.get('id')))
+
+    def handle_endtag(self, tag):
+        for i in range(len(self.stack) - 1, -1, -1):
+            if self.stack[i][0] == tag:
+                del self.stack[i:]
+                break
+
+
+class HomeCatalogTest(unittest.TestCase):
+    def test_all_catalog_cards_share_the_filter_grid(self):
+        home = HomeCatalog((ROOT / 'index.html').read_text())
+        featured = {'1', '2', '3', '4', '5'}
+        indices = [index for index, _ in home.cards]
+        self.assertEqual(len(indices), len(set(indices)))
+        self.assertTrue({str(i) for i in range(1, 132)}.issubset(indices))
+        detached = []
+        for index, parents in home.cards:
+            if index in featured:
+                self.assertNotIn('alle-artikel', parents)
+                self.assertNotIn('article-grid', parents)
+            elif parents[-2:] != ['alle-artikel', 'article-grid']:
+                detached.append(index)
+        self.assertEqual(detached, [], f'Catalogue cards outside filter grid: {detached}')
+        self.assertEqual(len(home.load_more), 1)
+        self.assertEqual(home.load_more[0][-1], 'alle-artikel')
+
+
 class ErrorPageNavigationTest(unittest.TestCase):
     def test_nested_missing_route_resolves_public_assets_at_root(self):
         page = (ROOT / '404.html').read_text()

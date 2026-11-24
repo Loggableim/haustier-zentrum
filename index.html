@@ -1385,8 +1385,6 @@
       </div>
     </article>
 
-  </div>
-
     <article data-index="102" class="blog-card" data-cat="allgemein">
       <div class="card-img"><img src="/images/htz-tiere-v1.webp" alt="Illustration: Hund, Katze und Pfotenabdruck" loading="lazy"></div>
       <div class="card-body">
@@ -1677,8 +1675,8 @@
       </div>
     </article>
 
-    <button id="loadMoreBtn" class="btn btn-outline" onclick="loadMore()">📚 Weitere Artikel laden</button>
   </div>
+  <button id="loadMoreBtn" class="btn btn-outline" onclick="loadMore()">📚 Weitere Artikel laden</button>
 </section>
 
 <!-- ============ NEWSLETTER ============ -->
@@ -1773,7 +1771,7 @@ document.querySelectorAll('.filter-btn').forEach(btn => {
     // Reset load-more visibility
     const loadBtn = document.getElementById('loadMoreBtn');
     if (loadBtn) {
-      loadBtn.dataset.page = '1';
+      currentPage = 1;
       showPage(1, filter);
     }
   });
