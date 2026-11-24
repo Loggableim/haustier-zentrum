@@ -443,4 +443,22 @@ class HealthSafetyTests(unittest.TestCase):
             self.assertNotIn(old,s)
         for new in ['sofort eine chinchillaerfahrene', 'nicht auf Gewichtsverlust warten', 'kein pauschales Wasserverbot', 'Spritzenfütterung und Medikamente nur nach tierärztlicher Anleitung', 'Keine vollständige tiermedizinische Prüfung']:
             self.assertIn(new,s)
+    def test_chinchilla_care_diarrhea_triage(self):
+        import json
+        import re
+        from _faq_consistency import check_faq
+        s = (R / 'chinchilla-haltung-pflege.html').read_text()
+        self.assertEqual(check_faq(s, 'chinchilla care'), 7)
+        faqs = [json.loads(raw) for raw in re.findall(
+            r'<script type="application/ld\+json">(.*?)</script>', s, re.S)]
+        questions = next(obj['mainEntity'] for obj in faqs if obj.get('@type') == 'FAQPage')
+        answer = next(q['acceptedAnswer']['text'] for q in questions if 'Durchfall' in q['name'])
+        for term in ['sofort eine chinchillaerfahrene Tierarztpraxis kontaktieren',
+                     'Nicht erst einen Tag beobachten', 'tierärztlichen Notdienst',
+                     'Keine eigenständige Futterkur', 'Heu und frisches Wasser weiter anbieten']:
+            self.assertIn(term, answer)
+        for old in ['12–24 Stunden', 'Entferne alles Futter außer Heu',
+                    'Futter einstellen (nur Heu und Wasser)', 'zu viel Wasser → Durchfall']:
+            self.assertNotIn(old, s)
+
 if __name__ == '__main__': unittest.main()
