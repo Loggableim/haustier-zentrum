@@ -1,4 +1,6 @@
 """Verify public image references and homepage navigation integration."""
+import json
+import re
 import unittest
 from html.parser import HTMLParser
 from pathlib import Path
@@ -11,14 +13,30 @@ class ImageRefs(HTMLParser):
     def __init__(self, html):
         super().__init__()
         self.refs = []
+        self.preview = {}
         self.feed(html)
 
     def handle_starttag(self, tag, attrs):
         attr = dict(attrs)
         if tag == 'img' and attr.get('src'):
             self.refs.append(attr['src'])
+        key = attr.get('property') or attr.get('name')
+        if tag == 'meta' and key in {'og:image', 'twitter:image'}:
+            self.preview.setdefault(key, []).append(attr.get('content'))
 
 class ImageTests(unittest.TestCase):
+    def test_chihuahua_social_and_schema_match_visible_hero(self):
+        html = (ROOT / 'artikel/chihuahua-rasseguide.html').read_text()
+        article = SITE + '/artikel/chihuahua-rasseguide'
+        hero = re.search(r'<div class="featured-img"><img src="([^"]+)"', html)[1]
+        expected = urljoin(article, hero)
+        self.assertEqual(expected, SITE + '/images/chihuahua-rasseguide_00001_.webp')
+        self.assertEqual(ImageRefs(html).preview, {'og:image': [expected], 'twitter:image': [expected]})
+        schemas = [json.loads(block) for block in re.findall(
+            r'<script type="application/ld\+json">(.*?)</script>', html, re.S)]
+        article_schema = [data for data in schemas if data.get('@type') in {'Article', 'BlogPosting'}]
+        self.assertEqual([data.get('image') for data in article_schema], [expected])
+
     def test_public_html_has_no_missing_site_images(self):
         pages = [*ROOT.glob('*.html'), *(ROOT / 'artikel').glob('*.html')]
         for page in pages:
