@@ -25,6 +25,48 @@ class ImageRefs(HTMLParser):
             self.preview.setdefault(key, []).append(attr.get('content'))
 
 class ImageTests(unittest.TestCase):
+    def test_pop_art_cover_matches_its_own_article_and_home_card(self):
+        home = (ROOT / 'index.html').read_text()
+        pilots = (
+            (
+                'ganzheitliche-hundegesundheit-2026-wie-sie-krankheiten-fruehzeitig-erkennen-und-',
+                107, 'hunde-gesundheit_00001_.webp',
+                'Pop-Art-Illustration: Hund mit roter Brille und Stethoskop', True,
+            ),
+            (
+                'notfall-checkliste-2026-erste-hilfe-fuer-hund-katze-und-kleintier-was-jede-halte',
+                123, 'erste-hilfe-haustiere-notfall-ratgeber_00001_.webp',
+                'Pop-Art-Illustration: Hund und Katze neben einem Erste-Hilfe-Koffer', False,
+            ),
+        )
+        for slug, index, filename, alt, schema_image in pilots:
+            with self.subTest(article=slug):
+                expected = f'/images/{filename}'
+                article = (ROOT / 'artikel' / (slug + '.html')).read_text()
+                lead = article.split('<div class="article-content">', 1)[0]
+                hero = re.findall(r'<img\b[^>]*\bclass="article-hero"[^>]*>', lead)
+                self.assertEqual(len(hero), 1)
+                for attribute in (f'src="{expected}"', f'alt="{alt}"', 'width="1216"', 'height="832"'):
+                    self.assertIn(attribute, hero[0])
+                card = re.search(rf'<article data-index="{index}"[^>]*>.*?</article>', home, re.S)
+                self.assertIsNotNone(card)
+                self.assertIn(f'href="/artikel/{slug}"', card[0])
+                self.assertRegex(card[0], rf'<img\b[^>]*src="{re.escape(expected)}"[^>]*alt="{re.escape(alt)}"')
+                if index == 123:
+                    self.assertRegex(card[0], r'<img\b[^>]*style="object-position: center 35%"')
+                self.assertEqual(ImageRefs(article).preview, {
+                    'og:image': [SITE + expected], 'twitter:image': [SITE + expected],
+                })
+                schemas = [json.loads(block) for block in re.findall(
+                    r'<script type="application/ld\+json">(.*?)</script>', article, re.S)]
+                items = [data for data in schemas if data.get('@type') in {'Article', 'BlogPosting'}]
+                self.assertEqual(len(items), 1)
+                if schema_image:
+                    self.assertEqual(items[0]['image'], SITE + expected)
+                    self.assertIn(f'<meta property="og:image:alt" content="{alt}">', article)
+                else:
+                    self.assertNotIn('image', items[0])
+
     def test_chihuahua_social_and_schema_match_visible_hero(self):
         html = (ROOT / 'artikel/chihuahua-rasseguide.html').read_text()
         article = SITE + '/artikel/chihuahua-rasseguide'
@@ -256,7 +298,7 @@ class RestoredArticleTemplateTest(unittest.TestCase):
                 self.assertIn('href="/css/article-template.css"', html)
                 self.assertLess(html.index('Content-Security-Policy'), html.index('rel="stylesheet"'))
                 self.assertEqual(html.count('src="/js/consent.js" defer'), 1)
-                self.assertRegex(html, r'<img [^>]+class="article-hero" width="1200" height="630"')
+                self.assertRegex(html, r'<img [^>]+class="article-hero" width="[1-9]\d*" height="[1-9]\d*"')
                 self.assertEqual(len(re.findall(r'<h1(?=\s|>)', html)), 1)
 
 
