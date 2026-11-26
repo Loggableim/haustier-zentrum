@@ -3,6 +3,11 @@
 **Modell:** `openrouter/owl-alpha` · **StoreID:** `nova03e-21`  
 **Start:** 17. Juni 2026 · **Rhythmus:** alle 3h per Cron
 
+## Priorisierung (26.11.2026, CEO-Sync)
+**Nächste P1-Blöcke für die Pipeline (SEO-Report 25.11.2026):** #136 Haustier-Versicherungen, #143 Haustier-Mietrecht, #64 Hunde-Alleine bleiben, #89 Zweite Katze, #146 Haustier-Garten Giftpflanzen, #98 Katzen-Floehe & Zecken, #154 Futterautomat, #155 Trinkbrunnen. Danach P2: #43, #61, #62, #46, #94, #95, #148, #113, #114.
+**Hinweis Alias-Slugs:** #78 ragdoll-rasseguide ist live als ragdoll-katze-rasseguide.html, #109 als frettchen-haustier-haltung-pflege-kosten.html, #126 als aquarium-pflanzen-einsteiger.html, #158 als allergiker-haustiere.html. Vor Neuanlage unter Original-Slug pruefen, sonst Duplicate.
+**Queue-Sync am 26.11.2026:** 28 bereits publizierte Themen auf Fertig gesetzt (_queue_sync_check.py prueft das ab sofort verifizierbar).
+
 | # | Status | Thema | Slug |
 |---|--------|-------|------|
 | 1 | ✅ Fertig 04.06.2026 | Deutscher Schäferhund Rasseguide | `deutscher-schaeferhund-rasseguide` |
