@@ -31,22 +31,22 @@
 | # | Status | Thema | Slug |
 |---|--------|-------|------|
 | 21 | ✅ Fertig 17.06.2026 | Rottweiler Rasseguide | `rottweiler-rasseguide` |
-| 22 | ✅ Bereit | Boxer Rasseguide | `boxer-rasseguide` |
-| 23 | ✅ Bereit | Beagle Rasseguide | `beagle-rasseguide` |
-| 24 | ✅ Bereit | Border Collie Rasseguide | `border-collie-rasseguide` |
+| 22 | ✅ Fertig 26.11.2026 | Boxer Rasseguide | `boxer-rasseguide` |
+| 23 | ✅ Fertig 26.11.2026 | Beagle Rasseguide | `beagle-rasseguide` |
+| 24 | ✅ Fertig 26.11.2026 | Border Collie Rasseguide | `border-collie-rasseguide` |
 | 25 | ✅ Fertig 17.06.2026 | Shih Tzu Rasseguide | `shih-tzu-rasseguide` |
-| 26 | ✅ Bereit | Yorkshire Terrier Rasseguide | `yorkshire-terrier-rasseguide` |
-| 27 | ✅ Bereit | Zwergspitz (Pomeranian) Rasseguide | `zwergspitz-pomeranian-rasseguide` |
-| 28 | ✅ Bereit | Malteser Rasseguide | `malteser-rasseguide` |
+| 26 | ✅ Fertig 26.11.2026 | Yorkshire Terrier Rasseguide | `yorkshire-terrier-rasseguide` |
+| 27 | ✅ Fertig 26.11.2026 | Zwergspitz (Pomeranian) Rasseguide | `zwergspitz-pomeranian-rasseguide` |
+| 28 | ✅ Fertig 26.11.2026 | Malteser Rasseguide | `malteser-rasseguide` |
 | 29 | ✅ Bereit | Cockerspaniel Rasseguide | `cockerspaniel-rasseguide` |
-| 30 | ✅ Bereit | Dalmatiner Rasseguide | `dalmatiner-rasseguide` |
+| 30 | ✅ Fertig 26.11.2026 | Dalmatiner Rasseguide | `dalmatiner-rasseguide` |
 | 31 | ✅ Bereit | Deutsche Dogge Rasseguide | `deutsche-dogge-rasseguide` |
 | 32 | ✅ Bereit | Bernhardiner Rasseguide | `bernhardiner-rasseguide` |
 | 33 | ✅ Bereit | Siberian Husky Rasseguide | `siberian-husky-rasseguide` |
-| 34 | ✅ Bereit | Mops Rasseguide | `mops-rasseguide` |
+| 34 | ✅ Fertig 26.11.2026 | Mops Rasseguide | `mops-rasseguide` |
 | 35 | ✅ Bereit | Zwergpudel Rasseguide | `zwergpudel-rasseguide` |
-| 36 | ✅ Bereit | Whippet Rasseguide | `whippet-rasseguide` |
-| 37 | ✅ Bereit | Berner Sennenhund Rasseguide | `berner-sennenhund-rasseguide` |
+| 36 | ✅ Fertig 26.11.2026 | Whippet Rasseguide | `whippet-rasseguide` |
+| 37 | ✅ Fertig 26.11.2026 | Berner Sennenhund Rasseguide | `berner-sennenhund-rasseguide` |
 | 38 | ✅ Bereit | Rhodesian Ridgeback Rasseguide | `rhodesian-ridgeback-rasseguide` |
 | 39 | ✅ Bereit | Dobermann Rasseguide | `dobermann-rasseguide` |
 | 40 | ✅ Bereit | Cane Corso Rasseguide | `cane-corso-rasseguide` |
@@ -100,9 +100,9 @@
 
 | # | Status | Thema | Slug |
 |---|--------|-------|------|
-| 76 | ✅ Bereit | Perserkatze Rasseguide | `perserkatze-rasseguide` |
+| 76 | ✅ Fertig 26.11.2026 | Perserkatze Rasseguide | `perserkatze-rasseguide` |
 | 77 | ✅ Bereit | Russisch Blau Rasseguide | `russisch-blau-rasseguide` |
-| 78 | ✅ Bereit | Ragdoll Rasseguide | `ragdoll-rasseguide` |
+| 78 | ✅ Fertig 26.11.2026 | Ragdoll Rasseguide | `ragdoll-rasseguide` |
 | 79 | ✅ Bereit | Sphynx (Nacktkatze) Rasseguide | `sphynx-nacktkatze-rasseguide` |
 | 80 | ✅ Bereit | Abessinier Katze Rasseguide | `abessinier-katze-rasseguide` |
 | 81 | ✅ Bereit | Scottish Fold Rasseguide | `scottish-fold-rasseguide` |
@@ -116,8 +116,8 @@
 | # | Status | Thema | Slug |
 |---|--------|-------|------|
 | 86 | ✅ Bereit | Katzen-Krallenpflege: Schneiden & Kratzgewohnheiten | `katzen-krallenpflege-schneiden-kratzen` |
-| 87 | ✅ Bereit | Katzen-Fellpflege: Bürsten & Knoten lösen | `katzen-fellpflege-buersten-knoten` |
-| 88 | ✅ Bereit | Katzen-Balkon sichern: So wird's gefahrlos | `katzen-balkon-sichern-gefahrlos` |
+| 87 | ✅ Fertig 26.11.2026 | Katzen-Fellpflege: Bürsten & Knoten lösen | `katzen-fellpflege-buersten-knoten` |
+| 88 | ✅ Fertig 26.11.2026 | Katzen-Balkon sichern: So wird's gefahrlos | `katzen-balkon-sichern-gefahrlos` |
 | 89 | ✅ Bereit | Zweite Katze: Vergesellschaftung Schritt für Schritt | `zweite-katze-vergesellschaftung-schritte` |
 | 90 | ✅ Bereit | Katzen-Umzug: So meistert ihr den Ortswechsel | `katzen-umzug-ortswechsel-meistern` |
 | 91 | ✅ Bereit | Katzen-Urlaub: Betreuung & Reiseoptionen | `katzen-urlaub-betreuung-reiseoptionen` |
@@ -128,7 +128,7 @@
 | 96 | ✅ Bereit | Katzen-Schilddrüsenüberfunktion: Symptome & Therapie | `katzen-schilddruesenueberfunktion-symptome` |
 | 97 | ✅ Bereit | Katzen-Würmer: Erkennen & Entwurmen | `katzen-wuermer-erkennen-entwurmen` |
 | 98 | ✅ Bereit | Katzen-Flöhe & Zecken: Schutz & Behandlung | `katzen-floehe-zecken-schutz-behandlung` |
-| 99 | ✅ Bereit | Katzen-Kastration: Ablauf, Kosten & Nachsorge | `katzen-kastration-ablauf-kosten-nachsorge` |
+| 99 | ✅ Fertig 26.11.2026 | Katzen-Kastration: Ablauf, Kosten & Nachsorge | `katzen-kastration-ablauf-kosten-nachsorge` |
 | 100 | ✅ Bereit | Katzen-Harnwegsinfekte: Erkennen & Vorbeugen | `katzen-harnwegsinfekte-erkennen-vorbeugen` |
 | 101 | ✅ Bereit | Katzen-Leckerchen selber machen: Gesunde Rezepte | `katzen-leckerchen-selber-machen-rezepte` |
 | 102 | ✅ Bereit | Katzen-Mobbing: Streit in der Mehrkatzenhaltung | `katzen-mobbing-streit-mehrkatzenhaltung` |
@@ -143,7 +143,7 @@
 | 106 | ✅ Bereit | Ratten als Haustiere: Haltung & Pflege | `ratten-haustiere-haltung-pflege` |
 | 107 | ✅ Bereit | Mäuse als Haustiere: Haltung & Pflege | `maeuse-haustiere-haltung-pflege` |
 | 108 | ✅ Bereit | Gerbils (Wüstenrennmäuse) Haltung | `gerbils-wuestenrennmäuse-haltung` |
-| 109 | ✅ Bereit | Frettchen Haltung: Das musst du wissen | `frettchen-haltung-musst-du-wissen` |
+| 109 | ✅ Fertig 26.11.2026 | Frettchen Haltung: Das musst du wissen | `frettchen-haltung-musst-du-wissen` |
 | 110 | ✅ Bereit | Igel als Haustier: Haltung & Ernährung | `igel-haustier-haltung-ernaehrung` |
 | 111 | ✅ Bereit | Landschildkröten Haltung: Gehege & Winterstarre | `landschildkroeten-haltung-gehege-winterstarre` |
 | 112 | ✅ Bereit | Wasserschildkröten Haltung: Aquaterrarium Einrichtung | `wasserschildkroeten-haltung-aquaterrarium` |
@@ -170,7 +170,7 @@
 
 | # | Status | Thema | Slug |
 |---|--------|-------|------|
-| 126 | ✅ Bereit | Aquarium Pflanzen: Arten & Pflege | `aquarium-pflanzen-arten-pflege` |
+| 126 | ✅ Fertig 26.11.2026 | Aquarium Pflanzen: Arten & Pflege | `aquarium-pflanzen-arten-pflege` |
 | 127 | ✅ Bereit | Aquarium CO2-Anlage: Einsteiger-Guide | `aquarium-co2-anlage-einsteiger-guide` |
 | 128 | ✅ Bereit | Aquarium Filter: Die richtige Filtertechnik | `aquarium-filter-richtige-filtertechnik` |
 | 129 | ✅ Bereit | Aquarium Beleuchtung: Licht für Pflanzen & Fische | `aquarium-beleuchtung-licht-pflanzen-fische` |
@@ -207,7 +207,7 @@
 | 155 | ✅ Bereit | Haustier-Trinkbrunnen: Für Hunde, Katzen & Kleintiere | `haustier-trinkbrunnen-hunde-katzen-kleintiere` |
 | 156 | ✅ Bereit | Haustier-Kamera: Heimtiere per App beobachten | `haustier-kamera-heimtiere-per-app-beobachten` |
 | 157 | ✅ Bereit | Haustier-Notvorrat: Für Notfälle vorsorgen | `haustier-notvorrat-notfaelle-vorsorgen` |
-| 158 | ✅ Bereit | Allergiker und Haustiere: Die besten Rassen | `allergiker-haustiere-besten-rassen` |
+| 158 | ✅ Fertig 26.11.2026 | Allergiker und Haustiere: Die besten Rassen | `allergiker-haustiere-besten-rassen` |
 | 159 | ✅ Bereit | Haustier-Bücher: Die besten Ratgeber 2026 | `haustier-buecher-besten-ratgeber-2026` |
 | 160 | ✅ Bereit | Haustier-Podcasts: Hörenswerte Formate | `haustier-podcasts-hoerenswerte-formate` |
 
@@ -277,7 +277,7 @@
 | 205 | ✅ Bereit | Japanischer Spitz Rasseguide | `japanischer-spitz-rasseguide` |
 | 206 | ✅ Bereit | Chow-Chow Rasseguide | `chow-chow-rasseguide` |
 | 207 | ✅ Bereit | Akita Inu Rasseguide | `akita-inu-rasseguide` |
-| 208 | ✅ Bereit | Shiba Inu Rasseguide | `shiba-inu-rasseguide` |
+| 208 | ✅ Fertig 26.11.2026 | Shiba Inu Rasseguide | `shiba-inu-rasseguide` |
 | 209 | ✅ Bereit | Eurasier Rasseguide | `eurasier-rasseguide` |
 | 210 | ✅ Bereit | Samojede Rasseguide | `samojede-rasseguide` |
 | 211 | ✅ Bereit | Alaskan Malamute Rasseguide | `alaskan-malamute-rasseguide` |
@@ -337,7 +337,7 @@
 | 250 | ✅ Bereit | Kleinpudel Rasseguide | `kleinpudel-rasseguide` |
 | 251 | ✅ Bereit | Toypudel Rasseguide | `toypudel-rasseguide` |
 | 252 | ✅ Bereit | Bichon Frisé Rasseguide | `bichon-frise-rasseguide` |
-| 253 | ✅ Bereit | Havaneser Rasseguide | `havaneser-rasseguide` |
+| 253 | ✅ Fertig 26.11.2026 | Havaneser Rasseguide | `havaneser-rasseguide` |
 | 254 | ✅ Bereit | Bologneser Rasseguide | `bologneser-rasseguide` |
 | 255 | ✅ Bereit | Coton de Tuléar Rasseguide | `coton-de-tulear-rasseguide` |
 | 256 | ✅ Bereit | Pekinginese Rasseguide | `pekinginese-rasseguide` |
